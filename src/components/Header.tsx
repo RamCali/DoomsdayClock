@@ -18,7 +18,7 @@ export function Header() {
           {/* Logo */}
           <a href="/" className="flex items-center gap-2 group">
             <img
-              src="/DoomsDayClock.net.svg"
+              src="/DoomsDayClock.net.png"
               alt="Doomsday Clock"
               className="h-10 sm:h-12 w-auto group-hover:scale-105 transition-transform"
             />
