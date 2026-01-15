@@ -70,9 +70,10 @@ export function DoomsdayClock({ className }: DoomsdayClockProps) {
             // Wedge goes from the hand position (counter-clockwise from 12) to 12 o'clock
             const wedgeAngleDeg = minutesToMidnight * 6; // positive angle in degrees
             const wedgeAngleRad = (wedgeAngleDeg * Math.PI) / 180;
-            // Reduced radius to avoid clipping into labels (was 42)
-            const innerRadius = 12;
-            const outerRadius = 36;
+            // Radius bounds: inner avoids center dot, outer stops before "12" label
+            // "12" label is at top-6 (~15% from top), so outer radius must be < 35
+            const innerRadius = 8;
+            const outerRadius = 28;
             // Start points: where the hand is (counter-clockwise from 12)
             const startXOuter = 50 - outerRadius * Math.sin(wedgeAngleRad);
             const startYOuter = 50 - outerRadius * Math.cos(wedgeAngleRad);
@@ -92,10 +93,10 @@ export function DoomsdayClock({ className }: DoomsdayClockProps) {
                 <defs>
                   <radialGradient id="wedgeGradient" cx="50%" cy="50%" r="50%">
                     <stop offset="0%" stopColor="transparent" />
-                    <stop offset="20%" stopColor="transparent" />
-                    <stop offset="40%" stopColor={`rgba(234, 56, 76, ${0.25 * pulseIntensity})`} />
-                    <stop offset="70%" stopColor={`rgba(234, 56, 76, ${0.5 * pulseIntensity})`} />
-                    <stop offset="100%" stopColor={`rgba(234, 56, 76, ${0.3 * pulseIntensity})`} />
+                    <stop offset="10%" stopColor="transparent" />
+                    <stop offset="30%" stopColor={`rgba(234, 56, 76, ${0.3 * pulseIntensity})`} />
+                    <stop offset="60%" stopColor={`rgba(234, 56, 76, ${0.6 * pulseIntensity})`} />
+                    <stop offset="100%" stopColor={`rgba(234, 56, 76, ${0.4 * pulseIntensity})`} />
                   </radialGradient>
                 </defs>
                 {/* Filled wedge (donut shape to avoid center) */}
@@ -112,8 +113,8 @@ export function DoomsdayClock({ className }: DoomsdayClockProps) {
                 <path
                   d={`M ${startXOuter} ${startYOuter} A ${outerRadius} ${outerRadius} 0 0 1 ${endXOuter} ${endYOuter}`}
                   fill="none"
-                  stroke={`rgba(234, 56, 76, ${0.8 * pulseIntensity})`}
-                  strokeWidth="1"
+                  stroke={`rgba(234, 56, 76, ${0.9 * pulseIntensity})`}
+                  strokeWidth="1.5"
                   className="transition-all duration-1000"
                 />
               </svg>
