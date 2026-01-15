@@ -10,7 +10,8 @@
       "Bash(sips:*)",
       "Bash(lsof:*)",
       "Bash(xargs kill -9)",
-      "Bash(ls:*)"
+      "Bash(ls:*)",
+      "Bash(git push:*)"
     ]
   }
 }
