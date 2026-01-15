@@ -41,21 +41,23 @@ export function DoomsdayClock({ className }: DoomsdayClockProps) {
           {/* Inner ring */}
           <div className="absolute inset-4 rounded-full border border-white/10" />
 
-          {/* Hour markers */}
+          {/* Hour markers (skip 12 o'clock position - we use the label instead) */}
           {Array.from({ length: 12 }).map((_, i) => {
             const angle = (i * 30 - 90) * (Math.PI / 180);
-            const isNoon = i === 0;
+            const isMidnight = i === 0;
+            const isSix = i === 6;
             const radius = 42;
             const x = 50 + radius * Math.cos(angle);
             const y = 50 + radius * Math.sin(angle);
 
+            // Skip 12 o'clock (midnight) position - we show "12" label instead
+            // Skip 6 o'clock position - we show "MIDNIGHT" label instead
+            if (isMidnight || isSix) return null;
+
             return (
               <div
                 key={i}
-                className={cn(
-                  "absolute w-1 h-4 -translate-x-1/2 -translate-y-1/2",
-                  isNoon ? "bg-doom h-6 w-1.5 glow-doom" : "bg-white/40"
-                )}
+                className="absolute w-1 h-4 -translate-x-1/2 -translate-y-1/2 bg-white/40"
                 style={{
                   left: `${x}%`,
                   top: `${y}%`,
@@ -151,8 +153,8 @@ export function DoomsdayClock({ className }: DoomsdayClockProps) {
           </div>
 
           {/* "MIDNIGHT" text at bottom */}
-          <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10">
-            <span className="text-muted-foreground text-xs sm:text-sm uppercase tracking-[0.3em] font-medium">
+          <div className="absolute bottom-5 sm:bottom-6 left-1/2 -translate-x-1/2 z-10">
+            <span className="text-muted-foreground text-[10px] sm:text-xs uppercase tracking-[0.25em] font-medium">
               Midnight
             </span>
           </div>
