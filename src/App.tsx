@@ -11,6 +11,7 @@ import { UpcomingUpdate } from "./components/UpcomingUpdate";
 import { Footer } from "./components/Footer";
 import { injectSEO } from "./components/SEO";
 import { ErrorBoundary, NotFound } from "./components/errors";
+import { OGImagePreview } from "./components/OGImagePreview";
 import "./index.css";
 
 function HomePage() {
@@ -59,6 +60,7 @@ function App() {
           <main className="pt-[calc(4rem+1.75rem)]">
             <Routes>
               <Route path="/" element={<HomePage />} />
+              <Route path="/og-preview" element={<OGImagePreview />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </main>
