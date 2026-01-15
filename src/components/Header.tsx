@@ -12,7 +12,7 @@ export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="fixed top-[1.75rem] left-0 right-0 z-50 glass border-b border-white/10">
+    <header className="fixed top-[1.75rem] left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-white/5">
       <div className="container-wide">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}

@@ -4,7 +4,7 @@ import { AlertTriangle, TrendingUp } from "lucide-react";
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center pt-16" id="clock">
+    <section className="relative min-h-[calc(100vh-5.75rem)] flex items-center" id="clock">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-doom/5 via-transparent to-transparent pointer-events-none" />
 
