@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Roboto+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 84.2% 60.2%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 0 84.2% 60.2%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 0 84.2% 60.2%;
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-feature-settings: "ss01", "ss02", "cv01", "cv02", "cv03";
+    min-height: 100vh;
+  }
+}
+
+@layer components {
+  /* Glass morphism effects */
+  .glass {
+    @apply bg-black/30 backdrop-blur-lg border border-white/10 shadow-glass;
+  }
+
+  .glass-card {
+    @apply bg-black/50 backdrop-blur-lg border border-white/10
+           hover:bg-black/60 rounded-2xl transition-all duration-300
+           hover:shadow-lg shadow-glass;
+  }
+
+  /* Doom accent card (red glow) */
+  .doom-card {
+    @apply bg-black/60 backdrop-blur-lg border border-doom/30
+           hover:bg-black/70 rounded-2xl transition-all duration-300
+           hover:shadow-lg;
+    box-shadow: 0 4px 15px rgba(234, 56, 76, 0.1);
+  }
+
+  .doom-accent-card {
+    @apply bg-doom/10 backdrop-blur-lg border border-doom/30
+           hover:bg-doom/15 rounded-2xl transition-all duration-300
+           hover:shadow-lg;
+    box-shadow: 0 4px 15px rgba(234, 56, 76, 0.15);
+  }
+
+  /* Atomic accent card (blue glow) */
+  .atomic-card {
+    @apply bg-black/50 backdrop-blur-lg border border-atomic/30
+           hover:bg-black/60 rounded-2xl transition-all duration-300
+           hover:shadow-lg;
+    box-shadow: 0 4px 15px rgba(30, 174, 219, 0.1);
+  }
+
+  /* Shimmer effect */
+  .doom-shimmer {
+    @apply relative overflow-hidden;
+  }
+
+  .doom-shimmer::after {
+    content: "";
+    @apply absolute top-0 left-0 right-0 bottom-0 -translate-x-full;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.08), transparent);
+    animation: shimmer 2s infinite;
+  }
+
+  /* Container utility */
+  .container-tight {
+    @apply max-w-4xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .container-wide {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+}
+
+@layer utilities {
+  /* Text gradient utilities */
+  .text-gradient-doom {
+    @apply bg-gradient-to-r from-doom-light via-doom to-doom-dark bg-clip-text text-transparent;
+  }
+
+  .text-gradient-atomic {
+    @apply bg-gradient-to-r from-atomic-light via-atomic to-atomic-dark bg-clip-text text-transparent;
+  }
+
+  /* Glow effects */
+  .glow-doom {
+    box-shadow: 0 0 20px rgba(234, 56, 76, 0.4);
+  }
+
+  .glow-atomic {
+    box-shadow: 0 0 20px rgba(30, 174, 219, 0.4);
+  }
+
+  .glow-green {
+    box-shadow: 0 0 20px rgba(76, 175, 80, 0.4);
+  }
+}
