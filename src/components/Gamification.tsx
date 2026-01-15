@@ -20,19 +20,27 @@ interface Badge {
   id: string;
   name: string;
   description: string;
-  icon: React.ReactNode;
   color: string;
   requirement: string;
   unlocked: boolean;
 }
 
-// Achievements system
+// Icon mapping - kept separate from serializable data
+const BADGE_ICONS: Record<string, React.ReactNode> = {
+  first_visit: <Star className="w-6 h-6" />,
+  prediction_made: <Target className="w-6 h-6" />,
+  history_explorer: <Clock className="w-6 h-6" />,
+  scenario_tester: <Zap className="w-6 h-6" />,
+  newsletter_sub: <Medal className="w-6 h-6" />,
+  social_sharer: <Share2 className="w-6 h-6" />,
+};
+
+// Achievements system - serializable data only
 const BADGES: Badge[] = [
   {
     id: "first_visit",
     name: "Doomsday Discoverer",
     description: "Visited DoomsdayClock.net for the first time",
-    icon: <Star className="w-6 h-6" />,
     color: "text-yellow-500 bg-yellow-500/20",
     requirement: "Visit the site",
     unlocked: true, // Always unlocked on visit
@@ -41,7 +49,6 @@ const BADGES: Badge[] = [
     id: "prediction_made",
     name: "Future Forecaster",
     description: "Made a prediction for the 2026 Doomsday Clock",
-    icon: <Target className="w-6 h-6" />,
     color: "text-blue-500 bg-blue-500/20",
     requirement: "Submit a prediction",
     unlocked: false,
@@ -50,7 +57,6 @@ const BADGES: Badge[] = [
     id: "history_explorer",
     name: "History Buff",
     description: "Explored the complete Doomsday Clock timeline",
-    icon: <Clock className="w-6 h-6" />,
     color: "text-purple-500 bg-purple-500/20",
     requirement: "View timeline section",
     unlocked: false,
@@ -59,7 +65,6 @@ const BADGES: Badge[] = [
     id: "scenario_tester",
     name: "What-If Wizard",
     description: "Tested 3 different scenarios",
-    icon: <Zap className="w-6 h-6" />,
     color: "text-cyan-500 bg-cyan-500/20",
     requirement: "Use What-If feature 3 times",
     unlocked: false,
@@ -68,7 +73,6 @@ const BADGES: Badge[] = [
     id: "newsletter_sub",
     name: "Doomsday Insider",
     description: "Subscribed to email notifications",
-    icon: <Medal className="w-6 h-6" />,
     color: "text-atomic bg-atomic/20",
     requirement: "Subscribe to newsletter",
     unlocked: false,
@@ -77,7 +81,6 @@ const BADGES: Badge[] = [
     id: "social_sharer",
     name: "Doomsday Ambassador",
     description: "Shared your prediction on social media",
-    icon: <Share2 className="w-6 h-6" />,
     color: "text-green-500 bg-green-500/20",
     requirement: "Share prediction",
     unlocked: false,
@@ -364,7 +367,7 @@ export function Gamification() {
                     }`}
                   >
                     <div className={`w-10 h-10 rounded-full flex items-center justify-center ${badge.color}`}>
-                      {badge.unlocked ? badge.icon : <Lock className="w-5 h-5" />}
+                      {badge.unlocked ? BADGE_ICONS[badge.id] : <Lock className="w-5 h-5" />}
                     </div>
                     <div className="flex-1 min-w-0">
                       <div className="font-medium text-white text-sm truncate">{badge.name}</div>
