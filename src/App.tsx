@@ -27,6 +27,24 @@ function HomePage() {
   );
 }
 
+// Disambiguation banner for DC Comic/Watchmen searchers (reduces bounce rate)
+function ComicDisambiguation() {
+  return (
+    <div className="fixed top-0 left-0 right-0 z-[60] bg-zinc-900/95 border-b border-white/5 py-1.5 text-center text-xs text-muted-foreground">
+      <span>Looking for the </span>
+      <a
+        href="https://en.wikipedia.org/wiki/Doomsday_Clock_(comics)"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-blue-400 hover:text-blue-300 underline underline-offset-2"
+      >
+        DC Watchmen Graphic Novel
+      </a>
+      <span>? This is the nuclear threat clock.</span>
+    </div>
+  );
+}
+
 function App() {
   useEffect(() => {
     injectSEO();
@@ -36,8 +54,9 @@ function App() {
     <ErrorBoundary>
       <BrowserRouter>
         <div className="min-h-screen bg-background text-foreground">
+          <ComicDisambiguation />
           <Header />
-          <main className="pt-16">
+          <main className="pt-[calc(4rem+1.75rem)]">
             <Routes>
               <Route path="/" element={<HomePage />} />
               <Route path="*" element={<NotFound />} />

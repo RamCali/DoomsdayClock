@@ -88,7 +88,7 @@ export function SEOHead() {
       {
         "@type": "HowToStep",
         name: "Compare to history",
-        text: "The safest time was 17 minutes (1991, end of Cold War). The closest ever is now at 90 seconds, set in 2023.",
+        text: `The safest time was 17 minutes (1991, end of Cold War). The closest ever is now at ${currentTime.seconds} seconds, set in ${currentTime.year}.`,
       },
       {
         "@type": "HowToStep",
@@ -220,14 +220,14 @@ export function injectSEO() {
       description: description,
       inLanguage: "en-US",
     },
-    // Article Schema
+    // Article Schema with embedded FAQ mainEntity (optimized for Featured Snippets)
     {
       "@context": "https://schema.org",
       "@type": "Article",
-      headline: title,
+      headline: `Current Doomsday Clock Time: ${currentTime.seconds} Seconds to Midnight`,
       description: description,
-      datePublished: "2024-01-01",
-      dateModified: currentTime.lastUpdated,
+      datePublished: "2025-01-28",
+      dateModified: new Date().toISOString().split("T")[0],
       author: {
         "@type": "Organization",
         name: "DoomsdayClock.net",
@@ -247,6 +247,27 @@ export function injectSEO() {
         "@id": url,
       },
       image: `${url}/DoomsDayClock.net.png`,
+      mainEntity: {
+        "@type": "FAQPage",
+        mainEntity: [
+          {
+            "@type": "Question",
+            name: "What time is the Doomsday Clock right now?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: `As of ${currentTime.lastUpdated}, the Doomsday Clock is set to ${currentTime.seconds} seconds to midnight, the closest it has ever been to global catastrophe.`,
+            },
+          },
+          {
+            "@type": "Question",
+            name: "When does the Doomsday Clock update?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "The clock is updated annually in late January by the Bulletin of the Atomic Scientists' Science and Security Board.",
+            },
+          },
+        ],
+      },
     },
     // Speakable Schema for AEO/Voice Search
     {
@@ -283,7 +304,7 @@ export function injectSEO() {
           "@type": "HowToStep",
           position: 3,
           name: "Compare to history",
-          text: "The safest time was 17 minutes (1991, end of Cold War). The closest ever is now at 90 seconds, set in 2023.",
+          text: `The safest time was 17 minutes (1991, end of Cold War). The closest ever is now at ${currentTime.seconds} seconds, set in ${currentTime.year}.`,
         },
         {
           "@type": "HowToStep",
