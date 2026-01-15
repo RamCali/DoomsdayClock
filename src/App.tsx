@@ -36,21 +36,14 @@ function App() {
     <ErrorBoundary>
       <BrowserRouter>
         <div className="min-h-screen bg-background text-foreground">
-          <Routes>
-            <Route
-              path="/"
-              element={
-                <>
-                  <Header />
-                  <main>
-                    <HomePage />
-                  </main>
-                  <Footer />
-                </>
-              }
-            />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
+          <Header />
+          <main className="pt-16">
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </main>
+          <Footer />
         </div>
       </BrowserRouter>
     </ErrorBoundary>

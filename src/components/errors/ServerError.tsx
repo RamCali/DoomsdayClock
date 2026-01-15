@@ -2,7 +2,7 @@ import { AlertOctagon, RefreshCw, Home, Zap } from "lucide-react";
 
 export function ServerError() {
   return (
-    <div className="min-h-screen bg-background flex items-center justify-center p-4">
+    <div className="min-h-[calc(100vh-4rem)] flex items-center justify-center p-4">
       <div className="max-w-2xl w-full text-center">
         {/* Broken Clock Animation */}
         <div className="relative w-48 h-48 mx-auto mb-8">
