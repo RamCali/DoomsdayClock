@@ -10,7 +10,7 @@ interface FAQItem {
 const faqData: FAQItem[] = [
   {
     question: "What time is the Doomsday Clock right now?",
-    answer: "The Doomsday Clock is at 90 seconds to midnight as of 2024. This is the closest it has ever been to symbolic global catastrophe since its creation in 1947 by the Bulletin of the Atomic Scientists."
+    answer: "The Doomsday Clock is at 89 seconds to midnight as of January 2025. This is the closest it has ever been to symbolic global catastrophe since its creation in 1947 by the Bulletin of the Atomic Scientists."
   },
   {
     question: "What is the Doomsday Clock?",
@@ -21,8 +21,8 @@ const faqData: FAQItem[] = [
     answer: "The Science and Security Board of the Bulletin of the Atomic Scientists sets the clock. The board includes 13 Nobel Laureates who meet twice yearly to evaluate global threats and decide clock adjustments."
   },
   {
-    question: "Why is the Doomsday Clock at 90 seconds?",
-    answer: "The clock moved to 90 seconds in January 2023 due to Russia's invasion of Ukraine and elevated nuclear escalation risk. Contributing factors include the climate crisis, eroded arms control treaties, and widespread disinformation."
+    question: "Why is the Doomsday Clock at 89 seconds?",
+    answer: "The clock moved to 89 seconds in January 2025 due to escalating nuclear risks, ongoing Russia-Ukraine war, climate crisis, and AI-related threats. It previously held at 90 seconds for two years."
   },
   {
     question: "What happens when the Doomsday Clock reaches midnight?",

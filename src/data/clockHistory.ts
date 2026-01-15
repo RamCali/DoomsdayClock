@@ -223,14 +223,22 @@ export const clockHistory: ClockEvent[] = [
     direction: "forward",
     reason: "Unchanged",
     details: "The Clock remains at 90 seconds due to ongoing Russia-Ukraine conflict, nuclear threats, and lack of climate action."
+  },
+  {
+    year: 2025,
+    time: "89 seconds",
+    minutes: 1.483,
+    direction: "forward",
+    reason: "Closest ever",
+    details: "The Clock moves 1 second closer to midnight—the closest it has ever been. Escalating nuclear risks, ongoing Russia-Ukraine war, climate crisis, and AI-related threats contribute to the decision."
   }
 ];
 
 export const currentTime = {
-  seconds: 90,
-  display: "90 seconds",
-  year: 2024,
-  lastUpdated: "January 1, 2026",
+  seconds: 89,
+  display: "89 seconds",
+  year: 2025,
+  lastUpdated: "January 28, 2025",
   nextUpdate: "January 2026",
   source: "Bulletin of the Atomic Scientists"
 };

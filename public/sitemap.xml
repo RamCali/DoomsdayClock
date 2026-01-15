@@ -7,48 +7,48 @@
   <!-- Homepage - Main Doomsday Clock page -->
   <url>
     <loc>https://doomsdayclock.net/</loc>
-    <lastmod>2024-01-24</lastmod>
+    <lastmod>2025-01-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <image:image>
       <image:loc>https://doomsdayclock.net/DoomsDayClock.net.png</image:loc>
-      <image:title>Doomsday Clock - 90 Seconds to Midnight</image:title>
-      <image:caption>The Doomsday Clock showing the current time of 90 seconds to midnight, the closest it has ever been to global catastrophe.</image:caption>
+      <image:title>Doomsday Clock - 89 Seconds to Midnight</image:title>
+      <image:caption>The Doomsday Clock showing the current time of 89 seconds to midnight, the closest it has ever been to global catastrophe.</image:caption>
     </image:image>
   </url>
 
   <!-- Section anchors for better indexing -->
   <url>
     <loc>https://doomsdayclock.net/#clock</loc>
-    <lastmod>2024-01-24</lastmod>
+    <lastmod>2025-01-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://doomsdayclock.net/#timeline</loc>
-    <lastmod>2024-01-24</lastmod>
+    <lastmod>2025-01-28</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://doomsdayclock.net/#scenarios</loc>
-    <lastmod>2024-01-24</lastmod>
+    <lastmod>2025-01-28</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://doomsdayclock.net/#history</loc>
-    <lastmod>2024-01-24</lastmod>
+    <lastmod>2025-01-28</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://doomsdayclock.net/#faq</loc>
-    <lastmod>2024-01-24</lastmod>
+    <lastmod>2025-01-28</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
   </url>

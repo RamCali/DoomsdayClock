@@ -2,8 +2,8 @@ import { faqData } from "./FAQ";
 import { currentTime, clockHistory } from "../data/clockHistory";
 
 export function SEOHead() {
-  const title = `Doomsday Clock 2024: ${currentTime.display} to Midnight | Complete Timeline & History`;
-  const description = `The Doomsday Clock is at ${currentTime.display} to midnight—the closest ever to global catastrophe. Explore the complete timeline from 1947-2024, interactive history, and what-if scenarios.`;
+  const title = "Doomsday Clock Today | Current Time & Complete Timeline (2026)";
+  const description = `Is it midnight yet? The official Doomsday Clock is now set to ${currentTime.display.charAt(0).toUpperCase() + currentTime.display.slice(1)} to Midnight. View the live countdown, historical timeline, and 2026 updates here.`;
   const url = "https://doomsdayclock.net";
 
   // FAQ Schema for rich snippets
@@ -180,8 +180,8 @@ export function SEOHead() {
 
 // Component to inject SEO into head
 export function injectSEO() {
-  const title = `Doomsday Clock 2024: ${currentTime.display} to Midnight | Complete Timeline & History`;
-  const description = `The Doomsday Clock is at ${currentTime.display} to midnight—the closest ever to global catastrophe. Explore the complete timeline from 1947-2024, interactive history, and what-if scenarios.`;
+  const title = "Doomsday Clock Today | Current Time & Complete Timeline (2026)";
+  const description = `Is it midnight yet? The official Doomsday Clock is now set to ${currentTime.display.charAt(0).toUpperCase() + currentTime.display.slice(1)} to Midnight. View the live countdown, historical timeline, and 2026 updates here.`;
   const url = "https://doomsdayclock.net";
 
   document.title = title;
