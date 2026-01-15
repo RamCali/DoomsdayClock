@@ -72,51 +72,32 @@ export function DoomsdayClock({ className }: DoomsdayClockProps) {
             // Wedge goes from the hand position (counter-clockwise from 12) to 12 o'clock
             const wedgeAngleDeg = minutesToMidnight * 6; // positive angle in degrees
             const wedgeAngleRad = (wedgeAngleDeg * Math.PI) / 180;
-            // Radius bounds: inner avoids center dot, outer stops before "12" label
-            // "12" label is at top-6 (~15% from top), so outer radius must be < 35
-            const innerRadius = 8;
-            const outerRadius = 28;
-            // Start points: where the hand is (counter-clockwise from 12)
-            const startXOuter = 50 - outerRadius * Math.sin(wedgeAngleRad);
-            const startYOuter = 50 - outerRadius * Math.cos(wedgeAngleRad);
-            const startXInner = 50 - innerRadius * Math.sin(wedgeAngleRad);
-            const startYInner = 50 - innerRadius * Math.cos(wedgeAngleRad);
-            // End points: 12 o'clock (top)
-            const endXOuter = 50;
-            const endYOuter = 50 - outerRadius;
-            const endXInner = 50;
-            const endYInner = 50 - innerRadius;
+            // Only show wedge in the upper portion of clock (between hand tip and 12)
+            const outerRadius = 32; // Match hand length roughly
+            // Hand tip position (counter-clockwise from 12)
+            const handTipX = 50 - outerRadius * Math.sin(wedgeAngleRad);
+            const handTipY = 50 - outerRadius * Math.cos(wedgeAngleRad);
+            // Midnight position (12 o'clock)
+            const midnightX = 50;
+            const midnightY = 50 - outerRadius;
 
             return (
               <svg
                 className="absolute inset-0 w-full h-full pointer-events-none"
                 viewBox="0 0 100 100"
               >
-                <defs>
-                  <radialGradient id="wedgeGradient" cx="50%" cy="50%" r="50%">
-                    <stop offset="0%" stopColor="transparent" />
-                    <stop offset="10%" stopColor="transparent" />
-                    <stop offset="30%" stopColor={`rgba(234, 56, 76, ${0.3 * pulseIntensity})`} />
-                    <stop offset="60%" stopColor={`rgba(234, 56, 76, ${0.6 * pulseIntensity})`} />
-                    <stop offset="100%" stopColor={`rgba(234, 56, 76, ${0.4 * pulseIntensity})`} />
-                  </radialGradient>
-                </defs>
-                {/* Filled wedge (donut shape to avoid center) */}
+                {/* Simple pie wedge from center to outer arc */}
                 <path
-                  d={`M ${startXInner} ${startYInner}
-                      L ${startXOuter} ${startYOuter}
-                      A ${outerRadius} ${outerRadius} 0 0 1 ${endXOuter} ${endYOuter}
-                      L ${endXInner} ${endYInner}
-                      A ${innerRadius} ${innerRadius} 0 0 0 ${startXInner} ${startYInner} Z`}
-                  fill="url(#wedgeGradient)"
+                  d={`M 50 50 L ${handTipX} ${handTipY} A ${outerRadius} ${outerRadius} 0 0 1 ${midnightX} ${midnightY} Z`}
+                  fill={`rgba(234, 56, 76, ${0.25 * pulseIntensity})`}
                   className="transition-all duration-1000"
                 />
-                {/* Glowing arc edge on outer radius only */}
+                {/* Glowing outer arc edge */}
                 <path
-                  d={`M ${startXOuter} ${startYOuter} A ${outerRadius} ${outerRadius} 0 0 1 ${endXOuter} ${endYOuter}`}
+                  d={`M ${handTipX} ${handTipY} A ${outerRadius} ${outerRadius} 0 0 1 ${midnightX} ${midnightY}`}
                   fill="none"
-                  stroke={`rgba(234, 56, 76, ${0.9 * pulseIntensity})`}
-                  strokeWidth="1.5"
+                  stroke={`rgba(234, 56, 76, ${0.7 * pulseIntensity})`}
+                  strokeWidth="2"
                   className="transition-all duration-1000"
                 />
               </svg>
