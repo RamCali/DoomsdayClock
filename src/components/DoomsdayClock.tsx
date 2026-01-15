@@ -65,27 +65,24 @@ export function DoomsdayClock({ className }: DoomsdayClockProps) {
             );
           })}
 
-          {/* 12 (Midnight) label */}
-          <div className="absolute top-6 left-1/2 -translate-x-1/2">
-            <span className="text-doom font-bold text-lg sm:text-xl font-mono tracking-wider">
-              12
-            </span>
-          </div>
-
           {/* Pulsating red wedge between minute hand and midnight */}
           {(() => {
             // Wedge goes from the hand position (counter-clockwise from 12) to 12 o'clock
-            // Hand angle is negative (e.g., -8.9 degrees for 89 seconds)
-            // We need to draw from the hand position clockwise to midnight
             const wedgeAngleDeg = minutesToMidnight * 6; // positive angle in degrees
             const wedgeAngleRad = (wedgeAngleDeg * Math.PI) / 180;
-            const radius = 42;
-            // Start point: where the hand is (counter-clockwise from 12)
-            const startX = 50 - radius * Math.sin(wedgeAngleRad);
-            const startY = 50 - radius * Math.cos(wedgeAngleRad);
-            // End point: 12 o'clock (top)
-            const endX = 50;
-            const endY = 50 - radius;
+            // Reduced radius to avoid clipping into labels (was 42)
+            const innerRadius = 12;
+            const outerRadius = 36;
+            // Start points: where the hand is (counter-clockwise from 12)
+            const startXOuter = 50 - outerRadius * Math.sin(wedgeAngleRad);
+            const startYOuter = 50 - outerRadius * Math.cos(wedgeAngleRad);
+            const startXInner = 50 - innerRadius * Math.sin(wedgeAngleRad);
+            const startYInner = 50 - innerRadius * Math.cos(wedgeAngleRad);
+            // End points: 12 o'clock (top)
+            const endXOuter = 50;
+            const endYOuter = 50 - outerRadius;
+            const endXInner = 50;
+            const endYInner = 50 - innerRadius;
 
             return (
               <svg
@@ -95,20 +92,25 @@ export function DoomsdayClock({ className }: DoomsdayClockProps) {
                 <defs>
                   <radialGradient id="wedgeGradient" cx="50%" cy="50%" r="50%">
                     <stop offset="0%" stopColor="transparent" />
-                    <stop offset="30%" stopColor="transparent" />
-                    <stop offset="50%" stopColor={`rgba(234, 56, 76, ${0.2 * pulseIntensity})`} />
-                    <stop offset="100%" stopColor={`rgba(234, 56, 76, ${0.5 * pulseIntensity})`} />
+                    <stop offset="20%" stopColor="transparent" />
+                    <stop offset="40%" stopColor={`rgba(234, 56, 76, ${0.25 * pulseIntensity})`} />
+                    <stop offset="70%" stopColor={`rgba(234, 56, 76, ${0.5 * pulseIntensity})`} />
+                    <stop offset="100%" stopColor={`rgba(234, 56, 76, ${0.3 * pulseIntensity})`} />
                   </radialGradient>
                 </defs>
-                {/* Filled wedge */}
+                {/* Filled wedge (donut shape to avoid center) */}
                 <path
-                  d={`M 50 50 L ${startX} ${startY} A ${radius} ${radius} 0 0 1 ${endX} ${endY} Z`}
+                  d={`M ${startXInner} ${startYInner}
+                      L ${startXOuter} ${startYOuter}
+                      A ${outerRadius} ${outerRadius} 0 0 1 ${endXOuter} ${endYOuter}
+                      L ${endXInner} ${endYInner}
+                      A ${innerRadius} ${innerRadius} 0 0 0 ${startXInner} ${startYInner} Z`}
                   fill="url(#wedgeGradient)"
                   className="transition-all duration-1000"
                 />
-                {/* Glowing arc edge */}
+                {/* Glowing arc edge on outer radius only */}
                 <path
-                  d={`M ${startX} ${startY} A ${radius} ${radius} 0 0 1 ${endX} ${endY}`}
+                  d={`M ${startXOuter} ${startYOuter} A ${outerRadius} ${outerRadius} 0 0 1 ${endXOuter} ${endYOuter}`}
                   fill="none"
                   stroke={`rgba(234, 56, 76, ${0.8 * pulseIntensity})`}
                   strokeWidth="1"
@@ -117,6 +119,13 @@ export function DoomsdayClock({ className }: DoomsdayClockProps) {
               </svg>
             );
           })()}
+
+          {/* 12 (Midnight) label */}
+          <div className="absolute top-6 left-1/2 -translate-x-1/2 z-10">
+            <span className="text-doom font-bold text-lg sm:text-xl font-mono tracking-wider">
+              12
+            </span>
+          </div>
 
           {/* Center dot */}
           <div className="absolute top-1/2 left-1/2 w-4 h-4 -translate-x-1/2 -translate-y-1/2 rounded-full bg-doom glow-doom z-20" />
@@ -141,7 +150,7 @@ export function DoomsdayClock({ className }: DoomsdayClockProps) {
           </div>
 
           {/* "MIDNIGHT" text at bottom */}
-          <div className="absolute bottom-8 left-1/2 -translate-x-1/2">
+          <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10">
             <span className="text-muted-foreground text-xs sm:text-sm uppercase tracking-[0.3em] font-medium">
               Midnight
             </span>
