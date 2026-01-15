@@ -12,6 +12,9 @@ import { Footer } from "./components/Footer";
 import { injectSEO } from "./components/SEO";
 import { ErrorBoundary, NotFound } from "./components/errors";
 import { OGImagePreview } from "./components/OGImagePreview";
+import { PredictionPoll } from "./components/PredictionPoll";
+import { EmailCapture } from "./components/EmailCapture";
+import { Gamification } from "./components/Gamification";
 import "./index.css";
 
 function HomePage() {
@@ -19,10 +22,13 @@ function HomePage() {
     <>
       <Hero />
       <InteractiveTimeline />
+      <PredictionPoll />
       <WhatIfScenarios />
       <TimelineChart />
       <Timeline />
+      <Gamification />
       <FAQ />
+      <EmailCapture />
       <UpcomingUpdate />
     </>
   );
