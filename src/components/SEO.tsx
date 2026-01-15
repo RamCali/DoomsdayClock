@@ -2,9 +2,9 @@ import { faqData } from "./FAQ";
 import { currentTime, clockHistory } from "../data/clockHistory";
 
 export function SEOHead() {
-  const title = `Doomsday Clock 2024 - Current Time: ${currentTime.display} to Midnight`;
-  const description = `The Doomsday Clock is currently at ${currentTime.display} to midnight - the closest ever. Track real-time updates, explore the complete history since 1947, and learn what this means for humanity.`;
-  const url = "https://doomsdayclock.org"; // Update with actual domain
+  const title = `Doomsday Clock 2024: ${currentTime.display} to Midnight | Complete Timeline & History`;
+  const description = `The Doomsday Clock is at ${currentTime.display} to midnight—the closest ever to global catastrophe. Explore the complete timeline from 1947-2024, interactive history, and what-if scenarios.`;
+  const url = "https://doomsdayclock.net";
 
   // FAQ Schema for rich snippets
   const faqSchema = {
@@ -180,8 +180,9 @@ export function SEOHead() {
 
 // Component to inject SEO into head
 export function injectSEO() {
-  const title = `Doomsday Clock 2024 - Current Time: ${currentTime.display} to Midnight`;
-  const description = `The Doomsday Clock is currently at ${currentTime.display} to midnight - the closest ever. Track real-time updates, explore the complete history since 1947, and learn what this means for humanity.`;
+  const title = `Doomsday Clock 2024: ${currentTime.display} to Midnight | Complete Timeline & History`;
+  const description = `The Doomsday Clock is at ${currentTime.display} to midnight—the closest ever to global catastrophe. Explore the complete timeline from 1947-2024, interactive history, and what-if scenarios.`;
+  const url = "https://doomsdayclock.net";
 
   document.title = title;
 
@@ -194,22 +195,164 @@ export function injectSEO() {
   }
   metaDescription.setAttribute("content", description);
 
-  // Add structured data
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: faqData.map((item) => ({
-      "@type": "Question",
-      name: item.question,
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: item.answer,
+  // All structured data schemas
+  const schemas = [
+    // FAQ Schema
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: faqData.map((item) => ({
+        "@type": "Question",
+        name: item.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: item.answer,
+        },
+      })),
+    },
+    // WebSite Schema with SearchAction
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      name: "Doomsday Clock",
+      alternateName: ["DoomsdayClock.net", "Doomsday Clock Timer"],
+      url: url,
+      description: description,
+      inLanguage: "en-US",
+    },
+    // Article Schema
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      headline: title,
+      description: description,
+      datePublished: "2024-01-01",
+      dateModified: currentTime.lastUpdated,
+      author: {
+        "@type": "Organization",
+        name: "DoomsdayClock.net",
+        url: url,
       },
-    })),
-  };
+      publisher: {
+        "@type": "Organization",
+        name: "DoomsdayClock.net",
+        url: url,
+        logo: {
+          "@type": "ImageObject",
+          url: `${url}/DoomsDayClock.net.png`,
+        },
+      },
+      mainEntityOfPage: {
+        "@type": "WebPage",
+        "@id": url,
+      },
+      image: `${url}/DoomsDayClock.net.png`,
+    },
+    // Speakable Schema for AEO/Voice Search
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      name: title,
+      speakable: {
+        "@type": "SpeakableSpecification",
+        cssSelector: [".speakable-current-time", ".speakable-quick-answer"],
+      },
+      url: url,
+    },
+    // HowTo Schema
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      name: "How to Read the Doomsday Clock",
+      description: "Understanding what the Doomsday Clock time means for global security",
+      totalTime: "PT2M",
+      step: [
+        {
+          "@type": "HowToStep",
+          position: 1,
+          name: "Check the current time",
+          text: `The Doomsday Clock is currently at ${currentTime.display} to midnight. The closer to midnight, the greater the existential threat.`,
+        },
+        {
+          "@type": "HowToStep",
+          position: 2,
+          name: "Understand midnight",
+          text: "Midnight represents global catastrophe - nuclear war, climate collapse, or other existential disasters. The clock has never reached midnight.",
+        },
+        {
+          "@type": "HowToStep",
+          position: 3,
+          name: "Compare to history",
+          text: "The safest time was 17 minutes (1991, end of Cold War). The closest ever is now at 90 seconds, set in 2023.",
+        },
+        {
+          "@type": "HowToStep",
+          position: 4,
+          name: "Track annual updates",
+          text: "The Bulletin of the Atomic Scientists announces updates each January. Major world events may trigger off-cycle adjustments.",
+        },
+      ],
+    },
+    // Timeline ItemList Schema
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      name: "Doomsday Clock History Timeline (1947-2024)",
+      description: "Complete history of Doomsday Clock settings from 1947 to present",
+      numberOfItems: clockHistory.length,
+      itemListElement: clockHistory.slice(0, 10).map((event, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        name: `${event.year}: ${event.time} - ${event.reason}`,
+        description: event.details,
+      })),
+    },
+    // BreadcrumbList Schema
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: url,
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Doomsday Clock",
+          item: `${url}/#clock`,
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: "History",
+          item: `${url}/#history`,
+        },
+      ],
+    },
+    // Organization Schema
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      name: "DoomsdayClock.net",
+      url: url,
+      logo: `${url}/DoomsDayClock.net.png`,
+      sameAs: [],
+      description: "Educational resource tracking the Doomsday Clock, maintained by the Bulletin of the Atomic Scientists.",
+    },
+  ];
 
-  const script = document.createElement("script");
-  script.type = "application/ld+json";
-  script.textContent = JSON.stringify(faqSchema);
-  document.head.appendChild(script);
+  // Inject all schemas
+  schemas.forEach((schema, index) => {
+    const existingScript = document.querySelector(`script[data-schema-index="${index}"]`);
+    if (!existingScript) {
+      const script = document.createElement("script");
+      script.type = "application/ld+json";
+      script.setAttribute("data-schema-index", index.toString());
+      script.textContent = JSON.stringify(schema);
+      document.head.appendChild(script);
+    }
+  });
 }
