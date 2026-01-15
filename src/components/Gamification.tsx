@@ -13,7 +13,7 @@ import {
   CheckCircle,
   Zap,
 } from "lucide-react";
-import { clockHistory, currentTime } from "../data/clockHistory";
+import { clockHistory } from "../data/clockHistory";
 
 // Badge definitions
 interface Badge {
