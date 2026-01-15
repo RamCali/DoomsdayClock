@@ -72,6 +72,52 @@ export function DoomsdayClock({ className }: DoomsdayClockProps) {
             </span>
           </div>
 
+          {/* Pulsating red wedge between minute hand and midnight */}
+          {(() => {
+            // Wedge goes from the hand position (counter-clockwise from 12) to 12 o'clock
+            // Hand angle is negative (e.g., -8.9 degrees for 89 seconds)
+            // We need to draw from the hand position clockwise to midnight
+            const wedgeAngleDeg = minutesToMidnight * 6; // positive angle in degrees
+            const wedgeAngleRad = (wedgeAngleDeg * Math.PI) / 180;
+            const radius = 42;
+            // Start point: where the hand is (counter-clockwise from 12)
+            const startX = 50 - radius * Math.sin(wedgeAngleRad);
+            const startY = 50 - radius * Math.cos(wedgeAngleRad);
+            // End point: 12 o'clock (top)
+            const endX = 50;
+            const endY = 50 - radius;
+
+            return (
+              <svg
+                className="absolute inset-0 w-full h-full pointer-events-none"
+                viewBox="0 0 100 100"
+              >
+                <defs>
+                  <radialGradient id="wedgeGradient" cx="50%" cy="50%" r="50%">
+                    <stop offset="0%" stopColor="transparent" />
+                    <stop offset="30%" stopColor="transparent" />
+                    <stop offset="50%" stopColor={`rgba(234, 56, 76, ${0.2 * pulseIntensity})`} />
+                    <stop offset="100%" stopColor={`rgba(234, 56, 76, ${0.5 * pulseIntensity})`} />
+                  </radialGradient>
+                </defs>
+                {/* Filled wedge */}
+                <path
+                  d={`M 50 50 L ${startX} ${startY} A ${radius} ${radius} 0 0 1 ${endX} ${endY} Z`}
+                  fill="url(#wedgeGradient)"
+                  className="transition-all duration-1000"
+                />
+                {/* Glowing arc edge */}
+                <path
+                  d={`M ${startX} ${startY} A ${radius} ${radius} 0 0 1 ${endX} ${endY}`}
+                  fill="none"
+                  stroke={`rgba(234, 56, 76, ${0.8 * pulseIntensity})`}
+                  strokeWidth="1"
+                  className="transition-all duration-1000"
+                />
+              </svg>
+            );
+          })()}
+
           {/* Center dot */}
           <div className="absolute top-1/2 left-1/2 w-4 h-4 -translate-x-1/2 -translate-y-1/2 rounded-full bg-doom glow-doom z-20" />
 

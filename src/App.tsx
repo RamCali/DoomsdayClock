@@ -15,14 +15,19 @@ import { OGImagePreview } from "./components/OGImagePreview";
 import { PredictionPoll } from "./components/PredictionPoll";
 import { EmailCapture } from "./components/EmailCapture";
 import { Gamification } from "./components/Gamification";
+import { CountdownTimer } from "./components/CountdownTimer";
+import { SocialProof } from "./components/SocialProof";
+import { TimeCapsule } from "./components/TimeCapsule";
 import "./index.css";
 
 function HomePage() {
   return (
     <>
       <Hero />
+      <CountdownTimer />
       <InteractiveTimeline />
       <PredictionPoll />
+      <TimeCapsule />
       <WhatIfScenarios />
       <TimelineChart />
       <Timeline />
@@ -30,6 +35,7 @@ function HomePage() {
       <FAQ />
       <EmailCapture />
       <UpcomingUpdate />
+      <SocialProof />
     </>
   );
 }

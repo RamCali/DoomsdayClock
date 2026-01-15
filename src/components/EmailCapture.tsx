@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Mail, Bell, CheckCircle, AlertCircle, Loader2, Shield } from "lucide-react";
+import { Mail, Bell, CheckCircle, AlertCircle, Loader2 } from "lucide-react";
 import { currentTime } from "../data/clockHistory";
 
 type SubmitStatus = "idle" | "loading" | "success" | "error";
@@ -148,14 +148,6 @@ export function EmailCapture() {
 
             {/* Trust signals */}
             <div className="flex flex-wrap items-center justify-center gap-6 mt-8 text-sm text-muted-foreground">
-              <div className="flex items-center gap-2">
-                <Shield className="w-4 h-4" />
-                <span>No spam, ever</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Mail className="w-4 h-4" />
-                <span>1-2 emails per year</span>
-              </div>
               <div className="flex items-center gap-2">
                 <CheckCircle className="w-4 h-4" />
                 <span>Unsubscribe anytime</span>

@@ -28,8 +28,8 @@ export function SocialProof() {
 
   // Update stats periodically to simulate real-time
   useEffect(() => {
-    // Initial delay before showing
-    const showTimer = setTimeout(() => setIsVisible(true), 2000);
+    // Show after a short delay
+    const showTimer = setTimeout(() => setIsVisible(true), 1500);
 
     // Update stats every 30 seconds
     const statsInterval = setInterval(() => {
@@ -46,6 +46,13 @@ export function SocialProof() {
       "A visitor shared their prediction",
     ];
 
+    // Show first activity after 5 seconds
+    const firstActivityTimer = setTimeout(() => {
+      const randomActivity = activities[Math.floor(Math.random() * activities.length)];
+      setRecentActivity(randomActivity);
+      setTimeout(() => setRecentActivity(null), 4000);
+    }, 5000);
+
     const activityInterval = setInterval(() => {
       const randomActivity = activities[Math.floor(Math.random() * activities.length)];
       setRecentActivity(randomActivity);
@@ -55,6 +62,7 @@ export function SocialProof() {
 
     return () => {
       clearTimeout(showTimer);
+      clearTimeout(firstActivityTimer);
       clearInterval(statsInterval);
       clearInterval(activityInterval);
     };
@@ -63,47 +71,44 @@ export function SocialProof() {
   if (!isVisible) return null;
 
   return (
-    <>
-      {/* Floating Social Proof Bar */}
-      <div className="fixed bottom-4 left-4 right-4 md:left-auto md:right-4 md:w-auto z-40 pointer-events-none">
-        <div className="flex flex-col gap-2 items-start md:items-end">
-          {/* Activity notification */}
-          {recentActivity && (
-            <div className="pointer-events-auto animate-in slide-in-from-bottom-2 fade-in duration-300 bg-zinc-900/95 backdrop-blur-lg border border-white/10 rounded-full px-4 py-2 shadow-lg">
-              <div className="flex items-center gap-2">
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green opacity-75" />
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-green" />
-                </span>
-                <span className="text-sm text-muted-foreground">{recentActivity}</span>
-              </div>
+    <div className="fixed bottom-4 left-4 right-4 md:left-auto md:right-4 md:w-auto z-[100]">
+      <div className="flex flex-col gap-2 items-start md:items-end">
+        {/* Activity notification */}
+        {recentActivity && (
+          <div className="bg-zinc-900 backdrop-blur-lg border border-white/10 rounded-full px-4 py-2 shadow-xl transition-all duration-300">
+            <div className="flex items-center gap-2">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-500 opacity-75" />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500" />
+              </span>
+              <span className="text-sm text-gray-300">{recentActivity}</span>
             </div>
-          )}
+          </div>
+        )}
 
-          {/* Live viewers count */}
-          <div className="pointer-events-auto bg-zinc-900/95 backdrop-blur-lg border border-white/10 rounded-full px-4 py-2 shadow-lg">
-            <div className="flex items-center gap-4">
-              <div className="flex items-center gap-2">
-                <Eye className="w-4 h-4 text-green" />
-                <span className="text-sm font-medium text-white">
-                  {stats.currentViewers}
-                </span>
-                <span className="text-sm text-muted-foreground hidden sm:inline">
-                  viewing now
-                </span>
-              </div>
-              <div className="w-px h-4 bg-white/10 hidden sm:block" />
-              <div className="hidden sm:flex items-center gap-2">
-                <Globe className="w-4 h-4 text-atomic" />
-                <span className="text-sm text-muted-foreground">
-                  {stats.totalPredictions.toLocaleString()} predictions
-                </span>
-              </div>
+        {/* Live viewers count */}
+        <div className="bg-zinc-900 backdrop-blur-lg border border-white/10 rounded-full px-4 py-2 shadow-xl">
+          <div className="flex items-center gap-4">
+            <div className="flex items-center gap-2">
+              <Eye className="w-4 h-4 text-green-500" />
+              <span className="text-sm font-medium text-white">
+                {stats.currentViewers}
+              </span>
+              <span className="text-sm text-gray-400 hidden sm:inline">
+                viewing now
+              </span>
+            </div>
+            <div className="w-px h-4 bg-white/10 hidden sm:block" />
+            <div className="hidden sm:flex items-center gap-2">
+              <Globe className="w-4 h-4 text-blue-400" />
+              <span className="text-sm text-gray-400">
+                {stats.totalPredictions.toLocaleString()} predictions
+              </span>
             </div>
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 
