@@ -10,7 +10,7 @@ interface FAQItem {
 const faqData: FAQItem[] = [
   {
     question: "What time is the Doomsday Clock right now?",
-    answer: "The Doomsday Clock is at 89 seconds to midnight as of January 2025. This is the closest it has ever been to symbolic global catastrophe since its creation in 1947 by the Bulletin of the Atomic Scientists."
+    answer: "The Doomsday Clock is at 85 seconds to midnight as of February 2026. This is the closest it has ever been to symbolic global catastrophe since its creation in 1947 by the Bulletin of the Atomic Scientists."
   },
   {
     question: "What is the Doomsday Clock?",
@@ -21,8 +21,8 @@ const faqData: FAQItem[] = [
     answer: "The Science and Security Board of the Bulletin of the Atomic Scientists sets the clock. The board includes 13 Nobel Laureates who meet twice yearly to evaluate global threats and decide clock adjustments."
   },
   {
-    question: "Why is the Doomsday Clock at 89 seconds?",
-    answer: "The clock moved to 89 seconds in January 2025 due to escalating nuclear risks, ongoing Russia-Ukraine war, climate crisis, and AI-related threats. It previously held at 90 seconds for two years."
+    question: "Why is the Doomsday Clock at 85 seconds?",
+    answer: "The clock moved to 85 seconds in February 2026 due to increased nuclear risks, the ongoing Russia-Ukraine war, the Middle East conflict, climate change, and AI-related threats. It had previously been at 89 seconds."
   },
   {
     question: "What happens when the Doomsday Clock reaches midnight?",
@@ -42,7 +42,7 @@ const faqData: FAQItem[] = [
   },
   {
     question: "How often is the Doomsday Clock updated?",
-    answer: "The Bulletin of the Atomic Scientists announces clock changes each January. However, significant world events may trigger off-cycle adjustments. The next expected update is January 2026."
+    answer: "The Bulletin of the Atomic Scientists announces clock changes each January. However, significant world events may trigger off-cycle adjustments. The next expected update is January 2027."
   },
   {
     question: "Is the Doomsday Clock scientifically accurate?",

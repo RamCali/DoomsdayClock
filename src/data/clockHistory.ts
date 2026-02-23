@@ -231,14 +231,22 @@ export const clockHistory: ClockEvent[] = [
     direction: "forward",
     reason: "Closest ever",
     details: "The Clock moves 1 second closer to midnight—the closest it has ever been. Escalating nuclear risks, ongoing Russia-Ukraine war, climate crisis, and AI-related threats contribute to the decision."
+  },
+  {
+    year: 2026,
+    time: "85 seconds",
+    minutes: 1.417,
+    direction: "forward",
+    reason: "Closest ever",
+    details: "The Clock moves to 85 seconds to midnight—a new record for the closest it has ever been. Increased nuclear risks, the ongoing Russia-Ukraine war, the Middle East conflict, climate change, and AI-related threats drive the decision."
   }
 ];
 
 export const currentTime = {
-  seconds: 89,
-  display: "89 seconds",
-  year: 2025,
-  lastUpdated: "January 28, 2025",
-  nextUpdate: "January 2026",
+  seconds: 85,
+  display: "85 seconds",
+  year: 2026,
+  lastUpdated: "February 4, 2026",
+  nextUpdate: "January 2027",
   source: "Bulletin of the Atomic Scientists"
 };

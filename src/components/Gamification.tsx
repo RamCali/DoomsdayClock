@@ -48,7 +48,7 @@ const BADGES: Badge[] = [
   {
     id: "prediction_made",
     name: "Future Forecaster",
-    description: "Made a prediction for the 2026 Doomsday Clock",
+    description: "Made a prediction for the 2027 Doomsday Clock",
     color: "text-blue-500 bg-blue-500/20",
     requirement: "Submit a prediction",
     unlocked: false,
@@ -152,7 +152,7 @@ export function Gamification() {
     if (savedStreak) setStreak(parseInt(savedStreak));
 
     // Check for prediction badge
-    if (localStorage.getItem("doomsday-prediction-2026")) {
+    if (localStorage.getItem("doomsday-prediction-2027")) {
       unlockBadge("prediction_made");
     }
 

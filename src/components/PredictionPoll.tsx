@@ -27,7 +27,7 @@ export function PredictionPoll() {
 
   // Check localStorage for existing vote
   useEffect(() => {
-    const saved = localStorage.getItem("doomsday-prediction-2026");
+    const saved = localStorage.getItem("doomsday-prediction-2027");
     if (saved) {
       setUserPrediction(saved as PredictionChoice);
       setHasVoted(true);
@@ -42,7 +42,7 @@ export function PredictionPoll() {
     setUserPrediction(choice);
 
     // Save to localStorage
-    localStorage.setItem("doomsday-prediction-2026", choice);
+    localStorage.setItem("doomsday-prediction-2027", choice);
 
     // Animate then show results
     setTimeout(() => {
@@ -57,7 +57,7 @@ export function PredictionPoll() {
   };
 
   const shareResult = () => {
-    const text = `I predict the 2026 Doomsday Clock will move ${userPrediction === "closer" ? "CLOSER to midnight ⚠️" : userPrediction === "farther" ? "FARTHER from midnight 🕊️" : "STAY THE SAME ⏸️"}. What do you think? #DoomsdayClock`;
+    const text = `I predict the 2027 Doomsday Clock will move ${userPrediction === "closer" ? "CLOSER to midnight ⚠️" : userPrediction === "farther" ? "FARTHER from midnight 🕊️" : "STAY THE SAME ⏸️"}. What do you think? #DoomsdayClock`;
     const url = "https://doomsdayclock.net";
 
     if (navigator.share) {
@@ -80,10 +80,10 @@ export function PredictionPoll() {
             <span className="text-sm font-medium text-amber-500">Community Prediction</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            What Will the 2026 Clock Show?
+            What Will the 2027 Clock Show?
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            The Bulletin announces the new time on <span className="text-white font-semibold">January 27, 2026</span>.
+            The Bulletin announces the new time in <span className="text-white font-semibold">January 2027</span>.
             Join {COMMUNITY_RESULTS.total.toLocaleString()}+ others in predicting whether we move closer to—or further from—midnight.
           </p>
         </div>
@@ -118,7 +118,7 @@ export function PredictionPoll() {
                 </div>
                 <h3 className="text-xl font-bold text-white mb-2">Closer</h3>
                 <p className="text-sm text-muted-foreground">
-                  Less than 89 seconds
+                  Less than 85 seconds
                 </p>
                 <p className="text-xs text-red-400 mt-2">More dangerous</p>
               </div>
@@ -142,7 +142,7 @@ export function PredictionPoll() {
                 </div>
                 <h3 className="text-xl font-bold text-white mb-2">Unchanged</h3>
                 <p className="text-sm text-muted-foreground">
-                  Stays at 89 seconds
+                  Stays at 85 seconds
                 </p>
                 <p className="text-xs text-yellow-400 mt-2">Status quo</p>
               </div>
@@ -166,7 +166,7 @@ export function PredictionPoll() {
                 </div>
                 <h3 className="text-xl font-bold text-white mb-2">Farther</h3>
                 <p className="text-sm text-muted-foreground">
-                  More than 89 seconds
+                  More than 85 seconds
                 </p>
                 <p className="text-xs text-green-400 mt-2">Less dangerous</p>
               </div>

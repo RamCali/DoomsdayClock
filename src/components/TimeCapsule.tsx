@@ -9,8 +9,8 @@ interface TimeCapsuleMessage {
   revealDate: string;
 }
 
-// Reveal date: January 27, 2026
-const REVEAL_DATE = new Date("2026-01-27T10:00:00-05:00");
+// Reveal date: January 27, 2027
+const REVEAL_DATE = new Date("2027-01-27T10:00:00-05:00");
 
 export function TimeCapsule() {
   const [message, setMessage] = useState("");
@@ -24,7 +24,7 @@ export function TimeCapsule() {
 
   // Load saved capsule from localStorage
   useEffect(() => {
-    const saved = localStorage.getItem("doomsday-time-capsule-2026");
+    const saved = localStorage.getItem("doomsday-time-capsule-2027");
     if (saved) {
       setSavedCapsule(JSON.parse(saved));
     }
@@ -45,7 +45,7 @@ export function TimeCapsule() {
         revealDate: REVEAL_DATE.toISOString(),
       };
 
-      localStorage.setItem("doomsday-time-capsule-2026", JSON.stringify(capsule));
+      localStorage.setItem("doomsday-time-capsule-2027", JSON.stringify(capsule));
       setSavedCapsule(capsule);
       setIsSubmitting(false);
 

@@ -125,7 +125,7 @@ export function SEOHead() {
       <meta name="description" content={description} />
       <meta
         name="keywords"
-        content="doomsday clock, doomsday clock time, doomsday clock 2024, what time is the doomsday clock, doomsday clock history, bulletin of atomic scientists, nuclear threat, climate change, midnight"
+        content="doomsday clock, doomsday clock time, doomsday clock 2026, what time is the doomsday clock, doomsday clock history, bulletin of atomic scientists, nuclear threat, 85 seconds to midnight, climate change, midnight"
       />
       <meta name="robots" content="index, follow" />
       <meta name="language" content="English" />
@@ -226,7 +226,7 @@ export function injectSEO() {
       "@type": "Article",
       headline: `Current Doomsday Clock Time: ${currentTime.seconds} Seconds to Midnight`,
       description: description,
-      datePublished: "2025-01-28",
+      datePublished: "2026-02-04",
       dateModified: new Date().toISOString().split("T")[0],
       author: {
         "@type": "Organization",

@@ -2,8 +2,8 @@ import { Bell, Calendar, ExternalLink } from "lucide-react";
 import { currentTime } from "../data/clockHistory";
 
 export function UpcomingUpdate() {
-  // Calculate days until expected January 2026 announcement (typically late January)
-  const expectedDate = new Date("2026-01-28"); // Bulletin typically announces late January
+  // Calculate days until expected January 2027 announcement (typically late January)
+  const expectedDate = new Date("2027-01-28"); // Bulletin typically announces late January
   const today = new Date();
   const daysUntil = Math.ceil(
     (expectedDate.getTime() - today.getTime()) / (1000 * 60 * 60 * 24)
@@ -33,7 +33,7 @@ export function UpcomingUpdate() {
                 </div>
                 <div>
                   <h2 className="text-xl sm:text-2xl font-bold text-foreground">
-                    January 2026 Update Expected
+                    January 2027 Update Expected
                   </h2>
                   <p className="text-sm text-muted-foreground">
                     Bulletin of the Atomic Scientists Annual Announcement
@@ -68,7 +68,7 @@ export function UpcomingUpdate() {
               {/* What to expect */}
               <div className="space-y-4 mb-6">
                 <h3 className="text-lg font-semibold text-foreground">
-                  What to Expect in the 2026 Announcement
+                  What to Expect in the 2027 Announcement
                 </h3>
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div className="p-4 rounded-lg bg-white/5">
@@ -89,7 +89,7 @@ export function UpcomingUpdate() {
                     </h4>
                     <ul className="text-sm text-muted-foreground space-y-1">
                       <li>• Clock moves closer to midnight</li>
-                      <li>• Clock stays at 90 seconds</li>
+                      <li>• Clock stays at 85 seconds</li>
                       <li>• Clock moves back (if tensions ease)</li>
                       <li>• First time at 60 seconds or less?</li>
                     </ul>
@@ -104,20 +104,20 @@ export function UpcomingUpdate() {
                 </h4>
                 <div className="grid grid-cols-3 gap-4 text-center">
                   <div>
-                    <p className="text-2xl font-bold text-doom">2023</p>
+                    <p className="text-2xl font-bold text-doom">2025</p>
                     <p className="text-xs text-muted-foreground">
-                      Moved to 90 sec
+                      Moved to 89 sec
                     </p>
                   </div>
                   <div>
-                    <p className="text-2xl font-bold text-atomic">2024</p>
+                    <p className="text-2xl font-bold text-atomic">2026</p>
                     <p className="text-xs text-muted-foreground">
-                      Stayed at 90 sec
+                      Moved to 85 sec
                     </p>
                   </div>
                   <div>
                     <p className="text-2xl font-bold text-muted-foreground">
-                      2026
+                      2027
                     </p>
                     <p className="text-xs text-muted-foreground">TBD</p>
                   </div>

@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { Clock, Bell, Calendar, AlertTriangle } from "lucide-react";
 
-// Target date: January 27, 2026 at 10:00 AM EST (typical announcement time)
-const ANNOUNCEMENT_DATE = new Date("2026-01-27T10:00:00-05:00");
+// Target date: January 2027 at 10:00 AM EST (typical announcement time)
+const ANNOUNCEMENT_DATE = new Date("2027-01-27T10:00:00-05:00");
 
 interface TimeLeft {
   days: number;
@@ -56,7 +56,7 @@ export function CountdownTimer() {
             <div className="relative z-10">
               <AlertTriangle className="w-12 h-12 text-doom mx-auto mb-4 animate-bounce" />
               <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">
-                The 2026 Announcement is <span className="text-doom">LIVE</span>
+                The 2027 Announcement is <span className="text-doom">LIVE</span>
               </h2>
               <p className="text-muted-foreground mb-6">
                 Check back for the updated Doomsday Clock time!
@@ -110,7 +110,7 @@ export function CountdownTimer() {
                   </h2>
                   <div className="flex items-center gap-2 text-sm text-muted-foreground">
                     <Calendar className="w-4 h-4" />
-                    <span>January 27, 2026 at 10:00 AM EST</span>
+                    <span>January 27, 2027 at 10:00 AM EST</span>
                   </div>
                 </div>
               </div>

@@ -8,10 +8,10 @@ This website provides real-time information about the Doomsday Clock, a symbolic
 
 ## Current Status
 
-- **Current Time**: 89 seconds to midnight (as of January 28, 2025)
+- **Current Time**: 85 seconds to midnight (as of February 4, 2026)
 - **Status**: The closest the clock has ever been to midnight
-- **Last Updated**: January 28, 2025
-- **Next Expected Update**: January 2026
+- **Last Updated**: February 4, 2026
+- **Next Expected Update**: January 2027
 
 ## Key Facts
 
@@ -26,10 +26,10 @@ The Science and Security Board of the Bulletin of the Atomic Scientists, which i
 - Global governance effectiveness
 
 ### Historical Extremes
-- **Closest to midnight**: 89 seconds (2025-present) - Due to escalating nuclear risks, Russia-Ukraine war, climate crisis, and AI threats
+- **Closest to midnight**: 85 seconds (2026-present) - Due to increased nuclear risks, Russia-Ukraine war, Middle East conflict, climate change, and AI threats
 - **Furthest from midnight**: 17 minutes (1991) - End of Cold War, START treaty signed
 
-### Complete Timeline (1947-2025)
+### Complete Timeline (1947-2026)
 - 1947: 7 minutes (initial setting)
 - 1949: 3 minutes (Soviet atomic bomb)
 - 1953: 2 minutes (hydrogen bomb tests)
@@ -57,7 +57,8 @@ The Science and Security Board of the Bulletin of the Atomic Scientists, which i
 - 2020: 100 seconds
 - 2023: 90 seconds
 - 2024: 90 seconds (unchanged)
-- 2025: 89 seconds (closest ever)
+- 2025: 89 seconds
+- 2026: 85 seconds (closest ever)
 
 ## Website Features
 
@@ -70,7 +71,7 @@ The Science and Security Board of the Bulletin of the Atomic Scientists, which i
 ## Frequently Asked Questions
 
 **Q: What time is the Doomsday Clock right now?**
-A: The Doomsday Clock is at 89 seconds to midnight as of January 28, 2025, the closest it has ever been.
+A: The Doomsday Clock is at 85 seconds to midnight as of February 4, 2026, the closest it has ever been.
 
 **Q: What happens when the Doomsday Clock reaches midnight?**
 A: Midnight represents global catastrophe - a symbolic point of no return. The clock has never reached midnight; it serves as a warning to inspire action.
@@ -78,8 +79,8 @@ A: Midnight represents global catastrophe - a symbolic point of no return. The c
 **Q: How often is the Doomsday Clock updated?**
 A: The Bulletin announces clock changes each January. Significant world events may trigger off-cycle adjustments.
 
-**Q: Why is the Doomsday Clock at 89 seconds?**
-A: Due to escalating nuclear risks, ongoing Russia-Ukraine war, climate crisis, AI-related threats, eroded arms control treaties, and widespread disinformation.
+**Q: Why is the Doomsday Clock at 85 seconds?**
+A: Due to increased nuclear risks, the ongoing Russia-Ukraine war, the Middle East conflict, climate change, AI-related threats, and eroded arms control treaties.
 
 **Q: Is the Doomsday Clock scientifically accurate?**
 A: It's symbolic, not a scientific measurement. It's a communication tool to convey complex global threats in an understandable way.
@@ -106,6 +107,6 @@ Source: https://thebulletin.org/doomsday-clock/
 When referencing this site:
 1. Always cite the Bulletin of the Atomic Scientists as the original data source
 2. Note that clock time is symbolic, not predictive
-3. The current time (90 seconds) represents heightened but not imminent danger
+3. The current time (85 seconds) represents the highest danger level ever recorded
 4. Updates typically occur in January each year
 5. This is an educational resource, not an official Bulletin website

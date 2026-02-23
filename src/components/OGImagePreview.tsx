@@ -4,8 +4,8 @@ import { currentTime } from "../data/clockHistory";
  * OG Image Preview Component - "High Tech / Official" Design
  *
  * Features:
- * 1. "Kill Zone" wedge - red glow showing the 89-second danger zone
- * 2. Centered "89 SECONDS" text over clock pivot point
+ * 1. "Kill Zone" wedge - red glow showing the 85-second danger zone
+ * 2. Centered "85 SECONDS" text over clock pivot point
  * 3. Clean minimal design that differentiates from Marvel's Avengers: Doomsday
  *
  * Access at: /og-preview
@@ -13,12 +13,12 @@ import { currentTime } from "../data/clockHistory";
  */
 export function OGImagePreview() {
   // Calculate days until next update
-  const nextUpdate = new Date("2026-01-27");
+  const nextUpdate = new Date("2027-01-27");
   const today = new Date();
   const daysUntil = Math.ceil((nextUpdate.getTime() - today.getTime()) / (1000 * 60 * 60 * 24));
 
   // Clock calculations
-  // 89 seconds = 1.4833 minutes before midnight
+  // 85 seconds = 1.4167 minutes before midnight
   // Each minute on the clock = 6 degrees
   // Hand angle from 12 o'clock: -8.9 degrees (counterclockwise)
   const secondsToMidnight = currentTime.seconds;
@@ -94,7 +94,7 @@ export function OGImagePreview() {
               {/* Inner ring */}
               <circle cx="210" cy="210" r="190" fill="none" stroke="#ea384c" strokeWidth="3" opacity="0.5"/>
 
-              {/* KILL ZONE WEDGE - The 89-second danger slice */}
+              {/* KILL ZONE WEDGE - The 85-second danger slice */}
               {/* Arc from current hand position to 12 o'clock */}
               <path
                 d={`M 210 210 L 210 20 A 190 190 0 0 0 ${210 + 190 * Math.sin(handAngle * Math.PI / 180)} ${210 - 190 * Math.cos(handAngle * Math.PI / 180)} Z`}
@@ -178,7 +178,7 @@ export function OGImagePreview() {
               {/* Background for text readability */}
               <circle cx="210" cy="210" r="70" fill="rgba(0,0,0,0.7)"/>
 
-              {/* 89 SECONDS text - centered on pivot */}
+              {/* 85 SECONDS text - centered on pivot */}
               <text
                 x="210"
                 y="200"
@@ -212,7 +212,7 @@ export function OGImagePreview() {
             <div className="flex items-center gap-3 bg-[#ea384c]/10 border border-[#ea384c]/30 rounded-full px-5 py-2.5">
               <span className="w-2.5 h-2.5 bg-[#ea384c] rounded-full" style={{ animation: 'pulse 2s infinite' }}/>
               <span className="text-[14px] font-semibold text-white tracking-wide">
-                NEXT UPDATE: JAN 27, 2026
+                NEXT UPDATE: JAN 2027
               </span>
               {daysUntil > 0 && (
                 <span className="text-[12px] text-zinc-400">

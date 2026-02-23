@@ -70,7 +70,7 @@ export function EmailCapture() {
                 Be First to Know
               </h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Get notified the moment the Bulletin announces the <span className="text-white font-semibold">2026 Doomsday Clock</span> update.
+                Get notified the moment the Bulletin announces the <span className="text-white font-semibold">2027 Doomsday Clock</span> update.
                 Will it move past {currentTime.seconds} seconds?
               </p>
             </div>
@@ -80,7 +80,7 @@ export function EmailCapture() {
               <div className="inline-flex items-center gap-2 bg-zinc-800/50 rounded-full px-4 py-2 border border-white/5">
                 <span className="w-2 h-2 bg-atomic rounded-full animate-pulse" />
                 <span className="text-sm text-muted-foreground">
-                  Next announcement: <span className="text-white font-medium">January 27, 2026</span>
+                  Next announcement: <span className="text-white font-medium">January 2027</span>
                 </span>
               </div>
             </div>
@@ -92,7 +92,7 @@ export function EmailCapture() {
                   <CheckCircle className="w-12 h-12 text-green-500 mb-4" />
                   <h3 className="text-xl font-bold text-white mb-2">You're on the list!</h3>
                   <p className="text-muted-foreground">
-                    We'll email you the moment the 2026 clock is announced.
+                    We'll email you the moment the 2027 clock is announced.
                     Check your inbox for a confirmation.
                   </p>
                 </div>
