@@ -12,6 +12,7 @@ import {
   Wind,
   RotateCcw,
   ChevronRight,
+  Crosshair,
 } from "lucide-react";
 
 interface Scenario {
@@ -42,6 +43,16 @@ const scenarios: Scenario[] = [
     impact: -0.5,
     impactLabel: "-30 seconds",
     icon: Flame,
+    category: "danger",
+  },
+  {
+    id: "us-iran-war",
+    title: "US-Iran Military Conflict",
+    description:
+      "Active US-Israel military strikes on Iran risk nuclear confrontation and Middle East destabilization",
+    impact: -0.67,
+    impactLabel: "-40 seconds",
+    icon: Crosshair,
     category: "danger",
   },
   {

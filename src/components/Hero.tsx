@@ -1,14 +1,60 @@
+import { useState } from "react";
+import { Link } from "react-router-dom";
 import { DoomsdayClock } from "./DoomsdayClock";
 import { currentTime } from "../data/clockHistory";
-import { AlertTriangle, TrendingUp } from "lucide-react";
+import { AlertTriangle, TrendingUp, X } from "lucide-react";
 
 export function Hero() {
+  const [bannerDismissed, setBannerDismissed] = useState(false);
+
   return (
     <section className="relative min-h-[calc(100vh-5.75rem)] flex items-center" id="clock">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-doom/5 via-transparent to-transparent pointer-events-none" />
 
       <div className="container-wide py-12 sm:py-16">
+        {/* Breaking News Banner */}
+        {!bannerDismissed && (
+          <div className="relative mb-6 animate-fade-in">
+            <Link
+              to="/blog/us-iran-crisis-doomsday-clock"
+              className="block doom-accent-card p-4 sm:p-5 border-doom/50 hover:border-doom transition-all duration-300 group"
+            >
+              <div className="flex items-start gap-3 sm:gap-4">
+                <div className="shrink-0 flex items-center gap-2">
+                  <span className="relative flex h-3 w-3">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-doom opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-3 w-3 bg-doom"></span>
+                  </span>
+                  <span className="text-xs sm:text-sm font-bold uppercase tracking-wider text-doom bg-doom/20 px-2 py-0.5 rounded">
+                    Breaking
+                  </span>
+                </div>
+                <div className="flex-1 min-w-0 pr-6">
+                  <p className="text-sm sm:text-base font-semibold text-foreground group-hover:text-doom transition-colors">
+                    US &amp; Israel Launch Strikes on Iran &mdash; &quot;Operation Epic Fury&quot;
+                  </p>
+                  <p className="text-xs sm:text-sm text-muted-foreground mt-1">
+                    Major military escalation could push the Doomsday Clock even closer to midnight.
+                    Read our analysis &rarr;
+                  </p>
+                </div>
+              </div>
+            </Link>
+            <button
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                setBannerDismissed(true);
+              }}
+              className="absolute top-2 right-2 p-1.5 rounded-lg bg-black/50 hover:bg-black/80 text-muted-foreground hover:text-foreground transition-colors z-10"
+              aria-label="Dismiss breaking news"
+            >
+              <X className="w-4 h-4" />
+            </button>
+          </div>
+        )}
+
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Left: Content */}
           <div className="text-center lg:text-left space-y-6 animate-fade-in">

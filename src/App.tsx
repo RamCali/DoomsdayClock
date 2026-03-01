@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { Header } from "./components/Header";
 import { Hero } from "./components/Hero";
 import { InteractiveTimeline } from "./components/InteractiveTimeline";
@@ -18,7 +18,17 @@ import { Gamification } from "./components/Gamification";
 import { CountdownTimer } from "./components/CountdownTimer";
 import { SocialProof } from "./components/SocialProof";
 import { TimeCapsule } from "./components/TimeCapsule";
+import { BlogIndex } from "./components/blog/BlogIndex";
+import { USIranCrisis } from "./components/blog/USIranCrisis";
 import "./index.css";
+
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
+}
 
 function HomePage() {
   return (
@@ -66,6 +76,7 @@ function App() {
   return (
     <ErrorBoundary>
       <BrowserRouter>
+        <ScrollToTop />
         <div className="min-h-screen bg-background text-foreground">
           <ComicDisambiguation />
           <Header />
@@ -73,6 +84,8 @@ function App() {
             <Routes>
               <Route path="/" element={<HomePage />} />
               <Route path="/og-preview" element={<OGImagePreview />} />
+              <Route path="/blog" element={<BlogIndex />} />
+              <Route path="/blog/us-iran-crisis-doomsday-clock" element={<USIranCrisis />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </main>

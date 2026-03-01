@@ -1,11 +1,16 @@
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { cn } from "../lib/utils";
 
-const navLinks = [
-  { href: "#clock", label: "Current Time" },
-  { href: "#history", label: "History" },
-  { href: "#faq", label: "FAQ" },
+const anchorLinks = [
+  { href: "/#clock", label: "Current Time" },
+  { href: "/#history", label: "History" },
+  { href: "/#faq", label: "FAQ" },
+];
+
+const routeLinks = [
+  { href: "/blog", label: "Blog" },
 ];
 
 export function Header() {
@@ -26,7 +31,7 @@ export function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => (
+            {anchorLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
@@ -34,6 +39,15 @@ export function Header() {
               >
                 {link.label}
               </a>
+            ))}
+            {routeLinks.map((link) => (
+              <Link
+                key={link.href}
+                to={link.href}
+                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+              >
+                {link.label}
+              </Link>
             ))}
           </nav>
 
@@ -66,7 +80,7 @@ export function Header() {
           )}
         >
           <nav className="flex flex-col gap-4 pt-4 border-t border-white/10">
-            {navLinks.map((link) => (
+            {anchorLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
@@ -75,6 +89,16 @@ export function Header() {
               >
                 {link.label}
               </a>
+            ))}
+            {routeLinks.map((link) => (
+              <Link
+                key={link.href}
+                to={link.href}
+                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                {link.label}
+              </Link>
             ))}
             <div className="flex items-center gap-2 pt-2">
               <span className="w-2 h-2 rounded-full bg-green animate-pulse" />
