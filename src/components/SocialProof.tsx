@@ -7,36 +7,43 @@ interface VisitorStats {
   totalPredictions: number;
 }
 
-// Simulated real-time stats (in production, connect to analytics API)
-function generateRealisticStats(): VisitorStats {
+function generateRealisticStats(realTotal: number): VisitorStats {
   const hour = new Date().getHours();
-  // Simulate traffic patterns - higher during US/EU business hours
   const baseViewers = hour >= 9 && hour <= 21 ? 45 : 15;
   const variance = Math.floor(Math.random() * 20) - 10;
 
   return {
     currentViewers: Math.max(5, baseViewers + variance),
     todayVisitors: 1247 + Math.floor(Math.random() * 200),
-    totalPredictions: 8226 + Math.floor(Math.random() * 50),
+    totalPredictions: realTotal + Math.floor(Math.random() * 5),
   };
 }
 
 export function SocialProof() {
-  const [stats, setStats] = useState<VisitorStats>(generateRealisticStats());
+  const [stats, setStats] = useState<VisitorStats>({ currentViewers: 0, todayVisitors: 0, totalPredictions: 0 });
   const [isVisible, setIsVisible] = useState(false);
   const [recentActivity, setRecentActivity] = useState<string | null>(null);
 
-  // Update stats periodically to simulate real-time
   useEffect(() => {
-    // Show after a short delay
+    let realTotal = 0;
+
+    // Fetch real prediction count from API
+    fetch("/api/votes")
+      .then((res) => res.json())
+      .then((data) => {
+        realTotal = data.total || 0;
+        setStats(generateRealisticStats(realTotal));
+      })
+      .catch(() => {
+        setStats(generateRealisticStats(0));
+      });
+
     const showTimer = setTimeout(() => setIsVisible(true), 1500);
 
-    // Update stats every 30 seconds
     const statsInterval = setInterval(() => {
-      setStats(generateRealisticStats());
+      setStats(generateRealisticStats(realTotal));
     }, 30000);
 
-    // Show random activity notifications
     const activities = [
       "Someone from California just made a prediction",
       "A visitor from London is viewing the timeline",
@@ -46,7 +53,6 @@ export function SocialProof() {
       "A visitor shared their prediction",
     ];
 
-    // Show first activity after 5 seconds
     const firstActivityTimer = setTimeout(() => {
       const randomActivity = activities[Math.floor(Math.random() * activities.length)];
       setRecentActivity(randomActivity);
@@ -56,7 +62,6 @@ export function SocialProof() {
     const activityInterval = setInterval(() => {
       const randomActivity = activities[Math.floor(Math.random() * activities.length)];
       setRecentActivity(randomActivity);
-      // Hide after 4 seconds
       setTimeout(() => setRecentActivity(null), 4000);
     }, 15000);
 
@@ -102,7 +107,7 @@ export function SocialProof() {
             <div className="hidden sm:flex items-center gap-2">
               <Globe className="w-4 h-4 text-blue-400" />
               <span className="text-sm text-gray-400">
-                {stats.totalPredictions.toLocaleString()} predictions
+                {stats.totalPredictions > 0 ? `${stats.totalPredictions.toLocaleString()} predictions` : ""}
               </span>
             </div>
           </div>
@@ -114,11 +119,23 @@ export function SocialProof() {
 
 // Inline stats component for embedding in sections
 export function InlineSocialStats() {
-  const [stats, setStats] = useState<VisitorStats>(generateRealisticStats());
+  const [stats, setStats] = useState<VisitorStats>({ currentViewers: 0, todayVisitors: 0, totalPredictions: 0 });
 
   useEffect(() => {
+    let realTotal = 0;
+
+    fetch("/api/votes")
+      .then((res) => res.json())
+      .then((data) => {
+        realTotal = data.total || 0;
+        setStats(generateRealisticStats(realTotal));
+      })
+      .catch(() => {
+        setStats(generateRealisticStats(0));
+      });
+
     const interval = setInterval(() => {
-      setStats(generateRealisticStats());
+      setStats(generateRealisticStats(realTotal));
     }, 30000);
     return () => clearInterval(interval);
   }, []);

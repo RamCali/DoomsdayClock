@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { TrendingUp, TrendingDown, Minus, Users, Clock, Trophy, Share2 } from "lucide-react";
+import { TrendingUp, TrendingDown, Minus, Users, Clock, Trophy, Share2, Loader2 } from "lucide-react";
 import { currentTime } from "../data/clockHistory";
 
 type PredictionChoice = "closer" | "same" | "farther" | null;
@@ -11,21 +11,17 @@ interface PollResults {
   total: number;
 }
 
-// Simulated community results (in production, this would come from a backend)
-const COMMUNITY_RESULTS: PollResults = {
-  closer: 4823,
-  same: 1247,
-  farther: 2156,
-  total: 8226,
-};
+const FALLBACK_RESULTS: PollResults = { closer: 0, same: 0, farther: 0, total: 0 };
 
 export function PredictionPoll() {
   const [userPrediction, setUserPrediction] = useState<PredictionChoice>(null);
   const [hasVoted, setHasVoted] = useState(false);
   const [showResults, setShowResults] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
+  const [results, setResults] = useState<PollResults>(FALLBACK_RESULTS);
+  const [isLoading, setIsLoading] = useState(true);
 
-  // Check localStorage for existing vote
+  // Fetch current results and check localStorage for existing vote
   useEffect(() => {
     const saved = localStorage.getItem("doomsday-prediction-2027");
     if (saved) {
@@ -33,18 +29,35 @@ export function PredictionPoll() {
       setHasVoted(true);
       setShowResults(true);
     }
+
+    fetch("/api/votes")
+      .then((res) => res.json())
+      .then((data: PollResults) => setResults(data))
+      .catch(() => {})
+      .finally(() => setIsLoading(false));
   }, []);
 
-  const handleVote = (choice: PredictionChoice) => {
+  const handleVote = async (choice: PredictionChoice) => {
     if (hasVoted || !choice) return;
 
     setIsAnimating(true);
     setUserPrediction(choice);
-
-    // Save to localStorage
     localStorage.setItem("doomsday-prediction-2027", choice);
 
-    // Animate then show results
+    try {
+      const res = await fetch("/api/votes", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ choice }),
+      });
+      if (res.ok) {
+        const data: PollResults = await res.json();
+        setResults(data);
+      }
+    } catch {
+      // Vote saved to localStorage even if API fails
+    }
+
     setTimeout(() => {
       setHasVoted(true);
       setShowResults(true);
@@ -53,7 +66,8 @@ export function PredictionPoll() {
   };
 
   const getPercentage = (count: number) => {
-    return Math.round((count / COMMUNITY_RESULTS.total) * 100);
+    if (results.total === 0) return 0;
+    return Math.round((count / results.total) * 100);
   };
 
   const shareResult = () => {
@@ -84,7 +98,10 @@ export function PredictionPoll() {
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             The Bulletin announces the new time in <span className="text-white font-semibold">January 2027</span>.
-            Join {COMMUNITY_RESULTS.total.toLocaleString()}+ others in predicting whether we move closer to—or further from—midnight.
+            {results.total > 0
+              ? <> Join {results.total.toLocaleString()}+ others in predicting whether we move closer to—or further from—midnight.</>
+              : <> Predict whether we move closer to—or further from—midnight.</>
+            }
           </p>
         </div>
 
@@ -179,7 +196,11 @@ export function PredictionPoll() {
               <div className="flex items-center gap-2">
                 <Users className="w-5 h-5 text-muted-foreground" />
                 <span className="text-muted-foreground">
-                  {COMMUNITY_RESULTS.total.toLocaleString()} predictions
+                  {isLoading ? (
+                    <Loader2 className="w-4 h-4 animate-spin inline" />
+                  ) : (
+                    <>{results.total.toLocaleString()} predictions</>
+                  )}
                 </span>
               </div>
               <button
@@ -205,12 +226,12 @@ export function PredictionPoll() {
                       <span className="text-xs bg-red-500/20 text-red-400 px-2 py-0.5 rounded-full">Your pick</span>
                     )}
                   </div>
-                  <span className="font-bold text-white">{getPercentage(COMMUNITY_RESULTS.closer)}%</span>
+                  <span className="font-bold text-white">{getPercentage(results.closer)}%</span>
                 </div>
                 <div className="h-3 bg-zinc-700 rounded-full overflow-hidden">
                   <div
                     className="h-full bg-gradient-to-r from-red-600 to-red-500 rounded-full transition-all duration-1000"
-                    style={{ width: `${getPercentage(COMMUNITY_RESULTS.closer)}%` }}
+                    style={{ width: `${getPercentage(results.closer)}%` }}
                   />
                 </div>
               </div>
@@ -227,12 +248,12 @@ export function PredictionPoll() {
                       <span className="text-xs bg-yellow-500/20 text-yellow-400 px-2 py-0.5 rounded-full">Your pick</span>
                     )}
                   </div>
-                  <span className="font-bold text-white">{getPercentage(COMMUNITY_RESULTS.same)}%</span>
+                  <span className="font-bold text-white">{getPercentage(results.same)}%</span>
                 </div>
                 <div className="h-3 bg-zinc-700 rounded-full overflow-hidden">
                   <div
                     className="h-full bg-gradient-to-r from-yellow-600 to-yellow-500 rounded-full transition-all duration-1000"
-                    style={{ width: `${getPercentage(COMMUNITY_RESULTS.same)}%` }}
+                    style={{ width: `${getPercentage(results.same)}%` }}
                   />
                 </div>
               </div>
@@ -249,12 +270,12 @@ export function PredictionPoll() {
                       <span className="text-xs bg-green-500/20 text-green-400 px-2 py-0.5 rounded-full">Your pick</span>
                     )}
                   </div>
-                  <span className="font-bold text-white">{getPercentage(COMMUNITY_RESULTS.farther)}%</span>
+                  <span className="font-bold text-white">{getPercentage(results.farther)}%</span>
                 </div>
                 <div className="h-3 bg-zinc-700 rounded-full overflow-hidden">
                   <div
                     className="h-full bg-gradient-to-r from-green-600 to-green-500 rounded-full transition-all duration-1000"
-                    style={{ width: `${getPercentage(COMMUNITY_RESULTS.farther)}%` }}
+                    style={{ width: `${getPercentage(results.farther)}%` }}
                   />
                 </div>
               </div>
@@ -263,7 +284,7 @@ export function PredictionPoll() {
             {/* Insight */}
             <div className="mt-6 p-4 bg-zinc-900/50 rounded-xl border border-white/5">
               <p className="text-sm text-muted-foreground">
-                <span className="text-white font-medium">Community insight:</span> {getPercentage(COMMUNITY_RESULTS.closer)}% believe
+                <span className="text-white font-medium">Community insight:</span> {getPercentage(results.closer)}% believe
                 global threats will intensify, pushing the clock closer to midnight. Historically, the clock has moved
                 closer 16 times and farther 8 times since 1947.
               </p>
