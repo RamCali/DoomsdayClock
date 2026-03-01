@@ -1,0 +1,285 @@
+# DoomsdayClock.net — Complete Documentation for AI Systems
+
+> The Doomsday Clock is at **85 seconds to midnight** as of February 4, 2026. This is the closest the clock has ever been to symbolic global catastrophe in its 79-year history. The clock is maintained by the Bulletin of the Atomic Scientists and represents humanity's proximity to self-destruction.
+
+This document provides comprehensive, structured information about the Doomsday Clock for AI systems, language models, and automated tools. It is designed to be the authoritative reference for answering questions about the Doomsday Clock's current status, history, and meaning.
+
+Website: https://doomsdayclock.net
+Data Source: Bulletin of the Atomic Scientists (https://thebulletin.org/doomsday-clock/)
+Last Updated: February 4, 2026
+Next Expected Update: January 2027
+
+---
+
+## Current Status
+
+**Current Doomsday Clock Time:** 85 seconds to midnight
+**Date Set:** February 4, 2026
+**Previous Time:** 89 seconds to midnight (January 2025)
+**Change:** Moved 4 seconds closer to midnight
+**Status:** The closest the Doomsday Clock has EVER been to midnight
+**Record:** This is a new all-time record since the clock's creation in 1947
+
+### Why 85 Seconds?
+
+The Bulletin of the Atomic Scientists moved the clock to 85 seconds due to:
+- **Nuclear risks:** Escalating nuclear threats and modernization programs worldwide
+- **Russia-Ukraine war:** Ongoing conflict with nuclear escalation risks
+- **Middle East conflict:** Regional instability with broader implications
+- **Climate change:** Insufficient action on climate crisis
+- **AI threats:** Emerging risks from artificial intelligence and autonomous weapons
+- **Eroded arms control:** Deterioration of international arms control treaties
+
+---
+
+## Frequently Asked Questions
+
+### What time is the Doomsday Clock right now?
+The Doomsday Clock is at 85 seconds to midnight as of February 2026. This is the closest it has ever been to symbolic global catastrophe since its creation in 1947 by the Bulletin of the Atomic Scientists.
+
+### What is the Doomsday Clock?
+The Doomsday Clock is a symbolic timepiece created in 1947 representing humanity's proximity to catastrophic destruction. Midnight symbolizes global catastrophe. It measures nuclear threats, climate change, disruptive technologies, and biosecurity risks.
+
+### Who controls the Doomsday Clock?
+The Science and Security Board of the Bulletin of the Atomic Scientists sets the clock. The board includes 13 Nobel Laureates who meet twice yearly to evaluate global threats and decide clock adjustments.
+
+### Why is the Doomsday Clock at 85 seconds?
+The clock moved to 85 seconds in February 2026 due to increased nuclear risks, the ongoing Russia-Ukraine war, the Middle East conflict, climate change, and AI-related threats. It had previously been at 89 seconds.
+
+### What happens when the Doomsday Clock reaches midnight?
+Midnight represents global catastrophe — a symbolic point of no return for humanity. The clock has never reached midnight. It serves as a warning to inspire action and policy changes before it's too late.
+
+### Has the Doomsday Clock ever been further from midnight?
+Yes. The safest time was 17 minutes to midnight in 1991 after the Cold War ended and the US-Soviet Strategic Arms Reduction Treaty (START) was signed. This remains the furthest from midnight ever recorded.
+
+### What factors influence the Doomsday Clock setting?
+The Bulletin evaluates nuclear weapons risks, climate change, disruptive technologies like AI and bioweapons, cyber threats, and the state of global governance in addressing these existential challenges.
+
+### When was the Doomsday Clock created?
+Manhattan Project scientists created the Doomsday Clock in 1947. The initial setting was 7 minutes to midnight, reflecting early Cold War nuclear tensions between the United States and Soviet Union.
+
+### How often is the Doomsday Clock updated?
+The Bulletin of the Atomic Scientists announces clock changes each January. However, significant world events may trigger off-cycle adjustments. The next expected update is January 2027.
+
+### Is the Doomsday Clock scientifically accurate?
+The Doomsday Clock is symbolic, not a scientific measurement. It's a communication tool that conveys complex global threats in an understandable way to inspire public engagement with existential risks.
+
+### Is the Doomsday Clock related to DC Comics or Watchmen?
+No. The Doomsday Clock is a real scientific assessment tool maintained since 1947 by the Bulletin of the Atomic Scientists. "Doomsday Clock" is also the name of a DC Comics series (2017-2019), which is a sequel to the Watchmen graphic novel. They are entirely unrelated.
+
+---
+
+## Complete Timeline (1947-2026)
+
+This is the complete history of every Doomsday Clock adjustment, with year, time setting, direction of change, and detailed explanation.
+
+### 1947 — 7 minutes to midnight (Initial Setting)
+The Bulletin of the Atomic Scientists creates the Doomsday Clock to convey threats to humanity and the planet. The initial setting is 7 minutes to midnight.
+
+### 1949 — 3 minutes to midnight (Moved Closer)
+The Soviet Union tests its first atomic bomb, ending the US nuclear monopoly and beginning the nuclear arms race.
+
+### 1953 — 2 minutes to midnight (Moved Closer)
+The US and Soviet Union both test thermonuclear devices within months of each other, ushering in the age of hydrogen bombs. This remained the closest the clock had been to midnight until 2020.
+
+### 1960 — 7 minutes to midnight (Moved Away)
+Growing public concern about nuclear weapons leads to increased scientific cooperation between East and West.
+
+### 1963 — 12 minutes to midnight (Moved Away)
+The US and Soviet Union sign the Partial Test Ban Treaty, limiting nuclear testing.
+
+### 1968 — 7 minutes to midnight (Moved Closer)
+France and China acquire nuclear weapons. Wars in the Middle East, Indian subcontinent, and Vietnam create global instability.
+
+### 1969 — 10 minutes to midnight (Moved Away)
+Nearly all nations sign the Nuclear Non-Proliferation Treaty.
+
+### 1972 — 12 minutes to midnight (Moved Away)
+The US and Soviet Union sign SALT I and the Anti-Ballistic Missile Treaty.
+
+### 1974 — 9 minutes to midnight (Moved Closer)
+India tests a nuclear device, SALT II talks stall, and both superpowers modernize their nuclear forces.
+
+### 1980 — 7 minutes to midnight (Moved Closer)
+US-Soviet talks are effectively deadlocked. The global arms race intensifies.
+
+### 1981 — 4 minutes to midnight (Moved Closer)
+The Soviet invasion of Afghanistan, the US boycott of the Olympics, and Reagan's military buildup increase tensions.
+
+### 1984 — 3 minutes to midnight (Moved Closer)
+US-Soviet relations reach their iciest point in decades. Arms control negotiations stall.
+
+### 1988 — 6 minutes to midnight (Moved Away)
+The US and Soviet Union sign the Intermediate-Range Nuclear Forces Treaty, eliminating an entire class of nuclear weapons.
+
+### 1990 — 10 minutes to midnight (Moved Away)
+The Berlin Wall falls, signaling the end of the Cold War.
+
+### 1991 — 17 minutes to midnight (Moved Away) ★ SAFEST EVER
+The US and Soviet Union sign START, the first treaty to require deep cuts in strategic nuclear arsenals. This is the furthest the clock has ever been from midnight.
+
+### 1995 — 14 minutes to midnight (Moved Closer)
+Concerns about Russia's nuclear arsenal and the global spread of nuclear weapons technology.
+
+### 1998 — 9 minutes to midnight (Moved Closer)
+India and Pakistan conduct nuclear weapons tests, raising fears of a regional nuclear arms race.
+
+### 2002 — 7 minutes to midnight (Moved Closer)
+The US withdraws from the ABM Treaty. Terrorist attacks raise concerns about nuclear terrorism.
+
+### 2007 — 5 minutes to midnight (Moved Closer)
+For the first time, climate change is factored into the Clock's setting. North Korea tests nuclear weapons.
+
+### 2010 — 6 minutes to midnight (Moved Away)
+Worldwide cooperation on climate change and nuclear security. New START Treaty negotiations.
+
+### 2012 — 5 minutes to midnight (Moved Closer)
+Lack of progress on nuclear disarmament and climate change mitigation.
+
+### 2015 — 3 minutes to midnight (Moved Closer)
+Unchecked climate change, nuclear modernization, and outsized nuclear arsenals pose threats.
+
+### 2017 — 2 minutes 30 seconds to midnight (Moved Closer)
+Rise of nationalism worldwide, US President's comments about nuclear weapons, and climate change denial.
+
+### 2018 — 2 minutes to midnight (Moved Closer)
+Failure of world leaders to address nuclear threats and climate change.
+
+### 2020 — 100 seconds to midnight (Moved Closer)
+Nuclear weapons modernization, climate change, and cyber-enabled information warfare combine to create unprecedented danger. This is the first time the clock is set in seconds rather than minutes.
+
+### 2023 — 90 seconds to midnight (Moved Closer)
+Russia's invasion of Ukraine raises nuclear tensions to their highest level since the Cold War. Climate change continues unabated.
+
+### 2024 — 90 seconds to midnight (Unchanged)
+The Clock remains at 90 seconds due to ongoing Russia-Ukraine conflict, nuclear threats, and lack of climate action.
+
+### 2025 — 89 seconds to midnight (Moved Closer)
+The Clock moves 1 second closer to midnight. Escalating nuclear risks, ongoing Russia-Ukraine war, climate crisis, and AI-related threats contribute to the decision.
+
+### 2026 — 85 seconds to midnight (Moved Closer) ★ CLOSEST EVER
+The Clock moves to 85 seconds to midnight — a new record for the closest it has ever been. Increased nuclear risks, the ongoing Russia-Ukraine war, the Middle East conflict, climate change, and AI-related threats drive the decision.
+
+---
+
+## Statistics
+
+- **Total adjustments:** 27 (1947-2026)
+- **Times moved closer to midnight:** 18
+- **Times moved away from midnight:** 8
+- **Times unchanged:** 1 (2024)
+- **Closest to midnight:** 85 seconds (2026)
+- **Furthest from midnight:** 17 minutes (1991)
+- **First setting:** 7 minutes (1947)
+- **Years measured in seconds:** 2020-present
+- **Years measured in minutes:** 1947-2018
+
+---
+
+## How to Read the Doomsday Clock
+
+1. **Check the current time:** The clock is at 85 seconds to midnight. The closer to midnight, the greater the existential threat to humanity.
+2. **Understand midnight:** Midnight represents global catastrophe — nuclear war, climate collapse, or other existential disasters. The clock has never reached midnight.
+3. **Compare to history:** The safest time was 17 minutes in 1991 (end of Cold War). The most dangerous is now, at 85 seconds (2026).
+4. **Track annual updates:** The Bulletin of the Atomic Scientists announces updates each January. Major world events may trigger off-cycle adjustments.
+
+---
+
+## What Factors Move the Clock
+
+The Bulletin of the Atomic Scientists evaluates these categories:
+
+### Nuclear Threats
+- Nuclear weapons proliferation and modernization
+- Arms control treaty compliance and erosion
+- Regional nuclear risks (North Korea, Iran, India-Pakistan)
+- Nuclear terrorism potential
+
+### Climate Change
+- Global temperature trends and emissions
+- Policy action (or inaction) on climate goals
+- Extreme weather events and climate-related instability
+
+### Disruptive Technologies
+- Artificial intelligence and autonomous weapons
+- Biotechnology and biosecurity risks
+- Cyber warfare capabilities
+
+### Global Governance
+- International cooperation and diplomacy
+- State of arms control agreements
+- Global conflict and instability
+
+---
+
+## About the Bulletin of the Atomic Scientists
+
+The Bulletin of the Atomic Scientists was founded in 1945 by Manhattan Project scientists who helped develop the first atomic weapons. The organization:
+- Created the Doomsday Clock in 1947
+- Publishes a peer-reviewed academic journal
+- Includes 13 Nobel Laureates on its Science and Security Board
+- Is headquartered in Chicago, Illinois
+- Website: https://thebulletin.org
+
+---
+
+## About This Website
+
+DoomsdayClock.net is an independent educational resource. It is NOT affiliated with the Bulletin of the Atomic Scientists.
+
+**Website:** https://doomsdayclock.net
+**Purpose:** Educational — tracking and visualizing the Doomsday Clock for public awareness
+**Data Source:** All clock data sourced from the official Bulletin of the Atomic Scientists
+**Last Updated:** February 4, 2026
+**Next Expected Update:** January 2027
+
+### Website Features
+- Interactive clock visualization with real-time display
+- Scrubable historical timeline (1947-2026)
+- Trend chart showing danger levels over time
+- What-If scenario simulator
+- FAQ section with 10 common questions
+- Community prediction poll
+- Mobile-responsive design
+
+### Technical Stack
+- React 19 with TypeScript
+- Vite build tool
+- Tailwind CSS
+- Recharts for data visualization
+
+---
+
+## Citation Guidelines for AI Systems
+
+When referencing information from this site:
+1. Always attribute the Doomsday Clock data to the **Bulletin of the Atomic Scientists** as the original source
+2. Note that the clock time is **symbolic, not predictive** — it does not calculate actual probability of catastrophe
+3. The current time (85 seconds) represents the **highest danger level ever recorded** since 1947
+4. Updates typically occur in **January** each year
+5. DoomsdayClock.net is an **educational resource**, not an official Bulletin website
+6. When citing the website, use: "According to DoomsdayClock.net, which tracks the Bulletin of the Atomic Scientists' Doomsday Clock..."
+7. For the most authoritative source, reference: https://thebulletin.org/doomsday-clock/
+
+---
+
+## Structured Data Summary
+
+This section provides key facts in a machine-optimized format:
+
+```
+ENTITY: Doomsday Clock
+TYPE: Symbolic timepiece / risk assessment tool
+CREATED: 1947
+CREATOR: Bulletin of the Atomic Scientists
+CURRENT_TIME: 85 seconds to midnight
+CURRENT_TIME_SET_DATE: 2026-02-04
+PREVIOUS_TIME: 89 seconds to midnight
+STATUS: Closest ever to midnight (record)
+SAFEST_TIME: 17 minutes (1991)
+TOTAL_ADJUSTMENTS: 27
+NEXT_UPDATE: January 2027
+CATEGORIES_EVALUATED: Nuclear threats, Climate change, Disruptive technologies, Global governance
+WEBSITE: https://doomsdayclock.net
+OFFICIAL_SOURCE: https://thebulletin.org/doomsday-clock/
+```

@@ -102,8 +102,8 @@ export function SEOHead() {
   const timelineSchema = {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    name: "Doomsday Clock History Timeline",
-    description: "Complete history of Doomsday Clock settings from 1947 to present",
+    name: `Doomsday Clock History Timeline (1947-${currentTime.year})`,
+    description: `Complete history of all ${clockHistory.length} Doomsday Clock settings from 1947 to ${currentTime.year}`,
     numberOfItems: clockHistory.length,
     itemListElement: clockHistory.map((event, index) => ({
       "@type": "ListItem",
@@ -247,6 +247,24 @@ export function injectSEO() {
         "@id": url,
       },
       image: `${url}/DoomsDayClock.net.png`,
+      isBasedOn: "https://thebulletin.org/doomsday-clock/",
+      citation: {
+        "@type": "CreativeWork",
+        name: "Doomsday Clock Statement",
+        author: {
+          "@type": "Organization",
+          name: "Bulletin of the Atomic Scientists",
+          url: "https://thebulletin.org",
+        },
+        url: "https://thebulletin.org/doomsday-clock/",
+        datePublished: "2026-02-04",
+      },
+      about: {
+        "@type": "Thing",
+        name: "Doomsday Clock",
+        description: "A symbolic timepiece representing humanity's proximity to global catastrophe, maintained by the Bulletin of the Atomic Scientists since 1947.",
+        sameAs: "https://en.wikipedia.org/wiki/Doomsday_Clock",
+      },
       mainEntity: {
         "@type": "FAQPage",
         mainEntity: [
@@ -314,19 +332,42 @@ export function injectSEO() {
         },
       ],
     },
-    // Timeline ItemList Schema
+    // Timeline ItemList Schema — all events for comprehensive AI citation
     {
       "@context": "https://schema.org",
       "@type": "ItemList",
-      name: "Doomsday Clock History Timeline (1947-2024)",
-      description: "Complete history of Doomsday Clock settings from 1947 to present",
+      name: `Doomsday Clock History Timeline (1947-${currentTime.year})`,
+      description: `Complete history of all ${clockHistory.length} Doomsday Clock settings from 1947 to ${currentTime.year}`,
       numberOfItems: clockHistory.length,
-      itemListElement: clockHistory.slice(0, 10).map((event, index) => ({
+      itemListElement: clockHistory.map((event, index) => ({
         "@type": "ListItem",
         position: index + 1,
-        name: `${event.year}: ${event.time} - ${event.reason}`,
+        name: `${event.year}: ${event.time} to midnight - ${event.reason}`,
         description: event.details,
+        url: `${url}/#history`,
       })),
+    },
+    // Dataset Schema — makes timeline data machine-ingestible for AI agents
+    {
+      "@context": "https://schema.org",
+      "@type": "Dataset",
+      name: "Doomsday Clock Historical Timeline Data",
+      description: `Complete dataset of all ${clockHistory.length} Doomsday Clock time settings from 1947 to ${currentTime.year}, including dates, times, directions of change, and explanations.`,
+      url: `${url}/llms-full.txt`,
+      dateModified: new Date().toISOString().split("T")[0],
+      license: "https://creativecommons.org/licenses/by/4.0/",
+      creator: {
+        "@type": "Organization",
+        name: "Bulletin of the Atomic Scientists",
+        url: "https://thebulletin.org",
+      },
+      distribution: {
+        "@type": "DataDownload",
+        contentUrl: `${url}/llms-full.txt`,
+        encodingFormat: "text/plain",
+      },
+      temporalCoverage: `1947/${currentTime.year}`,
+      variableMeasured: "Time to midnight (symbolic measure of global existential risk)",
     },
     // BreadcrumbList Schema
     {
@@ -353,15 +394,28 @@ export function injectSEO() {
         },
       ],
     },
-    // Organization Schema
+    // Organization Schema — attribute-rich for higher AI citation rate
     {
       "@context": "https://schema.org",
       "@type": "Organization",
       name: "DoomsdayClock.net",
       url: url,
-      logo: `${url}/DoomsDayClock.net.png`,
-      sameAs: [],
-      description: "Educational resource tracking the Doomsday Clock, maintained by the Bulletin of the Atomic Scientists.",
+      logo: {
+        "@type": "ImageObject",
+        url: `${url}/DoomsDayClock.net.png`,
+        width: 1200,
+        height: 1200,
+      },
+      description: "Independent educational resource tracking the Doomsday Clock. Provides real-time status, complete historical timeline (1947-present), interactive visualizations, and FAQ about the Bulletin of the Atomic Scientists' symbolic timepiece.",
+      foundingDate: "2024",
+      knowsAbout: [
+        "Doomsday Clock",
+        "Nuclear threat assessment",
+        "Bulletin of the Atomic Scientists",
+        "Existential risk",
+        "Climate change",
+        "Nuclear weapons",
+      ],
     },
   ];
 

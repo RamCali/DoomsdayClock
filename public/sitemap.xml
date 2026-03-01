@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 
@@ -11,7 +10,7 @@
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <image:image>
-      <image:loc>https://doomsdayclock.net/DoomsDayClock.net.png</image:loc>
+      <image:loc>https://doomsdayclock.net/og-image-2026.png</image:loc>
       <image:title>Doomsday Clock - 85 Seconds to Midnight</image:title>
       <image:caption>The Doomsday Clock showing the current time of 85 seconds to midnight, the closest it has ever been to global catastrophe.</image:caption>
     </image:image>
@@ -51,6 +50,21 @@
     <lastmod>2026-02-04</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
+  </url>
+
+  <!-- AI documentation files -->
+  <url>
+    <loc>https://doomsdayclock.net/llms.txt</loc>
+    <lastmod>2026-02-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://doomsdayclock.net/llms-full.txt</loc>
+    <lastmod>2026-02-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
 
 </urlset>

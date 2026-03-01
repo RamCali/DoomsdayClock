@@ -8,17 +8,18 @@ Allow: /
 # Sitemap location
 Sitemap: https://doomsdayclock.net/sitemap.xml
 
-# LLMs.txt for AI crawlers
-# https://llmstxt.org/
-# Location: https://doomsdayclock.net/llms.txt
+# LLMs.txt for AI crawlers (https://llmstxt.org)
+# Concise: https://doomsdayclock.net/llms.txt
+# Full: https://doomsdayclock.net/llms-full.txt
 
-# Specific bot permissions
+# Search engine bots
 User-agent: Googlebot
 Allow: /
 
 User-agent: Bingbot
 Allow: /
 
+# AI model crawlers — explicitly allowed
 User-agent: GPTBot
 Allow: /
 
@@ -34,13 +35,37 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
+User-agent: GoogleOther
+Allow: /
+
 User-agent: PerplexityBot
 Allow: /
 
 User-agent: YouBot
 Allow: /
 
-# Crawl delay for politeness (optional)
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: Meta-ExternalFetcher
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: Diffbot
+Allow: /
+
+User-agent: ImagesiftBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+# Crawl delay for politeness
 User-agent: *
 Crawl-delay: 1
 
