@@ -20,17 +20,20 @@ export function EmailCapture() {
 
     setStatus("loading");
 
-    // Simulate API call - replace with actual endpoint
-    // Example: await fetch('/api/subscribe', { method: 'POST', body: JSON.stringify({ email }) })
     try {
-      await new Promise((resolve) => setTimeout(resolve, 1500));
-
-      // Store in localStorage for now (replace with actual backend)
-      const subscribers = JSON.parse(localStorage.getItem("doomsday-subscribers") || "[]");
-      if (!subscribers.includes(email)) {
-        subscribers.push(email);
-        localStorage.setItem("doomsday-subscribers", JSON.stringify(subscribers));
-      }
+      await fetch(
+        "https://script.google.com/macros/s/AKfycbzq3sGl2yAYK_L5_aVTIhm4-Dkz1rBvMsm0oyXWpaaRObQnTI_vob9Tsa7LD0lwaQgsMg/exec",
+        {
+          method: "POST",
+          mode: "no-cors",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            email,
+            timestamp: new Date().toISOString(),
+            source: "doomsdayclock-notify",
+          }),
+        }
+      );
 
       setStatus("success");
       setEmail("");
