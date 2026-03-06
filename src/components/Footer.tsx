@@ -1,4 +1,5 @@
 import { ExternalLink, Bell } from "lucide-react";
+import { Link } from "react-router-dom";
 import { currentTime } from "../data/clockHistory";
 
 export function Footer() {
@@ -47,6 +48,12 @@ export function Footer() {
               >
                 FAQ
               </a>
+              <Link
+                to="/forum"
+                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+              >
+                Forum
+              </Link>
             </nav>
           </div>
 

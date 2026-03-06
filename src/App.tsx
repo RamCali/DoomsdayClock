@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { AuthProvider } from "./contexts/AuthContext";
 import { Header } from "./components/Header";
 import { Hero } from "./components/Hero";
 import { InteractiveTimeline } from "./components/InteractiveTimeline";
@@ -18,8 +19,14 @@ import { Gamification } from "./components/Gamification";
 import { CountdownTimer } from "./components/CountdownTimer";
 import { SocialProof } from "./components/SocialProof";
 import { TimeCapsule } from "./components/TimeCapsule";
+import { EmailPopup } from "./components/EmailPopup";
 import { BlogIndex } from "./components/blog/BlogIndex";
 import { USIranCrisis } from "./components/blog/USIranCrisis";
+import { ForumPage } from "./components/forum/ForumPage";
+import { PostDetail } from "./components/forum/PostDetail";
+import { ForumPreview } from "./components/forum/ForumPreview";
+import { VerifyEmail } from "./components/auth/VerifyEmail";
+import { ResetPassword } from "./components/auth/ResetPassword";
 import "./index.css";
 
 function ScrollToTop() {
@@ -37,6 +44,7 @@ function HomePage() {
       <CountdownTimer />
       <InteractiveTimeline />
       <PredictionPoll />
+      <ForumPreview />
       <TimeCapsule />
       <WhatIfScenarios />
       <TimelineChart />
@@ -75,23 +83,30 @@ function App() {
 
   return (
     <ErrorBoundary>
-      <BrowserRouter>
-        <ScrollToTop />
-        <div className="min-h-screen bg-background text-foreground">
-          <ComicDisambiguation />
-          <Header />
-          <main className="pt-[calc(4rem+1.75rem)]">
-            <Routes>
-              <Route path="/" element={<HomePage />} />
-              <Route path="/og-preview" element={<OGImagePreview />} />
-              <Route path="/blog" element={<BlogIndex />} />
-              <Route path="/blog/us-iran-crisis-doomsday-clock" element={<USIranCrisis />} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </main>
-          <Footer />
-        </div>
-      </BrowserRouter>
+      <AuthProvider>
+        <BrowserRouter>
+          <ScrollToTop />
+          <div className="min-h-screen bg-background text-foreground">
+            <ComicDisambiguation />
+            <Header />
+            <main className="pt-[calc(4rem+1.75rem)]">
+              <Routes>
+                <Route path="/" element={<HomePage />} />
+                <Route path="/og-preview" element={<OGImagePreview />} />
+                <Route path="/blog" element={<BlogIndex />} />
+                <Route path="/blog/us-iran-crisis-doomsday-clock" element={<USIranCrisis />} />
+                <Route path="/forum" element={<ForumPage />} />
+                <Route path="/forum/post/:id" element={<PostDetail />} />
+                <Route path="/verify-email" element={<VerifyEmail />} />
+                <Route path="/reset-password" element={<ResetPassword />} />
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+            </main>
+            <Footer />
+            <EmailPopup />
+          </div>
+        </BrowserRouter>
+      </AuthProvider>
     </ErrorBoundary>
   );
 }
