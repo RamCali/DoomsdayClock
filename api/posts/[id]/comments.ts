@@ -1,7 +1,38 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
-import { sql } from "../../_lib/db";
-import { setCors } from "../../_lib/cors";
-import { getUserFromRequest, requireAuth } from "../../_lib/auth";
+import { neon } from "@neondatabase/serverless";
+import jwt from "jsonwebtoken";
+
+const sql = neon(process.env.DATABASE_URL!);
+
+function setCors(res: VercelResponse) {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
+}
+
+interface JWTPayload { userId: number; email: string; }
+
+function getSecret(): string {
+  const secret = process.env.JWT_SECRET;
+  if (!secret) throw new Error("JWT_SECRET environment variable is not set");
+  return secret;
+}
+
+function verifyToken(token: string): JWTPayload {
+  return jwt.verify(token, getSecret()) as JWTPayload;
+}
+
+function getUserFromRequest(req: VercelRequest): JWTPayload | null {
+  const authHeader = req.headers.authorization;
+  if (!authHeader?.startsWith("Bearer ")) return null;
+  try { return verifyToken(authHeader.slice(7)); } catch { return null; }
+}
+
+function requireAuth(req: VercelRequest): JWTPayload {
+  const user = getUserFromRequest(req);
+  if (!user) { const err = new Error("Unauthorized") as Error & { status: number }; err.status = 401; throw err; }
+  return user;
+}
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   setCors(res);

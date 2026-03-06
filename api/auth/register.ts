@@ -1,10 +1,58 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
+import { neon } from "@neondatabase/serverless";
 import bcrypt from "bcryptjs";
+import jwt from "jsonwebtoken";
 import crypto from "crypto";
-import { sql } from "../_lib/db";
-import { setCors } from "../_lib/cors";
-import { signToken } from "../_lib/auth";
-import { sendVerificationEmail } from "../_lib/email";
+import { Resend } from "resend";
+
+const sql = neon(process.env.DATABASE_URL!);
+
+function setCors(res: VercelResponse) {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
+}
+
+interface JWTPayload { userId: number; email: string; }
+
+function getSecret(): string {
+  const secret = process.env.JWT_SECRET;
+  if (!secret) throw new Error("JWT_SECRET environment variable is not set");
+  return secret;
+}
+
+function signToken(payload: JWTPayload): string {
+  return jwt.sign(payload, getSecret(), { expiresIn: "7d" });
+}
+
+const FROM = "Doomsday Clock <noreply@doomsdayclock.net>";
+const FRONTEND_URL = process.env.FRONTEND_URL || "https://doomsdayclock.net";
+
+function getResend() {
+  if (!process.env.RESEND_API_KEY) throw new Error("RESEND_API_KEY not set");
+  return new Resend(process.env.RESEND_API_KEY);
+}
+
+async function sendVerificationEmail(email: string, token: string) {
+  const verifyUrl = `${FRONTEND_URL}/verify-email?token=${token}`;
+  await getResend().emails.send({
+    from: FROM,
+    to: email,
+    subject: "Verify your Doomsday Clock account",
+    html: `
+      <div style="font-family:sans-serif;max-width:480px;margin:0 auto;padding:32px;background:#111;color:#fff;border-radius:16px;">
+        <h2 style="margin:0 0 16px;font-size:24px;">Welcome to the Doomsday Clock Forum</h2>
+        <p style="color:#a1a1aa;margin:0 0 24px;line-height:1.6;">
+          Click below to verify your email and start sharing your ideas on how to save the world.
+        </p>
+        <a href="${verifyUrl}" style="display:inline-block;padding:12px 24px;background:#ea384c;color:#fff;border-radius:8px;text-decoration:none;font-weight:600;">
+          Verify Email
+        </a>
+        <p style="color:#71717a;font-size:12px;margin:24px 0 0;">This link expires in 24 hours.</p>
+      </div>
+    `,
+  });
+}
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   setCors(res);

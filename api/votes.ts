@@ -1,6 +1,7 @@
+import { neon } from "@neondatabase/serverless";
 import type { VercelRequest, VercelResponse } from "@vercel/node";
-import { sql } from "./_lib/db";
-import { setCors } from "./_lib/cors";
+
+const sql = neon(process.env.DATABASE_URL!);
 
 interface VoteResults {
   closer: number;
@@ -30,7 +31,10 @@ async function getResults(): Promise<VoteResults> {
 }
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
-  setCors(res);
+  // CORS headers
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
 
   if (req.method === "OPTIONS") {
     return res.status(200).end();

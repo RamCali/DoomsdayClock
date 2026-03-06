@@ -1,8 +1,46 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
+import { neon } from "@neondatabase/serverless";
 import crypto from "crypto";
-import { sql } from "../_lib/db";
-import { setCors } from "../_lib/cors";
-import { sendPasswordResetEmail } from "../_lib/email";
+import { Resend } from "resend";
+
+const sql = neon(process.env.DATABASE_URL!);
+
+function setCors(res: VercelResponse) {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
+}
+
+const FROM = "Doomsday Clock <noreply@doomsdayclock.net>";
+const FRONTEND_URL = process.env.FRONTEND_URL || "https://doomsdayclock.net";
+
+function getResend() {
+  if (!process.env.RESEND_API_KEY) throw new Error("RESEND_API_KEY not set");
+  return new Resend(process.env.RESEND_API_KEY);
+}
+
+async function sendPasswordResetEmail(email: string, token: string) {
+  const resetUrl = `${FRONTEND_URL}/reset-password?token=${token}`;
+  await getResend().emails.send({
+    from: FROM,
+    to: email,
+    subject: "Reset your Doomsday Clock password",
+    html: `
+      <div style="font-family:sans-serif;max-width:480px;margin:0 auto;padding:32px;background:#111;color:#fff;border-radius:16px;">
+        <h2 style="margin:0 0 16px;font-size:24px;">Password Reset</h2>
+        <p style="color:#a1a1aa;margin:0 0 24px;line-height:1.6;">
+          Click below to reset your password.
+        </p>
+        <a href="${resetUrl}" style="display:inline-block;padding:12px 24px;background:#1EAEDB;color:#fff;border-radius:8px;text-decoration:none;font-weight:600;">
+          Reset Password
+        </a>
+        <p style="color:#71717a;font-size:12px;margin:24px 0 0;">
+          This link expires in 1 hour. If you didn't request this, ignore this email.
+        </p>
+      </div>
+    `,
+  });
+}
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   setCors(res);
