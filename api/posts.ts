@@ -65,47 +65,79 @@ async function handleList(req: VercelRequest, res: VercelResponse) {
   const auth = getUserFromRequest(req);
   const userId = auth?.userId || 0;
 
-  let periodFilter = "";
-  if (sort === "top" && period === "day") {
-    periodFilter = "AND p.created_at > NOW() - INTERVAL '1 day'";
+  let posts;
+  let total;
+
+  if (sort === "new") {
+    posts = await sql`
+      SELECT p.id, p.title, p.body, p.vote_score, p.comment_count, p.created_at, p.updated_at,
+             u.display_name AS author_name, u.id AS author_id,
+             COALESCE(pv.value, 0)::int AS user_vote
+      FROM posts p
+      JOIN users u ON u.id = p.user_id
+      LEFT JOIN post_votes pv ON pv.post_id = p.id AND pv.user_id = ${userId}
+      ORDER BY p.created_at DESC
+      LIMIT ${limit} OFFSET ${offset}
+    `;
+    total = (await sql`SELECT COUNT(*)::int AS count FROM posts`)[0].count;
+  } else if (sort === "top" && period === "day") {
+    posts = await sql`
+      SELECT p.id, p.title, p.body, p.vote_score, p.comment_count, p.created_at, p.updated_at,
+             u.display_name AS author_name, u.id AS author_id,
+             COALESCE(pv.value, 0)::int AS user_vote
+      FROM posts p
+      JOIN users u ON u.id = p.user_id
+      LEFT JOIN post_votes pv ON pv.post_id = p.id AND pv.user_id = ${userId}
+      WHERE p.created_at > NOW() - INTERVAL '1 day'
+      ORDER BY p.vote_score DESC, p.created_at DESC
+      LIMIT ${limit} OFFSET ${offset}
+    `;
+    total = (await sql`SELECT COUNT(*)::int AS count FROM posts WHERE created_at > NOW() - INTERVAL '1 day'`)[0].count;
   } else if (sort === "top" && period === "week") {
-    periodFilter = "AND p.created_at > NOW() - INTERVAL '7 days'";
+    posts = await sql`
+      SELECT p.id, p.title, p.body, p.vote_score, p.comment_count, p.created_at, p.updated_at,
+             u.display_name AS author_name, u.id AS author_id,
+             COALESCE(pv.value, 0)::int AS user_vote
+      FROM posts p
+      JOIN users u ON u.id = p.user_id
+      LEFT JOIN post_votes pv ON pv.post_id = p.id AND pv.user_id = ${userId}
+      WHERE p.created_at > NOW() - INTERVAL '7 days'
+      ORDER BY p.vote_score DESC, p.created_at DESC
+      LIMIT ${limit} OFFSET ${offset}
+    `;
+    total = (await sql`SELECT COUNT(*)::int AS count FROM posts WHERE created_at > NOW() - INTERVAL '7 days'`)[0].count;
+  } else if (sort === "top") {
+    posts = await sql`
+      SELECT p.id, p.title, p.body, p.vote_score, p.comment_count, p.created_at, p.updated_at,
+             u.display_name AS author_name, u.id AS author_id,
+             COALESCE(pv.value, 0)::int AS user_vote
+      FROM posts p
+      JOIN users u ON u.id = p.user_id
+      LEFT JOIN post_votes pv ON pv.post_id = p.id AND pv.user_id = ${userId}
+      ORDER BY p.vote_score DESC, p.created_at DESC
+      LIMIT ${limit} OFFSET ${offset}
+    `;
+    total = (await sql`SELECT COUNT(*)::int AS count FROM posts`)[0].count;
+  } else {
+    // hot (default)
+    posts = await sql`
+      SELECT p.id, p.title, p.body, p.vote_score, p.comment_count, p.created_at, p.updated_at,
+             u.display_name AS author_name, u.id AS author_id,
+             COALESCE(pv.value, 0)::int AS user_vote
+      FROM posts p
+      JOIN users u ON u.id = p.user_id
+      LEFT JOIN post_votes pv ON pv.post_id = p.id AND pv.user_id = ${userId}
+      ORDER BY (p.vote_score::FLOAT / POWER(EXTRACT(EPOCH FROM (NOW() - p.created_at)) / 3600.0 + 2.0, 1.5)) DESC
+      LIMIT ${limit} OFFSET ${offset}
+    `;
+    total = (await sql`SELECT COUNT(*)::int AS count FROM posts`)[0].count;
   }
-
-  let orderBy: string;
-  switch (sort) {
-    case "new":
-      orderBy = "p.created_at DESC";
-      break;
-    case "top":
-      orderBy = "p.vote_score DESC, p.created_at DESC";
-      break;
-    case "hot":
-    default:
-      orderBy = "(p.vote_score::FLOAT / POWER(EXTRACT(EPOCH FROM (NOW() - p.created_at)) / 3600.0 + 2.0, 1.5)) DESC";
-      break;
-  }
-
-  // Build query with raw SQL since we need dynamic ORDER BY
-  const posts = await sql(`
-    SELECT p.id, p.title, p.body, p.vote_score, p.comment_count, p.created_at, p.updated_at,
-           u.display_name AS author_name, u.id AS author_id,
-           COALESCE(pv.value, 0)::int AS user_vote
-    FROM posts p
-    JOIN users u ON u.id = p.user_id
-    LEFT JOIN post_votes pv ON pv.post_id = p.id AND pv.user_id = $1
-    WHERE 1=1 ${periodFilter}
-    ORDER BY ${orderBy}
-    LIMIT $2 OFFSET $3
-  `, [userId, limit, offset]);
-
-  const [{ count }] = await sql(`SELECT COUNT(*)::int AS count FROM posts WHERE 1=1 ${periodFilter}`);
 
   return res.status(200).json({
     posts,
-    total: count,
+    total,
     page,
-    totalPages: Math.ceil(count / limit),
+    totalPages: Math.ceil(total / limit),
   });
 }
 
