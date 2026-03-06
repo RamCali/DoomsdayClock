@@ -188,7 +188,7 @@ export function AuthModal({ isOpen, onClose, initialTab = "login" }: AuthModalPr
                   <>
                     {/* Login Form */}
                     {tab === "login" && (
-                      <form onSubmit={handleLogin} className="space-y-4">
+                      <form onSubmit={handleLogin} noValidate className="space-y-4">
                         <InputField
                           icon={<Mail className="w-4 h-4" />}
                           type="email"
@@ -227,7 +227,7 @@ export function AuthModal({ isOpen, onClose, initialTab = "login" }: AuthModalPr
 
                     {/* Register Form */}
                     {tab === "register" && (
-                      <form onSubmit={handleRegister} className="space-y-4">
+                      <form onSubmit={handleRegister} noValidate className="space-y-4">
                         <InputField
                           icon={<User className="w-4 h-4" />}
                           type="text"
@@ -272,7 +272,7 @@ export function AuthModal({ isOpen, onClose, initialTab = "login" }: AuthModalPr
 
                     {/* Forgot Password Form */}
                     {tab === "forgot" && (
-                      <form onSubmit={handleForgotPassword} className="space-y-4">
+                      <form onSubmit={handleForgotPassword} noValidate className="space-y-4">
                         <InputField
                           icon={<Mail className="w-4 h-4" />}
                           type="email"
