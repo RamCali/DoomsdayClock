@@ -252,6 +252,7 @@ export function AuthModal({ isOpen, onClose, initialTab = "login" }: AuthModalPr
                           onToggle={() => setShowPassword(!showPassword)}
                           disabled={loading}
                           placeholder="Password (8+ characters)"
+                          autoComplete="new-password"
                         />
 
                         {error && <ErrorMessage message={error} />}
@@ -352,6 +353,7 @@ function PasswordField({
   onToggle,
   disabled,
   placeholder = "Password",
+  autoComplete = "current-password",
 }: {
   value: string;
   onChange: (v: string) => void;
@@ -359,6 +361,7 @@ function PasswordField({
   onToggle: () => void;
   disabled: boolean;
   placeholder?: string;
+  autoComplete?: string;
 }) {
   return (
     <div className="relative">
@@ -371,6 +374,7 @@ function PasswordField({
         value={value}
         onChange={(e) => onChange(e.target.value)}
         disabled={disabled}
+        autoComplete={autoComplete}
         className="w-full pl-10 pr-10 py-3 bg-zinc-800/50 border border-white/10 rounded-xl text-white text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-doom/50 focus:border-doom/50 transition-all disabled:opacity-50"
       />
       <button
