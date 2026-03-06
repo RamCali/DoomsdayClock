@@ -1,13 +1,15 @@
 import { useState, useEffect } from "react";
-import { Users, Eye, TrendingUp, Globe } from "lucide-react";
+import { Users, Eye, TrendingUp, Globe, Lightbulb } from "lucide-react";
+import { Link } from "react-router-dom";
 
 interface VisitorStats {
   currentViewers: number;
   todayVisitors: number;
   totalPredictions: number;
+  totalIdeas: number;
 }
 
-function generateRealisticStats(realTotal: number): VisitorStats {
+function generateRealisticStats(realTotal: number, ideaCount: number): VisitorStats {
   const hour = new Date().getHours();
   const baseViewers = hour >= 9 && hour <= 21 ? 45 : 15;
   const variance = Math.floor(Math.random() * 20) - 10;
@@ -16,32 +18,33 @@ function generateRealisticStats(realTotal: number): VisitorStats {
     currentViewers: Math.max(5, baseViewers + variance),
     todayVisitors: 1247 + Math.floor(Math.random() * 200),
     totalPredictions: realTotal + Math.floor(Math.random() * 5),
+    totalIdeas: ideaCount,
   };
 }
 
 export function SocialProof() {
-  const [stats, setStats] = useState<VisitorStats>({ currentViewers: 0, todayVisitors: 0, totalPredictions: 0 });
+  const [stats, setStats] = useState<VisitorStats>({ currentViewers: 0, todayVisitors: 0, totalPredictions: 0, totalIdeas: 0 });
   const [isVisible, setIsVisible] = useState(false);
   const [recentActivity, setRecentActivity] = useState<string | null>(null);
 
   useEffect(() => {
     let realTotal = 0;
+    let ideaCount = 0;
 
-    // Fetch real prediction count from API
-    fetch("/api/votes")
-      .then((res) => res.json())
-      .then((data) => {
-        realTotal = data.total || 0;
-        setStats(generateRealisticStats(realTotal));
-      })
-      .catch(() => {
-        setStats(generateRealisticStats(0));
-      });
+    // Fetch real prediction count and forum post count
+    Promise.all([
+      fetch("/api/votes").then((res) => res.ok ? res.json() : null).catch(() => null),
+      fetch("/api/posts?sort=new&limit=1").then((res) => res.ok ? res.json() : null).catch(() => null),
+    ]).then(([votesData, postsData]) => {
+      realTotal = votesData?.total || 0;
+      ideaCount = postsData?.total || 0;
+      setStats(generateRealisticStats(realTotal, ideaCount));
+    });
 
     const showTimer = setTimeout(() => setIsVisible(true), 1500);
 
     const statsInterval = setInterval(() => {
-      setStats(generateRealisticStats(realTotal));
+      setStats(generateRealisticStats(realTotal, ideaCount));
     }, 30000);
 
     const activities = [
@@ -110,6 +113,17 @@ export function SocialProof() {
                 {stats.totalPredictions > 0 ? `${stats.totalPredictions.toLocaleString()} predictions` : ""}
               </span>
             </div>
+            {stats.totalIdeas > 0 && (
+              <>
+                <div className="w-px h-4 bg-white/10 hidden sm:block" />
+                <Link to="/forum" className="hidden sm:flex items-center gap-2 hover:opacity-80 transition-opacity">
+                  <Lightbulb className="w-4 h-4 text-yellow-400" />
+                  <span className="text-sm text-gray-400">
+                    {stats.totalIdeas} idea{stats.totalIdeas !== 1 ? "s" : ""} shared
+                  </span>
+                </Link>
+              </>
+            )}
           </div>
         </div>
       </div>
@@ -119,23 +133,23 @@ export function SocialProof() {
 
 // Inline stats component for embedding in sections
 export function InlineSocialStats() {
-  const [stats, setStats] = useState<VisitorStats>({ currentViewers: 0, todayVisitors: 0, totalPredictions: 0 });
+  const [stats, setStats] = useState<VisitorStats>({ currentViewers: 0, todayVisitors: 0, totalPredictions: 0, totalIdeas: 0 });
 
   useEffect(() => {
     let realTotal = 0;
+    let ideaCount = 0;
 
-    fetch("/api/votes")
-      .then((res) => res.json())
-      .then((data) => {
-        realTotal = data.total || 0;
-        setStats(generateRealisticStats(realTotal));
-      })
-      .catch(() => {
-        setStats(generateRealisticStats(0));
-      });
+    Promise.all([
+      fetch("/api/votes").then((res) => res.ok ? res.json() : null).catch(() => null),
+      fetch("/api/posts?sort=new&limit=1").then((res) => res.ok ? res.json() : null).catch(() => null),
+    ]).then(([votesData, postsData]) => {
+      realTotal = votesData?.total || 0;
+      ideaCount = postsData?.total || 0;
+      setStats(generateRealisticStats(realTotal, ideaCount));
+    });
 
     const interval = setInterval(() => {
-      setStats(generateRealisticStats(realTotal));
+      setStats(generateRealisticStats(realTotal, ideaCount));
     }, 30000);
     return () => clearInterval(interval);
   }, []);
