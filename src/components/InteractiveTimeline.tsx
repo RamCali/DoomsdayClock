@@ -4,10 +4,12 @@ import { cn } from "../lib/utils";
 import { Play, Pause, SkipBack, SkipForward } from "lucide-react";
 
 export function InteractiveTimeline() {
-  const [currentIndex, setCurrentIndex] = useState(clockHistory.length - 1);
+  const [currentIndex, setCurrentIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isDragging, setIsDragging] = useState(false);
   const trackRef = useRef<HTMLDivElement>(null);
+  const sectionRef = useRef<HTMLElement>(null);
+  const hasAutoPlayed = useRef(false);
   const playIntervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   const currentEvent = clockHistory[currentIndex];
@@ -75,6 +77,24 @@ export function InteractiveTimeline() {
     }
   };
 
+  // Auto-play when component scrolls into view
+  useEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !hasAutoPlayed.current) {
+          hasAutoPlayed.current = true;
+          setCurrentIndex(0);
+          setIsPlaying(true);
+        }
+      },
+      { threshold: 0.3 }
+    );
+    observer.observe(section);
+    return () => observer.disconnect();
+  }, []);
+
   useEffect(() => {
     const handleGlobalMouseUp = () => setIsDragging(false);
     window.addEventListener("mouseup", handleGlobalMouseUp);
@@ -86,7 +106,7 @@ export function InteractiveTimeline() {
   }, []);
 
   return (
-    <section className="py-12 sm:py-16" id="explore">
+    <section ref={sectionRef} className="py-12 sm:py-16" id="explore">
       <div className="container-wide">
         <div className="text-center mb-8 sm:mb-12">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight mb-4">
