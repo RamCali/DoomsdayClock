@@ -1,7 +1,11 @@
 import jwt from "jsonwebtoken";
 import type { VercelRequest } from "@vercel/node";
 
-const JWT_SECRET = process.env.JWT_SECRET!;
+function getSecret(): string {
+  const secret = process.env.JWT_SECRET;
+  if (!secret) throw new Error("JWT_SECRET environment variable is not set");
+  return secret;
+}
 
 export interface JWTPayload {
   userId: number;
@@ -9,11 +13,11 @@ export interface JWTPayload {
 }
 
 export function signToken(payload: JWTPayload): string {
-  return jwt.sign(payload, JWT_SECRET, { expiresIn: "7d" });
+  return jwt.sign(payload, getSecret(), { expiresIn: "7d" });
 }
 
 export function verifyToken(token: string): JWTPayload {
-  return jwt.verify(token, JWT_SECRET) as JWTPayload;
+  return jwt.verify(token, getSecret()) as JWTPayload;
 }
 
 export function getUserFromRequest(req: VercelRequest): JWTPayload | null {

@@ -1,12 +1,18 @@
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
 const FROM = "Doomsday Clock <noreply@doomsdayclock.net>";
 const FRONTEND_URL = process.env.FRONTEND_URL || "https://doomsdayclock.net";
 
+function getResend() {
+  if (!process.env.RESEND_API_KEY) {
+    throw new Error("RESEND_API_KEY environment variable is not set");
+  }
+  return new Resend(process.env.RESEND_API_KEY);
+}
+
 export async function sendVerificationEmail(email: string, token: string) {
   const verifyUrl = `${FRONTEND_URL}/verify-email?token=${token}`;
-  await resend.emails.send({
+  await getResend().emails.send({
     from: FROM,
     to: email,
     subject: "Verify your Doomsday Clock account",
@@ -27,7 +33,7 @@ export async function sendVerificationEmail(email: string, token: string) {
 
 export async function sendPasswordResetEmail(email: string, token: string) {
   const resetUrl = `${FRONTEND_URL}/reset-password?token=${token}`;
-  await resend.emails.send({
+  await getResend().emails.send({
     from: FROM,
     to: email,
     subject: "Reset your Doomsday Clock password",
