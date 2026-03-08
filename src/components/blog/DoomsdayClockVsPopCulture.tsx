@@ -459,6 +459,15 @@ export function DoomsdayClockVsPopCulture() {
           </div>
         </div>
 
+        <RelatedArticles
+          currentSlug="doomsday-clock-comic-vs-real"
+          slugs={[
+            "doomsday-clock-history-timeline",
+            "what-happens-doomsday-clock-midnight",
+            "will-the-world-end-doomsday-clock",
+          ]}
+        />
+
         {/* Back link */}
         <div className="mt-8 text-center">
           <Link

@@ -624,6 +624,15 @@ export function WhoControlsClock() {
           </div>
         </div>
 
+        <RelatedArticles
+          currentSlug="who-controls-doomsday-clock"
+          slugs={[
+            "doomsday-clock-history-timeline",
+            "doomsday-clock-2026",
+            "what-happens-doomsday-clock-midnight",
+          ]}
+        />
+
         {/* Back link */}
         <div className="mt-8 text-center">
           <Link

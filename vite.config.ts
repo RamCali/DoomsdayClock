@@ -41,7 +41,9 @@ export default defineConfig({
         ],
       },
       workbox: {
-        globPatterns: ['**/*.{js,css,html,ico,png,svg,woff2}'],
+        globPatterns: ['**/*.{js,css,html,ico,svg,woff2}', '*.png', 'pwa-*.png'],
+        globIgnores: ['**/DoomsDayClock.net-original.png'],
+        maximumFileSizeToCacheInBytes: 3 * 1024 * 1024,
         navigateFallback: 'index.html',
         navigateFallbackDenylist: [/^\/api\//, /^\/embed\.html/],
         runtimeCaching: [

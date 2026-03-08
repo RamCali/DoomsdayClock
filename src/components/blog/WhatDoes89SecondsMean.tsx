@@ -460,6 +460,15 @@ export function WhatDoes89SecondsMean() {
           </Link>
         </div>
 
+        <RelatedArticles
+          currentSlug="what-does-89-seconds-to-midnight-mean"
+          slugs={[
+            "doomsday-clock-2026",
+            "doomsday-clock-history-timeline",
+            "will-the-world-end-doomsday-clock",
+          ]}
+        />
+
         {/* Back link */}
         <div className="mt-8 text-center">
           <Link

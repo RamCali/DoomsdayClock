@@ -740,6 +740,15 @@ export function WhatHappensAtMidnight() {
           </div>
         </div>
 
+        <RelatedArticles
+          currentSlug="what-happens-doomsday-clock-midnight"
+          slugs={[
+            "will-the-world-end-doomsday-clock",
+            "doomsday-clock-history-timeline",
+            "doomsday-clock-2027-prediction",
+          ]}
+        />
+
         {/* Back link */}
         <div className="mt-8 text-center">
           <Link

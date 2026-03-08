@@ -535,6 +535,15 @@ export function WillTheWorldEnd() {
           </Link>
         </div>
 
+        <RelatedArticles
+          currentSlug="will-the-world-end-doomsday-clock"
+          slugs={[
+            "what-happens-doomsday-clock-midnight",
+            "doomsday-clock-2027-prediction",
+            "who-controls-doomsday-clock",
+          ]}
+        />
+
         {/* Back link */}
         <div className="mt-8 text-center">
           <Link

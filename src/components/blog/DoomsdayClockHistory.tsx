@@ -829,6 +829,15 @@ export function DoomsdayClockHistory() {
           </Link>
         </div>
 
+        <RelatedArticles
+          currentSlug="doomsday-clock-history-timeline"
+          slugs={[
+            "doomsday-clock-2026",
+            "who-controls-doomsday-clock",
+            "doomsday-clock-comic-vs-real",
+          ]}
+        />
+
         {/* Back link */}
         <div className="mt-8 text-center">
           <Link
