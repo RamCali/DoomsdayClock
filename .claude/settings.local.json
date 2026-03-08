@@ -13,7 +13,25 @@
       "Bash(ls:*)",
       "Bash(git push:*)",
       "Bash(git add:*)",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "Bash(cd:*)",
+      "Bash(uuidgen:*)",
+      "Bash(chmod:*)",
+      "Bash(./scripts/indexnow-submit.sh:*)",
+      "Bash(nslookup:*)",
+      "Bash(curl:*)",
+      "Bash(npm run indexnow:*)",
+      "WebFetch(domain:thebulletin.org)",
+      "WebFetch(domain:resend.com)",
+      "WebFetch(domain:docs.anthropic.com)",
+      "WebFetch(domain:llmstxt.org)",
+      "Bash(cat:*)",
+      "Bash(npx tsc:*)",
+      "Bash(git status:*)",
+      "Bash(npx vite build)",
+      "Bash(find:*)",
+      "Bash(git -C \"/Users/RamG/Downloads/Projects \\(DND\\)/DoomsdayClock\" log --oneline -15)",
+      "Bash(npx vercel:*)"
     ]
   }
 }
