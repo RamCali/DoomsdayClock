@@ -5,7 +5,17 @@ const SITE_URL = "https://doomsdayclock.net";
 
 const BLOG_POSTS = [
   { slug: "us-iran-crisis-doomsday-clock", lastmod: "2026-02-28" },
+  { slug: "doomsday-clock-history-timeline", lastmod: "2026-03-07" },
+  { slug: "doomsday-clock-2026", lastmod: "2026-03-07" },
+  { slug: "doomsday-clock-2027-prediction", lastmod: "2026-03-07" },
+  { slug: "doomsday-clock-comic-vs-real", lastmod: "2026-03-07" },
+  { slug: "what-happens-doomsday-clock-midnight", lastmod: "2026-03-07" },
+  { slug: "who-controls-doomsday-clock", lastmod: "2026-03-07" },
+  { slug: "what-does-89-seconds-to-midnight-mean", lastmod: "2026-03-07" },
+  { slug: "will-the-world-end-doomsday-clock", lastmod: "2026-03-07" },
 ];
+
+const YEAR_PAGES = [2015, 2017, 2018, 2020, 2021, 2022, 2023, 2024, 2025, 2026];
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method !== "GET") return res.status(405).end();
@@ -62,6 +72,14 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
   </url>
+
+  <!-- Year Pages -->
+${YEAR_PAGES.map(y => `  <url>
+    <loc>${SITE_URL}/doomsday-clock-${y}</loc>
+    <lastmod>${today}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>`).join("\n")}
 
   <!-- Blog -->
   <url>

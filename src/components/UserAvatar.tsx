@@ -43,6 +43,7 @@ export function UserAvatar({ name, avatarUrl, size = "md", className }: UserAvat
       <img
         src={avatarUrl}
         alt={name}
+        loading="lazy"
         className={cn("rounded-full object-cover", sizeClasses[size], className)}
       />
     );

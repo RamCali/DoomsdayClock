@@ -15,11 +15,92 @@ interface BlogPost {
 
 const posts: BlogPost[] = [
   {
+    slug: "doomsday-clock-history-timeline",
+    title:
+      "Doomsday Clock History: Every Change from 1947 to 2026",
+    excerpt:
+      "The complete timeline of all 28 Doomsday Clock changes. From its creation at 7 minutes in 1947 to the current record of 85 seconds to midnight.",
+    date: "March 7, 2026",
+    readTime: "12 min read",
+    category: "explainer",
+    featured: true,
+  },
+  {
+    slug: "doomsday-clock-2026",
+    title:
+      "Doomsday Clock 2026: What Changed and Why",
+    excerpt:
+      "The Bulletin moved the clock from 89 to 85 seconds in February 2026. A deep dive on what drove the change and what 85 seconds means in context.",
+    date: "March 7, 2026",
+    readTime: "8 min read",
+    category: "update",
+  },
+  {
+    slug: "doomsday-clock-2027-prediction",
+    title:
+      "Doomsday Clock 2027 Prediction: What Could Move the Clock?",
+    excerpt:
+      "Scenario analysis of what could push the Doomsday Clock forward or backward in 2027. Covering nuclear risks, climate, AI, and geopolitical factors.",
+    date: "March 7, 2026",
+    readTime: "10 min read",
+    category: "analysis",
+  },
+  {
+    slug: "doomsday-clock-comic-vs-real",
+    title:
+      "Doomsday Clock vs. Pop Culture: The Comic, The Symbol, The Movement",
+    excerpt:
+      "The real Doomsday Clock vs. the DC Comics series \u2014 what\u2019s the difference? How Watchmen borrowed nuclear anxiety, and why the real clock matters more.",
+    date: "March 7, 2026",
+    readTime: "6 min read",
+    category: "explainer",
+  },
+  {
+    slug: "what-does-89-seconds-to-midnight-mean",
+    title:
+      "What Does 89 Seconds to Midnight Actually Mean?",
+    excerpt:
+      "The significance of the Doomsday Clock's 2025 setting explained. What 89 seconds means, how it compares to 90 seconds, and what the current 85-second record means for humanity.",
+    date: "March 7, 2026",
+    readTime: "8 min read",
+    category: "explainer",
+  },
+  {
+    slug: "will-the-world-end-doomsday-clock",
+    title:
+      "Will the World End? What the Doomsday Clock Actually Predicts",
+    excerpt:
+      "No, the world is not ending in 2026. What the Doomsday Clock actually predicts, the difference between the climate clock and the Doomsday Clock, and what science says about humanity's future.",
+    date: "March 7, 2026",
+    readTime: "9 min read",
+    category: "explainer",
+  },
+  {
+    slug: "what-happens-doomsday-clock-midnight",
+    title:
+      "What Happens When the Doomsday Clock Reaches Midnight?",
+    excerpt:
+      "Midnight represents global catastrophe. But the clock has never reached it. What midnight symbolizes, the near-misses that almost brought it, and why it's a warning, not a prediction.",
+    date: "March 7, 2026",
+    readTime: "7 min read",
+    category: "explainer",
+  },
+  {
+    slug: "who-controls-doomsday-clock",
+    title:
+      "Who Controls the Doomsday Clock? Inside the Bulletin of the Atomic Scientists",
+    excerpt:
+      "The Science and Security Board of the Bulletin of the Atomic Scientists sets the clock. Meet the Nobel Laureates and experts who decide how close we are to midnight.",
+    date: "March 7, 2026",
+    readTime: "6 min read",
+    category: "explainer",
+  },
+  {
     slug: "us-iran-crisis-doomsday-clock",
     title:
       "Operation Epic Fury: How US-Iran Strikes Could Push the Doomsday Clock to the Brink",
     excerpt:
-      "The US and Israel have launched coordinated military strikes against Iran. We analyze how this major escalation could affect the Doomsday Clock's position.",
+      "The US and Israel have launched coordinated military strikes against Iran. We analyze how this major escalation could affect the Doomsday Clock\u2019s position.",
     date: "February 28, 2026",
     readTime: "8 min read",
     category: "analysis",

@@ -1,5 +1,5 @@
 import { faqData } from "./FAQ";
-import { currentTime, clockHistory } from "../data/clockHistory";
+import { currentTime, clockHistory, ANNOUNCEMENT_DATE_ISO } from "../data/clockHistory";
 
 export function SEOHead() {
   const title = "Doomsday Clock Today | Current Time & Complete Timeline (2026)";
@@ -125,7 +125,7 @@ export function SEOHead() {
       <meta name="description" content={description} />
       <meta
         name="keywords"
-        content="doomsday clock, doomsday clock time, doomsday clock 2026, what time is the doomsday clock, doomsday clock history, bulletin of atomic scientists, nuclear threat, 85 seconds to midnight, climate change, midnight"
+        content="doomsday clock, doomsday clock time, doomsday clock 2026, doomsday clock 2025, doomsday clock 2024, doomsday clock 2023, doomsday clock 2022, doomsday clock 2021, doomsday clock 2020, doomsday clock 2015, what time is the doomsday clock, what is the current doomsday clock, doomsday clock history, bulletin of atomic scientists, nuclear threat, 85 seconds to midnight, 89 seconds to midnight, 90 seconds to midnight, what does 89 seconds to midnight mean, what happens when doomsday clock reaches midnight, farthest from midnight doomsday clock, 7 minutes to midnight, does the doomsday clock actually mean anything, will the world end in 2026, climate clock, will the world survive 2050, doomsday clock meaning, climate change, midnight, doomsday clock 2026 prediction, doomsday clock 2026 date"
       />
       <meta name="robots" content="index, follow" />
       <meta name="language" content="English" />
@@ -399,8 +399,8 @@ export function injectSEO() {
       "@context": "https://schema.org",
       "@type": "Event",
       name: "2027 Doomsday Clock Announcement",
-      description: "The Bulletin of the Atomic Scientists will announce the 2027 Doomsday Clock time, revealing how close humanity is to global catastrophe.",
-      startDate: "2027-01-28T10:00:00-06:00",
+      description: "The Bulletin of the Atomic Scientists will announce the 2027 Doomsday Clock time and updated nuclear threat assessment, revealing how close humanity is to global catastrophe. Watch the live doomsday clock 2027 update.",
+      startDate: ANNOUNCEMENT_DATE_ISO,
       endDate: "2027-01-28T11:00:00-06:00",
       eventStatus: "https://schema.org/EventScheduled",
       eventAttendanceMode: "https://schema.org/OnlineEventAttendanceMode",
@@ -412,6 +412,15 @@ export function injectSEO() {
         "@type": "Organization",
         name: "Bulletin of the Atomic Scientists",
         url: "https://thebulletin.org",
+      },
+      performer: {
+        "@type": "Organization",
+        name: "Bulletin of the Atomic Scientists Science and Security Board",
+      },
+      eventSchedule: {
+        "@type": "Schedule",
+        repeatFrequency: "P1Y",
+        byMonth: 1,
       },
       image: `${url}/og-image-2026.png`,
       offers: {

@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import { Clock, Bell, Calendar, AlertTriangle } from "lucide-react";
+import { ANNOUNCEMENT_DATE_ISO } from "../data/clockHistory";
 
-// Target date: January 2027 at 10:00 AM EST (typical announcement time)
-const ANNOUNCEMENT_DATE = new Date("2027-01-27T10:00:00-05:00");
+// Target date: January 28, 2027 at 10:00 AM CST (Bulletin HQ in Chicago)
+const ANNOUNCEMENT_DATE = new Date(ANNOUNCEMENT_DATE_ISO);
 
 interface TimeLeft {
   days: number;
@@ -110,7 +111,7 @@ export function CountdownTimer() {
                   </h2>
                   <div className="flex items-center gap-2 text-sm text-muted-foreground">
                     <Calendar className="w-4 h-4" />
-                    <span>January 27, 2027 at 10:00 AM EST</span>
+                    <span>January 28, 2027 at 10:00 AM CST</span>
                   </div>
                 </div>
               </div>

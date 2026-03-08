@@ -7,6 +7,7 @@ Allow: /
 
 # Sitemap location
 Sitemap: https://doomsdayclock.net/sitemap.xml
+Sitemap: https://doomsdayclock.net/news-sitemap.xml
 
 # LLMs.txt for AI crawlers (https://llmstxt.org)
 # Concise: https://doomsdayclock.net/llms.txt

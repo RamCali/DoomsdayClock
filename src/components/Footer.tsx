@@ -15,6 +15,7 @@ export function Footer() {
               <img
                 src="/DoomsDayClock.net.svg"
                 alt="Doomsday Clock"
+                loading="lazy"
                 className="h-12 sm:h-14 w-auto group-hover:scale-105 transition-transform"
               />
             </a>

@@ -7,6 +7,11 @@ interface MetaTagOptions {
   path: string;
   type?: string;
   image?: string;
+  newsKeywords?: string;
+  publishedTime?: string;
+  modifiedTime?: string;
+  section?: string;
+  author?: string;
 }
 
 function setMeta(nameOrProperty: string, content: string) {
@@ -31,7 +36,7 @@ function setCanonical(url: string) {
   link.href = url;
 }
 
-export function updateMetaTags({ title, description, path, type = "article", image = DEFAULT_OG_IMAGE }: MetaTagOptions) {
+export function updateMetaTags({ title, description, path, type = "article", image = DEFAULT_OG_IMAGE, newsKeywords, publishedTime, modifiedTime, section, author }: MetaTagOptions) {
   const fullUrl = `${SITE_URL}${path}`;
 
   document.title = title;
@@ -46,6 +51,12 @@ export function updateMetaTags({ title, description, path, type = "article", ima
   setMeta("twitter:image", image);
   setMeta("twitter:card", "summary_large_image");
   setCanonical(fullUrl);
+
+  if (newsKeywords) setMeta("news_keywords", newsKeywords);
+  if (publishedTime) setMeta("article:published_time", publishedTime);
+  if (modifiedTime) setMeta("article:modified_time", modifiedTime);
+  if (section) setMeta("article:section", section);
+  if (author) setMeta("article:author", author);
 }
 
 export function resetToDefaults() {

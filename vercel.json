@@ -1,7 +1,9 @@
 {
   "rewrites": [
     { "source": "/sitemap.xml", "destination": "/api/sitemap" },
+    { "source": "/news-sitemap.xml", "destination": "/api/news-sitemap" },
+    { "source": "/embed/clock", "destination": "/embed.html" },
     { "source": "/api/(.*)", "destination": "/api/$1" },
-    { "source": "/((?!api/).*)", "destination": "/index.html" }
+    { "source": "/((?!api/|embed/).*)", "destination": "/index.html" }
   ]
 }

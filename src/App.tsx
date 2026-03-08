@@ -25,6 +25,15 @@ import "./index.css";
 // Lazy-loaded route components (code splitting)
 const BlogIndex = lazy(() => import("./components/blog/BlogIndex").then(m => ({ default: m.BlogIndex })));
 const USIranCrisis = lazy(() => import("./components/blog/USIranCrisis").then(m => ({ default: m.USIranCrisis })));
+const DoomsdayClockHistory = lazy(() => import("./components/blog/DoomsdayClockHistory").then(m => ({ default: m.DoomsdayClockHistory })));
+const DoomsdayClock2026 = lazy(() => import("./components/blog/DoomsdayClock2026").then(m => ({ default: m.DoomsdayClock2026 })));
+const DoomsdayClock2027Prediction = lazy(() => import("./components/blog/DoomsdayClock2027Prediction").then(m => ({ default: m.DoomsdayClock2027Prediction })));
+const DoomsdayClockVsPopCulture = lazy(() => import("./components/blog/DoomsdayClockVsPopCulture").then(m => ({ default: m.DoomsdayClockVsPopCulture })));
+const WhatHappensAtMidnight = lazy(() => import("./components/blog/WhatHappensAtMidnight").then(m => ({ default: m.WhatHappensAtMidnight })));
+const WhoControlsClock = lazy(() => import("./components/blog/WhoControlsClock").then(m => ({ default: m.WhoControlsClock })));
+const WhatDoes89SecondsMean = lazy(() => import("./components/blog/WhatDoes89SecondsMean").then(m => ({ default: m.WhatDoes89SecondsMean })));
+const WillTheWorldEnd = lazy(() => import("./components/blog/WillTheWorldEnd").then(m => ({ default: m.WillTheWorldEnd })));
+const EmbedCodeGenerator = lazy(() => import("./components/EmbedCodeGenerator").then(m => ({ default: m.EmbedCodeGenerator })));
 const ForumPage = lazy(() => import("./components/forum/ForumPage").then(m => ({ default: m.ForumPage })));
 const PostDetail = lazy(() => import("./components/forum/PostDetail").then(m => ({ default: m.PostDetail })));
 const VerifyEmail = lazy(() => import("./components/auth/VerifyEmail").then(m => ({ default: m.VerifyEmail })));
@@ -98,6 +107,15 @@ function App() {
                   <Route path="/og-preview" element={<OGImagePreview />} />
                   <Route path="/blog" element={<BlogIndex />} />
                   <Route path="/blog/us-iran-crisis-doomsday-clock" element={<USIranCrisis />} />
+                  <Route path="/blog/doomsday-clock-history-timeline" element={<DoomsdayClockHistory />} />
+                  <Route path="/blog/doomsday-clock-2026" element={<DoomsdayClock2026 />} />
+                  <Route path="/blog/doomsday-clock-2027-prediction" element={<DoomsdayClock2027Prediction />} />
+                  <Route path="/blog/doomsday-clock-comic-vs-real" element={<DoomsdayClockVsPopCulture />} />
+                  <Route path="/blog/what-happens-doomsday-clock-midnight" element={<WhatHappensAtMidnight />} />
+                  <Route path="/blog/who-controls-doomsday-clock" element={<WhoControlsClock />} />
+                  <Route path="/blog/what-does-89-seconds-to-midnight-mean" element={<WhatDoes89SecondsMean />} />
+                  <Route path="/blog/will-the-world-end-doomsday-clock" element={<WillTheWorldEnd />} />
+                  <Route path="/embed" element={<EmbedCodeGenerator />} />
                   <Route path="/forum" element={<ForumPage />} />
                   <Route path="/forum/post/:id" element={<PostDetail />} />
                   <Route path="/verify-email" element={<VerifyEmail />} />

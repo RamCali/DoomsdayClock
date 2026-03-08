@@ -242,6 +242,9 @@ export const clockHistory: ClockEvent[] = [
   }
 ];
 
+// Shared constant — used by CountdownTimer, SEO Event schema, and blog posts
+export const ANNOUNCEMENT_DATE_ISO = "2027-01-28T10:00:00-06:00";
+
 export const currentTime = {
   seconds: 85,
   display: "85 seconds",
