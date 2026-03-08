@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { ArrowLeft, Clock, AlertTriangle, Calendar } from "lucide-react";
 import { currentTime } from "../../data/clockHistory";
 import { updateMetaTags, resetToDefaults } from "../../lib/seo";
+import { RelatedArticles } from "./RelatedArticles";
 
 export function USIranCrisis() {
   useEffect(() => {
@@ -376,6 +377,15 @@ export function USIranCrisis() {
             Try the What If Simulator
           </Link>
         </div>
+
+        <RelatedArticles
+          currentSlug="us-iran-crisis-doomsday-clock"
+          slugs={[
+            "doomsday-clock-2026",
+            "doomsday-clock-history-timeline",
+            "what-happens-doomsday-clock-midnight",
+          ]}
+        />
 
         {/* Back link */}
         <div className="mt-8 text-center">

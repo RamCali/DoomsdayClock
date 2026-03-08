@@ -2,6 +2,10 @@ import type { VercelRequest, VercelResponse } from "@vercel/node";
 
 const SITE_URL = "https://doomsdayclock.net";
 
+function escapeXml(str: string): string {
+  return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&apos;");
+}
+
 const NEWS_ARTICLES = [
   {
     slug: "doomsday-clock-2027-prediction",
@@ -33,6 +37,30 @@ const NEWS_ARTICLES = [
     date: "2026-02-28T00:00:00Z",
     keywords: "US Iran crisis, doomsday clock, nuclear threat, Operation Epic Fury",
   },
+  {
+    slug: "what-happens-doomsday-clock-midnight",
+    title: "What Happens When the Doomsday Clock Reaches Midnight?",
+    date: "2026-03-07T00:00:00Z",
+    keywords: "doomsday clock midnight, what happens at midnight, doomsday clock meaning",
+  },
+  {
+    slug: "who-controls-doomsday-clock",
+    title: "Who Controls the Doomsday Clock? Inside the Bulletin of the Atomic Scientists",
+    date: "2026-03-07T00:00:00Z",
+    keywords: "who controls doomsday clock, bulletin of atomic scientists, doomsday clock board",
+  },
+  {
+    slug: "what-does-89-seconds-to-midnight-mean",
+    title: "What Does 89 Seconds to Midnight Actually Mean?",
+    date: "2026-03-07T00:00:00Z",
+    keywords: "89 seconds to midnight, doomsday clock 2025, doomsday clock meaning",
+  },
+  {
+    slug: "will-the-world-end-doomsday-clock",
+    title: "Will the World End? What the Doomsday Clock Actually Predicts",
+    date: "2026-03-07T00:00:00Z",
+    keywords: "will the world end, doomsday clock prediction, end of the world 2026",
+  },
 ];
 
 export default function handler(req: VercelRequest, res: VercelResponse) {
@@ -50,7 +78,7 @@ ${NEWS_ARTICLES.map(
         <news:language>en</news:language>
       </news:publication>
       <news:publication_date>${a.date}</news:publication_date>
-      <news:title>${a.title}</news:title>
+      <news:title>${escapeXml(a.title)}</news:title>
       <news:keywords>${a.keywords}</news:keywords>
     </news:news>
   </url>`

@@ -9,7 +9,7 @@ interface BlogPost {
   excerpt: string;
   date: string;
   readTime: string;
-  category: "analysis" | "update" | "explainer";
+  category: "analysis" | "update" | "explainer" | "gear";
   featured?: boolean;
 }
 
@@ -105,6 +105,42 @@ const posts: BlogPost[] = [
     readTime: "8 min read",
     category: "analysis",
     featured: true,
+  },
+  {
+    slug: "best-doomsday-clock-watches",
+    title: "Best Doomsday Clock Watches & Atomic-Age Timepieces",
+    excerpt:
+      "From nuclear-inspired collector's pieces to military-grade survival watches, these timepieces blend style with preparedness for when every second counts.",
+    date: "March 7, 2026",
+    readTime: "7 min read",
+    category: "gear",
+  },
+  {
+    slug: "emergency-food-supply-guide",
+    title: "Best Emergency Food Supplies for Long-Term Storage",
+    excerpt:
+      "Expert guide to the best emergency food supplies for long-term storage. Freeze-dried meals, survival food kits, and storage tips for 25+ year shelf life.",
+    date: "March 7, 2026",
+    readTime: "9 min read",
+    category: "gear",
+  },
+  {
+    slug: "essential-survival-gear-2026",
+    title: "Essential Survival Gear for 2026: A Preparedness Guide",
+    excerpt:
+      "Complete guide to essential survival gear — bug-out bags, water filtration, communication devices, and first aid kits for any crisis scenario.",
+    date: "March 7, 2026",
+    readTime: "10 min read",
+    category: "gear",
+  },
+  {
+    slug: "best-home-backup-power-systems",
+    title: "Best Home Backup Power Systems for Extended Outages",
+    excerpt:
+      "Solar generators, battery stations, and whole-home systems compared. Keep the lights on when the grid goes down.",
+    date: "March 7, 2026",
+    readTime: "8 min read",
+    category: "gear",
   },
 ];
 

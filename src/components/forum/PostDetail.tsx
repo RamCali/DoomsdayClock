@@ -53,9 +53,52 @@ export function PostDetail() {
         description: desc,
         path: `/forum/post/${post.id}`,
       });
+
+      // DiscussionForumPosting structured data for rich results
+      const schema = {
+        "@context": "https://schema.org",
+        "@type": "DiscussionForumPosting",
+        headline: post.title,
+        text: post.body,
+        url: `https://doomsdayclock.net/forum/post/${post.id}`,
+        datePublished: post.created_at,
+        dateModified: post.updated_at || post.created_at,
+        author: { "@type": "Person", name: post.author_name },
+        interactionStatistic: {
+          "@type": "InteractionCounter",
+          interactionType: "https://schema.org/LikeAction",
+          userInteractionCount: post.vote_score,
+        },
+        commentCount: post.comment_count,
+        isPartOf: {
+          "@type": "DiscussionForum",
+          name: "Doomsday Clock Forum",
+          url: "https://doomsdayclock.net/forum",
+        },
+        ...(comments.length > 0 && {
+          comment: comments.filter(c => !c.parent_comment_id).slice(0, 10).map(c => ({
+            "@type": "Comment",
+            text: c.body,
+            datePublished: c.created_at,
+            author: { "@type": "Person", name: c.author_name },
+          })),
+        }),
+      };
+
+      const el = document.querySelector('script[data-forum-schema="post"]');
+      if (el) el.remove();
+      const script = document.createElement("script");
+      script.type = "application/ld+json";
+      script.setAttribute("data-forum-schema", "post");
+      script.textContent = JSON.stringify(schema);
+      document.head.appendChild(script);
     }
-    return () => resetToDefaults();
-  }, [post]);
+    return () => {
+      const el = document.querySelector('script[data-forum-schema="post"]');
+      if (el) el.remove();
+      resetToDefaults();
+    };
+  }, [post, comments]);
 
   const handleVote = async (value: 1 | -1) => {
     if (!user) {

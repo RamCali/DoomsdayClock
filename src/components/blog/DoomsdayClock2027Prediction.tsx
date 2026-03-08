@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { ArrowLeft, Clock, Calendar, TrendingUp, Minus } from "lucide-react";
 import { currentTime } from "../../data/clockHistory";
 import { updateMetaTags, resetToDefaults } from "../../lib/seo";
+import { RelatedArticles } from "./RelatedArticles";
 
 export function DoomsdayClock2027Prediction() {
   useEffect(() => {
@@ -616,6 +617,15 @@ export function DoomsdayClock2027Prediction() {
             </Link>
           </div>
         </div>
+
+        <RelatedArticles
+          currentSlug="doomsday-clock-2027-prediction"
+          slugs={[
+            "doomsday-clock-2026",
+            "us-iran-crisis-doomsday-clock",
+            "what-happens-doomsday-clock-midnight",
+          ]}
+        />
 
         {/* Back link */}
         <div className="mt-8 text-center">

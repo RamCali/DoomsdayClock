@@ -19,6 +19,7 @@ import { CountdownTimer } from "./components/CountdownTimer";
 import { SocialProof } from "./components/SocialProof";
 import { TimeCapsule } from "./components/TimeCapsule";
 import { EmailPopup } from "./components/EmailPopup";
+import { InstallPrompt } from "./components/InstallPrompt";
 import { ForumPreview } from "./components/forum/ForumPreview";
 import "./index.css";
 
@@ -33,12 +34,17 @@ const WhatHappensAtMidnight = lazy(() => import("./components/blog/WhatHappensAt
 const WhoControlsClock = lazy(() => import("./components/blog/WhoControlsClock").then(m => ({ default: m.WhoControlsClock })));
 const WhatDoes89SecondsMean = lazy(() => import("./components/blog/WhatDoes89SecondsMean").then(m => ({ default: m.WhatDoes89SecondsMean })));
 const WillTheWorldEnd = lazy(() => import("./components/blog/WillTheWorldEnd").then(m => ({ default: m.WillTheWorldEnd })));
+const DoomsdayClockWatches = lazy(() => import("./components/blog/DoomsdayClockWatches").then(m => ({ default: m.DoomsdayClockWatches })));
+const EmergencyFoodSupply = lazy(() => import("./components/blog/EmergencyFoodSupply").then(m => ({ default: m.EmergencyFoodSupply })));
+const SurvivalGear2026 = lazy(() => import("./components/blog/SurvivalGear2026").then(m => ({ default: m.SurvivalGear2026 })));
+const HomeBackupPower = lazy(() => import("./components/blog/HomeBackupPower").then(m => ({ default: m.HomeBackupPower })));
 const EmbedCodeGenerator = lazy(() => import("./components/EmbedCodeGenerator").then(m => ({ default: m.EmbedCodeGenerator })));
 const ForumPage = lazy(() => import("./components/forum/ForumPage").then(m => ({ default: m.ForumPage })));
 const PostDetail = lazy(() => import("./components/forum/PostDetail").then(m => ({ default: m.PostDetail })));
 const VerifyEmail = lazy(() => import("./components/auth/VerifyEmail").then(m => ({ default: m.VerifyEmail })));
 const ResetPassword = lazy(() => import("./components/auth/ResetPassword").then(m => ({ default: m.ResetPassword })));
 const OGImagePreview = lazy(() => import("./components/OGImagePreview").then(m => ({ default: m.OGImagePreview })));
+const YearPage = lazy(() => import("./components/YearPage").then(m => ({ default: m.YearPage })));
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -115,6 +121,11 @@ function App() {
                   <Route path="/blog/who-controls-doomsday-clock" element={<WhoControlsClock />} />
                   <Route path="/blog/what-does-89-seconds-to-midnight-mean" element={<WhatDoes89SecondsMean />} />
                   <Route path="/blog/will-the-world-end-doomsday-clock" element={<WillTheWorldEnd />} />
+                  <Route path="/blog/best-doomsday-clock-watches" element={<DoomsdayClockWatches />} />
+                  <Route path="/blog/emergency-food-supply-guide" element={<EmergencyFoodSupply />} />
+                  <Route path="/blog/essential-survival-gear-2026" element={<SurvivalGear2026 />} />
+                  <Route path="/blog/best-home-backup-power-systems" element={<HomeBackupPower />} />
+                  <Route path="/doomsday-clock-:year" element={<YearPage />} />
                   <Route path="/embed" element={<EmbedCodeGenerator />} />
                   <Route path="/forum" element={<ForumPage />} />
                   <Route path="/forum/post/:id" element={<PostDetail />} />
@@ -126,6 +137,7 @@ function App() {
             </main>
             <Footer />
             <EmailPopup />
+            <InstallPrompt />
           </div>
         </BrowserRouter>
       </AuthProvider>

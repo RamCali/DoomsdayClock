@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { ArrowLeft, Clock, Calendar, BookOpen } from "lucide-react";
 import { currentTime } from "../../data/clockHistory";
 import { updateMetaTags, resetToDefaults } from "../../lib/seo";
+import { RelatedArticles } from "./RelatedArticles";
 
 export function DoomsdayClockVsPopCulture() {
   useEffect(() => {

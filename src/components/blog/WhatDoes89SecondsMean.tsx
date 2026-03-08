@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { ArrowLeft, Clock, Calendar, BookOpen, AlertTriangle } from "lucide-react";
 import { currentTime, clockHistory } from "../../data/clockHistory";
 import { updateMetaTags, resetToDefaults } from "../../lib/seo";
+import { RelatedArticles } from "./RelatedArticles";
 
 export function WhatDoes89SecondsMean() {
   useEffect(() => {

@@ -13,6 +13,10 @@ const BLOG_POSTS = [
   { slug: "who-controls-doomsday-clock", lastmod: "2026-03-07" },
   { slug: "what-does-89-seconds-to-midnight-mean", lastmod: "2026-03-07" },
   { slug: "will-the-world-end-doomsday-clock", lastmod: "2026-03-07" },
+  { slug: "best-doomsday-clock-watches", lastmod: "2026-03-07" },
+  { slug: "emergency-food-supply-guide", lastmod: "2026-03-07" },
+  { slug: "essential-survival-gear-2026", lastmod: "2026-03-07" },
+  { slug: "best-home-backup-power-systems", lastmod: "2026-03-07" },
 ];
 
 const YEAR_PAGES = [2015, 2017, 2018, 2020, 2021, 2022, 2023, 2024, 2025, 2026];
