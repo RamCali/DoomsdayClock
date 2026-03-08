@@ -2,26 +2,15 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ArrowLeft, Clock, AlertTriangle, Calendar } from "lucide-react";
 import { currentTime } from "../../data/clockHistory";
+import { updateMetaTags, resetToDefaults } from "../../lib/seo";
 
 export function USIranCrisis() {
   useEffect(() => {
-    document.title =
-      "US-Iran Crisis & the Doomsday Clock: Operation Epic Fury Analysis | DoomsdayClock.net";
-
-    const prevDescription = document
-      .querySelector('meta[name="description"]')
-      ?.getAttribute("content");
-
-    let meta = document.querySelector('meta[name="description"]');
-    if (!meta) {
-      meta = document.createElement("meta");
-      meta.setAttribute("name", "description");
-      document.head.appendChild(meta);
-    }
-    meta.setAttribute(
-      "content",
-      "Analysis of how US-Israel strikes on Iran (Operation Epic Fury) could push the Doomsday Clock closer to midnight. Currently at 85 seconds."
-    );
+    updateMetaTags({
+      title: "US-Iran Crisis & the Doomsday Clock: Operation Epic Fury Analysis | DoomsdayClock.net",
+      description: "Analysis of how US-Israel strikes on Iran (Operation Epic Fury) could push the Doomsday Clock closer to midnight. Currently at 85 seconds.",
+      path: "/blog/us-iran-crisis-doomsday-clock",
+    });
 
     const schema = {
       "@context": "https://schema.org",
@@ -59,11 +48,7 @@ export function USIranCrisis() {
         'script[data-blog-schema="us-iran"]'
       );
       if (el) el.remove();
-      if (prevDescription) {
-        document
-          .querySelector('meta[name="description"]')
-          ?.setAttribute("content", prevDescription);
-      }
+      resetToDefaults();
     };
   }, []);
 

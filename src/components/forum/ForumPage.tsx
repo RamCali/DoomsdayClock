@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Plus, Loader2, Lightbulb } from "lucide-react";
 import { useAuth } from "../../contexts/AuthContext";
 import { apiFetch } from "../../lib/api";
+import { updateMetaTags, resetToDefaults } from "../../lib/seo";
 import { PostCard, type PostData } from "./PostCard";
 import { SortTabs, type SortOption, type PeriodOption } from "./SortTabs";
 import { CreatePostModal } from "./CreatePostModal";
@@ -40,6 +41,16 @@ export function ForumPage() {
   useEffect(() => {
     fetchPosts();
   }, [fetchPosts]);
+
+  useEffect(() => {
+    updateMetaTags({
+      title: "Forum | Doomsday Clock Community Discussion",
+      description: "Join the Doomsday Clock community. Share your ideas on how to push the clock back and discuss global existential risks.",
+      path: "/forum",
+      type: "website",
+    });
+    return () => resetToDefaults();
+  }, []);
 
   const handleSortChange = (newSort: SortOption) => {
     setSort(newSort);

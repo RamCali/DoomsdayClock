@@ -3,6 +3,7 @@ import { useParams, Link, useNavigate } from "react-router-dom";
 import { Loader2, Trash2, MessageSquare, ArrowLeft } from "lucide-react";
 import { useAuth } from "../../contexts/AuthContext";
 import { apiFetch } from "../../lib/api";
+import { updateMetaTags, resetToDefaults } from "../../lib/seo";
 import { VoteButton } from "./VoteButton";
 import { CommentForm } from "./CommentForm";
 import { CommentThread, type CommentData } from "./CommentThread";
@@ -43,6 +44,18 @@ export function PostDetail() {
   useEffect(() => {
     Promise.all([fetchPost(), fetchComments()]).finally(() => setLoading(false));
   }, [fetchPost, fetchComments]);
+
+  useEffect(() => {
+    if (post) {
+      const desc = post.body.length > 155 ? post.body.slice(0, 155) + "..." : post.body;
+      updateMetaTags({
+        title: `${post.title} | Doomsday Clock Forum`,
+        description: desc,
+        path: `/forum/post/${post.id}`,
+      });
+    }
+    return () => resetToDefaults();
+  }, [post]);
 
   const handleVote = async (value: 1 | -1) => {
     if (!user) {

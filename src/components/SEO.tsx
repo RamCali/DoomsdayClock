@@ -3,7 +3,7 @@ import { currentTime, clockHistory } from "../data/clockHistory";
 
 export function SEOHead() {
   const title = "Doomsday Clock Today | Current Time & Complete Timeline (2026)";
-  const description = `Is it midnight yet? The official Doomsday Clock is now set to ${currentTime.display.charAt(0).toUpperCase() + currentTime.display.slice(1)} to Midnight. View the live countdown, historical timeline, and 2026 updates here.`;
+  const description = `The Doomsday Clock is at ${currentTime.display} to midnight—a new record. View the live countdown, full timeline, and ${currentTime.year} updates.`;
   const url = "https://doomsdayclock.net";
 
   // FAQ Schema for rich snippets
@@ -181,7 +181,7 @@ export function SEOHead() {
 // Component to inject SEO into head
 export function injectSEO() {
   const title = "Doomsday Clock Today | Current Time & Complete Timeline (2026)";
-  const description = `Is it midnight yet? The official Doomsday Clock is now set to ${currentTime.display.charAt(0).toUpperCase() + currentTime.display.slice(1)} to Midnight. View the live countdown, historical timeline, and 2026 updates here.`;
+  const description = `The Doomsday Clock is at ${currentTime.display} to midnight—a new record. View the live countdown, full timeline, and ${currentTime.year} updates.`;
   const url = "https://doomsdayclock.net";
 
   document.title = title;
@@ -393,6 +393,34 @@ export function injectSEO() {
           item: `${url}/#history`,
         },
       ],
+    },
+    // Event Schema — January 2027 Doomsday Clock announcement
+    {
+      "@context": "https://schema.org",
+      "@type": "Event",
+      name: "2027 Doomsday Clock Announcement",
+      description: "The Bulletin of the Atomic Scientists will announce the 2027 Doomsday Clock time, revealing how close humanity is to global catastrophe.",
+      startDate: "2027-01-28T10:00:00-06:00",
+      endDate: "2027-01-28T11:00:00-06:00",
+      eventStatus: "https://schema.org/EventScheduled",
+      eventAttendanceMode: "https://schema.org/OnlineEventAttendanceMode",
+      location: {
+        "@type": "VirtualLocation",
+        url: "https://thebulletin.org/doomsday-clock/",
+      },
+      organizer: {
+        "@type": "Organization",
+        name: "Bulletin of the Atomic Scientists",
+        url: "https://thebulletin.org",
+      },
+      image: `${url}/og-image-2026.png`,
+      offers: {
+        "@type": "Offer",
+        price: "0",
+        priceCurrency: "USD",
+        availability: "https://schema.org/InStock",
+        url: url,
+      },
     },
     // Organization Schema — attribute-rich for higher AI citation rate
     {

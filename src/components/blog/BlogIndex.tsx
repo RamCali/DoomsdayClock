@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ArrowLeft, ChevronRight, Calendar, Clock } from "lucide-react";
+import { updateMetaTags, resetToDefaults } from "../../lib/seo";
 
 interface BlogPost {
   slug: string;
@@ -28,8 +29,13 @@ const posts: BlogPost[] = [
 
 export function BlogIndex() {
   useEffect(() => {
-    document.title =
-      "Blog | Doomsday Clock Analysis & Updates | DoomsdayClock.net";
+    updateMetaTags({
+      title: "Blog | Doomsday Clock Analysis & Updates | DoomsdayClock.net",
+      description: "Analysis, updates, and deep dives on the events that shape humanity's existential risk landscape.",
+      path: "/blog",
+      type: "website",
+    });
+    return () => resetToDefaults();
   }, []);
 
   return (

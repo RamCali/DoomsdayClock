@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, lazy, Suspense } from "react";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { AuthProvider } from "./contexts/AuthContext";
 import { Header } from "./components/Header";
@@ -12,7 +12,6 @@ import { UpcomingUpdate } from "./components/UpcomingUpdate";
 import { Footer } from "./components/Footer";
 import { injectSEO } from "./components/SEO";
 import { ErrorBoundary, NotFound } from "./components/errors";
-import { OGImagePreview } from "./components/OGImagePreview";
 import { PredictionPoll } from "./components/PredictionPoll";
 import { EmailCapture } from "./components/EmailCapture";
 import { Gamification } from "./components/Gamification";
@@ -20,14 +19,17 @@ import { CountdownTimer } from "./components/CountdownTimer";
 import { SocialProof } from "./components/SocialProof";
 import { TimeCapsule } from "./components/TimeCapsule";
 import { EmailPopup } from "./components/EmailPopup";
-import { BlogIndex } from "./components/blog/BlogIndex";
-import { USIranCrisis } from "./components/blog/USIranCrisis";
-import { ForumPage } from "./components/forum/ForumPage";
-import { PostDetail } from "./components/forum/PostDetail";
 import { ForumPreview } from "./components/forum/ForumPreview";
-import { VerifyEmail } from "./components/auth/VerifyEmail";
-import { ResetPassword } from "./components/auth/ResetPassword";
 import "./index.css";
+
+// Lazy-loaded route components (code splitting)
+const BlogIndex = lazy(() => import("./components/blog/BlogIndex").then(m => ({ default: m.BlogIndex })));
+const USIranCrisis = lazy(() => import("./components/blog/USIranCrisis").then(m => ({ default: m.USIranCrisis })));
+const ForumPage = lazy(() => import("./components/forum/ForumPage").then(m => ({ default: m.ForumPage })));
+const PostDetail = lazy(() => import("./components/forum/PostDetail").then(m => ({ default: m.PostDetail })));
+const VerifyEmail = lazy(() => import("./components/auth/VerifyEmail").then(m => ({ default: m.VerifyEmail })));
+const ResetPassword = lazy(() => import("./components/auth/ResetPassword").then(m => ({ default: m.ResetPassword })));
+const OGImagePreview = lazy(() => import("./components/OGImagePreview").then(m => ({ default: m.OGImagePreview })));
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -90,17 +92,19 @@ function App() {
             <ComicDisambiguation />
             <Header />
             <main className="pt-[calc(4rem+1.75rem)]">
-              <Routes>
-                <Route path="/" element={<HomePage />} />
-                <Route path="/og-preview" element={<OGImagePreview />} />
-                <Route path="/blog" element={<BlogIndex />} />
-                <Route path="/blog/us-iran-crisis-doomsday-clock" element={<USIranCrisis />} />
-                <Route path="/forum" element={<ForumPage />} />
-                <Route path="/forum/post/:id" element={<PostDetail />} />
-                <Route path="/verify-email" element={<VerifyEmail />} />
-                <Route path="/reset-password" element={<ResetPassword />} />
-                <Route path="*" element={<NotFound />} />
-              </Routes>
+              <Suspense fallback={<div className="min-h-[60vh] flex items-center justify-center"><div className="w-8 h-8 border-2 border-red-500 border-t-transparent rounded-full animate-spin" /></div>}>
+                <Routes>
+                  <Route path="/" element={<HomePage />} />
+                  <Route path="/og-preview" element={<OGImagePreview />} />
+                  <Route path="/blog" element={<BlogIndex />} />
+                  <Route path="/blog/us-iran-crisis-doomsday-clock" element={<USIranCrisis />} />
+                  <Route path="/forum" element={<ForumPage />} />
+                  <Route path="/forum/post/:id" element={<PostDetail />} />
+                  <Route path="/verify-email" element={<VerifyEmail />} />
+                  <Route path="/reset-password" element={<ResetPassword />} />
+                  <Route path="*" element={<NotFound />} />
+                </Routes>
+              </Suspense>
             </main>
             <Footer />
             <EmailPopup />

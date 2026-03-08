@@ -171,10 +171,19 @@ async function handleCreate(req: VercelRequest, res: VercelResponse) {
     INSERT INTO post_votes (post_id, user_id, value) VALUES (${post.id}, ${auth.userId}, 1)
   `;
 
+  // Notify search engines via IndexNow (non-blocking)
+  pingIndexNow(`https://doomsdayclock.net/forum/post/${post.id}`);
+
   return res.status(201).json({
     ...post,
     author_name: (await sql`SELECT display_name FROM users WHERE id = ${auth.userId}`)[0].display_name,
     author_id: auth.userId,
     user_vote: 1,
   });
+}
+
+function pingIndexNow(url: string) {
+  const key = "c486f332d56d45c5964ff728dd036499";
+  fetch(`https://api.indexnow.org/indexnow?url=${encodeURIComponent(url)}&key=${key}&keyLocation=https://www.doomsdayclock.net/${key}.txt`)
+    .catch(() => {});
 }
