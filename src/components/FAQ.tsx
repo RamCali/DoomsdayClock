@@ -73,6 +73,10 @@ const faqData: FAQItem[] = [
     answer: "The farthest the Doomsday Clock has ever been from midnight was 17 minutes, set in 1991 after the United States and Soviet Union signed the Strategic Arms Reduction Treaty (START). The end of the Cold War marked the safest period in the clock's history. Since then, it has only moved closer to midnight, reaching a record 85 seconds in 2026."
   },
   {
+    question: "Was the Doomsday Clock ever at 19 minutes to midnight?",
+    answer: "No. The Doomsday Clock has never been set to 19 minutes to midnight. The farthest it has ever been from midnight was 17 minutes, set in 1991 after the Cold War ended and the US and Soviet Union signed the Strategic Arms Reduction Treaty (START). Before that, the next safest settings were 14 minutes in 1995 and 12 minutes in 1963 and 1972."
+  },
+  {
     question: "What is 7 minutes to midnight?",
     answer: "Seven minutes to midnight was the Doomsday Clock's original setting when it was created in 1947 by Manhattan Project scientists. It reflected early Cold War nuclear tensions between the US and Soviet Union. The clock returned to 7 minutes multiple times — in 1960, 1968, 1980, and 2002. Today it stands far closer at 85 seconds to midnight."
   },

@@ -73,10 +73,10 @@ export function TimelineChart() {
       <div className="container-wide">
         <div className="text-center mb-8 sm:mb-12">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight mb-4">
-            How the Clock Has <span className="text-doom">Changed</span>
+            Doomsday Clock <span className="text-doom">Timeline Chart</span>
           </h2>
           <p className="text-muted-foreground text-sm sm:text-base md:text-lg max-w-2xl mx-auto">
-            Visualizing 77 years of the Doomsday Clock. Higher peaks mean closer
+            Visualizing every Doomsday Clock change from 1947 to 2026. Higher peaks mean closer
             to midnight — and greater danger for humanity.
           </p>
         </div>
@@ -222,7 +222,7 @@ export function TimelineChart() {
               Closest ever
             </p>
             <p className="text-2xl sm:text-3xl font-bold font-mono text-doom">
-              90s
+              85s
             </p>
           </div>
           <div className="glass-card p-4 text-center">
