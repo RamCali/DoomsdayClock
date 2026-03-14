@@ -50,6 +50,12 @@ export function Footer() {
                 FAQ
               </a>
               <Link
+                to="/store"
+                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+              >
+                Store
+              </Link>
+              <Link
                 to="/forum"
                 className="text-sm text-muted-foreground hover:text-foreground transition-colors"
               >

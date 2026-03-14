@@ -14,6 +14,7 @@ const anchorLinks = [
 
 const routeLinks = [
   { href: "/blog", label: "Blog" },
+  { href: "/store", label: "Store" },
   { href: "/forum", label: "Forum" },
 ];
 

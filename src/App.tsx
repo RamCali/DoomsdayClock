@@ -45,6 +45,7 @@ const VerifyEmail = lazy(() => import("./components/auth/VerifyEmail").then(m =>
 const ResetPassword = lazy(() => import("./components/auth/ResetPassword").then(m => ({ default: m.ResetPassword })));
 const OGImagePreview = lazy(() => import("./components/OGImagePreview").then(m => ({ default: m.OGImagePreview })));
 const YearPage = lazy(() => import("./components/YearPage").then(m => ({ default: m.YearPage })));
+const StorePage = lazy(() => import("./components/store/StorePage").then(m => ({ default: m.StorePage })));
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -126,6 +127,7 @@ function App() {
                   <Route path="/blog/essential-survival-gear-2026" element={<SurvivalGear2026 />} />
                   <Route path="/blog/best-home-backup-power-systems" element={<HomeBackupPower />} />
                   <Route path="/doomsday-clock-:year" element={<YearPage />} />
+                  <Route path="/store" element={<StorePage />} />
                   <Route path="/embed" element={<EmbedCodeGenerator />} />
                   <Route path="/forum" element={<ForumPage />} />
                   <Route path="/forum/post/:id" element={<PostDetail />} />
