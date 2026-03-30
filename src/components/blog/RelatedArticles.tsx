@@ -9,10 +9,11 @@ interface Article {
 
 // All published articles for cross-linking
 const ALL_ARTICLES: Article[] = [
-  { slug: "doomsday-clock-history-timeline", title: "Doomsday Clock History: Every Change from 1947 to 2026", category: "explainer" },
-  { slug: "doomsday-clock-2026", title: "Doomsday Clock 2026: What Changed and Why", category: "update" },
+  { slug: "doomsday-clock-history-timeline", title: "Doomsday Clock Timeline: All 28 Changes from 1947 to 2026", category: "explainer" },
+  { slug: "doomsday-clock-timeline-graph", title: "Doomsday Clock Graph & Chart: Visual Timeline (1947–2026)", category: "explainer" },
+  { slug: "doomsday-clock-2026", title: "Doomsday Clock 2026 Update: Current Time Is 85 Seconds", category: "update" },
   { slug: "doomsday-clock-2027-prediction", title: "Doomsday Clock 2027 Prediction: What Could Move the Clock?", category: "analysis" },
-  { slug: "us-iran-crisis-doomsday-clock", title: "Operation Epic Fury: How US-Iran Strikes Could Push the Clock to the Brink", category: "analysis" },
+  { slug: "us-iran-crisis-doomsday-clock", title: "US-Iran Crisis 2026: How Operation Epic Fury Could Push Past 85 Seconds", category: "analysis" },
   { slug: "doomsday-clock-comic-vs-real", title: "Doomsday Clock vs. Pop Culture: The Comic, The Symbol, The Movement", category: "explainer" },
   { slug: "what-happens-doomsday-clock-midnight", title: "What Happens When the Doomsday Clock Reaches Midnight?", category: "explainer" },
   { slug: "who-controls-doomsday-clock", title: "Who Controls the Doomsday Clock?", category: "explainer" },

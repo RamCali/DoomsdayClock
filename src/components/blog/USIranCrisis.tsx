@@ -8,16 +8,18 @@ import { RelatedArticles } from "./RelatedArticles";
 export function USIranCrisis() {
   useEffect(() => {
     updateMetaTags({
-      title: "US-Iran Crisis & the Doomsday Clock: Operation Epic Fury Analysis | DoomsdayClock.net",
-      description: "Analysis of how US-Israel strikes on Iran (Operation Epic Fury) could push the Doomsday Clock closer to midnight. Currently at 85 seconds.",
+      title: "US-Iran Crisis 2026: How Operation Epic Fury Could Push the Doomsday Clock Past 85 Seconds",
+      description: "US-Israel strikes on Iran threaten to push the Doomsday Clock even closer to midnight. At 85 seconds — already the closest ever — here's what the Iran conflict means for nuclear risk in 2026.",
       path: "/blog/us-iran-crisis-doomsday-clock",
+      newsKeywords:
+        "doomsday clock iran, doomsday clock 2026 update iran, us iran crisis doomsday clock, operation epic fury doomsday clock, doomsday clock iran war, doomsday clock march 2026 update, doomsday clock iran conflict",
     });
 
     const schema = {
       "@context": "https://schema.org",
       "@type": "NewsArticle",
       headline:
-        "Operation Epic Fury: How US-Iran Strikes Could Push the Doomsday Clock to the Brink",
+        "US-Iran Crisis 2026: How Operation Epic Fury Could Push the Doomsday Clock Past 85 Seconds",
       datePublished: "2026-02-28",
       dateModified: "2026-02-28",
       author: { "@type": "Organization", name: "DoomsdayClock.net" },
@@ -35,7 +37,7 @@ export function USIranCrisis() {
           "https://doomsdayclock.net/blog/us-iran-crisis-doomsday-clock",
       },
       description:
-        "Analysis of how the US-Iran military conflict could affect the Doomsday Clock.",
+        "US-Israel strikes on Iran threaten to push the Doomsday Clock even closer to midnight. At 85 seconds — already the closest ever — here's what the Iran conflict means for nuclear risk in 2026.",
     };
 
     const script = document.createElement("script");
@@ -86,8 +88,8 @@ export function USIranCrisis() {
           </div>
 
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight">
-            <span className="text-doom">Operation Epic Fury:</span> How
-            US-Iran Strikes Could Push the Doomsday Clock to the Brink
+            <span className="text-doom">US-Iran Crisis 2026:</span> How
+            Operation Epic Fury Could Push the Doomsday Clock Past 85 Seconds
           </h1>
 
           <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground">

@@ -51,10 +51,11 @@ const blogPages = [
     content: `<h1>Doomsday Clock Blog — Analysis & Updates</h1>
       <p>In-depth analysis, updates, and deep dives on the events that shape humanity's existential risk landscape.</p>
       <nav><ul>
-        <li><a href="/blog/doomsday-clock-2026">Doomsday Clock 2026: What Changed and Why</a></li>
+        <li><a href="/blog/doomsday-clock-2026">Doomsday Clock 2026 Update: Current Time Is 85 Seconds</a></li>
         <li><a href="/blog/doomsday-clock-2027-prediction">Doomsday Clock 2027 Prediction</a></li>
         <li><a href="/blog/us-iran-crisis-doomsday-clock">US-Iran Crisis & the Doomsday Clock</a></li>
-        <li><a href="/blog/doomsday-clock-history-timeline">Complete History Timeline (1947-2026)</a></li>
+        <li><a href="/blog/doomsday-clock-history-timeline">Doomsday Clock Timeline: All 28 Changes (1947-2026)</a></li>
+        <li><a href="/blog/doomsday-clock-timeline-graph">Doomsday Clock Graph & Chart: Visual Timeline</a></li>
         <li><a href="/blog/doomsday-clock-comic-vs-real">Doomsday Clock vs. Pop Culture</a></li>
         <li><a href="/blog/what-happens-doomsday-clock-midnight">What Happens at Midnight?</a></li>
         <li><a href="/blog/who-controls-doomsday-clock">Who Controls the Doomsday Clock?</a></li>
@@ -76,13 +77,13 @@ const blogPages = [
   },
   {
     path: "/blog/doomsday-clock-2026",
-    title: "Doomsday Clock 2026: What Changed and Why | DoomsdayClock.net",
-    description: "The Bulletin moved the Doomsday Clock from 89 to 85 seconds to midnight in February 2026. A deep dive on what drove the change and what 85 seconds means in context.",
-    content: `<h1>Doomsday Clock 2026: What Changed and Why</h1>
-      <p>On February 4, 2026, the Bulletin of the Atomic Scientists moved the Doomsday Clock from 89 to <strong>85 seconds to midnight</strong> — a new record for the closest the clock has ever been to global catastrophe.</p>
-      <h2>Why Did the Clock Move in 2026?</h2>
-      <p>The decision was driven by increased nuclear risks, the ongoing Middle East conflict, climate change acceleration, and emerging AI-related threats to global stability.</p>
-      <p><a href="/">Current Doomsday Clock time</a> | <a href="/blog/doomsday-clock-history-timeline">Full timeline</a></p>`,
+    title: "Doomsday Clock 2026 Update: Current Time Is 85 Seconds to Midnight (Closest Ever)",
+    description: "The Doomsday Clock 2026 setting is 85 seconds to midnight — the closest ever. Updated February 4, 2026. Why the Bulletin moved the clock from 89 to 85 seconds, what it means, and the current status of nuclear and climate threats.",
+    content: `<h1>Doomsday Clock 2026 Update: Current Time Is 85 Seconds to Midnight</h1>
+      <p>On February 4, 2026, the Bulletin of the Atomic Scientists moved the Doomsday Clock from 89 to <strong>85 seconds to midnight</strong> — a new record for the closest the clock has ever been to global catastrophe. This 4-second advance is the largest single move in the seconds era.</p>
+      <h2>Why Did the Doomsday Clock Move in 2026?</h2>
+      <p>The decision was driven by increased nuclear risks, the ongoing Middle East conflict including the US-Iran crisis, climate change acceleration, and emerging AI-related threats to global stability.</p>
+      <p><a href="/">Current Doomsday Clock time</a> | <a href="/blog/doomsday-clock-history-timeline">Complete timeline of all changes</a> | <a href="/blog/doomsday-clock-timeline-graph">Visual graph of the clock over time</a></p>`,
   },
   {
     path: "/blog/doomsday-clock-2027-prediction",
@@ -95,27 +96,46 @@ const blogPages = [
   },
   {
     path: "/blog/us-iran-crisis-doomsday-clock",
-    title: "US-Iran Crisis & the Doomsday Clock: Operation Epic Fury Analysis | DoomsdayClock.net",
-    description: "Analysis of how US-Israel strikes on Iran (Operation Epic Fury) could push the Doomsday Clock closer to midnight. Currently at 85 seconds.",
-    content: `<h1>US-Iran Crisis & the Doomsday Clock</h1>
-      <p>Operation Epic Fury — the US-Israel military strikes on Iran — represents one of the most significant escalations in Middle East tensions in decades. How could this crisis affect the Doomsday Clock?</p>
-      <h2>Impact on the Doomsday Clock</h2>
-      <p>With the clock already at 85 seconds to midnight, a widening conflict in the Middle East involving nuclear-armed or nuclear-threshold states could push it even closer.</p>`,
+    title: "US-Iran Crisis 2026: How Operation Epic Fury Could Push the Doomsday Clock Past 85 Seconds",
+    description: "US-Israel strikes on Iran threaten to push the Doomsday Clock even closer to midnight. At 85 seconds — already the closest ever — here's what the Iran conflict means for nuclear risk in 2026.",
+    content: `<h1>US-Iran Crisis 2026: How Operation Epic Fury Could Push the Doomsday Clock Past 85 Seconds</h1>
+      <p>Operation Epic Fury — the US-Israel military strikes on Iran — represents one of the most significant escalations in Middle East tensions in decades. With the Doomsday Clock already at 85 seconds to midnight, could this crisis push it even closer?</p>
+      <h2>Impact on the Doomsday Clock in 2026</h2>
+      <p>A widening conflict in the Middle East involving nuclear-armed or nuclear-threshold states could push the clock past 85 seconds — potentially the largest single advance in its history.</p>
+      <p><a href="/blog/doomsday-clock-2026">Doomsday Clock 2026: Current time and full analysis</a> | <a href="/blog/doomsday-clock-history-timeline">Complete timeline of all changes</a></p>`,
   },
   {
     path: "/blog/doomsday-clock-history-timeline",
-    title: "Doomsday Clock History: Complete Timeline of Every Change (1947-2026) | DoomsdayClock.net",
-    description: "Explore the complete history of every Doomsday Clock change from 1947 to 2026. See all 27 time adjustments, the reasons behind each move, and key historical events.",
-    content: `<h1>Doomsday Clock History: Complete Timeline (1947-2026)</h1>
-      <p>The Doomsday Clock has been adjusted 27 times since its creation in 1947 by the Bulletin of the Atomic Scientists. This complete timeline shows every change, from the original 7 minutes to midnight to today's 85 seconds.</p>
-      <h2>Key Milestones</h2>
+    title: "Doomsday Clock Timeline: All 28 Changes from 1947 to 2026 (Complete History)",
+    description: "The complete Doomsday Clock timeline with all 28 settings — from 7 minutes (1947) to 85 seconds (2026). See every change, why it moved, and how close we've come to midnight over the years.",
+    content: `<h1>Doomsday Clock Timeline: All 28 Changes from 1947 to 2026 (Complete History)</h1>
+      <p>The Doomsday Clock has been adjusted 28 times since its creation in 1947 by the Bulletin of the Atomic Scientists. This complete timeline shows every change, from the original 7 minutes to midnight to today's record-low 85 seconds.</p>
+      <h2>Key Milestones in the Doomsday Clock Timeline</h2>
       <ul>
         <li><strong>1947:</strong> Clock created at 7 minutes to midnight</li>
-        <li><strong>1953:</strong> 2 minutes — hydrogen bomb tests</li>
+        <li><strong>1953:</strong> 2 minutes — hydrogen bomb tests (closest until 2020)</li>
         <li><strong>1991:</strong> 17 minutes — furthest from midnight (Cold War ends)</li>
         <li><strong>2020:</strong> 100 seconds — enters sub-2-minute territory for first time</li>
-        <li><strong>2026:</strong> 85 seconds — closest ever</li>
-      </ul>`,
+        <li><strong>2023:</strong> 90 seconds — Russia-Ukraine war escalation</li>
+        <li><strong>2025:</strong> 89 seconds — record at the time</li>
+        <li><strong>2026:</strong> 85 seconds — closest ever to midnight</li>
+      </ul>
+      <p><a href="/blog/doomsday-clock-timeline-graph">See the visual Doomsday Clock graph and chart</a> | <a href="/blog/doomsday-clock-2026">2026 Update: Why it moved to 85 seconds</a></p>`,
+  },
+  {
+    path: "/blog/doomsday-clock-timeline-graph",
+    title: "Doomsday Clock Graph & Chart: Visual Timeline of Every Change (1947–2026)",
+    description: "See the Doomsday Clock history chart and visual timeline graph from 1947 to 2026. Track every change over time — from 17 minutes at its safest to 85 seconds at its closest to midnight.",
+    content: `<h1>Doomsday Clock Graph & Chart: Visual Timeline of Every Change (1947–2026)</h1>
+      <p>This interactive Doomsday Clock graph shows every time setting from 1947 to 2026. The visual history chart tracks how the clock has moved over time — from 17 minutes to midnight at its safest (1991) to the current record of 85 seconds (2026).</p>
+      <h2>Doomsday Clock Over Time: Key Trends</h2>
+      <ul>
+        <li><strong>1947–1953:</strong> Rapid advance from 7 to 2 minutes as nuclear arms race begins</li>
+        <li><strong>1963–1991:</strong> General improvement, reaching 17 minutes as Cold War ends</li>
+        <li><strong>1995–2020:</strong> Steady decline back toward midnight</li>
+        <li><strong>2020–2026:</strong> Sub-2-minute era — 100 seconds down to 85 seconds</li>
+      </ul>
+      <p><a href="/blog/doomsday-clock-history-timeline">Full timeline with detailed history</a> | <a href="/blog/doomsday-clock-2026">Why the clock moved to 85 seconds in 2026</a></p>`,
   },
   {
     path: "/blog/doomsday-clock-comic-vs-real",

@@ -8,12 +8,12 @@ import { RelatedArticles } from "./RelatedArticles";
 export function DoomsdayClock2026() {
   useEffect(() => {
     updateMetaTags({
-      title: "Doomsday Clock 2026: Moved to 85 Seconds — Closest Ever to Midnight | DoomsdayClock.net",
+      title: "Doomsday Clock 2026 Update: Current Time Is 85 Seconds to Midnight (Closest Ever)",
       description:
-        "The Doomsday Clock jumped from 89 to 85 seconds in February 2026 — the largest advance in the seconds era. Why it moved, what 85 seconds means, and what comes next.",
+        "The Doomsday Clock 2026 setting is 85 seconds to midnight — the closest ever. Updated February 4, 2026. Why the Bulletin moved the clock from 89 to 85 seconds, what it means, and the current status of nuclear and climate threats.",
       path: "/blog/doomsday-clock-2026",
       newsKeywords:
-        "doomsday clock 2026, doomsday clock 85 seconds, doomsday clock update 2026, bulletin atomic scientists 2026, doomsday clock prediction 2026, what is doomsday clock 2026, doomsday clock 2026 predictions, why did doomsday clock change 2026, how close is doomsday clock 2026",
+        "doomsday clock 2026, doomsday clock 2026 update, doomsday clock current setting 2026, doomsday clock 2026 status, doomsday clock 85 seconds, doomsday clock 2026 time, doomsday clock 2026 prediction, doomsday clock current status 2026, what is doomsday clock 2026, 2026 doomsday clock, doomsday clock announcement 2026",
       publishedTime: "2026-03-07T00:00:00Z",
       modifiedTime: "2026-03-07T00:00:00Z",
       section: "Update",

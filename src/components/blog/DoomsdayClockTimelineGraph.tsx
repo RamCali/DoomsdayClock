@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { ArrowLeft, Clock, Calendar, BarChart3 } from "lucide-react";
+import { ArrowLeft, Clock, Calendar, BarChart3, BookOpen } from "lucide-react";
 import { currentTime, clockHistory } from "../../data/clockHistory";
 import { updateMetaTags, resetToDefaults } from "../../lib/seo";
 import { RelatedArticles } from "./RelatedArticles";
@@ -9,12 +9,12 @@ export function DoomsdayClockTimelineGraph() {
   useEffect(() => {
     updateMetaTags({
       title:
-        "Doomsday Clock Timeline Graph: Every Change from 1947 to 2026 | DoomsdayClock.net",
+        "Doomsday Clock Graph & Chart: Visual Timeline of Every Change (1947–2026)",
       description:
-        "Interactive Doomsday Clock timeline graph showing every change from 1947 to 2026. See how the clock has moved over 28 adjustments across nearly 80 years of history.",
+        "See the Doomsday Clock history chart and visual timeline graph from 1947 to 2026. Track every change over time — from 17 minutes at its safest to 85 seconds at its closest to midnight.",
       path: "/blog/doomsday-clock-timeline-graph",
       newsKeywords:
-        "doomsday clock timeline, doomsday clock graph, doomsday clock over the years, doomsday clock by year, doomsday clock history graph",
+        "doomsday clock graph, doomsday clock chart, doomsday clock history chart, doomsday clock history graph, doomsday clock over time, doomsday clock over time graph, doomsday clock timeline, doomsday clock over the years, doomsday clock by year, doomsday clock progression",
       publishedTime: "2026-03-14T00:00:00Z",
       modifiedTime: "2026-03-14T00:00:00Z",
       section: "Analysis",
@@ -25,7 +25,7 @@ export function DoomsdayClockTimelineGraph() {
       "@context": "https://schema.org",
       "@type": "NewsArticle",
       headline:
-        "Doomsday Clock Timeline Graph: Every Change from 1947 to 2026",
+        "Doomsday Clock Graph & Chart: Visual Timeline of Every Change (1947–2026)",
       datePublished: "2026-03-14T00:00:00Z",
       dateModified: "2026-03-14T00:00:00Z",
       author: {
@@ -50,15 +50,20 @@ export function DoomsdayClockTimelineGraph() {
           "https://doomsdayclock.net/blog/doomsday-clock-timeline-graph",
       },
       description:
-        "Interactive Doomsday Clock timeline graph showing every change from 1947 to 2026 across 28 adjustments.",
+        "See the Doomsday Clock history chart and visual timeline graph from 1947 to 2026. Track every change over time — from 17 minutes at its safest to 85 seconds at its closest to midnight.",
       image: "https://doomsdayclock.net/og-image-2026.png",
       articleSection: "Analysis",
       keywords: [
-        "doomsday clock timeline",
         "doomsday clock graph",
+        "doomsday clock chart",
+        "doomsday clock history chart",
+        "doomsday clock history graph",
+        "doomsday clock over time",
+        "doomsday clock over time graph",
+        "doomsday clock timeline",
         "doomsday clock over the years",
         "doomsday clock by year",
-        "doomsday clock history graph",
+        "doomsday clock progression",
       ],
       inLanguage: "en-US",
       isAccessibleForFree: true,
@@ -118,8 +123,8 @@ export function DoomsdayClockTimelineGraph() {
           </div>
 
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight">
-            <span className="text-doom">Doomsday Clock Timeline Graph:</span>{" "}
-            Every Change from 1947 to 2026
+            <span className="text-doom">Doomsday Clock Graph &amp; Chart:</span>{" "}
+            Visual Timeline of Every Change (1947–2026)
           </h1>
 
           <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
@@ -153,12 +158,24 @@ export function DoomsdayClockTimelineGraph() {
           </div>
         </header>
 
+        {/* Cross-link to full history */}
+        <div className="mb-6 p-4 rounded-lg bg-blue-500/5 border border-blue-500/20">
+          <p className="text-sm text-foreground">
+            <BookOpen className="w-4 h-4 inline-block mr-1.5 text-blue-400" />
+            Want the full story behind each change? Read the{" "}
+            <Link to="/blog/doomsday-clock-history-timeline" className="text-doom hover:underline font-medium">
+              complete Doomsday Clock timeline &amp; history
+            </Link>{" "}
+            with detailed analysis of every adjustment from 1947 to 2026.
+          </p>
+        </div>
+
         {/* Article body */}
         <div className="doom-card p-6 sm:p-8 md:p-10 space-y-8">
           {/* Section 1: The Complete Graph */}
           <section>
             <h2 className="text-xl sm:text-2xl font-bold text-doom mb-4">
-              Doomsday Clock by Year: The Complete Graph
+              Doomsday Clock Chart by Year: The Complete History Graph
             </h2>
             <p className="text-foreground leading-relaxed mb-4">
               The Doomsday Clock has been adjusted {clockHistory.length - 1}{" "}

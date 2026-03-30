@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { ArrowLeft, Clock, Calendar, BookOpen } from "lucide-react";
+import { ArrowLeft, Clock, Calendar, BookOpen, BarChart3 } from "lucide-react";
 import { currentTime, clockHistory } from "../../data/clockHistory";
 import { updateMetaTags, resetToDefaults } from "../../lib/seo";
 import { RelatedArticles } from "./RelatedArticles";
@@ -9,12 +9,12 @@ export function DoomsdayClockHistory() {
   useEffect(() => {
     updateMetaTags({
       title:
-        "Doomsday Clock History: Complete Timeline of Every Change (1947-2026) | DoomsdayClock.net",
+        "Doomsday Clock Timeline: All 28 Changes from 1947 to 2026 (Complete History)",
       description:
-        "Explore the complete history of every Doomsday Clock change from 1947 to 2026. See all 27 time adjustments, the reasons behind each move, and key historical events.",
+        "The complete Doomsday Clock timeline with all 28 settings — from 7 minutes (1947) to 85 seconds (2026). See every change, why it moved, and how close we've come to midnight over the years.",
       path: "/blog/doomsday-clock-history-timeline",
       newsKeywords:
-        "doomsday clock history, doomsday clock timeline, doomsday clock changes, nuclear threat history, doomsday clock 1947, doomsday clock 1991, doomsday clock through the years, when was doomsday clock created, when did doomsday clock start, doomsday clock farthest from midnight",
+        "doomsday clock timeline, doomsday clock history, doomsday clock over the years, doomsday clock through the years, doomsday clock by year, doomsday clock changes, doomsday clock all settings, doomsday clock 1947, doomsday clock 1991, doomsday clock farthest from midnight, doomsday clock timeline all settings since 1947, doomsday clock history chart",
       publishedTime: "2026-03-07T00:00:00Z",
       modifiedTime: "2026-03-07T00:00:00Z",
       section: "Explainer",
@@ -25,7 +25,7 @@ export function DoomsdayClockHistory() {
       "@context": "https://schema.org",
       "@type": "NewsArticle",
       headline:
-        "Doomsday Clock History: Complete Timeline of Every Change (1947-2026)",
+        "Doomsday Clock Timeline: All 28 Changes from 1947 to 2026 (Complete History)",
       datePublished: "2026-03-07T00:00:00Z",
       dateModified: "2026-03-07T00:00:00Z",
       author: {
@@ -50,14 +50,17 @@ export function DoomsdayClockHistory() {
           "https://doomsdayclock.net/blog/doomsday-clock-history-timeline",
       },
       description:
-        "Complete history of every Doomsday Clock change from 1947 to 2026 with detailed analysis.",
+        "The complete Doomsday Clock timeline with all 28 settings — from 7 minutes (1947) to 85 seconds (2026). Every change, why it moved, and how close we've come to midnight.",
       image: "https://doomsdayclock.net/og-image-2026.png",
       articleSection: "Explainer",
       keywords: [
-        "doomsday clock history",
         "doomsday clock timeline",
-        "nuclear threat",
-        "bulletin of atomic scientists",
+        "doomsday clock history",
+        "doomsday clock over the years",
+        "doomsday clock through the years",
+        "doomsday clock by year",
+        "doomsday clock all settings",
+        "doomsday clock timeline all settings since 1947",
       ],
       inLanguage: "en-US",
       isAccessibleForFree: true,
@@ -202,8 +205,8 @@ export function DoomsdayClockHistory() {
           </div>
 
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight">
-            <span className="text-doom">Doomsday Clock History:</span>{" "}
-            Complete Timeline of Every Change (1947&ndash;2026)
+            <span className="text-doom">Doomsday Clock Timeline:</span>{" "}
+            All 28 Changes from 1947&ndash;2026 (Complete History)
           </h1>
 
           <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
@@ -236,6 +239,18 @@ export function DoomsdayClockHistory() {
             </div>
           </div>
         </header>
+
+        {/* Visual graph cross-link */}
+        <div className="mb-6 p-4 rounded-lg bg-purple-500/5 border border-purple-500/20">
+          <p className="text-sm text-foreground">
+            <BarChart3 className="w-4 h-4 inline-block mr-1.5 text-purple-400" />
+            Prefer a visual overview? See the{" "}
+            <Link to="/blog/doomsday-clock-timeline-graph" className="text-doom hover:underline font-medium">
+              Doomsday Clock graph &amp; chart
+            </Link>{" "}
+            showing every change from 1947 to 2026 in one interactive visualization.
+          </p>
+        </div>
 
         {/* Article body */}
         <div className="doom-card p-6 sm:p-8 md:p-10 space-y-8">

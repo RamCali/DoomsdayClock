@@ -39,9 +39,9 @@ const posts: BlogPost[] = [
   {
     slug: "doomsday-clock-history-timeline",
     title:
-      "Doomsday Clock History: Every Change from 1947 to 2026",
+      "Doomsday Clock Timeline: All 28 Changes from 1947 to 2026",
     excerpt:
-      "The complete timeline of all 28 Doomsday Clock changes. From its creation at 7 minutes in 1947 to the current record of 85 seconds to midnight.",
+      "The complete Doomsday Clock timeline with all 28 settings — from 7 minutes (1947) to 85 seconds (2026). See every change, why it moved, and how close we've come to midnight over the years.",
     date: "March 7, 2026",
     readTime: "12 min read",
     category: "explainer",
@@ -50,9 +50,9 @@ const posts: BlogPost[] = [
   {
     slug: "doomsday-clock-2026",
     title:
-      "Doomsday Clock 2026: What Changed and Why",
+      "Doomsday Clock 2026 Update: Current Time Is 85 Seconds to Midnight",
     excerpt:
-      "The Bulletin moved the clock from 89 to 85 seconds in February 2026. A deep dive on what drove the change and what 85 seconds means in context.",
+      "The Doomsday Clock 2026 setting is 85 seconds to midnight — the closest ever. Why the Bulletin moved the clock from 89 to 85 seconds, what it means, and the current status of threats.",
     date: "March 7, 2026",
     readTime: "8 min read",
     category: "update",
@@ -120,9 +120,9 @@ const posts: BlogPost[] = [
   {
     slug: "us-iran-crisis-doomsday-clock",
     title:
-      "Operation Epic Fury: How US-Iran Strikes Could Push the Doomsday Clock to the Brink",
+      "US-Iran Crisis 2026: How Operation Epic Fury Could Push the Doomsday Clock Past 85 Seconds",
     excerpt:
-      "The US and Israel have launched coordinated military strikes against Iran. We analyze how this major escalation could affect the Doomsday Clock\u2019s position.",
+      "US-Israel strikes on Iran threaten to push the Doomsday Clock even closer to midnight. At 85 seconds — already the closest ever — here's what the Iran conflict means for nuclear risk.",
     date: "February 28, 2026",
     readTime: "8 min read",
     category: "analysis",
@@ -167,9 +167,9 @@ const posts: BlogPost[] = [
   {
     slug: "doomsday-clock-timeline-graph",
     title:
-      "Doomsday Clock Timeline Graph: Every Change from 1947 to 2026",
+      "Doomsday Clock Graph & Chart: Visual Timeline (1947–2026)",
     excerpt:
-      "Interactive visual graph of every Doomsday Clock change across nearly 80 years. See how the clock has moved through 28 adjustments from 7 minutes to 85 seconds.",
+      "See the Doomsday Clock history chart and visual timeline graph. Track every change over time — from 17 minutes at its safest to 85 seconds at its closest to midnight.",
     date: "March 14, 2026",
     readTime: "8 min read",
     category: "explainer",
