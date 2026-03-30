@@ -65,9 +65,13 @@ export function PredictionPoll() {
     }, 800);
   };
 
+  const totalVotes = Number.isFinite(results?.total)
+    ? results.total
+    : (results.closer || 0) + (results.same || 0) + (results.farther || 0);
+
   const getPercentage = (count: number) => {
-    if (results.total === 0) return 0;
-    return Math.round((count / results.total) * 100);
+    if (totalVotes === 0) return 0;
+    return Math.round((count / totalVotes) * 100);
   };
 
   const shareResult = () => {
@@ -98,8 +102,8 @@ export function PredictionPoll() {
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             The Bulletin announces the new time in <span className="text-white font-semibold">January 2027</span>.
-            {results.total > 0
-              ? <> Join {results.total.toLocaleString()}+ others in predicting whether we move closer to—or further from—midnight.</>
+            {totalVotes > 0
+              ? <> Join {totalVotes.toLocaleString()}+ others in predicting whether we move closer to—or further from—midnight.</>
               : <> Predict whether we move closer to—or further from—midnight.</>
             }
           </p>
@@ -199,7 +203,7 @@ export function PredictionPoll() {
                   {isLoading ? (
                     <Loader2 className="w-4 h-4 animate-spin inline" />
                   ) : (
-                    <>{results.total.toLocaleString()} predictions</>
+                    <>{totalVotes.toLocaleString()} predictions</>
                   )}
                 </span>
               </div>
