@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { ShoppingBag, ExternalLink, Filter, Clock, Shield, Home, Shirt } from "lucide-react";
+import { ShoppingBag, ExternalLink, Filter, Clock, Shield, Home, Shirt, Download, FileText, BookOpen } from "lucide-react";
 import { cn } from "../../lib/utils";
 
 type Category = "all" | "apparel" | "home" | "survival";
@@ -293,6 +293,141 @@ export function StorePage() {
         {filtered.map((product) => (
           <StoreProductCard key={product.id} product={product} />
         ))}
+      </div>
+
+      {/* Digital Downloads Section */}
+      <div className="mt-16">
+        <div className="text-center mb-8">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-doom/10 border border-doom/30 text-doom text-xs font-medium mb-4">
+            <Download className="w-3.5 h-3.5" />
+            Digital Products
+          </div>
+          <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-2">
+            Digital Downloads
+          </h2>
+          <p className="text-muted-foreground text-sm max-w-lg mx-auto">
+            High-value emergency preparedness guides — instant download
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          {/* Free Lead Magnet */}
+          <div className="glass-card overflow-hidden flex flex-col h-full hover:border-green-500/30 transition-all duration-300 group">
+            <div className="relative">
+              <div className="w-full aspect-[16/9] bg-gradient-to-br from-green-900/30 to-zinc-900 rounded-t-xl flex items-center justify-center border-b border-white/5">
+                <FileText className="w-12 h-12 text-green-400/50" />
+              </div>
+              <span className="absolute top-3 left-3 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider bg-green-500 text-white rounded-md">
+                FREE
+              </span>
+            </div>
+            <div className="p-4 flex flex-col flex-1">
+              <h3 className="font-semibold text-foreground text-sm mb-1 group-hover:text-green-400 transition-colors">
+                Complete Emergency Preparedness Checklist
+              </h3>
+              <p className="text-xs text-muted-foreground mb-3 flex-1">
+                40-page printable checklist covering food, water, shelter, communications, and medical supplies. Updated for 2026.
+              </p>
+              <div className="flex items-center justify-between mt-auto">
+                <span className="text-lg font-bold text-green-400">FREE</span>
+                <a
+                  href="#email-signup"
+                  className="inline-flex items-center gap-1.5 px-4 py-2 bg-green-600 hover:bg-green-500 text-white text-xs font-semibold rounded-lg transition-colors"
+                >
+                  Download Free
+                  <Download className="w-3 h-3" />
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Nuclear Emergency Survival Guide */}
+          <div className="glass-card overflow-hidden flex flex-col h-full hover:border-doom/30 transition-all duration-300 group">
+            <div className="relative">
+              <div className="w-full aspect-[16/9] bg-gradient-to-br from-zinc-800 to-zinc-900 rounded-t-xl flex items-center justify-center border-b border-white/5">
+                <BookOpen className="w-12 h-12 text-doom/40" />
+              </div>
+            </div>
+            <div className="p-4 flex flex-col flex-1">
+              <h3 className="font-semibold text-foreground text-sm mb-1 group-hover:text-doom transition-colors">
+                Nuclear Emergency Survival Guide
+              </h3>
+              <p className="text-xs text-muted-foreground mb-3 flex-1">
+                Comprehensive 80-page guide on surviving a nuclear emergency. Covers shelter-in-place, evacuation routes, radiation exposure, and long-term recovery.
+              </p>
+              <div className="flex items-center justify-between mt-auto">
+                <span className="text-lg font-bold text-foreground">$9.99</span>
+                <a
+                  href="https://doomsdayclock.gumroad.com/l/nuclear-survival-guide"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 px-4 py-2 bg-doom hover:bg-doom/80 text-white text-xs font-semibold rounded-lg transition-colors"
+                >
+                  Buy on Gumroad
+                  <ExternalLink className="w-3 h-3" />
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Family Emergency Plan Template */}
+          <div className="glass-card overflow-hidden flex flex-col h-full hover:border-doom/30 transition-all duration-300 group">
+            <div className="relative">
+              <div className="w-full aspect-[16/9] bg-gradient-to-br from-zinc-800 to-zinc-900 rounded-t-xl flex items-center justify-center border-b border-white/5">
+                <FileText className="w-12 h-12 text-doom/40" />
+              </div>
+            </div>
+            <div className="p-4 flex flex-col flex-1">
+              <h3 className="font-semibold text-foreground text-sm mb-1 group-hover:text-doom transition-colors">
+                Family Emergency Plan Template
+              </h3>
+              <p className="text-xs text-muted-foreground mb-3 flex-1">
+                Editable PDF template for creating your family's emergency action plan. Includes contact sheets, meeting points, supply inventory, and go-bag checklists.
+              </p>
+              <div className="flex items-center justify-between mt-auto">
+                <span className="text-lg font-bold text-foreground">$4.99</span>
+                <a
+                  href="https://doomsdayclock.gumroad.com/l/family-emergency-plan"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 px-4 py-2 bg-doom hover:bg-doom/80 text-white text-xs font-semibold rounded-lg transition-colors"
+                >
+                  Buy on Gumroad
+                  <ExternalLink className="w-3 h-3" />
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* 90-Day Emergency Food Planning Guide */}
+          <div className="glass-card overflow-hidden flex flex-col h-full hover:border-doom/30 transition-all duration-300 group">
+            <div className="relative">
+              <div className="w-full aspect-[16/9] bg-gradient-to-br from-zinc-800 to-zinc-900 rounded-t-xl flex items-center justify-center border-b border-white/5">
+                <BookOpen className="w-12 h-12 text-doom/40" />
+              </div>
+            </div>
+            <div className="p-4 flex flex-col flex-1">
+              <h3 className="font-semibold text-foreground text-sm mb-1 group-hover:text-doom transition-colors">
+                90-Day Emergency Food Planning Guide
+              </h3>
+              <p className="text-xs text-muted-foreground mb-3 flex-1">
+                Complete meal planning guide for 90 days of emergency food storage. Includes shopping lists, rotation schedules, calorie calculations, and recipes.
+              </p>
+              <div className="flex items-center justify-between mt-auto">
+                <span className="text-lg font-bold text-foreground">$7.99</span>
+                <a
+                  href="https://doomsdayclock.gumroad.com/l/food-planning-guide"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 px-4 py-2 bg-doom hover:bg-doom/80 text-white text-xs font-semibold rounded-lg transition-colors"
+                >
+                  Buy on Gumroad
+                  <ExternalLink className="w-3 h-3" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
       {/* Bottom CTA */}

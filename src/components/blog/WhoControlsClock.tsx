@@ -21,7 +21,7 @@ export function WhoControlsClock() {
         "Who decides the Doomsday Clock time? Learn about the Bulletin of the Atomic Scientists, their Science and Security Board, and the process behind each clock setting.",
       path: "/blog/who-controls-doomsday-clock",
       newsKeywords:
-        "who controls doomsday clock, bulletin of atomic scientists, doomsday clock decision, science security board",
+        "who controls doomsday clock, bulletin of atomic scientists, doomsday clock decision, science security board, who sets doomsday clock, who runs doomsday clock, who moves doomsday clock, who updates doomsday clock, who decides doomsday clock",
       publishedTime: "2026-03-07T00:00:00Z",
       modifiedTime: "2026-03-07T00:00:00Z",
       section: "Explainer",
@@ -71,17 +71,82 @@ export function WhoControlsClock() {
       wordCount: 2000,
     };
 
+    const faqSchema = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "Who controls the Doomsday Clock?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "The Doomsday Clock is set by the Science and Security Board of the Bulletin of the Atomic Scientists, a nonprofit organization founded in 1945 by Manhattan Project scientists. The board includes Nobel Laureates and world-renowned experts in nuclear policy, climate science, and emerging technologies.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Who sets the Doomsday Clock?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "The Science and Security Board (SASB) of the Bulletin of the Atomic Scientists sets the clock through an annual process of assessment, consultation with external experts, deliberation, and consensus-building. The decision is announced each January at a press conference.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Who runs the Doomsday Clock?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "The Bulletin of the Atomic Scientists, headquartered in Chicago, Illinois, runs the Doomsday Clock. It was founded in 1945 by scientists who worked on the Manhattan Project, including early supporters Albert Einstein and J. Robert Oppenheimer.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Who moves the Doomsday Clock?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "The Science and Security Board moves the clock based on their assessment of nuclear risks, climate change, and disruptive technologies. The board does not receive government funding and operates independently to maintain credibility.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Who updates the Doomsday Clock?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "The Bulletin's Science and Security Board updates the clock annually, typically in January. The process involves months of research, external consultations, and deliberation before a consensus is reached on the new setting.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Who decides the Doomsday Clock time?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "The Science and Security Board decides the time through a consensus process. Board members independently evaluate global threats, consult with external experts and intelligence professionals, then convene to debate and reach agreement on the clock setting.",
+          },
+        },
+      ],
+    };
+
     const script = document.createElement("script");
     script.type = "application/ld+json";
     script.setAttribute("data-blog-schema", "who-controls");
     script.textContent = JSON.stringify(schema);
     document.head.appendChild(script);
 
+    const faqScript = document.createElement("script");
+    faqScript.type = "application/ld+json";
+    faqScript.setAttribute("data-blog-schema", "who-controls-faq");
+    faqScript.textContent = JSON.stringify(faqSchema);
+    document.head.appendChild(faqScript);
+
     return () => {
       const el = document.querySelector(
         'script[data-blog-schema="who-controls"]'
       );
       if (el) el.remove();
+      const faqEl = document.querySelector(
+        'script[data-blog-schema="who-controls-faq"]'
+      );
+      if (faqEl) faqEl.remove();
       resetToDefaults();
     };
   }, []);

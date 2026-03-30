@@ -22,7 +22,7 @@ export function WhatHappensAtMidnight() {
         "What happens if the Doomsday Clock hits midnight? Learn what midnight symbolizes, why the clock has never reached it, and the catastrophic scenarios it represents.",
       path: "/blog/what-happens-doomsday-clock-midnight",
       newsKeywords:
-        "doomsday clock midnight, what happens doomsday clock midnight, doomsday clock meaning, nuclear threat",
+        "doomsday clock midnight, what happens doomsday clock midnight, doomsday clock meaning, nuclear threat, doomsday clock 12, doomsday clock hits midnight, has the doomsday clock ever hit midnight, will the doomsday clock ever hit midnight, when will doomsday clock reach midnight",
       publishedTime: "2026-03-07T00:00:00Z",
       modifiedTime: "2026-03-07T00:00:00Z",
       section: "Explainer",
@@ -72,17 +72,74 @@ export function WhatHappensAtMidnight() {
       wordCount: 2000,
     };
 
+    const faqSchema = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "What happens if the Doomsday Clock reaches midnight?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Nothing literally 'happens' when the clock hits midnight — it is a metaphor, not a mechanism. Midnight represents the point of no return: global catastrophe from nuclear war, climate collapse, or disruptive technologies that has become inevitable or already occurred.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Has the Doomsday Clock ever hit midnight?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "No. In its entire 79-year history since 1947, the Doomsday Clock has never reached midnight. The closest it has been is 85 seconds to midnight, set in February 2026.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "What happens when the Doomsday Clock hits 0?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "The Doomsday Clock counts down to midnight (12:00), not to zero. If it were to reach midnight, it would mean the Bulletin of the Atomic Scientists has assessed that existential catastrophe has become inevitable or has already occurred. The clock is a warning, not a prediction.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Will the Doomsday Clock ever hit midnight?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "The Bulletin has stated the clock is designed to motivate action, not predict doom. The clock can move backward — it has done so 8 times in history. Whether it reaches midnight depends on the choices made by leaders, institutions, and citizens regarding nuclear weapons, climate change, and emerging technologies.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "What does midnight mean on the Doomsday Clock?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Midnight on the Doomsday Clock symbolizes global catastrophe — the destruction of civilization as we know it. This could come from nuclear war, climate collapse, pandemics, or disruptive technologies. It represents a point of no return from which recovery would be impossible or extremely unlikely.",
+          },
+        },
+      ],
+    };
+
     const script = document.createElement("script");
     script.type = "application/ld+json";
     script.setAttribute("data-blog-schema", "midnight");
     script.textContent = JSON.stringify(schema);
     document.head.appendChild(script);
 
+    const faqScript = document.createElement("script");
+    faqScript.type = "application/ld+json";
+    faqScript.setAttribute("data-blog-schema", "midnight-faq");
+    faqScript.textContent = JSON.stringify(faqSchema);
+    document.head.appendChild(faqScript);
+
     return () => {
       const el = document.querySelector(
         'script[data-blog-schema="midnight"]'
       );
       if (el) el.remove();
+      const faqEl = document.querySelector(
+        'script[data-blog-schema="midnight-faq"]'
+      );
+      if (faqEl) faqEl.remove();
       resetToDefaults();
     };
   }, []);

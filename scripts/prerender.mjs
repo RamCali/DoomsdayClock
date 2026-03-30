@@ -64,6 +64,14 @@ const blogPages = [
         <li><a href="/blog/emergency-food-supply-guide">Emergency Food Supply Guide</a></li>
         <li><a href="/blog/essential-survival-gear-2026">Essential Survival Gear 2026</a></li>
         <li><a href="/blog/best-home-backup-power-systems">Best Home Backup Power Systems</a></li>
+        <li><a href="/blog/doomsday-clock-and-artificial-intelligence">How AI Threatens the Doomsday Clock</a></li>
+        <li><a href="/blog/doomsday-clock-vs-other-threat-indices">Doomsday Clock vs Other Threat Indices</a></li>
+        <li><a href="/blog/how-many-nuclear-weapons-exist-2026">How Many Nuclear Weapons Exist?</a></li>
+        <li><a href="/blog/what-would-happen-in-a-nuclear-war">What Would Happen in a Nuclear War?</a></li>
+        <li><a href="/blog/seven-minutes-to-midnight-doomsday-clock">7 Minutes to Midnight Explained</a></li>
+        <li><a href="/blog/doomsday-clock-news-updates">Doomsday Clock News & Updates</a></li>
+        <li><a href="/blog/doomsday-clock-faq">Doomsday Clock FAQ</a></li>
+        <li><a href="/blog/when-will-doomsday-clock-hit-midnight">When Will the Clock Hit Midnight?</a></li>
       </ul></nav>`,
   },
   {
@@ -181,6 +189,131 @@ const blogPages = [
     description: "Complete guide to home backup power systems for extended outages. Solar generators, battery stations, and whole-home systems compared.",
     content: `<h1>Best Home Backup Power Systems for Extended Outages (2026)</h1>
       <p>A complete guide to home backup power systems for extended outages. Solar generators, portable battery stations, and whole-home systems compared and reviewed.</p>`,
+  },
+  {
+    path: "/blog/doomsday-clock-and-artificial-intelligence",
+    title: "How AI & Artificial Intelligence Threaten the Doomsday Clock | DoomsdayClock.net",
+    description: "Artificial intelligence is now a factor in the Doomsday Clock. Learn how AI weapons, deepfakes, and autonomous systems are pushing the clock closer to midnight in 2026.",
+    content: `<h1>How AI & Artificial Intelligence Threaten the Doomsday Clock</h1>
+      <p>Artificial intelligence has become a significant factor in the Bulletin of the Atomic Scientists' Doomsday Clock assessment. From autonomous weapons systems to AI-powered disinformation, technology is creating new existential risks.</p>
+      <h2>AI as a Doomsday Clock Factor</h2>
+      <p>The Bulletin began explicitly citing AI as a threat factor in its annual clock-setting deliberations, alongside nuclear weapons, climate change, and biosecurity risks.</p>`,
+  },
+  {
+    path: "/blog/doomsday-clock-vs-other-threat-indices",
+    title: "Doomsday Clock vs Other Global Threat Indices: How Do They Compare? | DoomsdayClock.net",
+    description: "How does the Doomsday Clock compare to the Climate Clock, Global Peace Index, Nuclear Threat Initiative, and other threat assessments?",
+    content: `<h1>Doomsday Clock vs Other Global Threat Indices</h1>
+      <p>The Doomsday Clock is the world's most recognized symbol of existential risk, but it's not the only global threat assessment. Compare it to the Climate Clock, Global Peace Index, Nuclear Threat Initiative Index, and more.</p>`,
+  },
+  {
+    path: "/blog/how-many-nuclear-weapons-exist-2026",
+    title: "How Many Nuclear Weapons Exist in 2026? Country-by-Country Breakdown | DoomsdayClock.net",
+    description: "There are approximately 12,100 nuclear warheads worldwide in 2026. See the complete country-by-country breakdown and how stockpiles affect the Doomsday Clock.",
+    content: `<h1>How Many Nuclear Weapons Exist in 2026?</h1>
+      <p>As of 2026, there are approximately 12,100 nuclear warheads worldwide, held by nine countries. Russia and the United States possess about 88% of all nuclear weapons.</p>
+      <h2>Nuclear Weapons by Country (2026)</h2>
+      <ul>
+        <li>Russia: ~5,580 warheads</li>
+        <li>United States: ~5,044 warheads</li>
+        <li>China: ~500 warheads</li>
+        <li>France: 290 warheads</li>
+        <li>United Kingdom: 225 warheads</li>
+        <li>Pakistan: ~170 warheads</li>
+        <li>India: ~172 warheads</li>
+        <li>Israel: ~90 warheads (undeclared)</li>
+        <li>North Korea: ~50 warheads</li>
+      </ul>`,
+  },
+  {
+    path: "/blog/what-would-happen-in-a-nuclear-war",
+    title: "What Would Happen in a Nuclear War? Science-Based Effects & Aftermath | DoomsdayClock.net",
+    description: "What would actually happen if nuclear war broke out? From the initial blast to nuclear winter, the science-based effects on cities, climate, food supply, and civilization.",
+    content: `<h1>What Would Happen in a Nuclear War?</h1>
+      <p>A nuclear war would cause devastating immediate effects — fireballs, shockwaves, and radiation — followed by long-term consequences including nuclear winter, crop failures, and potential civilizational collapse. This is why the Doomsday Clock exists.</p>
+      <h2>The Science of Nuclear War Effects</h2>
+      <p>Research from climate scientists including Alan Robock's nuclear winter models shows that even a limited nuclear exchange could trigger global temperature drops of 5-10°C, devastating agriculture worldwide.</p>`,
+  },
+  {
+    path: "/blog/seven-minutes-to-midnight-doomsday-clock",
+    title: "What Is 7 Minutes to Midnight on the Doomsday Clock? | DoomsdayClock.net",
+    description: "Seven minutes to midnight was the Doomsday Clock's original 1947 setting. Learn what 7 minutes meant, how it compares to today's 85 seconds, and the history behind the original time.",
+    content: `<h1>What Is 7 Minutes to Midnight on the Doomsday Clock?</h1>
+      <p>Seven minutes to midnight was the original setting of the Doomsday Clock when it was created in 1947 by the Bulletin of the Atomic Scientists. Artist Martyl Langsdorf designed the clock face with this initial setting.</p>
+      <h2>The Original 1947 Setting</h2>
+      <p>In 1947, the world's biggest nuclear concern was the growing atomic arsenal. The clock has since ranged from 17 minutes (1991) to today's record-low 85 seconds to midnight.</p>`,
+  },
+  {
+    path: "/blog/doomsday-clock-news-updates",
+    title: "Doomsday Clock News & Latest Updates (March 2026) | DoomsdayClock.net",
+    description: "The latest Doomsday Clock news and updates for March 2026. The clock moved to 85 seconds to midnight — the closest ever. Get the latest developments affecting the clock.",
+    content: `<h1>Doomsday Clock News & Latest Updates (March 2026)</h1>
+      <p>The Doomsday Clock is currently at 85 seconds to midnight — the closest it has ever been. The Bulletin of the Atomic Scientists moved the clock from 89 to 85 seconds in February 2026.</p>
+      <h2>Latest Update: February 2026</h2>
+      <p>The clock advanced by 4 seconds, the largest single move in the seconds era. The next update is expected in January 2027.</p>`,
+  },
+  {
+    path: "/blog/doomsday-clock-faq",
+    title: "Doomsday Clock FAQ: 30 Most Common Questions Answered | DoomsdayClock.net",
+    description: "Every question about the Doomsday Clock answered. What is it? What time is it set to? Who controls it? Can it go back? What happens at midnight? 30 expert answers.",
+    content: `<h1>Doomsday Clock FAQ: 30 Most Common Questions Answered</h1>
+      <p>Your comprehensive guide to every common question about the Doomsday Clock — from what it is and who controls it to what happens at midnight and whether it can go backward.</p>
+      <h2>What is the Doomsday Clock?</h2>
+      <p>The Doomsday Clock is a symbol that represents how close humanity is to catastrophic destruction, maintained by the Bulletin of the Atomic Scientists since 1947.</p>
+      <h2>What time is the Doomsday Clock set to?</h2>
+      <p>As of 2026, the Doomsday Clock is set at 85 seconds to midnight — the closest it has ever been.</p>`,
+  },
+  {
+    path: "/blog/when-will-doomsday-clock-hit-midnight",
+    title: "When Will the Doomsday Clock Hit Midnight? Predictions & Analysis | DoomsdayClock.net",
+    description: "Will the Doomsday Clock ever reach midnight? Analysis of the clock's trajectory, what midnight represents, and whether the clock could actually hit zero.",
+    content: `<h1>When Will the Doomsday Clock Hit Midnight?</h1>
+      <p>The Doomsday Clock has never reached midnight in its 79-year history, and it likely never will in the literal sense. Midnight represents global catastrophe — a scenario the clock is designed to help prevent, not predict.</p>
+      <h2>The Clock's Trajectory</h2>
+      <p>From 7 minutes in 1947 to 85 seconds in 2026, the clock has moved significantly closer to midnight. But the clock is a warning, not a countdown.</p>`,
+  },
+  {
+    path: "/blog/best-underground-bunker-kits",
+    title: "Best Underground Bunker Kits & Survival Shelters (2026) | DoomsdayClock.net",
+    description: "Complete guide to underground bunker kits and survival shelters. From DIY building supplies to pre-fabricated shelters, NBC air filtration, and cost breakdowns.",
+    content: `<h1>Best Underground Bunker Kits & Survival Shelters (2026)</h1>
+      <p>A comprehensive guide to underground bunker kits and survival shelters for emergency preparedness. Covers DIY options, pre-fabricated shelters, NBC air filtration systems, and complete cost breakdowns.</p>`,
+  },
+  {
+    path: "/blog/best-radiation-detectors-geiger-counters",
+    title: "Best Radiation Detectors & Geiger Counters for 2026 | DoomsdayClock.net",
+    description: "Expert-reviewed guide to the best radiation detectors and Geiger counters for nuclear emergency preparedness. From personal dosimeters to professional monitors.",
+    content: `<h1>Best Radiation Detectors & Geiger Counters for 2026</h1>
+      <p>Expert-reviewed guide to the best radiation detectors and Geiger counters. With the Doomsday Clock at 85 seconds to midnight, knowing your radiation exposure is more important than ever.</p>`,
+  },
+  {
+    path: "/blog/best-emergency-radios",
+    title: "Best Emergency Radios & Hand-Crank Weather Radios (2026) | DoomsdayClock.net",
+    description: "The best hand-crank, solar, and battery emergency radios with NOAA weather alerts. Stay connected when the grid goes down.",
+    content: `<h1>Best Emergency Radios & Hand-Crank Weather Radios (2026)</h1>
+      <p>Emergency radios with NOAA weather alerts are essential preparedness gear. Our expert-reviewed guide covers hand-crank, solar, and battery-powered options for any crisis scenario.</p>`,
+  },
+  {
+    path: "/blog/best-doomsday-clock-books-nuclear-threats",
+    title: "Best Books About Nuclear Threats, Doomsday & Existential Risk | DoomsdayClock.net",
+    description: "Essential reading on nuclear weapons, existential risk, and the Doomsday Clock. From The Doomsday Machine to Nuclear War: A Scenario.",
+    content: `<h1>Best Books About Nuclear Threats, Doomsday & Existential Risk</h1>
+      <p>The essential reading list for understanding nuclear threats and the Doomsday Clock. From Daniel Ellsberg's The Doomsday Machine to Annie Jacobsen's Nuclear War: A Scenario.</p>`,
+  },
+  {
+    path: "/blog/best-water-purification-systems-emergency",
+    title: "Best Water Purification Systems for Emergency Preparedness (2026) | DoomsdayClock.net",
+    description: "Water is the #1 survival priority. Expert guide to the best portable filters, home purification systems, and emergency water storage solutions.",
+    content: `<h1>Best Water Purification Systems for Emergency Preparedness (2026)</h1>
+      <p>Water purification is the single most important aspect of emergency preparedness. This guide covers portable filters, home systems, chemical treatments, and storage solutions.</p>`,
+  },
+  {
+    path: "/advertise",
+    title: "Advertise on DoomsdayClock.net | Media Kit & Sponsorship",
+    description: "Reach an engaged audience interested in geopolitics, science, and preparedness. Sponsorship options from $200/month. View our media kit.",
+    ogType: "website",
+    content: `<h1>Advertise on DoomsdayClock.net</h1>
+      <p>Reach a highly engaged audience interested in geopolitics, science, current events, and emergency preparedness. Sponsorship options starting at $200.</p>`,
   },
 ];
 

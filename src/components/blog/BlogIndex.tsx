@@ -15,6 +15,28 @@ interface BlogPost {
 
 const posts: BlogPost[] = [
   {
+    slug: "what-is-the-doomsday-clock",
+    title:
+      "What Is the Doomsday Clock? Definition, Meaning & How It Works",
+    excerpt:
+      "Everything you need to know about the Doomsday Clock — what it is, how it works, who sets it, and why it matters. The definitive guide to the world's most recognized symbol of existential risk.",
+    date: "March 14, 2026",
+    readTime: "12 min read",
+    category: "explainer",
+    featured: true,
+  },
+  {
+    slug: "doomsday-clock-current-time-today",
+    title:
+      "Doomsday Clock Current Time Today (2026): Live Status & Update",
+    excerpt:
+      "The Doomsday Clock is currently at 85 seconds to midnight — the closest it has ever been. See the latest status, what changed in 2026, and when the next update is expected.",
+    date: "March 14, 2026",
+    readTime: "6 min read",
+    category: "update",
+    featured: true,
+  },
+  {
     slug: "doomsday-clock-history-timeline",
     title:
       "Doomsday Clock History: Every Change from 1947 to 2026",
@@ -140,6 +162,288 @@ const posts: BlogPost[] = [
       "Solar generators, battery stations, and whole-home systems compared. Keep the lights on when the grid goes down.",
     date: "March 7, 2026",
     readTime: "8 min read",
+    category: "gear",
+  },
+  {
+    slug: "doomsday-clock-timeline-graph",
+    title:
+      "Doomsday Clock Timeline Graph: Every Change from 1947 to 2026",
+    excerpt:
+      "Interactive visual graph of every Doomsday Clock change across nearly 80 years. See how the clock has moved through 28 adjustments from 7 minutes to 85 seconds.",
+    date: "March 14, 2026",
+    readTime: "8 min read",
+    category: "explainer",
+  },
+  {
+    slug: "doomsday-clock-2025",
+    title:
+      "Doomsday Clock 2025: The 89-Second Update Explained",
+    excerpt:
+      "The Doomsday Clock moved to 89 seconds to midnight in January 2025 — the closest it had ever been. Full analysis of why it moved and what 89 seconds means.",
+    date: "March 14, 2026",
+    readTime: "8 min read",
+    category: "update",
+  },
+  {
+    slug: "doomsday-clock-climate-change",
+    title:
+      "How Climate Change Affects the Doomsday Clock",
+    excerpt:
+      "Climate change has been a factor in the Doomsday Clock since 2007. Learn how global warming, AI, and emerging threats influence the clock alongside nuclear risks.",
+    date: "March 14, 2026",
+    readTime: "9 min read",
+    category: "explainer",
+  },
+  {
+    slug: "doomsday-clock-cold-war",
+    title:
+      "The Doomsday Clock During the Cold War & Cuban Missile Crisis",
+    excerpt:
+      "How did the Doomsday Clock move during the Cold War? From hydrogen bomb tests to the Cuban Missile Crisis to the fall of the Berlin Wall — the complete Cold War clock history.",
+    date: "March 14, 2026",
+    readTime: "10 min read",
+    category: "explainer",
+  },
+  {
+    slug: "where-is-doomsday-clock-located",
+    title:
+      "Where Is the Doomsday Clock? Location, NYC, & How to See It",
+    excerpt:
+      "Where is the Doomsday Clock located? The Bulletin's Chicago headquarters, the NYC Metronome confusion, Union Square, and how to see the real clock.",
+    date: "March 14, 2026",
+    readTime: "6 min read",
+    category: "explainer",
+  },
+  {
+    slug: "how-long-is-89-seconds-doomsday-clock",
+    title:
+      "How Long Is 89 Seconds on the Doomsday Clock in Real Time?",
+    excerpt:
+      "The Doomsday Clock doesn't work like a real countdown. Learn what the seconds actually represent, why there's no real-time equivalent, and the common misconception explained.",
+    date: "March 14, 2026",
+    readTime: "6 min read",
+    category: "explainer",
+  },
+  {
+    slug: "can-doomsday-clock-go-back",
+    title:
+      "Can the Doomsday Clock Go Backwards? History of Every Reversal",
+    excerpt:
+      "Yes — the Doomsday Clock has moved backward 8 times. From the end of the Cold War to nuclear treaties, see every time the clock moved away from midnight.",
+    date: "March 14, 2026",
+    readTime: "8 min read",
+    category: "explainer",
+  },
+  {
+    slug: "how-is-doomsday-clock-calculated",
+    title:
+      "How Is the Doomsday Clock Calculated? The Science Behind the Setting",
+    excerpt:
+      "The Doomsday Clock isn't set by a formula — it's a consensus expert judgment. Explore the methodology, threat categories, and deliberation process behind the world's most famous risk assessment.",
+    date: "March 14, 2026",
+    readTime: "9 min read",
+    category: "explainer",
+  },
+  {
+    slug: "doomsday-clock-vs-atomic-clock",
+    title:
+      "Doomsday Clock vs Atomic Clock: What's the Difference?",
+    excerpt:
+      "They share a name but nothing else. Learn the difference between the symbolic threat clock and the world's most precise timekeeping device.",
+    date: "March 14, 2026",
+    readTime: "7 min read",
+    category: "explainer",
+  },
+  {
+    slug: "how-to-read-doomsday-clock",
+    title:
+      "How to Read the Doomsday Clock: A Beginner's Guide",
+    excerpt:
+      "What do the minutes and seconds mean? How to interpret changes? A beginner's guide to understanding the world's most recognized symbol of existential risk.",
+    date: "March 14, 2026",
+    readTime: "6 min read",
+    category: "explainer",
+  },
+  {
+    slug: "is-doomsday-clock-real-or-fake",
+    title:
+      "Is the Doomsday Clock Real or Fake? Debunking the Critics",
+    excerpt:
+      "Is the Doomsday Clock real, fake, or fear mongering? We address every criticism head-on — from scientific legitimacy to media sensationalism — with facts.",
+    date: "March 14, 2026",
+    readTime: "8 min read",
+    category: "explainer",
+  },
+  {
+    slug: "who-created-doomsday-clock",
+    title:
+      "Who Created the Doomsday Clock? The Founders Behind the Symbol",
+    excerpt:
+      "The story of the Manhattan Project scientists, the Bulletin of the Atomic Scientists, and artist Martyl Langsdorf — the people who created the world's most famous warning symbol.",
+    date: "March 14, 2026",
+    readTime: "8 min read",
+    category: "explainer",
+  },
+  {
+    slug: "why-is-doomsday-clock-important",
+    title:
+      "Why Is the Doomsday Clock Important? Why You Should Care",
+    excerpt:
+      "From influencing nuclear policy to raising climate awareness, discover why this 79-year-old symbol remains critically important — and what you can do about it.",
+    date: "March 14, 2026",
+    readTime: "7 min read",
+    category: "explainer",
+  },
+  {
+    slug: "doomsday-clock-through-decades",
+    title:
+      "Doomsday Clock Through the Decades: 2000 vs 2020 vs 2026",
+    excerpt:
+      "Compare the Doomsday Clock across three pivotal eras. See how global threats evolved from Cold War aftermath to the age of AI and climate crisis.",
+    date: "March 14, 2026",
+    readTime: "9 min read",
+    category: "explainer",
+  },
+  {
+    slug: "doomsday-clock-watchmen-comic",
+    title:
+      "Doomsday Clock & Watchmen: The Comic Series vs the Real Clock",
+    excerpt:
+      "Is Doomsday Clock a sequel to Watchmen? Is it canon? Is it worth reading? Everything about the DC Comics series versus the real nuclear threat clock.",
+    date: "March 14, 2026",
+    readTime: "8 min read",
+    category: "explainer",
+  },
+  {
+    slug: "doomsday-clock-and-artificial-intelligence",
+    title:
+      "How AI & Artificial Intelligence Threaten the Doomsday Clock",
+    excerpt:
+      "AI is now a factor in the Doomsday Clock. From autonomous weapons to deepfakes to nuclear command systems — how artificial intelligence is pushing the clock closer to midnight.",
+    date: "March 15, 2026",
+    readTime: "9 min read",
+    category: "explainer",
+  },
+  {
+    slug: "doomsday-clock-vs-other-threat-indices",
+    title:
+      "Doomsday Clock vs Other Global Threat Indices: How Do They Compare?",
+    excerpt:
+      "How does the Doomsday Clock compare to the Climate Clock, Global Peace Index, and Nuclear Threat Initiative? A comprehensive comparison of the world's threat assessments.",
+    date: "March 15, 2026",
+    readTime: "8 min read",
+    category: "explainer",
+  },
+  {
+    slug: "how-many-nuclear-weapons-exist-2026",
+    title:
+      "How Many Nuclear Weapons Exist in 2026? Country-by-Country Breakdown",
+    excerpt:
+      "There are approximately 12,100 nuclear warheads worldwide. See the complete country-by-country breakdown and how stockpiles affect the Doomsday Clock.",
+    date: "March 15, 2026",
+    readTime: "10 min read",
+    category: "explainer",
+  },
+  {
+    slug: "what-would-happen-in-a-nuclear-war",
+    title:
+      "What Would Happen in a Nuclear War? Science-Based Effects & Aftermath",
+    excerpt:
+      "What would actually happen if nuclear war broke out? From the initial blast to nuclear winter — the science-based effects on cities, climate, food supply, and civilization.",
+    date: "March 15, 2026",
+    readTime: "11 min read",
+    category: "explainer",
+  },
+  {
+    slug: "seven-minutes-to-midnight-doomsday-clock",
+    title:
+      "What Is 7 Minutes to Midnight on the Doomsday Clock?",
+    excerpt:
+      "Seven minutes to midnight was the Doomsday Clock's original 1947 setting. Learn what 7 minutes meant, how it compares to today's 85 seconds, and the history behind the original time.",
+    date: "March 15, 2026",
+    readTime: "7 min read",
+    category: "explainer",
+  },
+  {
+    slug: "doomsday-clock-news-updates",
+    title:
+      "Doomsday Clock News & Latest Updates (March 2026)",
+    excerpt:
+      "The latest Doomsday Clock news and updates. The clock moved to 85 seconds to midnight in 2026 — the closest ever. Get the latest developments affecting the clock.",
+    date: "March 15, 2026",
+    readTime: "6 min read",
+    category: "update",
+    featured: true,
+  },
+  {
+    slug: "doomsday-clock-faq",
+    title:
+      "Doomsday Clock FAQ: 30 Most Common Questions Answered",
+    excerpt:
+      "Every question about the Doomsday Clock answered. What is it? What time is it? Who controls it? Can it go back? What happens at midnight? 30 expert answers in one place.",
+    date: "March 15, 2026",
+    readTime: "15 min read",
+    category: "explainer",
+    featured: true,
+  },
+  {
+    slug: "when-will-doomsday-clock-hit-midnight",
+    title:
+      "When Will the Doomsday Clock Hit Midnight? Predictions & Analysis",
+    excerpt:
+      "Will the Doomsday Clock ever reach midnight? Analysis of the clock's trajectory, what midnight represents, and whether the clock could actually hit zero.",
+    date: "March 15, 2026",
+    readTime: "8 min read",
+    category: "analysis",
+  },
+  {
+    slug: "best-underground-bunker-kits",
+    title:
+      "Best Underground Bunker Kits & Survival Shelters (2026)",
+    excerpt:
+      "From DIY bunker building supplies to pre-fabricated underground shelters, the complete guide to bunker kits, NBC air filtration, and survival shelter options.",
+    date: "March 23, 2026",
+    readTime: "10 min read",
+    category: "gear",
+  },
+  {
+    slug: "best-radiation-detectors-geiger-counters",
+    title:
+      "Best Radiation Detectors & Geiger Counters for 2026",
+    excerpt:
+      "Expert-reviewed guide to the best radiation detectors and Geiger counters. From personal dosimeters to professional-grade monitors for nuclear emergency preparedness.",
+    date: "March 23, 2026",
+    readTime: "9 min read",
+    category: "gear",
+  },
+  {
+    slug: "best-emergency-radios",
+    title:
+      "Best Emergency Radios & Hand-Crank Weather Radios (2026)",
+    excerpt:
+      "The best hand-crank, solar, and battery emergency radios with NOAA weather alerts. Stay connected when the grid goes down.",
+    date: "March 23, 2026",
+    readTime: "8 min read",
+    category: "gear",
+  },
+  {
+    slug: "best-doomsday-clock-books-nuclear-threats",
+    title:
+      "Best Books About Nuclear Threats, Doomsday & Existential Risk",
+    excerpt:
+      "Essential reading on nuclear weapons, existential risk, and the Doomsday Clock. From Daniel Ellsberg's The Doomsday Machine to Annie Jacobsen's Nuclear War.",
+    date: "March 23, 2026",
+    readTime: "9 min read",
+    category: "gear",
+  },
+  {
+    slug: "best-water-purification-systems-emergency",
+    title:
+      "Best Water Purification Systems for Emergency Preparedness (2026)",
+    excerpt:
+      "Water is the #1 survival priority. Expert guide to the best portable filters, home purification systems, and emergency water storage solutions.",
+    date: "March 23, 2026",
+    readTime: "9 min read",
     category: "gear",
   },
 ];

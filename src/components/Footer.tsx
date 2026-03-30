@@ -1,4 +1,4 @@
-import { ExternalLink, Bell } from "lucide-react";
+import { ExternalLink, Bell, Heart, Coffee } from "lucide-react";
 import { Link } from "react-router-dom";
 import { currentTime } from "../data/clockHistory";
 
@@ -61,6 +61,12 @@ export function Footer() {
               >
                 Forum
               </Link>
+              <Link
+                to="/advertise"
+                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+              >
+                Advertise
+              </Link>
             </nav>
           </div>
 
@@ -109,6 +115,25 @@ export function Footer() {
               </p>
             </div>
           </div>
+        </div>
+
+        {/* Support Us */}
+        <div className="mt-8 p-4 rounded-xl bg-white/5 border border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="flex items-center gap-3">
+            <Heart className="w-5 h-5 text-doom shrink-0" />
+            <p className="text-sm text-muted-foreground">
+              This site is independently maintained. If you find it useful, consider supporting us.
+            </p>
+          </div>
+          <a
+            href="https://ko-fi.com/doomsdayclock"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-4 py-2 bg-doom/10 hover:bg-doom/20 border border-doom/30 text-doom text-sm font-medium rounded-lg transition-colors shrink-0"
+          >
+            <Coffee className="w-4 h-4" />
+            Support Us on Ko-fi
+          </a>
         </div>
 
         {/* Bottom bar */}

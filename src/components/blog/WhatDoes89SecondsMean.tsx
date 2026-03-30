@@ -14,7 +14,7 @@ export function WhatDoes89SecondsMean() {
         "What does 89 seconds to midnight actually mean? Understand the significance of the Doomsday Clock's 2025 setting, how it compares to 90 seconds, and what the current 85-second reading means for humanity.",
       path: "/blog/what-does-89-seconds-to-midnight-mean",
       newsKeywords:
-        "89 seconds to midnight, doomsday clock 89 seconds, what does 89 seconds mean, 90 seconds to midnight, doomsday clock meaning",
+        "89 seconds to midnight, doomsday clock 89 seconds, what does 89 seconds mean, 90 seconds to midnight, doomsday clock meaning, 85 seconds to midnight, doomsday clock 90 seconds to midnight, why was doomsday clock moved to 89 seconds",
       publishedTime: "2026-03-07T00:00:00Z",
       modifiedTime: "2026-03-07T00:00:00Z",
       section: "Explainer",
@@ -65,17 +65,74 @@ export function WhatDoes89SecondsMean() {
       wordCount: 2200,
     };
 
+    const faqSchema = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "What does 89 seconds to midnight mean on the Doomsday Clock?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "When the Bulletin of the Atomic Scientists set the Doomsday Clock to 89 seconds to midnight in January 2025, they were signaling that humanity was closer to self-inflicted catastrophe than at any previous point in the clock's history. The setting was one second closer than the previous record of 90 seconds, set in 2023.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "What does 90 seconds before midnight mean?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "90 seconds to midnight was the Doomsday Clock setting from 2023 to 2024, set primarily due to Russia's invasion of Ukraine and thinly veiled nuclear threats. It was the closest the clock had ever been at the time, breaking the 100-second barrier set in 2020.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "What does it mean if the Doomsday Clock is 85 seconds to midnight?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "85 seconds to midnight is the current Doomsday Clock setting as of February 2026 — the closest it has ever been. The Bulletin cited escalating nuclear risks, the Russia-Ukraine war, Middle East conflict, climate change, and AI-related threats as the primary drivers.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Why was the Doomsday Clock moved to 89 seconds?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "The Bulletin moved the clock to 89 seconds in January 2025 due to escalating nuclear risks, the erosion of arms control frameworks, the ongoing Russia-Ukraine war, 2024 being the hottest year on record, and rapid advances in AI and autonomous weapons systems.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Is the Doomsday Clock a real countdown?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "No. The Doomsday Clock is a symbolic measure, not a literal countdown. There is no conversion between clock seconds and real-world time. It represents the expert assessment of how close humanity is to existential catastrophe, with midnight representing the point of no return.",
+          },
+        },
+      ],
+    };
+
     const script = document.createElement("script");
     script.type = "application/ld+json";
     script.setAttribute("data-blog-schema", "89-seconds");
     script.textContent = JSON.stringify(schema);
     document.head.appendChild(script);
 
+    const faqScript = document.createElement("script");
+    faqScript.type = "application/ld+json";
+    faqScript.setAttribute("data-blog-schema", "89-seconds-faq");
+    faqScript.textContent = JSON.stringify(faqSchema);
+    document.head.appendChild(faqScript);
+
     return () => {
       const el = document.querySelector(
         'script[data-blog-schema="89-seconds"]'
       );
       if (el) el.remove();
+      const faqEl = document.querySelector(
+        'script[data-blog-schema="89-seconds-faq"]'
+      );
+      if (faqEl) faqEl.remove();
       resetToDefaults();
     };
   }, []);

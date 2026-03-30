@@ -14,7 +14,7 @@ export function DoomsdayClockHistory() {
         "Explore the complete history of every Doomsday Clock change from 1947 to 2026. See all 27 time adjustments, the reasons behind each move, and key historical events.",
       path: "/blog/doomsday-clock-history-timeline",
       newsKeywords:
-        "doomsday clock history, doomsday clock timeline, doomsday clock changes, nuclear threat history",
+        "doomsday clock history, doomsday clock timeline, doomsday clock changes, nuclear threat history, doomsday clock 1947, doomsday clock 1991, doomsday clock through the years, when was doomsday clock created, when did doomsday clock start, doomsday clock farthest from midnight",
       publishedTime: "2026-03-07T00:00:00Z",
       modifiedTime: "2026-03-07T00:00:00Z",
       section: "Explainer",
@@ -64,17 +64,82 @@ export function DoomsdayClockHistory() {
       wordCount: 2500,
     };
 
+    const faqSchema = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "When was the Doomsday Clock created?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "The Doomsday Clock was created in 1947 by the Bulletin of the Atomic Scientists, founded by Manhattan Project scientists. Artist Martyl Langsdorf designed the iconic clock image for the Bulletin's June 1947 cover, setting the initial time at 7 minutes to midnight.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "When did the Doomsday Clock start?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "The Doomsday Clock started in 1947 at 7 minutes to midnight. It was created by scientists who worked on the Manhattan Project to communicate the dangers of nuclear weapons to the public.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "What was the Doomsday Clock in 1947?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "In 1947, the Doomsday Clock was set at 7 minutes to midnight — its initial setting when created by the Bulletin of the Atomic Scientists to convey threats to humanity from nuclear weapons.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "What was the Doomsday Clock in 1991?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "In 1991, the Doomsday Clock was set to 17 minutes to midnight — the farthest it has ever been from midnight. This followed the signing of the Strategic Arms Reduction Treaty (START) and the end of the Cold War.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "How many times has the Doomsday Clock changed?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "The Doomsday Clock has been adjusted 27 times since its creation in 1947, with the most recent change in February 2026 when it moved to 85 seconds to midnight. It has moved forward 19 times and backward 8 times.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "What is the farthest the Doomsday Clock has been from midnight?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "The farthest the Doomsday Clock has ever been from midnight was 17 minutes, set in 1991 after the US and Soviet Union signed the Strategic Arms Reduction Treaty (START), marking the end of the Cold War.",
+          },
+        },
+      ],
+    };
+
     const script = document.createElement("script");
     script.type = "application/ld+json";
     script.setAttribute("data-blog-schema", "history");
     script.textContent = JSON.stringify(schema);
     document.head.appendChild(script);
 
+    const faqScript = document.createElement("script");
+    faqScript.type = "application/ld+json";
+    faqScript.setAttribute("data-blog-schema", "history-faq");
+    faqScript.textContent = JSON.stringify(faqSchema);
+    document.head.appendChild(faqScript);
+
     return () => {
       const el = document.querySelector(
         'script[data-blog-schema="history"]'
       );
       if (el) el.remove();
+      const faqEl = document.querySelector(
+        'script[data-blog-schema="history-faq"]'
+      );
+      if (faqEl) faqEl.remove();
       resetToDefaults();
     };
   }, []);

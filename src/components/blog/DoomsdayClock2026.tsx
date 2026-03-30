@@ -8,12 +8,12 @@ import { RelatedArticles } from "./RelatedArticles";
 export function DoomsdayClock2026() {
   useEffect(() => {
     updateMetaTags({
-      title: "Doomsday Clock 2026: What Changed and Why | DoomsdayClock.net",
+      title: "Doomsday Clock 2026: Moved to 85 Seconds — Closest Ever to Midnight | DoomsdayClock.net",
       description:
-        "The Bulletin moved the Doomsday Clock from 89 to 85 seconds to midnight in February 2026. A deep dive on what drove the change and what 85 seconds means in context.",
+        "The Doomsday Clock jumped from 89 to 85 seconds in February 2026 — the largest advance in the seconds era. Why it moved, what 85 seconds means, and what comes next.",
       path: "/blog/doomsday-clock-2026",
       newsKeywords:
-        "doomsday clock 2026, doomsday clock 85 seconds, doomsday clock update 2026, bulletin atomic scientists 2026",
+        "doomsday clock 2026, doomsday clock 85 seconds, doomsday clock update 2026, bulletin atomic scientists 2026, doomsday clock prediction 2026, what is doomsday clock 2026, doomsday clock 2026 predictions, why did doomsday clock change 2026, how close is doomsday clock 2026",
       publishedTime: "2026-03-07T00:00:00Z",
       modifiedTime: "2026-03-07T00:00:00Z",
       section: "Update",
@@ -61,15 +61,62 @@ export function DoomsdayClock2026() {
       wordCount: 1800,
     };
 
+    const faqSchema = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "What is the Doomsday Clock set at in 2026?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "The Doomsday Clock is set at 85 seconds to midnight as of February 4, 2026 — the closest it has ever been. The Bulletin moved it from 89 seconds (the 2025 setting) due to escalating nuclear risks, the Russia-Ukraine war, Middle East conflict, climate change, and AI-related threats.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "What is the Doomsday Clock prediction for 2026?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "The 2026 Doomsday Clock announcement moved the clock from 89 to 85 seconds to midnight — a 4-second jump that was the largest single forward move in the seconds era. The Bulletin cited multiple converging threats including nuclear escalation, climate acceleration, and AI risks.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Why did the Doomsday Clock change in 2026?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "The clock moved forward in 2026 due to increased nuclear risks from the Russia-Ukraine war and Middle East conflict, the continued acceleration of climate change, and deepening concerns about artificial intelligence and autonomous weapons systems.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "How close is the Doomsday Clock in 2026?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "In 2026, the Doomsday Clock is at 85 seconds to midnight — the closest it has ever been in its 79-year history. This represents a 15-second decline from 100 seconds in just six years (2020-2026), the fastest sustained deterioration on record.",
+          },
+        },
+      ],
+    };
+
     const script = document.createElement("script");
     script.type = "application/ld+json";
     script.setAttribute("data-blog-schema", "dc-2026");
     script.textContent = JSON.stringify(schema);
     document.head.appendChild(script);
 
+    const faqScript = document.createElement("script");
+    faqScript.type = "application/ld+json";
+    faqScript.setAttribute("data-blog-schema", "dc-2026-faq");
+    faqScript.textContent = JSON.stringify(faqSchema);
+    document.head.appendChild(faqScript);
+
     return () => {
       const el = document.querySelector('script[data-blog-schema="dc-2026"]');
       if (el) el.remove();
+      const faqEl = document.querySelector('script[data-blog-schema="dc-2026-faq"]');
+      if (faqEl) faqEl.remove();
       resetToDefaults();
     };
   }, []);

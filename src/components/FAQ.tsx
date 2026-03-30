@@ -103,6 +103,30 @@ const faqData: FAQItem[] = [
   {
     question: "Will the world survive in 2050?",
     answer: "Scientific consensus suggests the world will persist beyond 2050, but quality of life depends on actions taken today. The Doomsday Clock warns that nuclear risks, unchecked climate change, and emerging technology threats could severely impact civilization if left unaddressed. Climate models project significant impacts by 2050 — rising seas, extreme weather, food insecurity — but these are challenges to mitigate, not an inevitable end."
+  },
+  {
+    question: "Where is the Doomsday Clock physically located?",
+    answer: "The Doomsday Clock is not a single physical timepiece — it is a symbolic concept. The Bulletin of the Atomic Scientists, which owns and operates the clock, is headquartered at the University of Chicago in Illinois. The clock's image was originally created by artist Martyl Langsdorf for a 1947 magazine cover. Physical representations appear at the Bulletin's annual press conferences, typically held at the National Press Club in Washington, D.C."
+  },
+  {
+    question: "Can the Doomsday Clock ever go backwards?",
+    answer: "Yes. The Doomsday Clock has moved backward 8 times since 1947. The most dramatic reversal was in 1991, when it moved from 10 minutes to 17 minutes to midnight after the Cold War ended and the US-Soviet START treaty was signed. Other reversals followed nuclear test ban treaties, non-proliferation agreements, and arms reduction talks. The clock has not moved backward since 2010."
+  },
+  {
+    question: "How is the Doomsday Clock time calculated?",
+    answer: "The Doomsday Clock is not calculated by a formula or algorithm. It is set through consensus expert judgment by the Bulletin's Science and Security Board, which evaluates three categories of existential risk: nuclear weapons, climate change, and disruptive technologies. Board members conduct independent assessments, consult external experts, and deliberate over several months before reaching a consensus on the clock setting each January."
+  },
+  {
+    question: "Is the Doomsday Clock the same as an atomic clock?",
+    answer: "No. Despite sharing the word 'clock,' they are completely different. An atomic clock is a precision timekeeping device that measures time using the vibrations of cesium atoms — accurate to within one second over millions of years. It is used for GPS, internet synchronization, and scientific research. The Doomsday Clock is a symbolic risk assessment tool that measures humanity's proximity to catastrophe. One measures time; the other measures danger."
+  },
+  {
+    question: "How many Doomsday Clocks are there in the world?",
+    answer: "There is only one Doomsday Clock. It is maintained by the Bulletin of the Atomic Scientists in Chicago. While the clock's image has been reproduced countless times in media, art installations, and museum exhibits, there is only one official Doomsday Clock with one official setting, currently at 85 seconds to midnight as of February 2026."
+  },
+  {
+    question: "Is the Doomsday Clock fear mongering?",
+    answer: "The Doomsday Clock is a risk communication tool, not fear mongering. It is set by Nobel Laureates and leading scientists based on objective assessment of nuclear arsenals, climate data, and technology risks. The clock has moved backward 8 times when conditions improved, demonstrating that it responds to positive developments too. Other independent risk assessments — from the Cambridge Centre for Existential Risk, the Global Catastrophic Risk Institute, and intelligence agencies — generally align with the clock's trajectory."
   }
 ];
 
