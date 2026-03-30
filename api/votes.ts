@@ -1,7 +1,15 @@
 import { neon } from "@neondatabase/serverless";
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 
-const sql = neon(process.env.DATABASE_URL!);
+function getSql() {
+  const url = process.env.DATABASE_URL;
+  if (!url) {
+    const err = new Error("DATABASE_URL environment variable is not set") as Error & { status?: number };
+    err.status = 500;
+    throw err;
+  }
+  return neon(url);
+}
 
 interface VoteResults {
   closer: number;
@@ -10,7 +18,7 @@ interface VoteResults {
   total: number;
 }
 
-async function getResults(): Promise<VoteResults> {
+async function getResults(sql: ReturnType<typeof neon>): Promise<VoteResults> {
   const rows = await sql`
     SELECT choice, COUNT(*)::int AS count
     FROM votes
@@ -41,8 +49,9 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   }
 
   try {
+    const sql = getSql();
     if (req.method === "GET") {
-      const results = await getResults();
+      const results = await getResults(sql);
       return res.status(200).json(results);
     }
 
@@ -55,13 +64,16 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
       await sql`INSERT INTO votes (choice) VALUES (${choice})`;
 
-      const results = await getResults();
+      const results = await getResults(sql);
       return res.status(201).json(results);
     }
 
     return res.status(405).json({ error: "Method not allowed" });
   } catch (error) {
     console.error("Database error:", error);
+    if (error instanceof Error && "status" in error) {
+      return res.status((error as Error & { status: number }).status).json({ error: error.message });
+    }
     return res.status(500).json({ error: "Internal server error" });
   }
 }

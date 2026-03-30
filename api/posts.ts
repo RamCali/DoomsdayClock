@@ -2,7 +2,15 @@ import type { VercelRequest, VercelResponse } from "@vercel/node";
 import { neon } from "@neondatabase/serverless";
 import jwt from "jsonwebtoken";
 
-const sql = neon(process.env.DATABASE_URL!);
+function getSql() {
+  const url = process.env.DATABASE_URL;
+  if (!url) {
+    const err = new Error("DATABASE_URL environment variable is not set") as Error & { status?: number };
+    err.status = 500;
+    throw err;
+  }
+  return neon(url);
+}
 
 function setCors(res: VercelResponse) {
   res.setHeader("Access-Control-Allow-Origin", "*");
@@ -39,11 +47,12 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method === "OPTIONS") return res.status(200).end();
 
   try {
+    const sql = getSql();
     if (req.method === "GET") {
-      return handleList(req, res);
+      return handleList(sql, req, res);
     }
     if (req.method === "POST") {
-      return handleCreate(req, res);
+      return handleCreate(sql, req, res);
     }
     return res.status(405).json({ error: "Method not allowed" });
   } catch (error: unknown) {
@@ -55,7 +64,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   }
 }
 
-async function handleList(req: VercelRequest, res: VercelResponse) {
+async function handleList(sql: ReturnType<typeof neon>, req: VercelRequest, res: VercelResponse) {
   const sort = (req.query.sort as string) || "hot";
   const period = (req.query.period as string) || "all";
   const page = Math.max(1, parseInt(req.query.page as string) || 1);
@@ -141,7 +150,7 @@ async function handleList(req: VercelRequest, res: VercelResponse) {
   });
 }
 
-async function handleCreate(req: VercelRequest, res: VercelResponse) {
+async function handleCreate(sql: ReturnType<typeof neon>, req: VercelRequest, res: VercelResponse) {
   const auth = requireAuth(req);
   const { title, body } = req.body;
 
