@@ -337,10 +337,89 @@ const blogPages = [
   },
 ];
 
+const vaultPages = [
+  {
+    path: "/vault",
+    title: "The Vault: Offline Knowledge System — Complete Survival Operating System | DoomsdayClock.net",
+    description: "The Vault is a $99 digital survival product with 15 modules, 5 interactive tools, 3 crisis walkthroughs, and a printable emergency binder. Your tactical OS for grid-down scenarios.",
+    ogType: "product",
+    content: `<h1>The Vault: Offline Knowledge System</h1>
+      <p>Total Information Redundancy for Grid-Down Scenarios. 15 comprehensive modules, 5 interactive tools, 3 full crisis scenario walkthroughs, and a printable emergency binder system. Your tactical operating system for when the grid goes down.</p>
+      <h2>What's Included</h2>
+      <ul>
+        <li>Module 0: The 15-Minute Family Briefing</li>
+        <li>Module 1: The First 72 Hours</li>
+        <li>Module 2: Water Procurement & Purification</li>
+        <li>Module 3: Field Medicine & Trauma</li>
+        <li>Module 4: Communication When the Grid Is Down</li>
+        <li>Module 5: Food Security — 90-Day Runway</li>
+        <li>Module 6: Power Generation & Energy Management</li>
+        <li>Module 7: Shelter — Hardening, Heating & Cooling</li>
+        <li>Module 8: Navigation Without GPS</li>
+        <li>Module 9: Community Defense & Organization</li>
+        <li>Module 10: The Barter Economy</li>
+        <li>Module 11: Psychological Resilience</li>
+        <li>Module 12: Children, Elderly & Special Needs</li>
+        <li>Module 13: Digital Fortress — OpSec</li>
+        <li>Module 14: Full Crisis Walkthroughs</li>
+        <li>Module 15: Printable Emergency Binder</li>
+      </ul>
+      <h2>Interactive Tools</h2>
+      <ul>
+        <li><a href="/vault/supply-calculator">Supply Runway Calculator</a></li>
+        <li><a href="/vault/water-purification">Water Purification Decision Matrix</a></li>
+        <li><a href="/vault/frequency-reference">Communication Frequency Reference</a></li>
+        <li><a href="/vault/emergency-binder">Emergency Binder Generator</a></li>
+        <li><a href="/vault/threat-assessment">Threat Assessment Scorecard</a></li>
+      </ul>`,
+  },
+  {
+    path: "/vault/supply-calculator",
+    title: "Supply Runway Calculator — How Many Days Can You Survive? | DoomsdayClock.net",
+    description: "Free interactive survival supply calculator. Enter your household size and food inventory to calculate exactly how many days you can sustain your family in an emergency.",
+    content: `<h1>Supply Runway Calculator</h1>
+      <p>Calculate exactly how many days your family can survive on your current food supply. Enter your household members and food inventory to get your survival runway.</p>
+      <p><a href="/vault">Back to The Vault</a></p>`,
+  },
+  {
+    path: "/vault/water-purification",
+    title: "Water Purification Decision Tree — Find Your Best Method | DoomsdayClock.net",
+    description: "Interactive water purification guide. Select your water source and available tools to get step-by-step purification instructions for safe drinking water in any emergency.",
+    content: `<h1>Water Purification Decision Tree</h1>
+      <p>Find the best water purification method for your situation. Answer questions about your water source and available tools to get exact step-by-step instructions.</p>
+      <p><a href="/vault">Back to The Vault</a></p>`,
+  },
+  {
+    path: "/vault/frequency-reference",
+    title: "Emergency Communication Frequency Reference Card | DoomsdayClock.net",
+    description: "Complete emergency radio frequency reference. NOAA weather frequencies, FRS/GMRS channels, ham radio quick start, international distress frequencies, and the 5-5-5 communication protocol.",
+    content: `<h1>Communication Frequency Reference</h1>
+      <p>Complete emergency communication reference card with NOAA frequencies, FRS/GMRS channels, ham radio basics, and the 5-5-5 family communication protocol.</p>
+      <p><a href="/vault">Back to The Vault</a></p>`,
+  },
+  {
+    path: "/vault/emergency-binder",
+    title: "Emergency Binder Generator — Build Your Family's Emergency Plan | DoomsdayClock.net",
+    description: "Free interactive emergency binder generator. Enter your family information, rally points, medical data, and emergency contacts to create a printable family emergency binder.",
+    content: `<h1>Emergency Binder Generator</h1>
+      <p>Build your family's emergency binder with rally points, medical information, emergency contacts, and more. Print it, laminate it, keep it in your go-bag.</p>
+      <p><a href="/vault">Back to The Vault</a></p>`,
+  },
+  {
+    path: "/vault/threat-assessment",
+    title: "Personal Threat Assessment Scorecard — How Prepared Are You? | DoomsdayClock.net",
+    description: "Take the free threat assessment quiz. Score your preparedness across 8 categories — water, food, medical, communication, power, shelter, navigation, and community — and get a personalized action plan.",
+    content: `<h1>Personal Threat Assessment Scorecard</h1>
+      <p>How prepared are you? Score yourself across 8 critical survival categories and get a personalized action plan based on your weakest areas.</p>
+      <p><a href="/vault">Back to The Vault</a></p>`,
+  },
+];
+
 const allPages = [
   // Homepage is already well-covered by index.html noscript fallback — skip it
   ...yearPages,
   ...blogPages,
+  ...vaultPages,
 ];
 
 // ---------- template manipulation ----------

@@ -1,0 +1,129 @@
+{
+  "meta": {
+    "source": "Google & Bing keyword research",
+    "date": "2026-03-14",
+    "seed_keyword": "doomsday clock",
+    "seed_volume": 135000,
+    "note": "Excludes DC Comics, Watchmen, graphic novel, Smashing Pumpkins, and other non-atomic-scientist keywords"
+  },
+  "high_volume_keywords": [
+    { "keyword": "doomsday clock", "volume": 135000, "cpc": 5.38 },
+    { "keyword": "doomsday clock atomic scientists", "volume": 18100, "cpc": 2.26 },
+    { "keyword": "doomsday clock 2025", "volume": 12100, "cpc": 12.78 },
+    { "keyword": "what is the doomsday clock", "volume": 8100, "cpc": 7.02 },
+    { "keyword": "doomsday clock definition", "volume": 2900, "cpc": null },
+    { "keyword": "doomsday clock meaning", "volume": 2900, "cpc": null },
+    { "keyword": "doomsday clock live", "volume": 2400, "cpc": 4.57 },
+    { "keyword": "doomsday clock history", "volume": 1600, "cpc": 7.74 },
+    { "keyword": "how does the doomsday clock work", "volume": 1000, "cpc": 3.04 }
+  ],
+  "medium_volume_keywords": [
+    { "keyword": "what time doomsday clock", "volume": 880, "cpc": 9.25 },
+    { "keyword": "doomsday clock today", "volume": 720, "cpc": 7.22 },
+    { "keyword": "doomsday clock time", "volume": 720, "cpc": 8.14 },
+    { "keyword": "doomsday clock currently", "volume": 720, "cpc": 2.72 },
+    { "keyword": "doomsday clock 2024", "volume": 720, "cpc": 2.75 },
+    { "keyword": "doomsday clock what time is it", "volume": 720, "cpc": 1.86 },
+    { "keyword": "doomsday clock timeline", "volume": 590, "cpc": 1.17 },
+    { "keyword": "doomsday clock current time", "volume": 590, "cpc": 1.57 },
+    { "keyword": "doomsday clock current", "volume": 590, "cpc": 4.90 },
+    { "keyword": "what does doomsday clock mean", "volume": 590, "cpc": 22.50 },
+    { "keyword": "doomsday clock explained", "volume": 390, "cpc": null },
+    { "keyword": "doomsday clock 2026", "volume": 320, "cpc": 1.54 },
+    { "keyword": "doomsday clock seconds to midnight", "volume": 320, "cpc": null },
+    { "keyword": "doomsday clock right now", "volume": 260, "cpc": 0.98 },
+    { "keyword": "doomsday clock now", "volume": 260, "cpc": 3.04 },
+    { "keyword": "doomsday clock nyc", "volume": 260, "cpc": 6.16 },
+    { "keyword": "doomsday clock midnight", "volume": 210, "cpc": null },
+    { "keyword": "doomsday clock graph", "volume": 210, "cpc": 1.29 },
+    { "keyword": "doomsday clock global warming", "volume": 210, "cpc": null },
+    { "keyword": "doomsday clock over the years", "volume": 170, "cpc": 1.66 },
+    { "keyword": "doomsday clock bulletin of atomic scientists", "volume": 170, "cpc": 2.42 },
+    { "keyword": "doomsday clock news", "volume": 170, "cpc": null },
+    { "keyword": "doomsday clock new york", "volume": 170, "cpc": null }
+  ],
+  "low_volume_valuable_keywords": [
+    { "keyword": "where is doomsday clock located", "volume": 140, "cpc": null },
+    { "keyword": "how long is 89 seconds on the doomsday clock", "volume": 140, "cpc": null },
+    { "keyword": "doomsday clock update", "volume": 140, "cpc": null },
+    { "keyword": "doomsday clock over time", "volume": 110, "cpc": 1.40 },
+    { "keyword": "doomsday clock 1947", "volume": 110, "cpc": 1.47 },
+    { "keyword": "doomsday clock images", "volume": 90, "cpc": null },
+    { "keyword": "doomsday clock picture", "volume": 90, "cpc": null },
+    { "keyword": "how long is 90 seconds on the doomsday clock", "volume": 90, "cpc": null },
+    { "keyword": "doomsday clock history graph", "volume": 90, "cpc": null },
+    { "keyword": "doomsday clock 89 seconds", "volume": 70, "cpc": null },
+    { "keyword": "doomsday clock farthest from midnight", "volume": 70, "cpc": null },
+    { "keyword": "doomsday clock by year", "volume": 70, "cpc": 1.48 },
+    { "keyword": "doomsday clock location", "volume": 70, "cpc": null },
+    { "keyword": "doomsday clock live tracker", "volume": 70, "cpc": null },
+    { "keyword": "doomsday clock 100 seconds to midnight", "volume": 70, "cpc": null },
+    { "keyword": "doomsday clock union square", "volume": 70, "cpc": null },
+    { "keyword": "doomsday clock app", "volume": 70, "cpc": null },
+    { "keyword": "why was the doomsday clock created", "volume": 70, "cpc": null },
+    { "keyword": "doomsday clock announcement", "volume": 50, "cpc": 2.00 },
+    { "keyword": "doomsday clock 12", "volume": 50, "cpc": null },
+    { "keyword": "how far is the doomsday clock from midnight", "volume": 50, "cpc": null },
+    { "keyword": "doomsday clock prediction 2026", "volume": 40, "cpc": 2.87 },
+    { "keyword": "doomsday clock 85 seconds to midnight", "volume": 40, "cpc": null },
+    { "keyword": "doomsday clock 89 seconds to midnight", "volume": 40, "cpc": null },
+    { "keyword": "why is the doomsday clock at 89 seconds", "volume": 40, "cpc": null },
+    { "keyword": "doomsday clock iran", "volume": 40, "cpc": null },
+    { "keyword": "doomsday clock every year", "volume": 40, "cpc": null },
+    { "keyword": "doomsday clock 1991", "volume": 40, "cpc": null },
+    { "keyword": "what is doomsday clock 2026", "volume": 40, "cpc": null },
+    { "keyword": "doomsday clock in new york", "volume": 40, "cpc": null },
+    { "keyword": "doomsday clock 2026 predictions", "volume": 30, "cpc": null },
+    { "keyword": "doomsday clock origin", "volume": 30, "cpc": null },
+    { "keyword": "doomsday clock 90 seconds to midnight", "volume": 30, "cpc": null },
+    { "keyword": "what is the doomsday clock at today", "volume": 30, "cpc": 1.56 },
+    { "keyword": "when was doomsday clock created", "volume": 30, "cpc": null },
+    { "keyword": "when did doomsday clock start", "volume": 30, "cpc": null },
+    { "keyword": "doomsday clock update today", "volume": 20, "cpc": null },
+    { "keyword": "doomsday clock fear mongering", "volume": 20, "cpc": null },
+    { "keyword": "doomsday clock real or fake", "volume": 20, "cpc": null },
+    { "keyword": "who created doomsday clock", "volume": 20, "cpc": null },
+    { "keyword": "why is the doomsday clock so low", "volume": 20, "cpc": null },
+    { "keyword": "why was the doomsday clock moved to 89 seconds", "volume": 20, "cpc": null },
+    { "keyword": "doomsday clock year by year", "volume": 20, "cpc": null },
+    { "keyword": "doomsday clock climate change", "volume": null, "cpc": null },
+    { "keyword": "doomsday clock ai", "volume": null, "cpc": null },
+    { "keyword": "doomsday clock cuban missile crisis", "volume": null, "cpc": null },
+    { "keyword": "doomsday clock cold war", "volume": null, "cpc": null },
+    { "keyword": "doomsday clock closest to midnight", "volume": null, "cpc": null },
+    { "keyword": "doomsday clock countdown", "volume": null, "cpc": null }
+  ],
+  "paa_clusters": {
+    "current_time": [
+      "What time is the Doomsday Clock now?",
+      "What time is the Doomsday Clock set at now?",
+      "What time is the Doomsday Clock showing today?",
+      "What is the Doomsday Clock right now in 2026?"
+    ],
+    "meaning_89_seconds": [
+      "What does 89 seconds to midnight actually mean?",
+      "What does it mean when the Doomsday Clock is 89 seconds to midnight?",
+      "What does 90 seconds before midnight mean?",
+      "What does it mean if the Doomsday Clock is 85 seconds to midnight?"
+    ],
+    "midnight_consequences": [
+      "What happens if the Doomsday Clock reaches midnight?",
+      "What happens if the Doomsday Clock hits midnight?",
+      "What does it mean if the Doomsday Clock reaches midnight?"
+    ],
+    "accuracy_legitimacy": [
+      "Is the Doomsday Clock 100% accurate?",
+      "How serious is the Doomsday Clock?",
+      "Does the Doomsday Clock actually mean anything?",
+      "Are we in the end times?"
+    ],
+    "reversibility": [
+      "Can the Doomsday Clock go back?",
+      "What's the farthest from midnight the Doomsday Clock has ever been?"
+    ],
+    "seven_minutes": [
+      "What is 7 minutes to midnight?",
+      "What does seven minutes to midnight mean?"
+    ]
+  }
+}

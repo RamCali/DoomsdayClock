@@ -295,18 +295,87 @@ export function StorePage() {
         ))}
       </div>
 
-      {/* Digital Downloads Section */}
+      {/* The Vault — Premium Product Feature */}
       <div className="mt-16">
+        <div className="relative overflow-hidden rounded-2xl border border-doom/30 bg-gradient-to-br from-doom/10 via-zinc-900 to-zinc-900 p-8 sm:p-12">
+          <div className="absolute top-0 right-0 w-64 h-64 bg-doom/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+          <div className="relative">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-doom/20 border border-doom/40 text-doom text-xs font-bold uppercase tracking-wider mb-4">
+              <Shield className="w-3.5 h-3.5" />
+              Premium Digital Product
+            </div>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+              <div>
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-4">
+                  The Vault: Offline Knowledge System
+                </h2>
+                <p className="text-muted-foreground mb-6">
+                  Your complete tactical operating system for grid-down scenarios. 15 modules, 5 interactive tools, 3 full crisis walkthroughs, and a printable emergency binder. Works offline. Updated annually.
+                </p>
+                <ul className="space-y-2 mb-6">
+                  {[
+                    "15 comprehensive survival modules with SOPs",
+                    "5 interactive tools (calculators, decision trees, generators)",
+                    "3 realistic crisis scenario walkthroughs",
+                    "Printable emergency binder system",
+                    "Annual threat briefing updates",
+                    "Lifetime access + community forum",
+                  ].map((item) => (
+                    <li key={item} className="flex items-start gap-2 text-sm text-foreground/80">
+                      <Clock className="w-4 h-4 text-doom mt-0.5 shrink-0" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+                <div className="flex items-center gap-4">
+                  <Link
+                    to="/vault"
+                    className="inline-flex items-center gap-2 px-6 py-3 bg-doom hover:bg-doom/80 text-white font-bold rounded-xl transition-colors text-sm"
+                  >
+                    Learn More & Buy — $99
+                    <ExternalLink className="w-4 h-4" />
+                  </Link>
+                  <span className="text-xs text-muted-foreground line-through">$199</span>
+                </div>
+              </div>
+              <div className="grid grid-cols-2 gap-3">
+                {[
+                  { label: "Supply Calculator", href: "/vault/supply-calculator", icon: "📊" },
+                  { label: "Water Purification", href: "/vault/water-purification", icon: "💧" },
+                  { label: "Frequency Reference", href: "/vault/frequency-reference", icon: "📻" },
+                  { label: "Emergency Binder", href: "/vault/emergency-binder", icon: "📋" },
+                  { label: "Threat Assessment", href: "/vault/threat-assessment", icon: "🎯" },
+                  { label: "View All Modules", href: "/vault", icon: "📖" },
+                ].map((tool) => (
+                  <Link
+                    key={tool.href}
+                    to={tool.href}
+                    className="glass-card p-3 text-center hover:border-doom/30 transition-all group"
+                  >
+                    <div className="text-2xl mb-1">{tool.icon}</div>
+                    <div className="text-xs font-medium text-muted-foreground group-hover:text-foreground transition-colors">
+                      {tool.label}
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Other Digital Downloads */}
+      <div className="mt-12">
         <div className="text-center mb-8">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-doom/10 border border-doom/30 text-doom text-xs font-medium mb-4">
             <Download className="w-3.5 h-3.5" />
-            Digital Products
+            Digital Guides
           </div>
           <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-2">
-            Digital Downloads
+            Individual Guides
           </h2>
           <p className="text-muted-foreground text-sm max-w-lg mx-auto">
-            High-value emergency preparedness guides — instant download
+            Standalone guides for specific preparedness topics
           </p>
         </div>
 

@@ -1,0 +1,290 @@
+{
+  "content_plan": {
+    "generated": "2026-03-14",
+    "strategy": "Target high-volume informational keywords not yet covered by existing blog posts, with FAQ schema for PAA capture",
+    "existing_content": [
+      "doomsday-clock-history-timeline",
+      "doomsday-clock-2026",
+      "doomsday-clock-2027-prediction",
+      "doomsday-clock-comic-vs-real",
+      "what-does-89-seconds-to-midnight-mean",
+      "will-the-world-end-doomsday-clock",
+      "what-happens-doomsday-clock-midnight",
+      "who-controls-doomsday-clock",
+      "us-iran-crisis-doomsday-clock",
+      "best-doomsday-clock-watches",
+      "emergency-food-supply-guide",
+      "essential-survival-gear-2026",
+      "best-home-backup-power-systems"
+    ],
+    "priority_1_new_content": [
+      {
+        "slug": "what-is-the-doomsday-clock",
+        "title": "What Is the Doomsday Clock? Definition, Meaning & How It Works",
+        "primary_keyword": "what is the doomsday clock",
+        "primary_volume": 8100,
+        "secondary_keywords": [
+          "doomsday clock definition (2.9K)",
+          "doomsday clock meaning (2.9K)",
+          "how does the doomsday clock work (1K)",
+          "doomsday clock explained (390)",
+          "what does doomsday clock mean (590 / $22.50 CPC)",
+          "doomsday clock bulletin of atomic scientists (170)",
+          "why was the doomsday clock created (70)",
+          "how is the doomsday clock calculated",
+          "is the doomsday clock 100% accurate",
+          "does the doomsday clock actually mean anything",
+          "how often does the doomsday clock change"
+        ],
+        "combined_keyword_volume": 16150,
+        "content_type": "Pillar / Cornerstone",
+        "word_count_target": "2500-3000",
+        "notes": "This is the #1 gap. Covers the massive 'what is' intent cluster. Should be the definitive explainer with FAQ schema. Link to history timeline, who controls, and midnight posts.",
+        "faq_schema_questions": [
+          "What is the Doomsday Clock?",
+          "How does the Doomsday Clock work?",
+          "Who created the Doomsday Clock?",
+          "Is the Doomsday Clock accurate?",
+          "How often does the Doomsday Clock change?",
+          "Does the Doomsday Clock actually mean anything?"
+        ]
+      },
+      {
+        "slug": "doomsday-clock-current-time-today",
+        "title": "Doomsday Clock Current Time Today (2026): Live Status & Update",
+        "primary_keyword": "doomsday clock today",
+        "primary_volume": 720,
+        "secondary_keywords": [
+          "doomsday clock current time (590)",
+          "doomsday clock currently (720)",
+          "doomsday clock time (720)",
+          "what time doomsday clock (880 / $9.25 CPC)",
+          "doomsday clock what time is it (720)",
+          "doomsday clock right now (260)",
+          "doomsday clock now (260)",
+          "what is the doomsday clock at today (30 / $1.56 CPC)",
+          "doomsday clock update today (20)",
+          "doomsday clock current (590 / $4.90 CPC)"
+        ],
+        "combined_keyword_volume": 4790,
+        "content_type": "Evergreen / Updated regularly",
+        "word_count_target": "1500-2000",
+        "notes": "Massive navigational intent cluster. Should auto-update or show current setting prominently. High CPC ($9.25) suggests ad value. Link to homepage clock widget. Add structured data for current time."
+      },
+      {
+        "slug": "doomsday-clock-timeline-graph",
+        "title": "Doomsday Clock Timeline Graph: Every Change from 1947 to 2026",
+        "primary_keyword": "doomsday clock timeline",
+        "primary_volume": 590,
+        "secondary_keywords": [
+          "doomsday clock graph (210)",
+          "doomsday clock over the years (170)",
+          "doomsday clock by year (70)",
+          "doomsday clock over time (110)",
+          "doomsday clock history graph (90)",
+          "doomsday clock year by year (20)",
+          "doomsday clock every year (40)",
+          "doomsday clock changes over time",
+          "doomsday clock chart",
+          "doomsday clock over time graph",
+          "doomsday clock 1947 (110)"
+        ],
+        "combined_keyword_volume": 1410,
+        "content_type": "Visual / Interactive content",
+        "word_count_target": "1500-2000",
+        "notes": "Distinct from existing history-timeline blog post — this should be a dedicated interactive chart/graph page with the TimelineChart component. Embed the existing chart with more context. Target image search too."
+      }
+    ],
+    "priority_2_new_content": [
+      {
+        "slug": "doomsday-clock-climate-change-global-warming",
+        "title": "How Climate Change Affects the Doomsday Clock",
+        "primary_keyword": "doomsday clock climate change",
+        "secondary_keywords": [
+          "doomsday clock global warming (210)",
+          "doomsday clock ai",
+          "environmental doomsday clock",
+          "climate doomsday clock"
+        ],
+        "combined_keyword_volume": 210,
+        "content_type": "Blog post",
+        "word_count_target": "1500-2000",
+        "notes": "Growing interest in non-nuclear threats affecting the clock. Cover climate, AI, and biotech as newer factors. Link to 2026 and 2027 prediction posts."
+      },
+      {
+        "slug": "doomsday-clock-cold-war-cuban-missile-crisis",
+        "title": "The Doomsday Clock During the Cold War & Cuban Missile Crisis",
+        "primary_keyword": "doomsday clock cold war",
+        "secondary_keywords": [
+          "doomsday clock cuban missile crisis",
+          "doomsday clock during cuban missile crisis",
+          "doomsday clock during cold war",
+          "doomsday clock 1953",
+          "doomsday clock 1991 (40)",
+          "doomsday clock closest to midnight",
+          "doomsday clock farthest from midnight (70)"
+        ],
+        "combined_keyword_volume": 110,
+        "content_type": "Blog post",
+        "word_count_target": "1500-2000",
+        "notes": "Historical deep-dive. The 'farthest from midnight' (1991, 17 min) and 'closest' (1953, 2 min) are strong hooks. Link to history timeline."
+      },
+      {
+        "slug": "doomsday-clock-location-where",
+        "title": "Where Is the Doomsday Clock? Location, NYC, Union Square & More",
+        "primary_keyword": "where is doomsday clock located",
+        "primary_volume": 140,
+        "secondary_keywords": [
+          "doomsday clock location (70)",
+          "doomsday clock nyc (260 / $6.16 CPC)",
+          "doomsday clock new york (170)",
+          "doomsday clock union square (70)",
+          "doomsday clock in new york (40)",
+          "doomsday clock chicago",
+          "doomsday clock university of chicago"
+        ],
+        "combined_keyword_volume": 750,
+        "content_type": "Blog post",
+        "word_count_target": "1000-1500",
+        "notes": "High CPC on 'nyc' keyword. Cover the Bulletin office in Chicago, the NYC Metronome clock confusion, Union Square, and where to see it. Good for local SEO."
+      },
+      {
+        "slug": "how-long-is-89-seconds-doomsday-clock",
+        "title": "How Long Is 89 Seconds on the Doomsday Clock in Real Time?",
+        "primary_keyword": "how long is 89 seconds on the doomsday clock",
+        "primary_volume": 140,
+        "secondary_keywords": [
+          "how long is 90 seconds on the doomsday clock (90)",
+          "how long is 100 seconds on the doomsday clock in real time",
+          "how long is 85 seconds on the doomsday clock",
+          "doomsday clock 89 seconds in years",
+          "doomsday clock 90 seconds in years",
+          "how long is a second on the doomsday clock",
+          "doomsday clock to real time"
+        ],
+        "combined_keyword_volume": 230,
+        "content_type": "Blog post / FAQ",
+        "word_count_target": "1000-1500",
+        "notes": "Complements existing '89 seconds meaning' post but addresses a different intent — people literally want to know the real-time equivalent. Explain the metaphorical nature. Strong PAA capture potential."
+      },
+      {
+        "slug": "can-doomsday-clock-go-backwards",
+        "title": "Can the Doomsday Clock Go Backwards? History of Clock Reversals",
+        "primary_keyword": "can the doomsday clock go backwards",
+        "primary_volume": 90,
+        "secondary_keywords": [
+          "can the doomsday clock go back",
+          "has the doomsday clock ever moved back",
+          "doomsday clock reset",
+          "doomsday clock farthest from midnight (70)",
+          "doomsday clock moved"
+        ],
+        "combined_keyword_volume": 160,
+        "content_type": "Blog post",
+        "word_count_target": "1000-1500",
+        "notes": "Strong PAA cluster. Answer is yes — it's moved back 8 times. Cover each reversal with context. Hopeful angle differentiates from doom content."
+      },
+      {
+        "slug": "doomsday-clock-2025-update",
+        "title": "Doomsday Clock 2025: The 89-Second Update Explained",
+        "primary_keyword": "doomsday clock 2025",
+        "primary_volume": 12100,
+        "secondary_keywords": [
+          "doomsday clock 2025 update",
+          "doomsday clock 2025 meaning",
+          "doomsday clock 2025 predictions",
+          "atomic scientists doomsday clock 2025",
+          "what was the doomsday clock in 2025"
+        ],
+        "combined_keyword_volume": 12100,
+        "content_type": "Blog post",
+        "word_count_target": "1500-2000",
+        "notes": "HUGE volume (12.1K) and highest CPC ($12.78). Even though it's 2026, people are still searching 2025. Cover the Jan 2025 announcement, the move to 89 seconds, and what changed. Evergreen recap."
+      }
+    ],
+    "priority_3_content_optimizations": [
+      {
+        "existing_slug": "what-does-89-seconds-to-midnight-mean",
+        "optimization": "Add FAQ schema targeting PAA cluster: 'What does 90 seconds before midnight mean?', 'What does it mean if the Doomsday Clock is 85 seconds to midnight?', 'Why was the doomsday clock moved to 89 seconds?'",
+        "keywords_to_add": [
+          "doomsday clock 85 seconds to midnight (40)",
+          "doomsday clock 90 seconds to midnight (30)",
+          "why was the doomsday clock moved to 89 seconds (20)"
+        ]
+      },
+      {
+        "existing_slug": "what-happens-doomsday-clock-midnight",
+        "optimization": "Add FAQ schema for: 'Has the Doomsday Clock ever hit midnight?', 'What happens when the doomsday clock hits 0?', 'Will the doomsday clock ever hit midnight?'",
+        "keywords_to_add": [
+          "doomsday clock 12 (50)",
+          "doomsday clock hits midnight",
+          "has the doomsday clock ever hit midnight"
+        ]
+      },
+      {
+        "existing_slug": "who-controls-doomsday-clock",
+        "optimization": "Add sections for 'who sets', 'who runs', 'who moves', 'who updates' variations. Add FAQ schema.",
+        "keywords_to_add": [
+          "who sets the doomsday clock",
+          "who runs the doomsday clock",
+          "who moves the doomsday clock",
+          "who updates the doomsday clock",
+          "who decides doomsday clock"
+        ]
+      },
+      {
+        "existing_slug": "doomsday-clock-history-timeline",
+        "optimization": "Add 'doomsday clock 1947' and 'doomsday clock 1991' H2 sections. Add structured data for timeline.",
+        "keywords_to_add": [
+          "doomsday clock 1947 (110)",
+          "doomsday clock 1991 (40)",
+          "doomsday clock through the years",
+          "when did doomsday clock start (30)",
+          "when was doomsday clock created (30)"
+        ]
+      },
+      {
+        "existing_slug": "doomsday-clock-2026",
+        "optimization": "Add FAQ schema. Target 'prediction 2026' and 'what is doomsday clock 2026' keywords.",
+        "keywords_to_add": [
+          "doomsday clock prediction 2026 (40 / $2.87 CPC)",
+          "what is doomsday clock 2026 (40)",
+          "doomsday clock 2026 predictions (30)",
+          "why did doomsday clock change 2026",
+          "how close is doomsday clock 2026"
+        ]
+      }
+    ],
+    "homepage_seo_keywords": {
+      "notes": "These keywords should be targeted by the homepage/app itself via meta tags, H1, and structured data",
+      "keywords": [
+        "doomsday clock (135K)",
+        "doomsday clock live (2.4K)",
+        "doomsday clock today (720)",
+        "doomsday clock current time (590)",
+        "doomsday clock right now (260)",
+        "doomsday clock now (260)",
+        "doomsday clock seconds to midnight (320)",
+        "doomsday clock live tracker (70)",
+        "doomsday clock countdown"
+      ]
+    },
+    "internal_linking_strategy": {
+      "pillar_page": "what-is-the-doomsday-clock",
+      "hub_spokes": [
+        "what-is-the-doomsday-clock -> doomsday-clock-history-timeline",
+        "what-is-the-doomsday-clock -> who-controls-doomsday-clock",
+        "what-is-the-doomsday-clock -> what-happens-doomsday-clock-midnight",
+        "what-is-the-doomsday-clock -> can-doomsday-clock-go-backwards",
+        "what-is-the-doomsday-clock -> doomsday-clock-current-time-today",
+        "doomsday-clock-current-time-today -> doomsday-clock-2025-update",
+        "doomsday-clock-current-time-today -> doomsday-clock-2026",
+        "doomsday-clock-history-timeline -> doomsday-clock-cold-war-cuban-missile-crisis",
+        "doomsday-clock-history-timeline -> doomsday-clock-timeline-graph",
+        "what-does-89-seconds-to-midnight-mean -> how-long-is-89-seconds-doomsday-clock",
+        "doomsday-clock-2026 -> doomsday-clock-climate-change-global-warming",
+        "doomsday-clock-location-where -> Homepage (NYC/live clock)"
+      ]
+    }
+  }
+}

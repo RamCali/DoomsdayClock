@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(head:*)",
+      "Bash(node -e:*)",
+      "Bash(node:*)",
+      "Bash(wc:*)",
+      "Bash(npx vite build:*)",
+      "Bash(python3:*)",
+      "Bash(grep -E \"\\\\.\\(xml|txt|json\\)$\")",
+      "Bash(grep -E \"\\\\.\\(xml|txt\\)$\")",
+      "Bash(grep -E \"\\\\.tsx$\")",
+      "Bash(grep -E \"\\\\.\\(ts|js\\)$\")",
+      "Bash(grep -r \"stripe\\\\|payment\\\\|gumroad\\\\|checkout\" '/Users/RamG/Downloads/Projects \\(DND\\)/DoomsdayClock/src' --include=*.tsx --include=*.ts -l)",
+      "Bash(grep -E \"\\\\.tsx$|^d\")",
+      "Bash(wc -l \"/Users/RamG/Downloads/Projects \\(DND\\)/DoomsdayClock/src/components/blog\"/*.tsx)"
+    ],
+    "additionalDirectories": [
+      "/Users/RamG/Downloads/Projects (DND)/DoomsdayClock/src/components"
+    ]
+  }
+}
