@@ -426,15 +426,13 @@ export function StorePage() {
               </p>
               <div className="flex items-center justify-between mt-auto">
                 <span className="text-lg font-bold text-foreground">$9.99</span>
-                <a
-                  href="https://doomsdayclock.gumroad.com/l/nuclear-survival-guide"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  to="/store/nuclear-survival-guide"
                   className="inline-flex items-center gap-1.5 px-4 py-2 bg-doom hover:bg-doom/80 text-white text-xs font-semibold rounded-lg transition-colors"
                 >
-                  Buy on Gumroad
+                  Learn More
                   <ExternalLink className="w-3 h-3" />
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -455,15 +453,13 @@ export function StorePage() {
               </p>
               <div className="flex items-center justify-between mt-auto">
                 <span className="text-lg font-bold text-foreground">$4.99</span>
-                <a
-                  href="https://doomsdayclock.gumroad.com/l/family-emergency-plan"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  to="/store/family-emergency-plan"
                   className="inline-flex items-center gap-1.5 px-4 py-2 bg-doom hover:bg-doom/80 text-white text-xs font-semibold rounded-lg transition-colors"
                 >
-                  Buy on Gumroad
+                  Learn More
                   <ExternalLink className="w-3 h-3" />
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -484,15 +480,13 @@ export function StorePage() {
               </p>
               <div className="flex items-center justify-between mt-auto">
                 <span className="text-lg font-bold text-foreground">$7.99</span>
-                <a
-                  href="https://doomsdayclock.gumroad.com/l/food-planning-guide"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  to="/store/food-planning-guide"
                   className="inline-flex items-center gap-1.5 px-4 py-2 bg-doom hover:bg-doom/80 text-white text-xs font-semibold rounded-lg transition-colors"
                 >
-                  Buy on Gumroad
+                  Learn More
                   <ExternalLink className="w-3 h-3" />
-                </a>
+                </Link>
               </div>
             </div>
           </div>

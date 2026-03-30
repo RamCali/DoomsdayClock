@@ -335,6 +335,33 @@ const blogPages = [
     content: `<h1>Advertise on DoomsdayClock.net</h1>
       <p>Reach a highly engaged audience interested in geopolitics, science, current events, and emergency preparedness. Sponsorship options starting at $200.</p>`,
   },
+  {
+    path: "/store/nuclear-survival-guide",
+    title: "Nuclear Emergency Survival Guide — 12-Chapter Digital Guide | DoomsdayClock.net",
+    description: "The complete 80-page guide to surviving a nuclear emergency. Covers shelter-in-place, evacuation, radiation exposure, decontamination, and long-term recovery. $9.99 instant download.",
+    ogType: "product",
+    content: `<h1>Nuclear Emergency Survival Guide</h1>
+      <p>The complete 80-page guide to surviving a nuclear emergency. 12 chapters covering shelter-in-place protocols, evacuation decisions, radiation basics, decontamination, potassium iodide dosing, emergency water and food, first aid, and long-term recovery. Based on FEMA, CDC, and NRC guidelines.</p>
+      <p><a href="https://doomsdayclock.gumroad.com/l/nuclear-survival-guide">Buy Now — $9.99</a></p>`,
+  },
+  {
+    path: "/store/family-emergency-plan",
+    title: "Family Emergency Plan Template — Printable Worksheets | DoomsdayClock.net",
+    description: "Editable family emergency action plan with contact sheets, meeting points, go-bag checklists, medical info, and scenario-specific protocols. $4.99 instant download.",
+    ogType: "product",
+    content: `<h1>Family Emergency Plan Template</h1>
+      <p>Editable emergency action plan template for your family. Includes emergency contacts, communication tree, 3 meeting points, evacuation routes, 72-hour go-bag checklist, medical information worksheets, important documents checklist, and 5 scenario-specific action plans.</p>
+      <p><a href="https://doomsdayclock.gumroad.com/l/family-emergency-plan">Buy Now — $4.99</a></p>`,
+  },
+  {
+    path: "/store/food-planning-guide",
+    title: "90-Day Emergency Food Planning Guide — Meal Plans & Shopping Lists | DoomsdayClock.net",
+    description: "Complete 90-day emergency food storage guide. Calorie calculations, shopping lists, storage methods, 30-day meal plan with recipes, and budget planning. $7.99 instant download.",
+    ogType: "product",
+    content: `<h1>90-Day Emergency Food Planning Guide</h1>
+      <p>Complete meal planning guide for 90 days of emergency food storage. Includes calorie calculations by household size, the 3-tier pantry foundation, 12-week shopping lists, storage methods and shelf life guide, 30-day meal plan with 10 recipes, rotation tracking, and budget optimization.</p>
+      <p><a href="https://doomsdayclock.gumroad.com/l/food-planning-guide">Buy Now — $7.99</a></p>`,
+  },
 ];
 
 const vaultPages = [

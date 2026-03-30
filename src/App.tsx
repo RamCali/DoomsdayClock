@@ -77,6 +77,9 @@ const OGImagePreview = lazy(() => import("./components/OGImagePreview").then(m =
 const YearPage = lazy(() => import("./components/YearPage").then(m => ({ default: m.YearPage })));
 const StorePage = lazy(() => import("./components/store/StorePage").then(m => ({ default: m.StorePage })));
 const Advertise = lazy(() => import("./components/Advertise").then(m => ({ default: m.Advertise })));
+const NuclearSurvivalGuide = lazy(() => import("./components/products/NuclearSurvivalGuide").then(m => ({ default: m.NuclearSurvivalGuide })));
+const FamilyEmergencyPlan = lazy(() => import("./components/products/FamilyEmergencyPlan").then(m => ({ default: m.FamilyEmergencyPlan })));
+const FoodPlanningGuide = lazy(() => import("./components/products/FoodPlanningGuide").then(m => ({ default: m.FoodPlanningGuide })));
 const VaultLanding = lazy(() => import("./components/vault/VaultLanding").then(m => ({ default: m.VaultLanding })));
 const SupplyCalculator = lazy(() => import("./components/vault/SupplyCalculator").then(m => ({ default: m.SupplyCalculator })));
 const WaterPurificationTool = lazy(() => import("./components/vault/WaterPurificationTool").then(m => ({ default: m.WaterPurificationTool })));
@@ -195,6 +198,9 @@ function App() {
                   <Route path="/blog/best-water-purification-systems-emergency" element={<WaterPurificationSystems />} />
                   <Route path="/doomsday-clock-:year" element={<YearPage />} />
                   <Route path="/store" element={<StorePage />} />
+                  <Route path="/store/nuclear-survival-guide" element={<NuclearSurvivalGuide />} />
+                  <Route path="/store/family-emergency-plan" element={<FamilyEmergencyPlan />} />
+                  <Route path="/store/food-planning-guide" element={<FoodPlanningGuide />} />
                   <Route path="/vault" element={<VaultLanding />} />
                   <Route path="/vault/supply-calculator" element={<SupplyCalculator />} />
                   <Route path="/vault/water-purification" element={<WaterPurificationTool />} />
