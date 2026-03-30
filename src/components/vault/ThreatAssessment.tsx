@@ -789,6 +789,13 @@ export function ThreatAssessment() {
                           : "border-zinc-700 hover:border-zinc-500 text-zinc-300 hover:text-white"
                       }`}
                     >
+                      <input
+                        type="radio"
+                        name={`q-${currentCategory.id}-${qIdx}`}
+                        className="hidden sr-only"
+                        checked={selected}
+                        onChange={() => handleAnswer(qIdx as 0 | 1, value)}
+                      />
                       <div
                         className={`w-5 h-5 rounded-full border-2 flex items-center justify-center flex-shrink-0 transition-colors ${
                           selected ? "border-atomic" : "border-zinc-500"

@@ -613,12 +613,7 @@ export function SupplyCalculator() {
             <div className="mb-8">
               <h3 className="text-sm font-semibold text-zinc-300 mb-3">Per-Person Breakdown</h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-                {dailyCaloriesPerPerson.map((p) => {
-                  const personDays =
-                    p.calories > 0 && people.length > 0
-                      ? totalStoredCalories / (p.calories * people.length)
-                      : 0;
-                  return (
+                {dailyCaloriesPerPerson.map((p) => (
                     <div
                       key={p.id}
                       className="bg-zinc-800/40 rounded-lg px-4 py-3 flex items-center justify-between"
@@ -636,8 +631,7 @@ export function SupplyCalculator() {
                         </div>
                       </div>
                     </div>
-                  );
-                })}
+                ))}
               </div>
             </div>
           )}

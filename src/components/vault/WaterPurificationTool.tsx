@@ -476,13 +476,10 @@ export function WaterPurificationTool() {
       setCurrentStep(3);
       return;
     }
-    if ((currentStep === 3 && waterClear === true) || (currentStep === 4 && waterClear === true)) {
+    if (currentStep === 3 && waterClear === true) {
       setSelectedMethods([]);
-      setCurrentStep(waterClear === false ? 4 : 3);
-      if (currentStep === 3) {
-        setWaterClear(null);
-        setCurrentStep(2);
-      }
+      setWaterClear(null);
+      setCurrentStep(2);
       return;
     }
     if (currentStep === 3 && waterClear === false) {
@@ -510,7 +507,6 @@ export function WaterPurificationTool() {
 
   // Determine which step the method selection is
   const methodStep = waterClear === false ? 4 : 3;
-  const resultsStep = waterClear === false ? 5 : 4;
 
   const bestMethod = selectedMethods.length > 0 ? getBestMethod(selectedMethods) : null;
   const riskLevel = selectedSource && bestMethod ? getRiskLevel(selectedSource, bestMethod) : null;
