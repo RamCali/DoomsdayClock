@@ -9,6 +9,11 @@ interface VisitorStats {
   totalIdeas: number;
 }
 
+function formatCount(value: unknown) {
+  const n = typeof value === "number" ? value : Number(value);
+  return Number.isFinite(n) ? n.toLocaleString() : "0";
+}
+
 function generateRealisticStats(realTotal: number, ideaCount: number): VisitorStats {
   const hour = new Date().getHours();
   const baseViewers = hour >= 9 && hour <= 21 ? 45 : 15;
@@ -110,7 +115,7 @@ export function SocialProof() {
             <div className="hidden sm:flex items-center gap-2">
               <Globe className="w-4 h-4 text-blue-400" />
               <span className="text-sm text-gray-400">
-                {stats.totalPredictions > 0 ? `${stats.totalPredictions.toLocaleString()} predictions` : ""}
+                {stats.totalPredictions > 0 ? `${formatCount(stats.totalPredictions)} predictions` : ""}
               </span>
             </div>
             {stats.totalIdeas > 0 && (
@@ -170,13 +175,13 @@ export function InlineSocialStats() {
       <div className="flex items-center gap-2">
         <Users className="w-4 h-4 text-atomic" />
         <span className="text-muted-foreground">
-          <span className="text-white font-medium">{stats.todayVisitors.toLocaleString()}</span> visitors today
+          <span className="text-white font-medium">{formatCount(stats.todayVisitors)}</span> visitors today
         </span>
       </div>
       <div className="flex items-center gap-2">
         <TrendingUp className="w-4 h-4 text-purple-500" />
         <span className="text-muted-foreground">
-          <span className="text-white font-medium">{stats.totalPredictions.toLocaleString()}</span> predictions made
+          <span className="text-white font-medium">{formatCount(stats.totalPredictions)}</span> predictions made
         </span>
       </div>
     </div>
