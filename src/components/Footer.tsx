@@ -141,9 +141,23 @@ export function Footer() {
           <p className="text-xs text-muted-foreground">
             &copy; {currentYear} DoomsdayClock. For educational purposes.
           </p>
-          <p className="text-xs text-muted-foreground">
-            Up-to-date as of {currentTime.lastUpdated}
-          </p>
+          <div className="flex items-center gap-4">
+            <Link
+              to="/terms"
+              className="text-xs text-muted-foreground hover:text-foreground transition-colors"
+            >
+              Terms of Service
+            </Link>
+            <Link
+              to="/privacy"
+              className="text-xs text-muted-foreground hover:text-foreground transition-colors"
+            >
+              Privacy Policy
+            </Link>
+            <p className="text-xs text-muted-foreground">
+              Up-to-date as of {currentTime.lastUpdated}
+            </p>
+          </div>
         </div>
       </div>
     </footer>

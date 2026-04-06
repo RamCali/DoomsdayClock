@@ -12,6 +12,8 @@ import { UpcomingUpdate } from "./components/UpcomingUpdate";
 import { Footer } from "./components/Footer";
 import { injectSEO } from "./components/SEO";
 import { ErrorBoundary, NotFound } from "./components/errors";
+import { TermsOfService } from "./components/TermsOfService";
+import { PrivacyPolicy } from "./components/PrivacyPolicy";
 import { PredictionPoll } from "./components/PredictionPoll";
 import { EmailCapture } from "./components/EmailCapture";
 import { Gamification } from "./components/Gamification";
@@ -213,6 +215,8 @@ function App() {
                   <Route path="/forum/post/:id" element={<PostDetail />} />
                   <Route path="/verify-email" element={<VerifyEmail />} />
                   <Route path="/reset-password" element={<ResetPassword />} />
+                  <Route path="/terms" element={<TermsOfService />} />
+                  <Route path="/privacy" element={<PrivacyPolicy />} />
                   <Route path="*" element={<NotFound />} />
                 </Routes>
               </Suspense>
