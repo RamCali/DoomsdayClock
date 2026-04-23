@@ -5,17 +5,27 @@ import { currentTime } from "../../data/clockHistory";
 import { updateMetaTags, resetToDefaults } from "../../lib/seo";
 import { RelatedArticles } from "./RelatedArticles";
 
+const MONTHS = [
+  "January", "February", "March", "April", "May", "June",
+  "July", "August", "September", "October", "November", "December",
+];
+
 export function DoomsdayClock2026() {
+  const now = new Date();
+  const currentMonth = MONTHS[now.getMonth()];
+  const currentYear = now.getFullYear();
+  const lastUpdatedDisplay = `${currentMonth} ${now.getDate()}, ${currentYear}`;
+  const modifiedISO = now.toISOString();
+
   useEffect(() => {
     updateMetaTags({
-      title: "Doomsday Clock 2026 Update: Current Time Is 85 Seconds to Midnight (Closest Ever)",
-      description:
-        "The Doomsday Clock 2026 setting is 85 seconds to midnight — the closest ever. Updated February 4, 2026. Why the Bulletin moved the clock from 89 to 85 seconds, what it means, and the current status of nuclear and climate threats.",
+      title: "Doomsday Clock 2026: 85 Seconds to Midnight — Current Status",
+      description: `Current Doomsday Clock status: 85 seconds to midnight — the closest ever, set February 4, 2026. Page last refreshed ${lastUpdatedDisplay}. Why the Bulletin moved from 89 to 85 seconds.`,
       path: "/blog/doomsday-clock-2026",
       newsKeywords:
-        "doomsday clock 2026, doomsday clock 2026 update, doomsday clock current setting 2026, doomsday clock 2026 status, doomsday clock 85 seconds, doomsday clock 2026 time, doomsday clock 2026 prediction, doomsday clock current status 2026, what is doomsday clock 2026, 2026 doomsday clock, doomsday clock announcement 2026",
-      publishedTime: "2026-03-07T00:00:00Z",
-      modifiedTime: "2026-03-07T00:00:00Z",
+        "doomsday clock 2026, doomsday clock 2026 update, doomsday clock current setting 2026, doomsday clock 2026 status, doomsday clock 85 seconds, doomsday clock current status 2026, current doomsday clock time 2026, doomsday clock 2026 current time, doomsday clock current time 2026, doomsday clock 2026 seconds to midnight, doomsday clock 2026 prediction",
+      publishedTime: "2026-02-04T00:00:00Z",
+      modifiedTime: modifiedISO,
       section: "Update",
       author: "DoomsdayClock.net",
     });
@@ -23,9 +33,9 @@ export function DoomsdayClock2026() {
     const schema = {
       "@context": "https://schema.org",
       "@type": "NewsArticle",
-      headline: "Doomsday Clock 2026: What Changed and Why",
-      datePublished: "2026-03-07T00:00:00Z",
-      dateModified: "2026-03-07T00:00:00Z",
+      headline: "Doomsday Clock 2026: 85 Seconds to Midnight — Current Status",
+      datePublished: "2026-02-04T00:00:00Z",
+      dateModified: modifiedISO,
       author: {
         "@type": "Organization",
         name: "DoomsdayClock.net",
@@ -112,14 +122,31 @@ export function DoomsdayClock2026() {
     faqScript.textContent = JSON.stringify(faqSchema);
     document.head.appendChild(faqScript);
 
+    const breadcrumbSchema = {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: "https://doomsdayclock.net/" },
+        { "@type": "ListItem", position: 2, name: "Blog", item: "https://doomsdayclock.net/blog" },
+        { "@type": "ListItem", position: 3, name: "Doomsday Clock 2026", item: "https://doomsdayclock.net/blog/doomsday-clock-2026" },
+      ],
+    };
+    const breadcrumbScript = document.createElement("script");
+    breadcrumbScript.type = "application/ld+json";
+    breadcrumbScript.setAttribute("data-blog-schema", "dc-2026-breadcrumb");
+    breadcrumbScript.textContent = JSON.stringify(breadcrumbSchema);
+    document.head.appendChild(breadcrumbScript);
+
     return () => {
       const el = document.querySelector('script[data-blog-schema="dc-2026"]');
       if (el) el.remove();
       const faqEl = document.querySelector('script[data-blog-schema="dc-2026-faq"]');
       if (faqEl) faqEl.remove();
+      const bcEl = document.querySelector('script[data-blog-schema="dc-2026-breadcrumb"]');
+      if (bcEl) bcEl.remove();
       resetToDefaults();
     };
-  }, []);
+  }, [currentMonth, currentYear, lastUpdatedDisplay, modifiedISO]);
 
   return (
     <article className="py-12 sm:py-16">
@@ -155,13 +182,22 @@ export function DoomsdayClock2026() {
 
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight">
             <span className="text-doom">Doomsday Clock 2026:</span>{" "}
-            What Changed and Why
+            85 Seconds to Midnight — Current Status
           </h1>
+
+          {/* Direct-answer paragraph for featured snippet capture */}
+          <p
+            id="direct-answer"
+            className="text-base sm:text-lg text-foreground leading-relaxed"
+          >
+            The Doomsday Clock is currently set at{" "}
+            <strong>85 seconds to midnight</strong> as of February 4, 2026 — the closest it has ever been in its 79-year history. The Bulletin of the Atomic Scientists moved it forward from 89 seconds, citing nuclear escalation, climate acceleration, and AI risks.
+          </p>
 
           <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
             <span className="flex items-center gap-1.5">
               <Calendar className="w-4 h-4" />
-              March 7, 2026
+              Last updated: {lastUpdatedDisplay}
             </span>
             <span className="flex items-center gap-1.5">
               <Clock className="w-4 h-4" />

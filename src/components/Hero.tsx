@@ -132,6 +132,69 @@ export function Hero() {
           </div>
         </div>
 
+        {/* Latest Updates — internal-link equity to top SEO targets */}
+        <nav
+          aria-label="Latest Doomsday Clock updates"
+          className="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-4"
+        >
+          <Link
+            to="/blog/doomsday-clock-2026"
+            className="glass-card p-4 group hover:border-doom/40 transition-colors"
+          >
+            <span className="text-xs uppercase tracking-wider text-doom font-medium block mb-1.5">
+              Current Status
+            </span>
+            <h3 className="text-sm font-semibold text-foreground group-hover:text-doom transition-colors">
+              Doomsday Clock 2026 — 85 seconds to midnight
+            </h3>
+            <p className="text-xs text-muted-foreground mt-1">
+              Current status and why the Bulletin moved it.
+            </p>
+          </Link>
+          <Link
+            to="/blog/doomsday-clock-history-timeline"
+            className="glass-card p-4 group hover:border-doom/40 transition-colors"
+          >
+            <span className="text-xs uppercase tracking-wider text-doom font-medium block mb-1.5">
+              Timeline
+            </span>
+            <h3 className="text-sm font-semibold text-foreground group-hover:text-doom transition-colors">
+              Complete timeline 1947–2026
+            </h3>
+            <p className="text-xs text-muted-foreground mt-1">
+              Every setting, every reason, year-by-year.
+            </p>
+          </Link>
+          <Link
+            to="/blog/us-iran-crisis-doomsday-clock"
+            className="glass-card p-4 group hover:border-doom/40 transition-colors"
+          >
+            <span className="text-xs uppercase tracking-wider text-doom font-medium block mb-1.5">
+              Analysis
+            </span>
+            <h3 className="text-sm font-semibold text-foreground group-hover:text-doom transition-colors">
+              Operation Epic Fury impact
+            </h3>
+            <p className="text-xs text-muted-foreground mt-1">
+              US-Iran crisis and the nuclear risk picture.
+            </p>
+          </Link>
+          <Link
+            to="/blog/doomsday-clock-faq"
+            className="glass-card p-4 group hover:border-doom/40 transition-colors"
+          >
+            <span className="text-xs uppercase tracking-wider text-doom font-medium block mb-1.5">
+              FAQ
+            </span>
+            <h3 className="text-sm font-semibold text-foreground group-hover:text-doom transition-colors">
+              Doomsday Clock FAQ
+            </h3>
+            <p className="text-xs text-muted-foreground mt-1">
+              How often it updates, who controls it, what midnight means.
+            </p>
+          </Link>
+        </nav>
+
         {/* Scroll indicator */}
         <div className="hidden md:flex justify-center pt-12">
           <div className="flex flex-col items-center gap-2 text-muted-foreground">

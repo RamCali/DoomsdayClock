@@ -3,20 +3,24 @@ import { neon } from "@neondatabase/serverless";
 
 const SITE_URL = "https://doomsdayclock.net";
 
+const TODAY_ISO = new Date().toISOString().split("T")[0];
+
 const BLOG_POSTS = [
-  { slug: "us-iran-crisis-doomsday-clock", lastmod: "2026-02-28" },
-  { slug: "doomsday-clock-history-timeline", lastmod: "2026-03-07" },
-  { slug: "doomsday-clock-2026", lastmod: "2026-03-07" },
-  { slug: "doomsday-clock-2027-prediction", lastmod: "2026-03-07" },
-  { slug: "doomsday-clock-comic-vs-real", lastmod: "2026-03-07" },
-  { slug: "what-happens-doomsday-clock-midnight", lastmod: "2026-03-07" },
-  { slug: "who-controls-doomsday-clock", lastmod: "2026-03-07" },
-  { slug: "what-does-89-seconds-to-midnight-mean", lastmod: "2026-03-07" },
-  { slug: "will-the-world-end-doomsday-clock", lastmod: "2026-03-07" },
-  { slug: "best-doomsday-clock-watches", lastmod: "2026-03-07" },
-  { slug: "emergency-food-supply-guide", lastmod: "2026-03-07" },
-  { slug: "essential-survival-gear-2026", lastmod: "2026-03-07" },
-  { slug: "best-home-backup-power-systems", lastmod: "2026-03-07" },
+  { slug: "doomsday-clock-2026", lastmod: TODAY_ISO, priority: "1.0", changefreq: "daily" },
+  { slug: "us-iran-crisis-doomsday-clock", lastmod: TODAY_ISO, priority: "0.9", changefreq: "daily" },
+  { slug: "doomsday-clock-history-timeline", lastmod: TODAY_ISO, priority: "0.9", changefreq: "weekly" },
+  { slug: "doomsday-clock-monthly-update", lastmod: TODAY_ISO, priority: "0.6", changefreq: "weekly" },
+  { slug: "doomsday-clock-faq", lastmod: TODAY_ISO, priority: "0.8", changefreq: "weekly" },
+  { slug: "doomsday-clock-2027-prediction", lastmod: "2026-03-07", priority: "0.8", changefreq: "monthly" },
+  { slug: "doomsday-clock-comic-vs-real", lastmod: "2026-03-07", priority: "0.7", changefreq: "monthly" },
+  { slug: "what-happens-doomsday-clock-midnight", lastmod: "2026-03-07", priority: "0.7", changefreq: "monthly" },
+  { slug: "who-controls-doomsday-clock", lastmod: "2026-03-07", priority: "0.7", changefreq: "monthly" },
+  { slug: "what-does-89-seconds-to-midnight-mean", lastmod: "2026-03-07", priority: "0.7", changefreq: "monthly" },
+  { slug: "will-the-world-end-doomsday-clock", lastmod: "2026-03-07", priority: "0.7", changefreq: "monthly" },
+  { slug: "best-doomsday-clock-watches", lastmod: "2026-03-07", priority: "0.6", changefreq: "monthly" },
+  { slug: "emergency-food-supply-guide", lastmod: "2026-03-07", priority: "0.6", changefreq: "monthly" },
+  { slug: "essential-survival-gear-2026", lastmod: "2026-03-07", priority: "0.6", changefreq: "monthly" },
+  { slug: "best-home-backup-power-systems", lastmod: "2026-03-07", priority: "0.6", changefreq: "monthly" },
 ];
 
 const YEAR_PAGES = [2015, 2017, 2018, 2020, 2021, 2022, 2023, 2024, 2025, 2026];
@@ -95,8 +99,8 @@ ${YEAR_PAGES.map(y => `  <url>
 ${BLOG_POSTS.map(p => `  <url>
     <loc>${SITE_URL}/blog/${p.slug}</loc>
     <lastmod>${p.lastmod}</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <changefreq>${p.changefreq}</changefreq>
+    <priority>${p.priority}</priority>
   </url>`).join("\n")}
 
   <!-- Forum -->

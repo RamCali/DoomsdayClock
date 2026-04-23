@@ -6,22 +6,29 @@ import { updateMetaTags, resetToDefaults } from "../../lib/seo";
 import { RelatedArticles } from "./RelatedArticles";
 
 export function USIranCrisis() {
+  const modifiedISO = new Date().toISOString();
+
   useEffect(() => {
     updateMetaTags({
-      title: "US-Iran Crisis 2026: How Operation Epic Fury Could Push the Doomsday Clock Past 85 Seconds",
-      description: "US-Israel strikes on Iran threaten to push the Doomsday Clock even closer to midnight. At 85 seconds — already the closest ever — here's what the Iran conflict means for nuclear risk in 2026.",
+      title: "Operation Epic Fury & the Doomsday Clock: US-Iran Nuclear Crisis 2026",
+      description:
+        "Operation Epic Fury — the 2026 US-Israel strikes on Iran — and what it means for the Doomsday Clock. Latest nuclear escalation analysis and Bulletin response.",
       path: "/blog/us-iran-crisis-doomsday-clock",
       newsKeywords:
-        "doomsday clock iran, doomsday clock 2026 update iran, us iran crisis doomsday clock, operation epic fury doomsday clock, doomsday clock iran war, doomsday clock march 2026 update, doomsday clock iran conflict",
+        "operation epic fury doomsday clock 2026, operation epic fury, doomsday clock iran, doomsday clock 2026 update iran, us iran crisis doomsday clock, doomsday clock iran war, doomsday clock iran conflict, doomsday clock 2026 iran conflict, doomsday clock 2026 update iran conflict",
+      publishedTime: "2026-02-28T00:00:00Z",
+      modifiedTime: modifiedISO,
+      section: "Analysis",
+      author: "DoomsdayClock.net",
     });
 
     const schema = {
       "@context": "https://schema.org",
       "@type": "NewsArticle",
       headline:
-        "US-Iran Crisis 2026: How Operation Epic Fury Could Push the Doomsday Clock Past 85 Seconds",
-      datePublished: "2026-02-28",
-      dateModified: "2026-02-28",
+        "Operation Epic Fury & the Doomsday Clock: US-Iran Nuclear Crisis 2026",
+      datePublished: "2026-02-28T00:00:00Z",
+      dateModified: modifiedISO,
       author: { "@type": "Organization", name: "DoomsdayClock.net" },
       publisher: {
         "@type": "Organization",
@@ -46,14 +53,81 @@ export function USIranCrisis() {
     script.textContent = JSON.stringify(schema);
     document.head.appendChild(script);
 
+    const faqSchema = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "How does the US-Iran crisis affect the Doomsday Clock in 2026?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "The 2026 US-Israel strikes on Iran (Operation Epic Fury) directly amplify every threat the Bulletin of the Atomic Scientists already cited when setting the clock at 85 seconds: nuclear escalation, fraying arms control, and Middle East conflict. A crisis of this magnitude could push the clock forward by 20–40 seconds in a future setting.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "What is Operation Epic Fury?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Operation Epic Fury is the coordinated US-Israeli military strike on Iran launched on February 28, 2026, targeting military installations, air defense systems, and facilities linked to Iran's nuclear program across Tehran and other major Iranian cities.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Could the Doomsday Clock move because of the Iran war?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Yes. The Bulletin of the Atomic Scientists typically updates the clock once a year in January, but off-cycle adjustments are possible during major crises. The active use of military force by two nuclear-armed nations against a threshold nuclear state represents exactly the kind of qualitative escalation that has historically warranted special statements.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "How close is the Doomsday Clock right now in 2026?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "As of February 2026, the Doomsday Clock is set at 85 seconds to midnight — the closest it has ever been in its 79-year history. This setting was made before Operation Epic Fury, meaning the actual current risk level is likely higher than the official setting reflects.",
+          },
+        },
+      ],
+    };
+    const faqScript = document.createElement("script");
+    faqScript.type = "application/ld+json";
+    faqScript.setAttribute("data-blog-schema", "us-iran-faq");
+    faqScript.textContent = JSON.stringify(faqSchema);
+    document.head.appendChild(faqScript);
+
+    const breadcrumbSchema = {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: "https://doomsdayclock.net/" },
+        { "@type": "ListItem", position: 2, name: "Blog", item: "https://doomsdayclock.net/blog" },
+        { "@type": "ListItem", position: 3, name: "US-Iran Crisis & the Doomsday Clock", item: "https://doomsdayclock.net/blog/us-iran-crisis-doomsday-clock" },
+      ],
+    };
+    const breadcrumbScript = document.createElement("script");
+    breadcrumbScript.type = "application/ld+json";
+    breadcrumbScript.setAttribute("data-blog-schema", "us-iran-breadcrumb");
+    breadcrumbScript.textContent = JSON.stringify(breadcrumbSchema);
+    document.head.appendChild(breadcrumbScript);
+
     return () => {
       const el = document.querySelector(
         'script[data-blog-schema="us-iran"]'
       );
       if (el) el.remove();
+      const faqEl = document.querySelector(
+        'script[data-blog-schema="us-iran-faq"]'
+      );
+      if (faqEl) faqEl.remove();
+      const bcEl = document.querySelector(
+        'script[data-blog-schema="us-iran-breadcrumb"]'
+      );
+      if (bcEl) bcEl.remove();
       resetToDefaults();
     };
-  }, []);
+  }, [modifiedISO]);
 
   return (
     <article className="py-12 sm:py-16">

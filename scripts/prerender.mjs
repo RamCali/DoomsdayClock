@@ -16,6 +16,19 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const DIST = join(__dirname, "..", "dist");
 const SITE = "https://doomsdayclock.net";
 
+// Build-time date stamps so prerendered HTML always reflects "current month/year"
+// in titles, descriptions, and article:modified_time. Combined with a daily
+// rebuild cron, this gives Google a fresh freshness signal every day.
+const BUILD_NOW = new Date();
+const MONTHS = [
+  "January", "February", "March", "April", "May", "June",
+  "July", "August", "September", "October", "November", "December",
+];
+const CURRENT_MONTH = MONTHS[BUILD_NOW.getMonth()];
+const CURRENT_YEAR = BUILD_NOW.getFullYear();
+const LAST_UPDATED_DISPLAY = `${CURRENT_MONTH} ${BUILD_NOW.getDate()}, ${CURRENT_YEAR}`;
+const MODIFIED_ISO = BUILD_NOW.toISOString();
+
 // ---------- page data ----------
 
 const clockData = {
@@ -77,13 +90,24 @@ const blogPages = [
   },
   {
     path: "/blog/doomsday-clock-2026",
-    title: "Doomsday Clock 2026 Update: Current Time Is 85 Seconds to Midnight (Closest Ever)",
-    description: "The Doomsday Clock 2026 setting is 85 seconds to midnight — the closest ever. Updated February 4, 2026. Why the Bulletin moved the clock from 89 to 85 seconds, what it means, and the current status of nuclear and climate threats.",
-    content: `<h1>Doomsday Clock 2026 Update: Current Time Is 85 Seconds to Midnight</h1>
-      <p>On February 4, 2026, the Bulletin of the Atomic Scientists moved the Doomsday Clock from 89 to <strong>85 seconds to midnight</strong> — a new record for the closest the clock has ever been to global catastrophe. This 4-second advance is the largest single move in the seconds era.</p>
+    title: "Doomsday Clock 2026: 85 Seconds to Midnight — Current Status",
+    description: `Current Doomsday Clock status: 85 seconds to midnight — the closest ever, set February 4, 2026. Page last refreshed ${LAST_UPDATED_DISPLAY}. Why the Bulletin moved from 89 to 85 seconds.`,
+    content: `<h1>Doomsday Clock 2026: 85 Seconds to Midnight — Current Status</h1>
+      <p>The Doomsday Clock is currently set at <strong>85 seconds to midnight</strong> as of February 4, 2026 — the closest it has ever been in its 79-year history. The Bulletin of the Atomic Scientists moved it forward from 89 seconds, citing nuclear escalation, climate acceleration, and AI risks.</p>
+      <p><em>Last updated: ${LAST_UPDATED_DISPLAY}</em></p>
       <h2>Why Did the Doomsday Clock Move in 2026?</h2>
       <p>The decision was driven by increased nuclear risks, the ongoing Middle East conflict including the US-Iran crisis, climate change acceleration, and emerging AI-related threats to global stability.</p>
-      <p><a href="/">Current Doomsday Clock time</a> | <a href="/blog/doomsday-clock-history-timeline">Complete timeline of all changes</a> | <a href="/blog/doomsday-clock-timeline-graph">Visual graph of the clock over time</a></p>`,
+      <p><a href="/">Current Doomsday Clock time</a> | <a href="/blog/doomsday-clock-history-timeline">Complete timeline of all changes</a> | <a href="/blog/doomsday-clock-monthly-update">Month-by-month update log</a></p>`,
+  },
+  {
+    path: "/blog/doomsday-clock-monthly-update",
+    title: "Doomsday Clock Monthly Update Log — Month-by-Month Changes",
+    description: `Month-by-month log of Doomsday Clock developments through ${CURRENT_YEAR}: Bulletin statements, nuclear incidents, and escalation events that shape the next setting. Page refreshed ${LAST_UPDATED_DISPLAY}.`,
+    content: `<h1>Doomsday Clock Monthly Update Log — Month-by-Month Changes</h1>
+      <p>This page logs month-by-month developments affecting the Doomsday Clock through ${CURRENT_YEAR}: Bulletin statements, nuclear incidents, diplomatic breakdowns, and the escalation events that will shape the next official setting.</p>
+      <p><em>Page refreshed: ${LAST_UPDATED_DISPLAY}.</em> For the current clock setting and the canonical 2026 analysis, see our <a href="/blog/doomsday-clock-2026">Doomsday Clock 2026 current status</a> page.</p>
+      <h2>Recent Developments</h2>
+      <p>For the most significant geopolitical event currently affecting nuclear risk, see our <a href="/blog/us-iran-crisis-doomsday-clock">US-Iran crisis breakdown</a>. For the complete history of every setting, see the <a href="/blog/doomsday-clock-history-timeline">Doomsday Clock timeline 1947–${CURRENT_YEAR}</a>.</p>`,
   },
   {
     path: "/blog/doomsday-clock-2027-prediction",
@@ -96,8 +120,8 @@ const blogPages = [
   },
   {
     path: "/blog/us-iran-crisis-doomsday-clock",
-    title: "US-Iran Crisis 2026: How Operation Epic Fury Could Push the Doomsday Clock Past 85 Seconds",
-    description: "US-Israel strikes on Iran threaten to push the Doomsday Clock even closer to midnight. At 85 seconds — already the closest ever — here's what the Iran conflict means for nuclear risk in 2026.",
+    title: "Operation Epic Fury & the Doomsday Clock: US-Iran Nuclear Crisis 2026",
+    description: "Operation Epic Fury — the US-Israel strikes on Iran — and what it means for the Doomsday Clock. Latest nuclear escalation analysis and Bulletin response.",
     content: `<h1>US-Iran Crisis 2026: How Operation Epic Fury Could Push the Doomsday Clock Past 85 Seconds</h1>
       <p>Operation Epic Fury — the US-Israel military strikes on Iran — represents one of the most significant escalations in Middle East tensions in decades. With the Doomsday Clock already at 85 seconds to midnight, could this crisis push it even closer?</p>
       <h2>Impact on the Doomsday Clock in 2026</h2>
@@ -106,8 +130,8 @@ const blogPages = [
   },
   {
     path: "/blog/doomsday-clock-history-timeline",
-    title: "Doomsday Clock Timeline: All 28 Changes from 1947 to 2026 (Complete History)",
-    description: "The complete Doomsday Clock timeline with all 28 settings — from 7 minutes (1947) to 85 seconds (2026). See every change, why it moved, and how close we've come to midnight over the years.",
+    title: "Doomsday Clock Timeline: All 28 Changes from 1947 to 2026",
+    description: "Complete Doomsday Clock timeline — all 28 settings from 7 minutes (1947) to 85 seconds (2026). Year-by-year history with dates, reasons, and graph.",
     content: `<h1>Doomsday Clock Timeline: All 28 Changes from 1947 to 2026 (Complete History)</h1>
       <p>The Doomsday Clock has been adjusted 28 times since its creation in 1947 by the Bulletin of the Atomic Scientists. This complete timeline shows every change, from the original 7 minutes to midnight to today's record-low 85 seconds.</p>
       <h2>Key Milestones in the Doomsday Clock Timeline</h2>
@@ -509,6 +533,19 @@ function generateHTML(template, page) {
     /<link rel="canonical" href="[^"]*"/,
     `<link rel="canonical" href="${SITE}${page.path}"`
   );
+
+  // Inject (or replace) article:modified_time so freshness signal updates with each daily build.
+  // Stamping this in the prerendered HTML is what Googlebot reads first — must be present
+  // in the static markup, not just injected client-side via React.
+  const modifiedMeta = `<meta property="article:modified_time" content="${MODIFIED_ISO}" />`;
+  if (/<meta property="article:modified_time"/.test(html)) {
+    html = html.replace(
+      /<meta property="article:modified_time" content="[^"]*"\s*\/?>/,
+      modifiedMeta
+    );
+  } else {
+    html = html.replace("</head>", `  ${modifiedMeta}\n</head>`);
+  }
 
   // Replace the #root content: put SEO content BEFORE the noscript fallback
   // React's createRoot().render() will replace all of this when JS loads

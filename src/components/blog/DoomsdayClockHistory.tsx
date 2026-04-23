@@ -6,17 +6,19 @@ import { updateMetaTags, resetToDefaults } from "../../lib/seo";
 import { RelatedArticles } from "./RelatedArticles";
 
 export function DoomsdayClockHistory() {
+  const modifiedISO = new Date().toISOString();
+
   useEffect(() => {
     updateMetaTags({
       title:
-        "Doomsday Clock Timeline: All 28 Changes from 1947 to 2026 (Complete History)",
+        "Doomsday Clock Timeline: All 28 Changes from 1947 to 2026",
       description:
-        "The complete Doomsday Clock timeline with all 28 settings — from 7 minutes (1947) to 85 seconds (2026). See every change, why it moved, and how close we've come to midnight over the years.",
+        "Complete Doomsday Clock timeline — all 28 settings from 7 minutes (1947) to 85 seconds (2026). Year-by-year history with dates, reasons, and graph.",
       path: "/blog/doomsday-clock-history-timeline",
       newsKeywords:
         "doomsday clock timeline, doomsday clock history, doomsday clock over the years, doomsday clock through the years, doomsday clock by year, doomsday clock changes, doomsday clock all settings, doomsday clock 1947, doomsday clock 1991, doomsday clock farthest from midnight, doomsday clock timeline all settings since 1947, doomsday clock history chart",
       publishedTime: "2026-03-07T00:00:00Z",
-      modifiedTime: "2026-03-07T00:00:00Z",
+      modifiedTime: modifiedISO,
       section: "Explainer",
       author: "DoomsdayClock.net",
     });
@@ -25,9 +27,9 @@ export function DoomsdayClockHistory() {
       "@context": "https://schema.org",
       "@type": "NewsArticle",
       headline:
-        "Doomsday Clock Timeline: All 28 Changes from 1947 to 2026 (Complete History)",
+        "Doomsday Clock Timeline: All 28 Changes from 1947 to 2026",
       datePublished: "2026-03-07T00:00:00Z",
-      dateModified: "2026-03-07T00:00:00Z",
+      dateModified: modifiedISO,
       author: {
         "@type": "Organization",
         name: "DoomsdayClock.net",
@@ -134,6 +136,21 @@ export function DoomsdayClockHistory() {
     faqScript.textContent = JSON.stringify(faqSchema);
     document.head.appendChild(faqScript);
 
+    const breadcrumbSchema = {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: "https://doomsdayclock.net/" },
+        { "@type": "ListItem", position: 2, name: "Blog", item: "https://doomsdayclock.net/blog" },
+        { "@type": "ListItem", position: 3, name: "Doomsday Clock Timeline", item: "https://doomsdayclock.net/blog/doomsday-clock-history-timeline" },
+      ],
+    };
+    const breadcrumbScript = document.createElement("script");
+    breadcrumbScript.type = "application/ld+json";
+    breadcrumbScript.setAttribute("data-blog-schema", "history-breadcrumb");
+    breadcrumbScript.textContent = JSON.stringify(breadcrumbSchema);
+    document.head.appendChild(breadcrumbScript);
+
     return () => {
       const el = document.querySelector(
         'script[data-blog-schema="history"]'
@@ -143,9 +160,13 @@ export function DoomsdayClockHistory() {
         'script[data-blog-schema="history-faq"]'
       );
       if (faqEl) faqEl.remove();
+      const bcEl = document.querySelector(
+        'script[data-blog-schema="history-breadcrumb"]'
+      );
+      if (bcEl) bcEl.remove();
       resetToDefaults();
     };
-  }, []);
+  }, [modifiedISO]);
 
   // Group clock history into eras for dynamic rendering
   const coldWarEarly = clockHistory.filter(

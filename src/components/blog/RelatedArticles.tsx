@@ -11,9 +11,10 @@ interface Article {
 const ALL_ARTICLES: Article[] = [
   { slug: "doomsday-clock-history-timeline", title: "Doomsday Clock Timeline: All 28 Changes from 1947 to 2026", category: "explainer" },
   { slug: "doomsday-clock-timeline-graph", title: "Doomsday Clock Graph & Chart: Visual Timeline (1947–2026)", category: "explainer" },
-  { slug: "doomsday-clock-2026", title: "Doomsday Clock 2026 Update: Current Time Is 85 Seconds", category: "update" },
+  { slug: "doomsday-clock-2026", title: "Doomsday Clock 2026: 85 Seconds to Midnight (Current Status)", category: "update" },
+  { slug: "doomsday-clock-monthly-update", title: "Doomsday Clock — This Month's Update", category: "update" },
   { slug: "doomsday-clock-2027-prediction", title: "Doomsday Clock 2027 Prediction: What Could Move the Clock?", category: "analysis" },
-  { slug: "us-iran-crisis-doomsday-clock", title: "US-Iran Crisis 2026: How Operation Epic Fury Could Push Past 85 Seconds", category: "analysis" },
+  { slug: "us-iran-crisis-doomsday-clock", title: "Doomsday Clock & US-Iran Crisis 2026: Nuclear Risk Update", category: "analysis" },
   { slug: "doomsday-clock-comic-vs-real", title: "Doomsday Clock vs. Pop Culture: The Comic, The Symbol, The Movement", category: "explainer" },
   { slug: "what-happens-doomsday-clock-midnight", title: "What Happens When the Doomsday Clock Reaches Midnight?", category: "explainer" },
   { slug: "who-controls-doomsday-clock", title: "Who Controls the Doomsday Clock?", category: "explainer" },
@@ -44,6 +45,32 @@ const ALL_ARTICLES: Article[] = [
   { slug: "best-water-purification-systems-emergency", title: "Best Water Purification Systems for Emergency Preparedness", category: "gear" },
 ];
 
+// Slug-relevance map: each post points to its 3 most semantically related siblings.
+// This replaces the old "first 3 in array" auto-pick to concentrate internal-link
+// equity on the high-value, query-aligned posts.
+const RELEVANCE_MAP: Record<string, string[]> = {
+  "doomsday-clock-2026": [
+    "doomsday-clock-monthly-update",
+    "doomsday-clock-history-timeline",
+    "us-iran-crisis-doomsday-clock",
+  ],
+  "doomsday-clock-history-timeline": [
+    "doomsday-clock-2026",
+    "doomsday-clock-timeline-graph",
+    "doomsday-clock-through-decades",
+  ],
+  "us-iran-crisis-doomsday-clock": [
+    "doomsday-clock-2026",
+    "doomsday-clock-monthly-update",
+    "how-many-nuclear-weapons-exist-2026",
+  ],
+  "doomsday-clock-monthly-update": [
+    "doomsday-clock-2026",
+    "doomsday-clock-history-timeline",
+    "us-iran-crisis-doomsday-clock",
+  ],
+};
+
 interface RelatedArticlesProps {
   currentSlug: string;
   slugs?: string[];
@@ -52,16 +79,27 @@ interface RelatedArticlesProps {
 export function RelatedArticles({ currentSlug, slugs }: RelatedArticlesProps) {
   let articles: Article[];
 
-  if (slugs) {
-    // Show specific recommended articles
-    articles = slugs
+  const resolveSlugs = (list: string[]): Article[] =>
+    list
       .map(s => ALL_ARTICLES.find(a => a.slug === s))
       .filter((a): a is Article => !!a);
+
+  if (slugs) {
+    // Explicit override from the calling component wins.
+    articles = resolveSlugs(slugs);
+  } else if (RELEVANCE_MAP[currentSlug]) {
+    // Use curated relevance map for known posts.
+    articles = resolveSlugs(RELEVANCE_MAP[currentSlug]);
   } else {
-    // Auto-pick 3 articles excluding current
-    articles = ALL_ARTICLES
-      .filter(a => a.slug !== currentSlug)
-      .slice(0, 3);
+    // Fallback: same-category siblings, then anything else.
+    const current = ALL_ARTICLES.find(a => a.slug === currentSlug);
+    const sameCategory = ALL_ARTICLES.filter(
+      a => a.slug !== currentSlug && current && a.category === current.category
+    );
+    const others = ALL_ARTICLES.filter(
+      a => a.slug !== currentSlug && (!current || a.category !== current.category)
+    );
+    articles = [...sameCategory, ...others].slice(0, 3);
   }
 
   if (articles.length === 0) return null;

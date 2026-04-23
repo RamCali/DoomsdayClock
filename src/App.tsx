@@ -30,6 +30,7 @@ const BlogIndex = lazy(() => import("./components/blog/BlogIndex").then(m => ({ 
 const USIranCrisis = lazy(() => import("./components/blog/USIranCrisis").then(m => ({ default: m.USIranCrisis })));
 const DoomsdayClockHistory = lazy(() => import("./components/blog/DoomsdayClockHistory").then(m => ({ default: m.DoomsdayClockHistory })));
 const DoomsdayClock2026 = lazy(() => import("./components/blog/DoomsdayClock2026").then(m => ({ default: m.DoomsdayClock2026 })));
+const MonthlyUpdate = lazy(() => import("./components/blog/MonthlyUpdate").then(m => ({ default: m.MonthlyUpdate })));
 const DoomsdayClock2027Prediction = lazy(() => import("./components/blog/DoomsdayClock2027Prediction").then(m => ({ default: m.DoomsdayClock2027Prediction })));
 const DoomsdayClockVsPopCulture = lazy(() => import("./components/blog/DoomsdayClockVsPopCulture").then(m => ({ default: m.DoomsdayClockVsPopCulture })));
 const WhatHappensAtMidnight = lazy(() => import("./components/blog/WhatHappensAtMidnight").then(m => ({ default: m.WhatHappensAtMidnight })));
@@ -158,6 +159,7 @@ function App() {
                   <Route path="/blog/us-iran-crisis-doomsday-clock" element={<USIranCrisis />} />
                   <Route path="/blog/doomsday-clock-history-timeline" element={<DoomsdayClockHistory />} />
                   <Route path="/blog/doomsday-clock-2026" element={<DoomsdayClock2026 />} />
+                  <Route path="/blog/doomsday-clock-monthly-update" element={<MonthlyUpdate />} />
                   <Route path="/blog/doomsday-clock-2027-prediction" element={<DoomsdayClock2027Prediction />} />
                   <Route path="/blog/doomsday-clock-comic-vs-real" element={<DoomsdayClockVsPopCulture />} />
                   <Route path="/blog/what-happens-doomsday-clock-midnight" element={<WhatHappensAtMidnight />} />
