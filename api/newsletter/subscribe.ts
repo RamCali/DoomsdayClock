@@ -1,5 +1,5 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
-import { setCors } from "../_lib/cors";
+import { setCors } from "../_lib/cors.js";
 
 const SENDX_IDENTIFY_URL = "https://api.sendx.io/api/v1/rest/contact/identify";
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
