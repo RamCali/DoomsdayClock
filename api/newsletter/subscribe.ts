@@ -31,21 +31,25 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method === "OPTIONS") return res.status(200).end();
   if (req.method !== "POST") return res.status(405).json({ error: "Method not allowed" });
 
-  const apiKey = process.env.SENDX_TEAM_API_KEY;
-  if (!apiKey) {
-    console.error("SendX subscribe error: SENDX_TEAM_API_KEY is not configured");
-    return res.status(500).json({ error: "Newsletter signup is not configured" });
-  }
-
-  const body = req.body as SubscribeBody;
-  const email = body.email?.trim().toLowerCase();
-  const source = body.source?.trim() || "doomsdayclock-popup";
-
-  if (!email || !EMAIL_PATTERN.test(email) || email.length > 255) {
-    return res.status(400).json({ error: "Valid email is required" });
-  }
-
   try {
+    const apiKey = process.env.SENDX_TEAM_API_KEY;
+    if (!apiKey) {
+      console.error("SendX subscribe error: SENDX_TEAM_API_KEY is not configured");
+      return res.status(500).json({ error: "Newsletter signup is not configured" });
+    }
+
+    const rawBody = req.body;
+    const body: SubscribeBody =
+      typeof rawBody === "string"
+        ? (JSON.parse(rawBody) as SubscribeBody)
+        : ((rawBody ?? {}) as SubscribeBody);
+    const email = body.email?.trim().toLowerCase();
+    const source = body.source?.trim() || "doomsdayclock-popup";
+
+    if (!email || !EMAIL_PATTERN.test(email) || email.length > 255) {
+      return res.status(400).json({ error: "Valid email is required" });
+    }
+
     const sendxRes = await fetch(SENDX_IDENTIFY_URL, {
       method: "POST",
       headers: {
@@ -74,7 +78,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
     return res.status(200).json({ ok: true });
   } catch (error) {
-    console.error("SendX subscribe error:", error);
-    return res.status(502).json({ error: "Could not subscribe right now" });
+    console.error("Newsletter subscribe handler crashed:", error);
+    return res.status(500).json({ error: "Could not subscribe right now" });
   }
 }

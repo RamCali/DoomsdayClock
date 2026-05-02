@@ -12,8 +12,10 @@ export async function subscribeToNewsletter(email: string, source: string) {
   });
 
   if (!res.ok) {
-    const data = await res.json().catch(() => ({ error: "Something went wrong. Please try again." }));
-    throw new Error(data.error || "Something went wrong. Please try again.");
+    const data = await res
+      .json()
+      .catch(() => ({ error: `Signup failed (HTTP ${res.status}). Please try again.` }));
+    throw new Error(data.error || `Signup failed (HTTP ${res.status}). Please try again.`);
   }
 
   return res.json();

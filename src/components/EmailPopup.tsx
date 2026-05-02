@@ -4,8 +4,8 @@ import { currentTime } from "../data/clockHistory";
 import { isValidEmail, subscribeToNewsletter } from "../lib/newsletter";
 
 const DISMISSED_KEY = "doomsday-popup-dismissed";
-const POPUP_DELAY_MS = 15000; // Show after 15 seconds
-const DISMISS_DAYS = 7; // Don't show again for 7 days after dismiss
+const POPUP_DELAY_MS = 5000; // Show after 5 seconds
+const DISMISS_MS = 15000; // Show again 15 seconds after dismiss
 
 type SubmitStatus = "idle" | "loading" | "success" | "error";
 
@@ -25,7 +25,7 @@ export function EmailPopup() {
 
   const handleDismiss = () => {
     setVisible(false);
-    const expiry = Date.now() + DISMISS_DAYS * 24 * 60 * 60 * 1000;
+    const expiry = Date.now() + DISMISS_MS;
     localStorage.setItem(DISMISSED_KEY, String(expiry));
   };
 
