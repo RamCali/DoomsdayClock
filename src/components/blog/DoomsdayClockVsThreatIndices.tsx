@@ -685,7 +685,7 @@ export function DoomsdayClockVsThreatIndices() {
             className="p-4 rounded-lg bg-white/5 border border-white/10 hover:border-doom/30 transition-colors group"
           >
             <h4 className="font-semibold text-foreground group-hover:text-doom transition-colors mb-1">
-              Doomsday Clock History: Every Change from 1947 to 2026
+              Doomsday Clock Timeline: Every Year from 1947 to 2026
             </h4>
             <p className="text-sm text-muted-foreground">
               The full timeline of the Doomsday Clock across nearly eight

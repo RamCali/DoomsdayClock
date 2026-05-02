@@ -10,9 +10,9 @@ export function USIranCrisis() {
 
   useEffect(() => {
     updateMetaTags({
-      title: "Operation Epic Fury & the Doomsday Clock: US-Iran Nuclear Crisis 2026",
+      title: "Doomsday Clock 2026 Update: US-Iran Crisis Nuclear Risk",
       description:
-        "Operation Epic Fury — the 2026 US-Israel strikes on Iran — and what it means for the Doomsday Clock. Latest nuclear escalation analysis and Bulletin response.",
+        "Latest Doomsday Clock 2026 update on the US-Iran crisis, Iran conflict, nuclear escalation risk, and whether the clock could move closer to midnight.",
       path: "/blog/us-iran-crisis-doomsday-clock",
       newsKeywords:
         "operation epic fury doomsday clock 2026, operation epic fury, doomsday clock iran, doomsday clock 2026 update iran, us iran crisis doomsday clock, doomsday clock iran war, doomsday clock iran conflict, doomsday clock 2026 iran conflict, doomsday clock 2026 update iran conflict",
@@ -26,7 +26,7 @@ export function USIranCrisis() {
       "@context": "https://schema.org",
       "@type": "NewsArticle",
       headline:
-        "Operation Epic Fury & the Doomsday Clock: US-Iran Nuclear Crisis 2026",
+        "Doomsday Clock 2026 Update: US-Iran Crisis Nuclear Risk",
       datePublished: "2026-02-28T00:00:00Z",
       dateModified: modifiedISO,
       author: { "@type": "Organization", name: "DoomsdayClock.net" },
@@ -44,7 +44,7 @@ export function USIranCrisis() {
           "https://doomsdayclock.net/blog/us-iran-crisis-doomsday-clock",
       },
       description:
-        "US-Israel strikes on Iran threaten to push the Doomsday Clock even closer to midnight. At 85 seconds — already the closest ever — here's what the Iran conflict means for nuclear risk in 2026.",
+        "The US-Iran crisis threatens to push the Doomsday Clock even closer to midnight. At 85 seconds already, here's what the Iran conflict means for nuclear risk in 2026.",
     };
 
     const script = document.createElement("script");
@@ -162,9 +162,15 @@ export function USIranCrisis() {
           </div>
 
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight">
-            <span className="text-doom">US-Iran Crisis 2026:</span> How
-            Operation Epic Fury Could Push the Doomsday Clock Past 85 Seconds
+            <span className="text-doom">Doomsday Clock 2026 Update:</span>{" "}
+            US-Iran Crisis and Nuclear Risk
           </h1>
+
+          <p className="text-base sm:text-lg text-foreground leading-relaxed">
+            This Doomsday Clock 2026 update explains how the US-Iran crisis
+            and Iran conflict could affect the current 85-seconds-to-midnight
+            setting and future Bulletin assessments.
+          </p>
 
           <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
             <span className="flex items-center gap-1.5">
@@ -201,7 +207,7 @@ export function USIranCrisis() {
           {/* Section 1 */}
           <section>
             <h2 className="text-xl sm:text-2xl font-bold text-doom mb-4">
-              What Happened Today
+              Doomsday Clock 2026 Update: What Happened Today
             </h2>
             <p className="text-foreground leading-relaxed mb-4">
               On February 28, 2026, the United States and Israel launched

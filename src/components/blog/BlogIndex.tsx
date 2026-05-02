@@ -39,7 +39,7 @@ const posts: BlogPost[] = [
   {
     slug: "doomsday-clock-history-timeline",
     title:
-      "Doomsday Clock Timeline: All 28 Changes from 1947 to 2026",
+      "Doomsday Clock Timeline: Every Year from 1947 to 2026",
     excerpt:
       "The complete Doomsday Clock timeline with all 28 settings — from 7 minutes (1947) to 85 seconds (2026). See every change, why it moved, and how close we've come to midnight over the years.",
     date: "March 7, 2026",
@@ -50,7 +50,7 @@ const posts: BlogPost[] = [
   {
     slug: "doomsday-clock-2026",
     title:
-      "Doomsday Clock 2026 Update: Current Time Is 85 Seconds to Midnight",
+      "Doomsday Clock 2026 Current Time: 85 Seconds to Midnight",
     excerpt:
       "The Doomsday Clock 2026 setting is 85 seconds to midnight — the closest ever. Why the Bulletin moved the clock from 89 to 85 seconds, what it means, and the current status of threats.",
     date: "March 7, 2026",

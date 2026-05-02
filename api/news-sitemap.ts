@@ -15,13 +15,13 @@ const NEWS_ARTICLES = [
   },
   {
     slug: "doomsday-clock-history-timeline",
-    title: "Doomsday Clock History: Every Change from 1947 to 2026",
+    title: "Doomsday Clock Timeline: Every Year from 1947 to 2026",
     date: "2026-03-07T00:00:00Z",
     keywords: "doomsday clock history, doomsday clock timeline, nuclear threat history",
   },
   {
     slug: "doomsday-clock-2026",
-    title: "Doomsday Clock 2026: What Changed and Why",
+    title: "Doomsday Clock 2026 Current Time: 85 Seconds to Midnight",
     date: "2026-03-07T00:00:00Z",
     keywords: "doomsday clock 2026, 85 seconds to midnight, bulletin atomic scientists 2026",
   },

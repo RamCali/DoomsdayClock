@@ -60,8 +60,8 @@ export function updateMetaTags({ title, description, path, type = "article", ima
 }
 
 export function resetToDefaults() {
-  const title = "Doomsday Clock Today | Current Time & Complete Timeline (2026)";
-  const description = "Is it midnight yet? The official Doomsday Clock is now set to 85 Seconds to Midnight\u2014a new record. View the live countdown, historical timeline, and 2026 updates here.";
+  const title = "Doomsday Clock Current Time 2026: 85 Seconds to Midnight";
+  const description = "The Doomsday Clock current time is 85 seconds to midnight in 2026. See the latest status, current setting, live clock, and complete timeline.";
   document.title = title;
   updateMetaTags({ title, description, path: "/", type: "website" });
 }

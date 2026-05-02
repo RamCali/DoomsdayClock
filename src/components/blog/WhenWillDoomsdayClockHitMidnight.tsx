@@ -714,7 +714,7 @@ export function WhenWillDoomsdayClockHitMidnight() {
               className="p-4 rounded-lg bg-white/5 border border-white/10 hover:border-atomic/30 transition-colors group"
             >
               <h4 className="font-medium text-foreground group-hover:text-atomic transition-colors mb-1">
-                Doomsday Clock 2026: What Changed and Why
+                Doomsday Clock 2026 Current Time: 85 Seconds to Midnight
               </h4>
               <p className="text-xs text-muted-foreground">
                 A deep dive on the 4-second advance and the threats behind

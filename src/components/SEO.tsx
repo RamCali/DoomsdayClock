@@ -2,8 +2,8 @@ import { faqData } from "./FAQ";
 import { currentTime, clockHistory, ANNOUNCEMENT_DATE_ISO } from "../data/clockHistory";
 
 export function SEOHead() {
-  const title = "Doomsday Clock Today | Current Time & Complete Timeline (2026)";
-  const description = `The Doomsday Clock is at ${currentTime.display} to midnight—a new record. View the live countdown, full timeline, and ${currentTime.year} updates.`;
+  const title = "Doomsday Clock Current Time 2026: 85 Seconds to Midnight";
+  const description = `The Doomsday Clock current time is ${currentTime.display} to midnight in ${currentTime.year}. See the latest status, current setting, live clock, and complete timeline.`;
   const url = "https://doomsdayclock.net";
 
   // FAQ Schema for rich snippets
@@ -180,8 +180,8 @@ export function SEOHead() {
 
 // Component to inject SEO into head
 export function injectSEO() {
-  const title = "Doomsday Clock Today | Current Time & Complete Timeline (2026)";
-  const description = `The Doomsday Clock is at ${currentTime.display} to midnight—a new record. View the live countdown, full timeline, and ${currentTime.year} updates.`;
+  const title = "Doomsday Clock Current Time 2026: 85 Seconds to Midnight";
+  const description = `The Doomsday Clock current time is ${currentTime.display} to midnight in ${currentTime.year}. See the latest status, current setting, live clock, and complete timeline.`;
   const url = "https://doomsdayclock.net";
 
   document.title = title;

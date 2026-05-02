@@ -145,10 +145,10 @@ export function Hero() {
               Current Status
             </span>
             <h3 className="text-sm font-semibold text-foreground group-hover:text-doom transition-colors">
-              Doomsday Clock 2026 — 85 seconds to midnight
+              Doomsday Clock 2026 current time
             </h3>
             <p className="text-xs text-muted-foreground mt-1">
-              Current status and why the Bulletin moved it.
+              Current setting, status, and why the Bulletin moved it.
             </p>
           </Link>
           <Link
@@ -159,7 +159,7 @@ export function Hero() {
               Timeline
             </span>
             <h3 className="text-sm font-semibold text-foreground group-hover:text-doom transition-colors">
-              Complete timeline 1947–2026
+              Doomsday Clock timeline 1947-2026
             </h3>
             <p className="text-xs text-muted-foreground mt-1">
               Every setting, every reason, year-by-year.
@@ -173,7 +173,7 @@ export function Hero() {
               Analysis
             </span>
             <h3 className="text-sm font-semibold text-foreground group-hover:text-doom transition-colors">
-              Operation Epic Fury impact
+              Doomsday Clock 2026 update Iran conflict
             </h3>
             <p className="text-xs text-muted-foreground mt-1">
               US-Iran crisis and the nuclear risk picture.

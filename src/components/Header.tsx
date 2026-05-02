@@ -7,8 +7,8 @@ import { UserAvatar } from "./UserAvatar";
 import { AuthModal } from "./auth/AuthModal";
 
 const anchorLinks = [
-  { href: "/#clock", label: "Current Time" },
-  { href: "/#history", label: "History" },
+  { href: "/blog/doomsday-clock-2026", label: "Current Setting" },
+  { href: "/blog/doomsday-clock-history-timeline", label: "Timeline" },
   { href: "/#faq", label: "FAQ" },
 ];
 

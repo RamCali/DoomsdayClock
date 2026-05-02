@@ -137,6 +137,7 @@ ${posts.map(p => {
 </urlset>`;
 
   res.setHeader("Content-Type", "application/xml");
+  res.setHeader("X-Robots-Tag", "noindex");
   res.setHeader("Cache-Control", "public, s-maxage=3600, stale-while-revalidate=600");
   return res.status(200).send(xml);
 }

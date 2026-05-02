@@ -593,7 +593,7 @@ export function DoomsdayClock2027Prediction() {
               className="p-3 rounded-lg bg-white/5 border border-white/10 hover:border-doom/40 transition-colors group"
             >
               <p className="text-sm font-medium text-foreground group-hover:text-doom transition-colors">
-                Doomsday Clock History: Every Change from 1947 to 2026
+                Doomsday Clock Timeline: Every Year from 1947 to 2026
               </p>
               <p className="text-xs text-muted-foreground mt-1">Explainer</p>
             </Link>
@@ -602,7 +602,7 @@ export function DoomsdayClock2027Prediction() {
               className="p-3 rounded-lg bg-white/5 border border-white/10 hover:border-doom/40 transition-colors group"
             >
               <p className="text-sm font-medium text-foreground group-hover:text-doom transition-colors">
-                Doomsday Clock 2026: What Changed and Why
+                Doomsday Clock 2026 Current Time: 85 Seconds to Midnight
               </p>
               <p className="text-xs text-muted-foreground mt-1">Update</p>
             </Link>

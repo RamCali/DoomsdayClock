@@ -11,9 +11,9 @@ export function DoomsdayClockHistory() {
   useEffect(() => {
     updateMetaTags({
       title:
-        "Doomsday Clock Timeline: All 28 Changes from 1947 to 2026",
+        "Doomsday Clock Timeline: Every Year from 1947 to 2026",
       description:
-        "Complete Doomsday Clock timeline — all 28 settings from 7 minutes (1947) to 85 seconds (2026). Year-by-year history with dates, reasons, and graph.",
+        "See the full Doomsday Clock timeline from 1947 to 2026, including every setting, seconds to midnight, and why the clock moved.",
       path: "/blog/doomsday-clock-history-timeline",
       newsKeywords:
         "doomsday clock timeline, doomsday clock history, doomsday clock over the years, doomsday clock through the years, doomsday clock by year, doomsday clock changes, doomsday clock all settings, doomsday clock 1947, doomsday clock 1991, doomsday clock farthest from midnight, doomsday clock timeline all settings since 1947, doomsday clock history chart",
@@ -27,7 +27,7 @@ export function DoomsdayClockHistory() {
       "@context": "https://schema.org",
       "@type": "NewsArticle",
       headline:
-        "Doomsday Clock Timeline: All 28 Changes from 1947 to 2026",
+        "Doomsday Clock Timeline: Every Year from 1947 to 2026",
       datePublished: "2026-03-07T00:00:00Z",
       dateModified: modifiedISO,
       author: {
@@ -227,7 +227,7 @@ export function DoomsdayClockHistory() {
 
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight">
             <span className="text-doom">Doomsday Clock Timeline:</span>{" "}
-            All 28 Changes from 1947&ndash;2026 (Complete History)
+            Every Year from 1947 to 2026
           </h1>
 
           <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
@@ -275,6 +275,39 @@ export function DoomsdayClockHistory() {
 
         {/* Article body */}
         <div className="doom-card p-6 sm:p-8 md:p-10 space-y-8">
+          <section aria-labelledby="timeline-table">
+            <h2 id="timeline-table" className="text-xl sm:text-2xl font-bold text-doom mb-4">
+              Doomsday Clock Timeline Table
+            </h2>
+            <p className="text-foreground leading-relaxed mb-4">
+              This table summarizes every official Doomsday Clock setting
+              from 1947 to 2026, with the year, time to midnight, movement,
+              and reason for each change.
+            </p>
+            <div className="overflow-x-auto rounded-lg border border-white/10">
+              <table className="w-full min-w-[640px] text-sm">
+                <thead className="bg-white/10 text-left text-muted-foreground">
+                  <tr>
+                    <th className="px-4 py-3 font-semibold">Year</th>
+                    <th className="px-4 py-3 font-semibold">Time to Midnight</th>
+                    <th className="px-4 py-3 font-semibold">Change</th>
+                    <th className="px-4 py-3 font-semibold">Reason</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-white/10">
+                  {clockHistory.map((event) => (
+                    <tr key={event.year} className="bg-white/[0.03]">
+                      <td className="px-4 py-3 font-medium text-foreground">{event.year}</td>
+                      <td className="px-4 py-3 text-doom font-semibold">{event.time}</td>
+                      <td className="px-4 py-3 text-muted-foreground capitalize">{event.direction}</td>
+                      <td className="px-4 py-3 text-muted-foreground">{event.reason}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </section>
+
           {/* Section 1: The Birth of the Doomsday Clock */}
           <section>
             <h2 className="text-xl sm:text-2xl font-bold text-doom mb-4">
@@ -911,7 +944,7 @@ export function DoomsdayClockHistory() {
             className="p-4 rounded-lg bg-white/5 border border-white/10 hover:border-doom/30 transition-colors group"
           >
             <h4 className="font-semibold text-foreground group-hover:text-doom transition-colors mb-1">
-              Doomsday Clock 2026: What Changed and Why
+              Doomsday Clock 2026 Current Time: 85 Seconds to Midnight
             </h4>
             <p className="text-sm text-muted-foreground">
               Deep dive on the February 2026 announcement &mdash; from 89 to 85 seconds.

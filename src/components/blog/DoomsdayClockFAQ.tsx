@@ -710,7 +710,7 @@ export function DoomsdayClockFAQ() {
                   to="/blog/doomsday-clock-2026"
                   className="text-atomic hover:underline"
                 >
-                  Doomsday Clock 2026: What Changed and Why
+                  Doomsday Clock 2026 Current Time: 85 Seconds to Midnight
                 </Link>
                 .
               </p>
