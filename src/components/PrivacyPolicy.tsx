@@ -129,7 +129,7 @@ export function PrivacyPolicy() {
                 <strong>Google AdSense:</strong> For serving advertisements
               </li>
               <li>
-                <strong>Google Apps Script:</strong> For processing email
+                <strong>SendX:</strong> For processing email
                 subscriptions
               </li>
               <li>
@@ -149,7 +149,7 @@ export function PrivacyPolicy() {
             </h2>
             <p>
               We take reasonable measures to protect your information. Email
-              subscriptions are stored securely via Google Sheets. Forum data is
+              subscriptions are stored securely via SendX. Forum data is
               stored in our database with appropriate security measures. However,
               no method of transmission over the internet is 100% secure.
             </p>

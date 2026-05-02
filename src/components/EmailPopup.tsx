@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Mail, Bell, CheckCircle, AlertCircle, Loader2, X } from "lucide-react";
 import { currentTime } from "../data/clockHistory";
+import { isValidEmail, subscribeToNewsletter } from "../lib/newsletter";
 
 const DISMISSED_KEY = "doomsday-popup-dismissed";
 const POPUP_DELAY_MS = 15000; // Show after 15 seconds
@@ -31,7 +32,7 @@ export function EmailPopup() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!email || !email.includes("@")) {
+    if (!isValidEmail(email)) {
       setStatus("error");
       setErrorMessage("Please enter a valid email address");
       return;
@@ -40,19 +41,7 @@ export function EmailPopup() {
     setStatus("loading");
 
     try {
-      await fetch(
-        "https://script.google.com/macros/s/AKfycbzq3sGl2yAYK_L5_aVTIhm4-Dkz1rBvMsm0oyXWpaaRObQnTI_vob9Tsa7LD0lwaQgsMg/exec",
-        {
-          method: "POST",
-          mode: "no-cors",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            email,
-            timestamp: new Date().toISOString(),
-            source: "doomsdayclock-popup",
-          }),
-        }
-      );
+      await subscribeToNewsletter(email, "doomsdayclock-popup");
 
       setStatus("success");
       setEmail("");
@@ -69,9 +58,9 @@ export function EmailPopup() {
       setTimeout(() => {
         handleDismiss();
       }, 3000);
-    } catch {
+    } catch (error) {
       setStatus("error");
-      setErrorMessage("Something went wrong. Please try again.");
+      setErrorMessage(error instanceof Error ? error.message : "Something went wrong. Please try again.");
     }
   };
 
