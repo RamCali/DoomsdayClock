@@ -20,10 +20,10 @@ export function DoomsdayClock2026() {
   useEffect(() => {
     updateMetaTags({
       title: "Doomsday Clock 2026 Current Time: 85 Seconds to Midnight",
-      description: `The Doomsday Clock 2026 current setting is 85 seconds to midnight. See the latest status, why it changed, and what the 2026 update means. Refreshed ${lastUpdatedDisplay}.`,
+      description: `Doomsday Clock 2026 current time: 85 seconds to midnight — the latest update and current position from the Bulletin of the Atomic Scientists. Reasons, prediction, and what it means. Status as of ${lastUpdatedDisplay}.`,
       path: "/blog/doomsday-clock-2026",
       newsKeywords:
-        "doomsday clock 2026, doomsday clock 2026 update, doomsday clock current setting 2026, doomsday clock 2026 status, doomsday clock 85 seconds, doomsday clock current status 2026, current doomsday clock time 2026, doomsday clock 2026 current time, doomsday clock current time 2026, doomsday clock 2026 seconds to midnight, doomsday clock 2026 prediction",
+        "doomsday clock 2026, doomsday clock 2026 update, doomsday clock latest update, doomsday clock current setting 2026, doomsday clock current position 2026, doomsday clock 2026 status, doomsday clock 85 seconds, doomsday clock current status 2026, current doomsday clock time 2026, doomsday clock 2026 current time, doomsday clock current time 2026, doomsday clock 2026 seconds to midnight, doomsday clock 2026 minutes to midnight, doomsday clock 2026 prediction, doomsday clock 2026 reasons, doomsday clock 2026 iran, doomsday clock 2026 announcement",
       publishedTime: "2026-02-04T00:00:00Z",
       modifiedTime: modifiedISO,
       section: "Update",
@@ -57,12 +57,24 @@ export function DoomsdayClock2026() {
         "@id": "https://doomsdayclock.net/blog/doomsday-clock-2026",
       },
       description:
-        "The Bulletin moved the Doomsday Clock from 89 to 85 seconds in February 2026. A deep dive on the change.",
+        "Doomsday Clock 2026 current time, latest update, and current position: 85 seconds to midnight. Reasons, prediction, and what the change from 89 to 85 seconds means.",
       image: "https://doomsdayclock.net/og-image-2026.png",
       articleSection: "Update",
       keywords: [
         "doomsday clock 2026",
+        "doomsday clock 2026 current time",
+        "doomsday clock current time 2026",
+        "doomsday clock 2026 current setting",
+        "doomsday clock 2026 current position",
+        "doomsday clock 2026 latest update",
+        "doomsday clock 2026 announcement",
+        "doomsday clock 2026 prediction",
+        "doomsday clock 2026 reasons",
+        "doomsday clock 2026 iran",
+        "doomsday clock 2026 minutes to midnight",
         "85 seconds to midnight",
+        "85 seconds to midnight meaning",
+        "89 vs 85 seconds doomsday clock",
         "bulletin of atomic scientists",
         "nuclear threat 2026",
       ],
@@ -105,6 +117,38 @@ export function DoomsdayClock2026() {
           acceptedAnswer: {
             "@type": "Answer",
             text: "In 2026, the Doomsday Clock is at 85 seconds to midnight — the closest it has ever been in its 79-year history. This represents a 15-second decline from 100 seconds in just six years (2020-2026), the fastest sustained deterioration on record.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "What does 85 seconds to midnight mean?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "The meaning of 85 seconds to midnight is symbolic: it is the Bulletin of the Atomic Scientists' assessment that humanity is closer than ever to global catastrophe. In clock terms, 85 seconds is roughly 1.42 minutes to midnight — a metaphor for nuclear, climate, and AI-driven existential risk, not a literal countdown.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "What is the Doomsday Clock current position in 2026?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "The Doomsday Clock's current position in 2026 is 85 seconds to midnight. This is the closest the clock has ever stood to midnight since it was created in 1947.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "What is the Doomsday Clock 2026 prediction?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "The 2026 Doomsday Clock prediction came true on February 4, 2026, when the Bulletin moved the clock from 89 to 85 seconds to midnight — the largest single forward move in the seconds era. Looking ahead, our 2027 prediction analyzes whether the clock will move closer, hold, or pull back.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Why did the Doomsday Clock change in 2026? Reasons and explanation",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "The reasons behind the 2026 change: escalating nuclear risks (Russia-Ukraine, Middle East, Iran's nuclear program), the hottest year on record in 2025, AI-enabled autonomous weapons, and the collapse of arms control. The Bulletin's explanation framed this as a convergence of threats rather than a single trigger.",
           },
         },
       ],
@@ -190,16 +234,25 @@ export function DoomsdayClock2026() {
             id="direct-answer"
             className="text-base sm:text-lg text-foreground leading-relaxed"
           >
-            The Doomsday Clock is currently set at{" "}
-            <strong>85 seconds to midnight</strong> as of February 4, 2026 — the closest it has ever been in its 79-year history. The Bulletin of the Atomic Scientists moved it forward from 89 seconds, citing nuclear escalation, climate acceleration, and AI risks.
+            The Doomsday Clock current time is{" "}
+            <strong>85 seconds to midnight</strong> — the latest update from
+            the Bulletin of the Atomic Scientists, set on February 4, 2026.
+            That is the current position of the clock and the closest it has
+            ever been in its 79-year history. The Bulletin moved it forward
+            from 89 seconds, citing nuclear escalation, climate acceleration,
+            and AI risks.
           </p>
 
-          <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
-            <span className="flex items-center gap-1.5">
+          <div className="flex flex-wrap items-center gap-3 text-sm">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-doom/10 border border-doom/30 text-doom font-medium">
               <Calendar className="w-4 h-4" />
-              Last updated: {lastUpdatedDisplay}
+              Status as of {currentMonth} {currentYear}
             </span>
-            <span className="flex items-center gap-1.5">
+            <span className="flex items-center gap-1.5 text-muted-foreground">
+              <Calendar className="w-4 h-4" />
+              Latest update: {lastUpdatedDisplay}
+            </span>
+            <span className="flex items-center gap-1.5 text-muted-foreground">
               <Clock className="w-4 h-4" />
               8 min read
             </span>
@@ -237,7 +290,8 @@ export function DoomsdayClock2026() {
                 </h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   The current Doomsday Clock time in 2026 is{" "}
-                  <strong className="text-doom">85 seconds to midnight</strong>.
+                  <strong className="text-doom">85 seconds to midnight</strong>{" "}
+                  &mdash; roughly 1.42 minutes to midnight.
                 </p>
               </div>
               <div className="p-4 rounded-lg bg-white/5 border border-white/10">
@@ -251,11 +305,21 @@ export function DoomsdayClock2026() {
               </div>
               <div className="p-4 rounded-lg bg-white/5 border border-white/10">
                 <h3 className="font-semibold text-foreground mb-2">
-                  When was the Doomsday Clock last updated?
+                  What is the Doomsday Clock current position?
                 </h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  It was last updated on February 4, 2026, when the clock moved
-                  from 89 seconds to 85 seconds to midnight.
+                  The current position of the Doomsday Clock is 85 seconds to
+                  midnight &mdash; the closest position in its 79-year history.
+                </p>
+              </div>
+              <div className="p-4 rounded-lg bg-white/5 border border-white/10">
+                <h3 className="font-semibold text-foreground mb-2">
+                  What is the latest update on the Doomsday Clock?
+                </h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  The latest update was on February 4, 2026, when the Bulletin
+                  moved the clock from 89 seconds to 85 seconds to midnight.
+                  The next announcement is expected in {currentTime.nextUpdate}.
                 </p>
               </div>
               <div className="p-4 rounded-lg bg-white/5 border border-white/10">
@@ -263,26 +327,77 @@ export function DoomsdayClock2026() {
                   How many seconds to midnight is the Doomsday Clock?
                 </h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  The Doomsday Clock is 85 seconds to midnight, the closest
-                  setting in its history.
+                  The Doomsday Clock is 85 seconds to midnight &mdash; about
+                  1.42 minutes to midnight, the closest setting in its history.
                 </p>
               </div>
+              <div className="p-4 rounded-lg bg-white/5 border border-white/10">
+                <h3 className="font-semibold text-foreground mb-2">
+                  What does 85 seconds to midnight mean?
+                </h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  The meaning of 85 seconds to midnight is symbolic: the
+                  Bulletin&apos;s assessment that humanity is closer than ever
+                  to global catastrophe from nuclear, climate, and AI risks
+                  &mdash; not a literal countdown.
+                </p>
+              </div>
+              <div className="p-4 rounded-lg bg-white/5 border border-white/10">
+                <h3 className="font-semibold text-foreground mb-2">
+                  What was the Doomsday Clock 2026 prediction?
+                </h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  The 2026 Doomsday Clock prediction proved correct: the clock
+                  moved forward from 89 to 85 seconds, the largest single
+                  forward jump in the seconds era.
+                </p>
+              </div>
+              <div className="p-4 rounded-lg bg-white/5 border border-white/10">
+                <h3 className="font-semibold text-foreground mb-2">
+                  Why did the Doomsday Clock move in 2026? Reasons &amp; explanation
+                </h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  The reasons for the 2026 move: nuclear escalation
+                  (Russia-Ukraine, Middle East, Iran), the hottest year on
+                  record, AI-enabled autonomous weapons, and the collapse of
+                  arms control. See the full explanation below.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          {/* 89 vs 85 disambiguation callout */}
+          <section aria-labelledby="89-vs-85" className="-mt-2">
+            <div className="p-5 rounded-lg bg-doom/10 border border-doom/30">
+              <h3 id="89-vs-85" className="text-base sm:text-lg font-bold text-doom mb-2">
+                89 vs 85 seconds: which is the current Doomsday Clock time?
+              </h3>
+              <p className="text-sm text-foreground leading-relaxed mb-2">
+                <strong>85 seconds is the current setting.</strong> 89 seconds
+                was the 2025 setting, which held from January 28, 2025 until
+                February 4, 2026, when the Bulletin moved the clock forward.
+                If you&apos;re seeing &ldquo;89 seconds&rdquo; in older
+                articles or January 2026 references, that figure is now
+                outdated &mdash; the latest update places the clock at 85
+                seconds to midnight.
+              </p>
             </div>
           </section>
 
           {/* Section 1: The 2026 Announcement */}
           <section>
             <h2 className="text-xl sm:text-2xl font-bold text-doom mb-4">
-              The 2026 Announcement
+              The Latest Doomsday Clock Announcement (February 2026)
             </h2>
             <p className="text-foreground leading-relaxed mb-4">
-              On February 4, 2026, the Bulletin of the Atomic Scientists
-              moved the Doomsday Clock from 89 seconds to 85 seconds to
-              midnight. The announcement was made at the Bulletin&apos;s
-              annual press conference in Washington D.C., where members of
-              the Science and Security Board laid out the reasoning behind
-              the most significant single-year advance since the clock
-              entered the seconds range in 2020.
+              The latest Doomsday Clock announcement came on February 4, 2026,
+              when the Bulletin of the Atomic Scientists moved the clock from
+              89 seconds to 85 seconds to midnight. This 2026 announcement
+              was made at the Bulletin&apos;s annual press conference in
+              Washington D.C., where members of the Science and Security
+              Board laid out the reasons behind the most significant
+              single-year advance since the clock entered the seconds range
+              in 2020.
             </p>
             <p className="text-foreground leading-relaxed mb-4">
               This is the fourth consecutive year the clock has moved
@@ -440,7 +555,7 @@ export function DoomsdayClock2026() {
               </div>
             </div>
 
-            <p className="text-foreground leading-relaxed">
+            <p className="text-foreground leading-relaxed mb-4">
               The Bulletin emphasized that these threat categories do not
               exist in isolation. Nuclear brinkmanship is amplified by AI
               misinformation. Climate disasters destabilize regions
@@ -450,6 +565,26 @@ export function DoomsdayClock2026() {
               cascading combination currently in play. It is this
               convergence &mdash; not any single event &mdash; that
               drove the four-second advance.
+            </p>
+
+            <h3 className="text-lg sm:text-xl font-semibold text-doom mb-2 mt-6">
+              Iran and the 2026 Doomsday Clock update
+            </h3>
+            <p className="text-foreground leading-relaxed">
+              Iran&apos;s nuclear program was a specific reason cited in the
+              2026 announcement. The Bulletin pointed to enrichment levels
+              approaching weapons-grade thresholds, the breakdown of JCPOA
+              successor talks, and the risk of regional escalation pulling
+              the United States into direct confrontation. For a deeper
+              breakdown of how the US-Iran crisis is shaping the clock&apos;s
+              current position, see our analysis:{" "}
+              <Link
+                to="/blog/us-iran-crisis-doomsday-clock"
+                className="text-doom hover:underline"
+              >
+                The US-Iran Crisis and the Doomsday Clock
+              </Link>
+              .
             </p>
           </section>
 
