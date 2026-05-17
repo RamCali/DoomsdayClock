@@ -8,9 +8,9 @@ import { RelatedArticles } from "./RelatedArticles";
 export function DoomsdayClock2025() {
   useEffect(() => {
     updateMetaTags({
-      title: "Doomsday Clock 2025: Why It Moved to 89 Seconds to Midnight | DoomsdayClock.net",
+      title: "Doomsday Clock 2025: 89 Seconds to Midnight (Now 85 in 2026)",
       description:
-        "In January 2025, the Doomsday Clock moved to 89 seconds to midnight — a record at the time. What caused the change from 90 seconds, what 89 seconds means, and how it led to 2026's 85-second setting.",
+        "In January 2025, the Doomsday Clock moved to 89 seconds to midnight — a record at the time. It has since moved to 85 seconds in February 2026. Full breakdown of the 2025 change, what caused it, and the 2026 update.",
       path: "/blog/doomsday-clock-2025",
       newsKeywords:
         "doomsday clock 2025, 89 seconds to midnight, doomsday clock update 2025, bulletin atomic scientists 2025, doomsday clock 2025 update, doomsday clock 2025 meaning, what was the doomsday clock in 2025, atomic scientists doomsday clock 2025, doomsday clock 2025 predictions",
@@ -169,29 +169,40 @@ export function DoomsdayClock2025() {
             </span>
           </div>
 
-          {/* Update banner */}
-          <div className="doom-accent-card p-4 flex items-center gap-4">
-            <AlertTriangle className="w-8 h-8 text-doom shrink-0" />
-            <div>
-              <p className="text-sm font-semibold text-foreground">
-                Note: The Doomsday Clock has since moved to{" "}
-                <span className="text-doom font-bold">
-                  {currentTime.display}
-                </span>{" "}
-                in February 2026
-              </p>
-              <p className="text-xs text-muted-foreground">
-                This article covers the January 2025 announcement, when the
-                clock was set to 89 seconds to midnight.{" "}
-                <Link
-                  to="/blog/doomsday-clock-2026"
-                  className="text-doom hover:underline"
-                >
-                  Read the 2026 update &rarr;
-                </Link>
-              </p>
+          {/* Update banner — prominent CTA to current 2026 setting */}
+          <Link
+            to="/blog/doomsday-clock-2026"
+            className="block doom-accent-card border-doom/60 hover:border-doom p-5 sm:p-6 transition-all duration-300 group"
+          >
+            <div className="flex items-start gap-4">
+              <AlertTriangle className="w-10 h-10 text-doom shrink-0 mt-0.5" />
+              <div className="flex-1 min-w-0">
+                <div className="flex items-center gap-2 mb-1.5">
+                  <span className="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-doom bg-doom/20 px-2 py-0.5 rounded">
+                    Latest
+                  </span>
+                  <span className="text-xs text-muted-foreground">
+                    Updated February 2026
+                  </span>
+                </div>
+                <p className="text-base sm:text-lg font-bold text-foreground group-hover:text-doom transition-colors leading-tight">
+                  The clock has since moved to{" "}
+                  <span className="text-doom">
+                    {currentTime.display} to midnight
+                  </span>{" "}
+                  &mdash; the new record
+                </p>
+                <p className="text-sm text-muted-foreground mt-2">
+                  This article covers the January 2025 announcement (89
+                  seconds). For the current 85-second setting and a full
+                  breakdown of what changed,{" "}
+                  <span className="text-doom font-medium underline underline-offset-2 group-hover:no-underline">
+                    read the 2026 update &rarr;
+                  </span>
+                </p>
+              </div>
             </div>
-          </div>
+          </Link>
         </header>
 
         {/* Article body */}

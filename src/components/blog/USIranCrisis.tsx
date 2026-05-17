@@ -10,9 +10,9 @@ export function USIranCrisis() {
 
   useEffect(() => {
     updateMetaTags({
-      title: "Doomsday Clock 2026 Update: US-Iran Crisis Nuclear Risk",
+      title: "Doomsday Clock 2026: Has the US-Iran Crisis Moved It?",
       description:
-        "Latest Doomsday Clock 2026 update on the US-Iran crisis, Iran conflict, nuclear escalation risk, and whether the clock could move closer to midnight.",
+        "At 85 seconds to midnight, did the US-Iran crisis push the Doomsday Clock closer? What Iran's nuclear escalation means for the 2027 Bulletin assessment.",
       path: "/blog/us-iran-crisis-doomsday-clock",
       newsKeywords:
         "operation epic fury doomsday clock 2026, operation epic fury, doomsday clock iran, doomsday clock 2026 update iran, us iran crisis doomsday clock, doomsday clock iran war, doomsday clock iran conflict, doomsday clock 2026 iran conflict, doomsday clock 2026 update iran conflict",
@@ -26,7 +26,7 @@ export function USIranCrisis() {
       "@context": "https://schema.org",
       "@type": "NewsArticle",
       headline:
-        "Doomsday Clock 2026 Update: US-Iran Crisis Nuclear Risk",
+        "Doomsday Clock 2026: Has the US-Iran Crisis Moved It?",
       datePublished: "2026-02-28T00:00:00Z",
       dateModified: modifiedISO,
       author: { "@type": "Organization", name: "DoomsdayClock.net" },
@@ -162,8 +162,8 @@ export function USIranCrisis() {
           </div>
 
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight">
-            <span className="text-doom">Doomsday Clock 2026 Update:</span>{" "}
-            US-Iran Crisis and Nuclear Risk
+            <span className="text-doom">Doomsday Clock 2026:</span>{" "}
+            Has the US-Iran Crisis Moved It?
           </h1>
 
           <p className="text-base sm:text-lg text-foreground leading-relaxed">

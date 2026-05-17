@@ -16,9 +16,9 @@ export function WillTheWorldEnd() {
   useEffect(() => {
     updateMetaTags({
       title:
-        "Will the World End? What the Doomsday Clock Actually Predicts | DoomsdayClock.net",
+        "When Will the World End? Doomsday Clock Predictions for 2026, 2050 & 2100",
       description:
-        "Will the world end in 2026? What the Doomsday Clock actually predicts, the difference between the climate clock and the Doomsday Clock, and what science says about humanity's future.",
+        "Scientists say no — the world won't end in 2026. But the Doomsday Clock just hit 85 seconds to midnight, the closest ever. Real timelines for 2026, 2050, and 2100 from the Bulletin of Atomic Scientists, plus what would actually push us past midnight.",
       path: "/blog/will-the-world-end-doomsday-clock",
       newsKeywords:
         "will the world end, doomsday clock 2026, world end 2026, climate clock, will the world survive 2050, doomsday predictions",

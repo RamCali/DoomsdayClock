@@ -67,11 +67,11 @@ export function Hero() {
             </div>
 
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
-              <span className="text-doom">Doomsday Clock</span>
+              <span className="text-doom">Doomsday Clock</span>: {currentTime.display} to Midnight
             </h1>
 
             <h2 className="text-lg sm:text-xl md:text-2xl text-muted-foreground font-medium">
-              What Is, History, Interactive & What If Simulation
+              Live status, complete 1947–{currentTime.year} timeline, and what {currentTime.display} to midnight means.
             </h2>
 
             {/* Speakable content for voice search / AEO */}

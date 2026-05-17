@@ -15,7 +15,11 @@
       "Bash(grep -E \"\\\\.tsx$|^d\")",
       "Bash(wc -l \"/Users/RamG/Downloads/Projects \\(DND\\)/DoomsdayClock/src/components/blog\"/*.tsx)",
       "Bash(timeout 15 npx vite --port 5199)",
-      "Bash(npx eslint *)"
+      "Bash(npx eslint *)",
+      "Bash(rm api/newsletter/subscribe.ts)",
+      "Bash(rmdir api/newsletter)",
+      "Bash(grep -n \"^  {$\\\\|question:\" src/components/FAQ.tsx)",
+      "Bash(git stash *)"
     ],
     "additionalDirectories": [
       "/Users/RamG/Downloads/Projects (DND)/DoomsdayClock/src/components"

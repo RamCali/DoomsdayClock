@@ -13,6 +13,18 @@ const faqData: FAQItem[] = [
     answer: "The Doomsday Clock is at 85 seconds to midnight as of February 2026. This is the closest it has ever been to symbolic global catastrophe since its creation in 1947 by the Bulletin of the Atomic Scientists."
   },
   {
+    question: "How close are we to midnight on the Doomsday Clock?",
+    answer: "We are 85 seconds from midnight on the Doomsday Clock as of February 2026 — the closest in the clock's 79-year history. For context, the clock was 17 minutes from midnight in 1991 (the safest setting ever) and 100 seconds in 2020 (when it first entered the seconds range). The 85-second setting represents the highest sustained level of existential risk the Bulletin of the Atomic Scientists has ever assessed."
+  },
+  {
+    question: "How many minutes to midnight is the Doomsday Clock?",
+    answer: "The Doomsday Clock is no longer measured in minutes. As of February 2026, it stands at 85 seconds to midnight — about 1 minute and 25 seconds. The clock entered the sub-minute range for the first time in 2020 when it was set to 100 seconds, and it has remained in seconds ever since. The last time it was measured in whole minutes was 2018, at 2 minutes."
+  },
+  {
+    question: "Is the Doomsday Clock real?",
+    answer: "Yes, the Doomsday Clock is real — it is a scientifically deliberated assessment maintained by the Bulletin of the Atomic Scientists since 1947. It is not a physical countdown clock or a literal predictor of catastrophe. It is a consensus judgment by 13 Nobel Laureates and security experts who evaluate nuclear, climate, AI, and biosecurity risks each year to set the time. The current setting of 85 seconds to midnight reflects their assessment of how close humanity is to global catastrophe."
+  },
+  {
     question: "What is the Doomsday Clock?",
     answer: "The Doomsday Clock is a symbolic timepiece created in 1947 representing humanity's proximity to catastrophic destruction. Midnight symbolizes global catastrophe. It measures nuclear threats, climate change, disruptive technologies, and biosecurity risks."
   },

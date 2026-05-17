@@ -199,12 +199,16 @@ const blogPages = [
   },
   {
     path: "/blog/will-the-world-end-doomsday-clock",
-    title: "Will the World End? What the Doomsday Clock Actually Predicts | DoomsdayClock.net",
-    description: "Will the world end in 2026? What the Doomsday Clock actually predicts, the difference between the climate clock and the Doomsday Clock, and what science says about humanity's future.",
-    content: `<h1>Will the World End? What the Doomsday Clock Actually Predicts</h1>
-      <p>The Doomsday Clock is not a prediction that the world will end. It's a warning — a call to action from scientists who believe humanity has the power to change course.</p>
-      <h2>What the Clock Does and Doesn't Predict</h2>
-      <p>The clock measures the level of existential risk, not the probability of a specific doomsday event. Even at 85 seconds to midnight, the message is that action can still push the clock back.</p>`,
+    title: "When Will the World End? Doomsday Clock Predictions for 2026, 2050 & 2100",
+    description: "Scientists say no — the world won't end in 2026. But the Doomsday Clock just hit 85 seconds to midnight, the closest ever. Real timelines for 2026, 2050, and 2100 from the Bulletin of Atomic Scientists, plus what would actually push us past midnight.",
+    content: `<h1>When Will the World End? Doomsday Clock Predictions for 2026, 2050 &amp; 2100</h1>
+      <p><strong>No scientific body predicts the world will end in 2026.</strong> But the Doomsday Clock just moved to 85 seconds to midnight — the closest it has ever been since 1947. Here's what the clock actually predicts for 2026, 2050, and 2100, and what would have to happen for it to hit zero.</p>
+      <h2>Will the World End in 2026?</h2>
+      <p>No credible scientific body, government agency, or research institution predicts the world will end in 2026. The Doomsday Clock measures existential risk — not a countdown to a specific date. It has been at 2 minutes (1953), 17 minutes (1991), and now 85 seconds (2026), proving the threats it tracks are not inevitable.</p>
+      <h2>Will the World Survive in 2050?</h2>
+      <p>Yes, with very high probability — but climate models project 1.5–2.5°C of warming, sea levels rising 15–30cm, and significant strain on global food and water systems. Not apocalyptic, but more dangerous.</p>
+      <h2>What Would Push the Clock Past Midnight?</h2>
+      <p>The Bulletin of Atomic Scientists cites four converging threats: nuclear escalation, climate change, AI risks, and biosecurity. A nuclear exchange, runaway warming above 4°C, or unchecked AI deployment would all push the clock toward midnight.</p>`,
   },
   {
     path: "/blog/best-doomsday-clock-watches",
@@ -350,6 +354,181 @@ const blogPages = [
     description: "Water is the #1 survival priority. Expert guide to the best portable filters, home purification systems, and emergency water storage solutions.",
     content: `<h1>Best Water Purification Systems for Emergency Preparedness (2026)</h1>
       <p>Water purification is the single most important aspect of emergency preparedness. This guide covers portable filters, home systems, chemical treatments, and storage solutions.</p>`,
+  },
+  {
+    path: "/blog/what-is-the-doomsday-clock",
+    title: "What Is the Doomsday Clock? Definition, Meaning & How It Works (2026) | DoomsdayClock.net",
+    description: "The Doomsday Clock is a symbol of how close humanity is to catastrophe, currently at 85 seconds to midnight. Learn what it means, how it works, who sets it, and why it matters — the definitive guide.",
+    content: `<h1>What Is the Doomsday Clock?</h1>
+      <p>The Doomsday Clock is a symbolic timepiece maintained by the Bulletin of the Atomic Scientists since 1947, representing how close humanity is to global catastrophe. As of 2026, it sits at 85 seconds to midnight — the closest it has ever been.</p>
+      <h2>How the Clock Works</h2>
+      <p>The Bulletin's Science and Security Board evaluates nuclear threats, climate change, disruptive technologies, and biosecurity each year, then decides whether to move the clock forward, backward, or leave it unchanged.</p>
+      <p><a href="/blog/how-is-doomsday-clock-calculated">How is the clock calculated?</a> | <a href="/blog/who-controls-doomsday-clock">Who controls the clock?</a></p>`,
+  },
+  {
+    path: "/blog/doomsday-clock-current-time-today",
+    title: "Doomsday Clock Current Time: 85 Seconds to Midnight (March 2026) | DoomsdayClock.net",
+    description: `The Doomsday Clock is at 85 seconds to midnight — the closest EVER. Updated ${LAST_UPDATED_DISPLAY}. See what changed from 89 seconds, why it moved, and when the next update is expected.`,
+    content: `<h1>Doomsday Clock Current Time: 85 Seconds to Midnight</h1>
+      <p>The Doomsday Clock is currently at <strong>85 seconds to midnight</strong> as of February 4, 2026 — the closest it has ever been in its 79-year history.</p>
+      <p><em>Page refreshed: ${LAST_UPDATED_DISPLAY}.</em></p>
+      <h2>What Changed from 89 Seconds</h2>
+      <p>The Bulletin moved the clock forward by 4 seconds, citing nuclear escalation, the Middle East conflict, climate acceleration, and AI-related risks.</p>`,
+  },
+  {
+    path: "/blog/doomsday-clock-2025",
+    title: "Doomsday Clock 2025: 89 Seconds to Midnight (Now 85 in 2026)",
+    description: "In January 2025, the Doomsday Clock moved to 89 seconds to midnight — a record at the time. It has since moved to 85 seconds in February 2026. Full breakdown of the 2025 change, what caused it, and the 2026 update.",
+    content: `<h1>Doomsday Clock 2025: 89 Seconds to Midnight (Now 85 in 2026)</h1>
+      <p><strong>Latest update:</strong> The Doomsday Clock has since moved to <strong>85 seconds to midnight</strong> in February 2026 — the new record. <a href="/blog/doomsday-clock-2026">Read the 2026 update &rarr;</a></p>
+      <p>In January 2025, the Bulletin of the Atomic Scientists moved the Doomsday Clock to 89 seconds to midnight — the closest it had ever been at the time. This article covers what caused the 2025 change and what it means in context of the 2026 advance.</p>
+      <h2>Why the Clock Moved to 89 Seconds in 2025</h2>
+      <p>Escalating nuclear risks, the ongoing Russia-Ukraine war, climate crisis, and AI-related threats drove the decision. The one-second move from 90 to 89 was deliberate — a signal that conditions had worsened, but not yet collapsed.</p>
+      <h2>What Happened Since: The 2026 Update</h2>
+      <p>In February 2026, the Bulletin moved the clock forward by 4 seconds to 85 seconds to midnight — the largest single advance in the seconds era. <a href="/blog/doomsday-clock-2026">Full 2026 analysis</a>.</p>
+      <p><a href="/blog/doomsday-clock-2026">2026 update: 85 seconds</a> | <a href="/blog/doomsday-clock-history-timeline">Full timeline</a></p>`,
+  },
+  {
+    path: "/blog/doomsday-clock-climate-change",
+    title: "How Climate Change Affects the Doomsday Clock | DoomsdayClock.net",
+    description: "Climate change has been a factor in the Doomsday Clock since 2007. Learn how global warming, AI, and emerging threats influence the clock's position alongside nuclear risks.",
+    content: `<h1>How Climate Change Affects the Doomsday Clock</h1>
+      <p>Climate change has been an explicit factor in the Doomsday Clock since 2007, when the Bulletin of the Atomic Scientists added it to its list of existential threats alongside nuclear weapons.</p>
+      <h2>Climate as a Clock Factor</h2>
+      <p>Each year, the Science and Security Board weighs climate acceleration, emissions trajectories, and policy responses when deciding whether to move the clock.</p>`,
+  },
+  {
+    path: "/blog/doomsday-clock-cold-war",
+    title: "The Doomsday Clock During the Cold War & Cuban Missile Crisis | DoomsdayClock.net",
+    description: "How did the Doomsday Clock move during the Cold War? From hydrogen bomb tests to the Cuban Missile Crisis to the fall of the Berlin Wall — the complete Cold War clock history.",
+    content: `<h1>The Doomsday Clock During the Cold War</h1>
+      <p>The Doomsday Clock was created in 1947 at the dawn of the Cold War. From hydrogen bomb tests to the Cuban Missile Crisis to the fall of the Berlin Wall, the clock tracked humanity's closest brushes with nuclear catastrophe.</p>
+      <h2>Key Cold War Settings</h2>
+      <p>The closest setting until 2020 was 2 minutes in 1953 (hydrogen bomb tests). The farthest was 17 minutes in 1991 (Cold War ends).</p>`,
+  },
+  {
+    path: "/blog/where-is-doomsday-clock-located",
+    title: "Where Is the Doomsday Clock Located? The Physical Clock Explained | DoomsdayClock.net",
+    description: "Where is the Doomsday Clock physically located? Learn about the Bulletin of the Atomic Scientists headquarters in Chicago, where the clock is kept, and how to visit.",
+    content: `<h1>Where Is the Doomsday Clock Located?</h1>
+      <p>The Doomsday Clock is maintained by the Bulletin of the Atomic Scientists, headquartered at the University of Chicago. The physical clock face is housed at the Bulletin's offices in Chicago, Illinois.</p>
+      <h2>Visiting the Bulletin</h2>
+      <p>While the clock itself is not on public display, the Bulletin's offices and the University of Chicago campus are accessible to visitors interested in the history of atomic science.</p>`,
+  },
+  {
+    path: "/blog/how-long-is-89-seconds-doomsday-clock",
+    title: "How Long Is 89 Seconds on the Doomsday Clock in Real Time? | DoomsdayClock.net",
+    description: "How long is 89 seconds on the Doomsday Clock in real time? The Doomsday Clock doesn't work like a real countdown. Learn what the seconds actually represent and why it's a metaphor, not a timer.",
+    content: `<h1>How Long Is 89 Seconds on the Doomsday Clock?</h1>
+      <p>The Doomsday Clock doesn't work like a real countdown. 89 seconds (or today's 85 seconds) is a symbolic measure of existential risk, not a literal duration until catastrophe.</p>
+      <h2>The Clock as Metaphor</h2>
+      <p>The closer to midnight, the greater the perceived threat. The clock has never reached midnight — and it isn't meant to predict a specific event.</p>`,
+  },
+  {
+    path: "/blog/can-doomsday-clock-go-back",
+    title: "Can the Doomsday Clock Go Back? A History of Reversals | DoomsdayClock.net",
+    description: "Can the Doomsday Clock be reversed? Yes — it has moved backward 8 times. Explore every reversal, what caused them, and what it would take to turn the clock back today.",
+    content: `<h1>Can the Doomsday Clock Go Back?</h1>
+      <p>Yes — the Doomsday Clock has moved backward 8 times in its history. The most dramatic reversal was in 1991, when it moved from 10 minutes to 17 minutes as the Cold War ended.</p>
+      <h2>What It Would Take Today</h2>
+      <p>Reversing the clock from 85 seconds would require meaningful arms-control progress, climate policy breakthroughs, and de-escalation in active conflicts.</p>`,
+  },
+  {
+    path: "/blog/how-is-doomsday-clock-calculated",
+    title: "How Is the Doomsday Clock Calculated? The Science Behind the Setting | DoomsdayClock.net",
+    description: "How is the Doomsday Clock time calculated? Explore the methodology, threat categories, and expert deliberation process behind the world's most famous risk assessment.",
+    content: `<h1>How Is the Doomsday Clock Calculated?</h1>
+      <p>The Doomsday Clock is set by the Science and Security Board of the Bulletin of the Atomic Scientists, in consultation with their Board of Sponsors (which includes Nobel Laureates).</p>
+      <h2>The Methodology</h2>
+      <p>The board evaluates four main threat categories — nuclear weapons, climate change, disruptive technologies (including AI), and biosecurity — then deliberates to reach a consensus setting each January.</p>`,
+  },
+  {
+    path: "/blog/doomsday-clock-vs-atomic-clock",
+    title: "Doomsday Clock vs Atomic Clock: What's the Difference? | DoomsdayClock.net",
+    description: "Doomsday Clock vs atomic clock — they share a name but nothing else. Learn the difference between the symbolic threat clock and the world's most precise timekeeping device.",
+    content: `<h1>Doomsday Clock vs Atomic Clock: What's the Difference?</h1>
+      <p>The Doomsday Clock and the atomic clock share the word "atomic" but are completely different. The Doomsday Clock is a symbolic threat assessment; atomic clocks are physical devices that measure time using atomic oscillations.</p>
+      <h2>The Key Distinction</h2>
+      <p>Atomic clocks define the second with sub-nanosecond precision and underpin GPS. The Doomsday Clock has no physical mechanism — it's a metaphor maintained by scientists.</p>`,
+  },
+  {
+    path: "/blog/how-to-read-doomsday-clock",
+    title: "How to Read the Doomsday Clock: A Beginner's Guide | DoomsdayClock.net",
+    description: "How to read and understand the Doomsday Clock. A beginner's guide to what the minutes and seconds mean, how to interpret changes, and what the current time tells us.",
+    content: `<h1>How to Read the Doomsday Clock</h1>
+      <p>Reading the Doomsday Clock is simple: the closer the hand is to midnight, the greater the perceived existential threat. Today's setting of 85 seconds is the closest it has ever been.</p>
+      <h2>Interpreting Changes</h2>
+      <p>Movement toward midnight indicates worsening conditions; movement away signals progress. The clock is updated annually in late January.</p>`,
+  },
+  {
+    path: "/blog/is-doomsday-clock-real-or-fake",
+    title: "Is the Doomsday Clock Real or Fake? Debunking the Critics | DoomsdayClock.net",
+    description: "Is the Doomsday Clock real, fake, or fear mongering? We address every criticism head-on — from scientific legitimacy to media sensationalism — with facts.",
+    content: `<h1>Is the Doomsday Clock Real or Fake?</h1>
+      <p>The Doomsday Clock is a real, scientifically-deliberated assessment by the Bulletin of the Atomic Scientists. It is not a prediction or a physical countdown — it is a consensus expert judgment of existential risk.</p>
+      <h2>Addressing the Critics</h2>
+      <p>Critics call it sensationalism; supporters call it the most successful science-communication symbol of the 20th century. Both views agree it influences global policy discussion.</p>`,
+  },
+  {
+    path: "/blog/who-created-doomsday-clock",
+    title: "Who Created the Doomsday Clock? The Founders Behind the Symbol | DoomsdayClock.net",
+    description: "Who founded and created the Doomsday Clock? The story of the Manhattan Project scientists, the Bulletin of the Atomic Scientists, and artist Martyl Langsdorf.",
+    content: `<h1>Who Created the Doomsday Clock?</h1>
+      <p>The Doomsday Clock was created in 1947 by artist Martyl Langsdorf for the cover of the Bulletin of the Atomic Scientists, a magazine founded by Manhattan Project scientists who feared the consequences of nuclear weapons.</p>
+      <h2>The Founders</h2>
+      <p>Eugene Rabinowitch and Hyman Goldsmith, both Manhattan Project veterans, founded the Bulletin in 1945. Martyl Langsdorf set the original clock at 7 minutes to midnight.</p>`,
+  },
+  {
+    path: "/blog/why-is-doomsday-clock-important",
+    title: "Why Is the Doomsday Clock Important? Why You Should Care | DoomsdayClock.net",
+    description: "Why does the Doomsday Clock matter? From influencing nuclear policy to raising climate awareness, discover why this 79-year-old symbol remains critically important today.",
+    content: `<h1>Why Is the Doomsday Clock Important?</h1>
+      <p>The Doomsday Clock matters because it translates complex, abstract existential risks into a single intuitive symbol — one that policymakers, journalists, and the public can immediately understand.</p>
+      <h2>Influence on Policy</h2>
+      <p>The clock has shaped nuclear arms-control discourse for nearly 80 years and is cited in major media every time it moves.</p>`,
+  },
+  {
+    path: "/blog/doomsday-clock-through-decades",
+    title: "Doomsday Clock Through the Decades: 2000 vs 2020 vs 2026 | DoomsdayClock.net",
+    description: "Compare the Doomsday Clock across three pivotal eras: 2000, 2020, and 2026. See how global threats evolved from Cold War aftermath to the age of AI and climate crisis.",
+    content: `<h1>Doomsday Clock Through the Decades</h1>
+      <p>From 9 minutes in 2000, to 100 seconds in 2020, to 85 seconds in 2026 — the Doomsday Clock has tracked humanity's evolving relationship with existential risk across three very different eras.</p>
+      <h2>2000 vs 2020 vs 2026</h2>
+      <p>In 2000, the dominant concerns were nuclear proliferation and US-Russia relations. By 2020, climate and cyber threats had become central. By 2026, AI joins the threat matrix.</p>`,
+  },
+  {
+    path: "/blog/doomsday-clock-watchmen-comic",
+    title: "Doomsday Clock & Watchmen: The Comic Series vs the Real Clock | DoomsdayClock.net",
+    description: "Is Doomsday Clock a sequel to Watchmen? Is it canon? Everything about the DC Comics series versus the real nuclear threat clock by the Bulletin of Atomic Scientists.",
+    content: `<h1>Doomsday Clock & Watchmen</h1>
+      <p>"Doomsday Clock" is a 12-issue DC Comics series (2017–2019) by Geoff Johns and Gary Frank, a direct sequel to Alan Moore's Watchmen. It is named after — but distinct from — the real Doomsday Clock maintained by the Bulletin of the Atomic Scientists.</p>
+      <h2>Real vs Fictional</h2>
+      <p>The real clock is a scientific risk assessment. The comic is fiction inspired by the symbol. Both draw on the same nuclear-era anxiety.</p>`,
+  },
+  {
+    path: "/store",
+    title: "DoomsdayClock.net Store — Survival Guides, Apparel & Preparedness Gear",
+    description: "Official DoomsdayClock.net store. Digital survival guides, family emergency plans, apparel, and curated preparedness gear for the 85-seconds-to-midnight era.",
+    ogType: "website",
+    content: `<h1>DoomsdayClock.net Store</h1>
+      <p>Digital survival guides, family emergency plans, apparel, and curated preparedness gear. Every product chosen for the 85-seconds-to-midnight era.</p>
+      <p><a href="/store/nuclear-survival-guide">Nuclear Survival Guide</a> | <a href="/store/family-emergency-plan">Family Emergency Plan</a> | <a href="/store/food-planning-guide">90-Day Food Planning Guide</a></p>`,
+  },
+  {
+    path: "/terms",
+    title: "Terms of Service | DoomsdayClock.net",
+    description: "Terms of Service for DoomsdayClock.net. By using the site, you agree to these terms governing access, acceptable use, intellectual property, and liability.",
+    ogType: "website",
+    content: `<h1>Terms of Service</h1>
+      <p>By accessing and using DoomsdayClock.net, you agree to be bound by these Terms of Service. The full text governs acceptable use, intellectual property, disclaimers, and limitations of liability.</p>`,
+  },
+  {
+    path: "/privacy",
+    title: "Privacy Policy | DoomsdayClock.net",
+    description: "Privacy Policy for DoomsdayClock.net. Learn how we collect, use, and safeguard your information, including analytics, newsletter signups, and cookies.",
+    ogType: "website",
+    content: `<h1>Privacy Policy</h1>
+      <p>DoomsdayClock.net is committed to protecting your privacy. This policy explains what information we collect (analytics, newsletter signups, cookies), how we use it, and your rights.</p>`,
   },
   {
     path: "/advertise",

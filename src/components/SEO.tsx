@@ -2,8 +2,8 @@ import { faqData } from "./FAQ";
 import { currentTime, clockHistory, ANNOUNCEMENT_DATE_ISO } from "../data/clockHistory";
 
 export function SEOHead() {
-  const title = "Doomsday Clock Current Time 2026: 85 Seconds to Midnight";
-  const description = `The Doomsday Clock current time is ${currentTime.display} to midnight in ${currentTime.year}. See the latest status, current setting, live clock, and complete timeline.`;
+  const title = `${currentTime.display} to Midnight: Doomsday Clock ${currentTime.year} (Live)`;
+  const description = `How close is doomsday? The Doomsday Clock — humanity's expert countdown to global catastrophe — is at ${currentTime.display} to midnight, the closest in 79 years. Live status, full 1947–${currentTime.year} timeline, and what ${currentTime.display} means.`;
   const url = "https://doomsdayclock.net";
 
   // FAQ Schema for rich snippets
@@ -180,8 +180,8 @@ export function SEOHead() {
 
 // Component to inject SEO into head
 export function injectSEO() {
-  const title = "Doomsday Clock Current Time 2026: 85 Seconds to Midnight";
-  const description = `The Doomsday Clock current time is ${currentTime.display} to midnight in ${currentTime.year}. See the latest status, current setting, live clock, and complete timeline.`;
+  const title = `${currentTime.display} to Midnight: Doomsday Clock ${currentTime.year} (Live)`;
+  const description = `How close is doomsday? The Doomsday Clock — humanity's expert countdown to global catastrophe — is at ${currentTime.display} to midnight, the closest in 79 years. Live status, full 1947–${currentTime.year} timeline, and what ${currentTime.display} means.`;
   const url = "https://doomsdayclock.net";
 
   document.title = title;

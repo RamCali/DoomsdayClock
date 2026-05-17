@@ -9,11 +9,12 @@ export function DoomsdayClockHistory() {
   const modifiedISO = new Date().toISOString();
 
   useEffect(() => {
+    const totalSettings = clockHistory.length;
     updateMetaTags({
       title:
-        "Doomsday Clock Timeline: Every Year from 1947 to 2026",
+        `Doomsday Clock Timeline: All ${totalSettings} Settings, 1947–2026`,
       description:
-        "See the full Doomsday Clock timeline from 1947 to 2026, including every setting, seconds to midnight, and why the clock moved.",
+        `Every Doomsday Clock setting from 1947 to 2026 — all ${totalSettings} changes, from 7 minutes (1947) to 85 seconds (2026), with the reason behind each move.`,
       path: "/blog/doomsday-clock-history-timeline",
       newsKeywords:
         "doomsday clock timeline, doomsday clock history, doomsday clock over the years, doomsday clock through the years, doomsday clock by year, doomsday clock changes, doomsday clock all settings, doomsday clock 1947, doomsday clock 1991, doomsday clock farthest from midnight, doomsday clock timeline all settings since 1947, doomsday clock history chart",
@@ -27,7 +28,7 @@ export function DoomsdayClockHistory() {
       "@context": "https://schema.org",
       "@type": "NewsArticle",
       headline:
-        "Doomsday Clock Timeline: Every Year from 1947 to 2026",
+        `Doomsday Clock Timeline: All ${totalSettings} Settings, 1947–2026`,
       datePublished: "2026-03-07T00:00:00Z",
       dateModified: modifiedISO,
       author: {
@@ -227,7 +228,7 @@ export function DoomsdayClockHistory() {
 
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight">
             <span className="text-doom">Doomsday Clock Timeline:</span>{" "}
-            Every Year from 1947 to 2026
+            All {clockHistory.length} Settings, 1947–2026
           </h1>
 
           <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
