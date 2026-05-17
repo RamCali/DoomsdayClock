@@ -195,21 +195,30 @@ export function injectSEO() {
   }
   metaDescription.setAttribute("content", description);
 
+  // Site-wide FAQPage belongs only on the homepage. Blog/product routes own
+  // their own page-specific FAQPage and would otherwise trigger GSC's
+  // "Duplicate field FAQPage" warning.
+  const isHomepage = typeof window !== "undefined" && window.location.pathname === "/";
+
   // All structured data schemas
   const schemas = [
-    // FAQ Schema
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      mainEntity: faqData.map((item) => ({
-        "@type": "Question",
-        name: item.question,
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: item.answer,
-        },
-      })),
-    },
+    // FAQ Schema — homepage only
+    ...(isHomepage
+      ? [
+          {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: faqData.map((item) => ({
+              "@type": "Question",
+              name: item.question,
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: item.answer,
+              },
+            })),
+          },
+        ]
+      : []),
     // WebSite Schema with SearchAction
     {
       "@context": "https://schema.org",
@@ -220,7 +229,7 @@ export function injectSEO() {
       description: description,
       inLanguage: "en-US",
     },
-    // Article Schema with embedded FAQ mainEntity (optimized for Featured Snippets)
+    // Article Schema
     {
       "@context": "https://schema.org",
       "@type": "Article",
@@ -264,27 +273,6 @@ export function injectSEO() {
         name: "Doomsday Clock",
         description: "A symbolic timepiece representing humanity's proximity to global catastrophe, maintained by the Bulletin of the Atomic Scientists since 1947.",
         sameAs: "https://en.wikipedia.org/wiki/Doomsday_Clock",
-      },
-      mainEntity: {
-        "@type": "FAQPage",
-        mainEntity: [
-          {
-            "@type": "Question",
-            name: "What time is the Doomsday Clock right now?",
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: `As of ${currentTime.lastUpdated}, the Doomsday Clock is set to ${currentTime.seconds} seconds to midnight, the closest it has ever been to global catastrophe.`,
-            },
-          },
-          {
-            "@type": "Question",
-            name: "When does the Doomsday Clock update?",
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: "The clock is updated annually in late January by the Bulletin of the Atomic Scientists' Science and Security Board.",
-            },
-          },
-        ],
       },
     },
     // Speakable Schema for AEO/Voice Search
