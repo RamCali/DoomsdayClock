@@ -19,8 +19,8 @@
   "rewrites": [
     { "source": "/sitemap.xml", "destination": "/api/sitemap" },
     { "source": "/news-sitemap.xml", "destination": "/api/news-sitemap" },
-    { "source": "/embed/clock", "destination": "/embed.html" },
+    { "source": "/embed/clock", "destination": "/embed" },
     { "source": "/api/(.*)", "destination": "/api/$1" },
-    { "source": "/((?!api/|embed/).*)", "destination": "/index.html" }
+    { "source": "/(.*)", "destination": "/" }
   ]
 }

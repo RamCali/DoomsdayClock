@@ -49,38 +49,6 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     </image:image>
   </url>
 
-  <!-- Section anchors -->
-  <url>
-    <loc>${SITE_URL}/#clock</loc>
-    <lastmod>${today}</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>${SITE_URL}/#timeline</loc>
-    <lastmod>${today}</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>${SITE_URL}/#scenarios</loc>
-    <lastmod>${today}</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>${SITE_URL}/#history</loc>
-    <lastmod>${today}</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>${SITE_URL}/#faq</loc>
-    <lastmod>${today}</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
   <!-- Year Pages -->
 ${YEAR_PAGES.map(y => `  <url>
     <loc>${SITE_URL}/doomsday-clock-${y}</loc>

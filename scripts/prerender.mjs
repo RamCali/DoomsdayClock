@@ -539,6 +539,15 @@ const blogPages = [
       <p>Reach a highly engaged audience interested in geopolitics, science, current events, and emergency preparedness. Sponsorship options starting at $200.</p>`,
   },
   {
+    path: "/forum",
+    title: "Forum | Doomsday Clock Community Discussion",
+    description: "Join the Doomsday Clock community. Share your ideas on how to push the clock back and discuss global existential risks.",
+    ogType: "website",
+    content: `<h1>Doomsday Clock Community Forum</h1>
+      <p>Share ideas on how to push the Doomsday Clock back from midnight. Discuss nuclear risk, climate change, and global existential threats with the community.</p>
+      <p><a href="/blog/doomsday-clock-2026">Current Doomsday Clock status (85 seconds)</a> | <a href="/">Back to homepage</a></p>`,
+  },
+  {
     path: "/store/nuclear-survival-guide",
     title: "Nuclear Emergency Survival Guide — 12-Chapter Digital Guide | DoomsdayClock.net",
     description: "The complete 80-page guide to surviving a nuclear emergency. Covers shelter-in-place, evacuation, radiation exposure, decontamination, and long-term recovery. $9.99 instant download.",
