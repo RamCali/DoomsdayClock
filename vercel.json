@@ -10,9 +10,9 @@
   ],
   "redirects": [
     {
-      "source": "/:path*",
+      "source": "/(.*)",
       "has": [{ "type": "host", "value": "www.doomsdayclock.net" }],
-      "destination": "https://doomsdayclock.net/:path*",
+      "destination": "https://doomsdayclock.net/$1",
       "permanent": true
     }
   ],

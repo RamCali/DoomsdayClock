@@ -46,6 +46,22 @@ export function PostDetail() {
   }, [fetchPost, fetchComments]);
 
   useEffect(() => {
+    if (!loading && !post) {
+      // Soft 404 — post was deleted; tell Google not to index this URL
+      let el = document.querySelector('meta[name="robots"]') as HTMLMetaElement | null;
+      if (!el) {
+        el = document.createElement("meta");
+        el.setAttribute("name", "robots");
+        document.head.appendChild(el);
+      }
+      el.setAttribute("content", "noindex, nofollow");
+      return () => {
+        el?.setAttribute("content", "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1");
+      };
+    }
+  }, [loading, post]);
+
+  useEffect(() => {
     if (post) {
       const desc = post.body.length > 155 ? post.body.slice(0, 155) + "..." : post.body;
       updateMetaTags({
